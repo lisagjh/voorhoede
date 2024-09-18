@@ -1,4 +1,4 @@
-# Voorhoede
+![image](https://github.com/user-attachments/assets/4c2775ad-eb9a-4efa-a8a4-6ce82ebc8ebe)
 
 De Voorhoede is een digital agency voor webdevelopment
 

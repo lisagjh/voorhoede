@@ -12,7 +12,7 @@ Ontwerp en ontwikkel de nieuwe vacature website van DDA. Daarnaast moet er ook e
 
 ## Resources
 
-[Backlog](https://github.com/orgs/fdnd-agency/projects/40)
+<!-- [Backlog](https://github.com/orgs/fdnd-agency/projects/40) -->
 
 [Design]()
 

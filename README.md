@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/4c2775ad-eb9a-4efa-a8a4-6ce82ebc8ebe)
 
-De Voorhoede is een digital agency voor webdevelopment. Bij de Voorhoede maken ze sites, apps, UI’s en andere digitale producten met webtechnologie. Daarbij maken ze impact door enkel samen te werken met missie gedreven organisaties en projecten, waarbij de focus ligt op **toegangelijkheid voor iedereen**, **privacy by design**, **energiebewust gebouwd/performance** en **open source**(waar mogelijk). De ervaring staat altijd op 1.
+De Voorhoede is een digital agency voor webdevelopment. Bij de Voorhoede maken ze sites, apps, UI’s en andere digitale producten met webtechnologie. Daarbij maken ze impact door enkel samen te werken met missie gedreven organisaties en projecten, waarbij de focus ligt op **toegangelijkheid voor iedereen**, **privacy by design**, **energiebewust gebouwd/performance** en **open source**(waar mogelijk). De gebruiker staat altijd op 1.
 
 [Voorhoede.nl](https://www.voorhoede.nl/)
 

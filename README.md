@@ -1,14 +1,15 @@
 ![image](https://github.com/user-attachments/assets/4c2775ad-eb9a-4efa-a8a4-6ce82ebc8ebe)
 
-De Voorhoede is een digital agency voor webdevelopment
+De Voorhoede is een digital agency voor webdevelopment. Bij de Voorhoede maken ze sites, apps, UI’s en andere digitale producten met webtechnologie. Daarbij maken ze impact door enkel samen te werken met missie gedreven organisaties en projecten, waarbij de focus ligt op **toegangelijkheid voor iedereen**, **privacy by design**, **energiebewust gebouwd/performance** en **open source**(waar mogelijk). De ervaring staat altijd op 1.
 
 [Voorhoede.nl](https://www.voorhoede.nl/)
 
-# DDA Vacature Site
-Dutch Digital Agencies (DDA) verenigt en vertegenwoordigt de beste digitale bureaus van Nederland. DDA bundelt de vacatures voor de aangesloten agencies. De Voorhoede heeft de opdracht gekregen om een nieuw platform te ontwerpen en te bouwen voor de vacatures van de bij DDA aangesloten agencies.
+# Dutch Digital Agencies (DDA)
+DDA verbindt sinds 2002 toonaangevende digitale bureaus in Nederland. 
+Met 167 leden delen zij kennis en stimuleren innovatie door evenementen zoals de Dutch Digital Day, waar digitalisering en technologie vanuit nieuwe invalshoeken worden belicht. DDA richt zich op samenwerking en talentontwikkeling, en zet zich in om de digitale industrie continu vooruit te helpen.
 
 ## Design challenge
-Ontwerp en ontwikkel de nieuwe vacature website van DDA. Daarnaast moet er ook een beheeromgeving komen waar de agencies vacatures kunnen toevoegen, aanpassen en verwijderen.
+Ontwerp en ontwikkel de nieuwe vacature website voor de DDA, met focus op design en digitale toegankelijkheid. Waarbij doordachte keuzes gemaakt zijn en een solide basis neer gezet is zodat de website toekomstbestendig is.
 
 ## Resources
 

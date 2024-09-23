@@ -15,4 +15,5 @@ Ontwerp en ontwikkel de nieuwe vacature website voor de DDA, met focus op design
 
 <!-- [Backlog](https://github.com/orgs/fdnd-agency/projects/40) -->
 
+[Briefing](https://docs.google.com/presentation/d/1ftEW6eeBfwAldI_6cEPEcNVqNpyJ__8L9oDEKbWXll4/edit#slide=id.g2f4c6552ab0_0_27)
 [Figma design](https://www.figma.com/design/buVIAOQh08mzEmL3T4pUQC/DDA-Website)

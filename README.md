@@ -9,7 +9,7 @@ DDA verbindt sinds 2002 toonaangevende digitale bureaus in Nederland.
 Met 167 leden delen zij kennis en stimuleren innovatie door evenementen zoals de Dutch Digital Day, waar digitalisering en technologie vanuit nieuwe invalshoeken worden belicht. DDA richt zich op samenwerking en talentontwikkeling, en zet zich in om de digitale industrie continu vooruit te helpen.
 
 ## Design challenge
-Ontwerp en ontwikkel de nieuwe vacature website voor de DDA, met focus op design en digitale toegankelijkheid. Waarbij doordachte keuzes gemaakt zijn en een solide basis neer gezet is zodat de website toekomstbestendig is.
+Ontwerp en ontwikkel de nieuwe website voor de DDA, met focus op design en digitale toegankelijkheid. Waarbij doordachte keuzes gemaakt zijn en een solide basis neer gezet is zodat de website toekomstbestendig is.
 
 ## Resources
 

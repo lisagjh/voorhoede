@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Archivo", sans-serif;
+}
+
+:root {
+  --black: #222226;
+  --grey: #666666;
+  --white: #fff;
+  --blue: #364bf7;
+}
+
+h1 {
+    font-size: 6em;
+    letter-spacing: -4px;
+}
+
+h2 {
+    font-size: 4em;
+    letter-spacing: -4px;
+}
+
+h3 {
+    font-size: 3em;
+    letter-spacing: -4px;
+}

@@ -1,6 +1,7 @@
 <script>
     import MainTitle from "$lib/MainTitle.svelte";
     import DescriptionText from "$lib/descriptionText.svelte";
+    import BackHomeBtn from "$lib/BackHomeBtn.svelte";
 </script>
 
 <main>
@@ -11,6 +12,8 @@
     </header>
 
     <section class="landing-section">
+        <BackHomeBtn/>
+
         <MainTitle
         label="VACATURES"
         />

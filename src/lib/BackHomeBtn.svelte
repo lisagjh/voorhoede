@@ -18,8 +18,8 @@
         align-items: center;
         color: inherit;
         text-decoration: none;
-        font-size: 12px;
-        gap: 8px;
+        font-size: .75em;
+        gap: .5em;
     }
 
 </style>

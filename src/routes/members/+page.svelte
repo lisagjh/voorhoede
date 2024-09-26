@@ -4,6 +4,7 @@
     import Member from "$lib/Member.svelte";
     import Vacancies from "$lib/Vacancies.svelte";
     import myImage from '../../lib/images/logo.png';
+    import Searchform from "$lib/Searchform.svelte";
 </script>
 
 <main>
@@ -20,12 +21,8 @@
         Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie.
     </p>
 
-    <form class="searchform">
-        <label for="site-search">zoek een bureau:</label>
-        <input type="search" name="search" id="site-search" placeholder="zoek een bureau..."/>
-        <hr>
-        <button>zoek een bureach</button>
-    </form>
+
+    <Searchform />
 
 
     <Member data={data}/>
@@ -40,14 +37,7 @@
     .header{
         background-color: var(--grey);
     }
-    #site-search{
-        border: none;
-        /*border-bottom: 2px solid var(--grey);*/
-    }
-    .searchform{
-        border-bottom: var(--grey);
 
-    }
 
     .logo{
         width: 12em;

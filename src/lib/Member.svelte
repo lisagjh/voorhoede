@@ -12,6 +12,7 @@
             <li>{member.title}</li>
             <li>amsterdam</li>
             <li>25 tot 49 werkemers</li>
+            <li>details</li>
         </ul>
     {/each}
 </section>

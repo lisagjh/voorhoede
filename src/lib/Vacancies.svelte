@@ -11,6 +11,5 @@
         <li>{member.description} omschrijiving</li>
         <li>{member.Data_Posted } datum gepost</li>
     </ul>
-    <hr>
 
 {/each}

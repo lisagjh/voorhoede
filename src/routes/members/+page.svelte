@@ -32,7 +32,7 @@
 <style>
     main{
         line-height: 1.5;
-        padding: 2em;
+        padding: 2rem;
     }
     .header{
         background-color: var(--grey);

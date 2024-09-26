@@ -1,39 +1,25 @@
 <script>
     export let data;
 
+    import Member from "$lib/Member.svelte";
+    import Vacancies from "$lib/Vacancies.svelte";
 </script>
 
 <main>
+
+
     <a href="/">Home</a>
-    {#each data.members as member}
-
-                    <ul>
 
 
-                        <li>{member.title}</li>
-                        <li>{member.summary}</li>
-                        <li>{member.description}</li>
-                        <li>{member.vacancies} de id van de vacature</li>
-                    </ul>
-                <hr>
-
-    {/each}
+    <h2>onze leden</h2>
+    <p>
+        De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging. 
+        Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie.
+    </p>
 
 
-    <h2>vacatuer data</h2>
-    {#each data.vacature as member}
 
-        <ul>
-
-
-            <li>{member.Title}  title</li>
-            <li>{member.Hours}  uren</li>
-            <li>{member.description} omschrijiving</li>
-            <li>{member.Data_Posted } datum gepost</li>
-        </ul>
-        <hr>
-
-    {/each}
+    <Member data={data}/>
 
 </main>
 

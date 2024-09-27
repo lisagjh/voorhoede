@@ -51,55 +51,59 @@
       </li>
     </ul>
 
-    <a href="/login" class="login">
-      Login
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8 3L13.0001 8.0001L8 13.0002"
-          stroke="#364BF7"
-          stroke-width="1.5"
-          stroke-miterlimit="4.62023"
-        />
-        <path
-          d="M3 8L13 8"
-          stroke="#364BF7"
-          stroke-width="1.5"
-          stroke-miterlimit="4.62023"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </a>
+    <ul class="nav-cta">
+      <li class="login">
+        <a href="/#">
+          Login
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 3L13.0001 8.0001L8 13.0002"
+              stroke="#364BF7"
+              stroke-width="1.5"
+              stroke-miterlimit="4.62023"
+            />
+            <path
+              d="M3 8L13 8"
+              stroke="#364BF7"
+              stroke-width="1.5"
+              stroke-miterlimit="4.62023"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </li>
 
-    <div class="join">
-      <a href="/join" class="join">Word lid</a>
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8 3L13.0001 8.0001L8 13.0002"
-          stroke="#222226"
-          stroke-width="1.5"
-          stroke-miterlimit="4.62023"
-        />
-        <path
-          d="M3 8L13 8"
-          stroke="#222226"
-          stroke-width="1.5"
-          stroke-miterlimit="4.62023"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </div>
+      <li class="join">
+        <a href="/#" class="join">Word lid</a>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 3L13.0001 8.0001L8 13.0002"
+            stroke="#222226"
+            stroke-width="1.5"
+            stroke-miterlimit="4.62023"
+          />
+          <path
+            d="M3 8L13 8"
+            stroke="#222226"
+            stroke-width="1.5"
+            stroke-miterlimit="4.62023"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </li>
+    </ul>
   </nav>
 </header>
 
@@ -109,6 +113,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--black);
   }
 
   button {
@@ -122,8 +127,8 @@
     display: grid;
     justify-items: start;
     position: absolute;
-    top: 3.5rem;
-    width: 100%;
+    top: 5rem;
+    width: 100vw;
   }
   /* nav * targets all elements, children and nested. nav > * will only select direct children */
   nav * {
@@ -133,29 +138,72 @@
   nav ul {
     display: flex;
     flex-direction: column;
+    width: 90%;
+    padding: 0;
   }
 
   li {
     display: flex;
-    justify-content: start;
     list-style: "";
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--black);
+    transition: .25s ease-in-out;
   }
 
   a {
     color: var(--black);
     text-decoration: none;
+    margin: 0;
   }
 
-  a.login {
+  .nav-cta {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav-cta li {
+    padding: 0.5rem;
+  }
+
+  .login {
     color: var(--blue);
+    border: none;
+  }
+
+  .login a {
+    margin: 0;
+  }
+
+  li.login:hover a {
+    color: var(--white);
+  }
+
+  li.login:hover {
+    background-color: var(--blue);
+    color: var(--white);
+  }
+
+  li.login:hover svg path {
+    stroke: var(--white);
   }
 
   .join {
-    padding: 0.75rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-wrap: nowrap;
     border: 1px solid var(--black);
   }
 
   .join a {
-    border-left: none;
+    margin: 0;
+    border: none;
   }
+
+  
 </style>

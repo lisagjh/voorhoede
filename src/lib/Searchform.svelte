@@ -5,7 +5,6 @@
 </form>
 
 <style>
-
     #site-search{
         border: none;
         border-bottom: 2px solid var(--grey);

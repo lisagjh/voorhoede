@@ -8,38 +8,36 @@
 </script>
 
 <main>
-
-    <div  class="header">
-    <img  src="{myImage}" class="logo" alt="Dutch Digital Agencies logo link naar home" loading="lazy">
+    <div class="header">
+        <img src="{myImage}" class="logo" alt="Dutch Digital Agencies logo link naar home" loading="lazy">
     </div>
-    <a href="/">Home</a>
 
+    <a href="/">Home</a>
 
     <h2>onze leden</h2>
     <p>
-        De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging. 
+        De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters
+        aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging. 
         Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie.
     </p>
-
-
-    <Searchform />
-
+    <Searchform/>
 
     <Member data={data}/>
 
 </main>
 
 <style>
-    main{
+    main {
         line-height: 1.5;
         padding: 2rem;
     }
-    .header{
+
+    .header {
         background-color: var(--grey);
     }
 
 
-    .logo{
+    .logo {
         width: 12em;
     }
 

@@ -2,27 +2,14 @@
     export let data;
 </script>
 <div class="gridcontainer">
-
-
-
     {#each data.members as member}
         <div class="card">
-
-                <!--{#if member.photo && member.photo.id }-->
-                <!--                    <picture>-->
-
-                <!--                        <img src="https://fdnd-agency.directus.app/assets/{member.photo.id}" alt="{member.title}"-->
-                <!--                             width="{member.photo.width}" height="{member.photo.height}">-->
-                <!--                    </picture>-->
-
                 <picture>
                     <img src="https://fdnd-agency.directus.app/assets/687ea821-1626-4d43-bd4a-16d7a7bb1f34?format=avif"
                          alt="{member.title}"
                          width="{member.photo.width}" height="{member.photo.height}">
                 </picture>
-
-                <!--{/if}-->
-        <ul class="card__label">
+        <ul class="cardlabel">
             <li class="labelfilters">
                 service design
             </li>
@@ -32,7 +19,7 @@
             <li class="Companyname">{member.title}</li>
             <li>amsterdam</li>
         </ul>
-        <ul class="card__label">
+        <ul class="cardlabel">
             <li>25 tot 49 werkemers</li>
             <li class="card__li__hiring">hiring</li>
         </ul>
@@ -45,7 +32,6 @@
 </div>
 
 <style>
-    /*div :first-child*/
     .gridcontainer {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -82,7 +68,7 @@
         width: 100%;
     }
 
-    .card__label {
+    .cardlabel {
         display: flex;
         flex-direction: row;
         text-overflow: ellipsis;

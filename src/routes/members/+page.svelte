@@ -18,8 +18,6 @@
 
     <Member data={data}/>
 
-    <h2>de vacatures </h2>
-
 </main>
 
 <style>

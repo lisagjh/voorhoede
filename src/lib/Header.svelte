@@ -138,9 +138,11 @@
 
   nav {
     position: fixed; /* Fix to the viewport instead of absolute in the header */
-    top: 5rem;
+    top: 4.25rem;
     width: 100%;
     max-width: 19.5rem;
+    background-color: var(--white);
+    padding: 0.5rem;
   }
 
   /* als het scherm iets groter word blijft de nav rechts hangen bij  */

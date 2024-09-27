@@ -1,14 +1,9 @@
 <script>
-  import { onMount } from "svelte";
-
-  onMount(async () => {});
+  let isMenuOpen = false;
 
   function toggleMenu() {
-    const menu = document.querySelector("nav");
-
+    isMenuOpen = !isMenuOpen;
     console.log("click");
-
-    menu.classList.toggle("show");
   }
 </script>
 
@@ -43,7 +38,7 @@
     </svg>
   </button>
 
-  <nav>
+  <nav class:show={isMenuOpen}>
     <ul>
       <li>
         <a href="/">Home</a>
@@ -122,19 +117,23 @@
 </header>
 
 <style>
+  /* Component Styles */
   header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 0.75rem 1rem;
     border-bottom: 1px solid var(--black);
+    min-width: 100vw;
+    position: sticky;
+    top: 0;
   }
 
   button {
     background-color: transparent;
     border: 1px solid var(--black);
-    height: 40px;
-    width: 40px;
+    height: 2.5rem;
+    width: 2.5rem;
   }
 
   nav {
@@ -142,11 +141,20 @@
     justify-items: start;
     position: absolute;
     top: 5rem;
-    width: 100vw;
-    max-width: 24.5rem;
+    width: 100%;
+    max-width: 19.5rem;
+    background-color: var(--white);
+  }
+
+  /* als het scherm iets groter word blijft de nav rechts hangen onder de button */
+  @media (min-width: 20.5rem) {
+    nav {
+      right: 0rem;
+    }
   }
 
   /* nav * targets all elements, children and nested. nav > * will only select direct children */
+  /* ik snap niet waarom dit wel werkt, maar niet wanneer ik dit gewoon op de nav toepas */
   nav * {
     font-family: var(--martian-mono);
   }
@@ -160,7 +168,6 @@
 
   li {
     display: flex;
-    list-style: "";
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
     border-bottom: 1px solid var(--black);
@@ -170,7 +177,6 @@
   a {
     color: var(--black);
     text-decoration: none;
-    margin: 0;
   }
 
   .nav-cta {
@@ -190,38 +196,46 @@
     border: none;
   }
 
-  .login a {
-    margin: 0;
-  }
-
-  li.login:hover a {
-    color: var(--white);
-  }
-
-  li.login:hover {
+  .login:hover {
     background-color: var(--blue);
     color: var(--white);
   }
 
-  li.login:hover svg path {
+  .login:hover a,
+  .login:hover svg path {
+    color: var(--white);
     stroke: var(--white);
   }
 
   .join {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    border: 1px solid var(--black);
     flex-wrap: nowrap;
     text-wrap: nowrap;
-    border: 1px solid var(--black);
   }
 
   .join a {
-    margin: 0;
     border: none;
   }
 
+  @media (max-width: 264px) {
+    .nav-cta {
+      flex-direction: column;
+    }
+  }
+
+  /* INTERACTION: menu button toggle nav visibility */
+
+  nav {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    transform: translateX(100px);
+  }
   .show {
-    background-color: red;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
   }
 </style>

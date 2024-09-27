@@ -10,8 +10,6 @@
 </header>
 
 <main>
-  
-
   <section class="landing-section">
     <BackHomeBtn />
 

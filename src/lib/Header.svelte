@@ -1,22 +1,21 @@
 <script>
   import { onMount } from "svelte";
 
-  onMount(async () => {
-    function toggleMenu() {
-      menuBtn = document.querySelector(button);
-      menu = document.querySelector(nav);
+  onMount(async () => {});
 
-      console.log("click");
+  function toggleMenu() {
+    const menu = document.querySelector("nav");
 
-      menuBtn.classlist.toggleMenu("show");
-    }
-  });
+    console.log("click");
+
+    menu.classList.toggle("show");
+  }
 </script>
 
 <header>
   <img src="/dda-logo.svg" alt="" />
 
-  <button on:click={toggleMenu}>
+  <button on:click={toggleMenu} aria-label="navigation menu">
     <svg
       width="32"
       height="32"
@@ -144,9 +143,9 @@
     position: absolute;
     top: 5rem;
     width: 100vw;
-    max-width: 24.5rem;  
-    opacity: 0;
+    max-width: 24.5rem;
   }
+
   /* nav * targets all elements, children and nested. nav > * will only select direct children */
   nav * {
     font-family: var(--martian-mono);
@@ -223,6 +222,6 @@
   }
 
   .show {
-    opacity: 1;
+    background-color: red;
   }
 </style>

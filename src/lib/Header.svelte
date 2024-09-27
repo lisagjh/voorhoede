@@ -117,7 +117,6 @@
 </header>
 
 <style>
-  /* Component Styles */
   header {
     display: flex;
     justify-content: space-between;
@@ -125,6 +124,7 @@
     padding: 0.75rem 1rem;
     border-bottom: 1px solid var(--black);
     min-width: 100vw;
+    width: 100%;
     position: sticky;
     top: 0;
   }
@@ -137,18 +137,16 @@
   }
 
   nav {
-    display: grid;
-    justify-items: start;
-    position: absolute;
+    position: fixed; /* Fix to the viewport instead of absolute in the header */
     top: 5rem;
     width: 100%;
     max-width: 19.5rem;
-    background-color: var(--white);
   }
 
-  /* als het scherm iets groter word blijft de nav rechts hangen onder de button */
+  /* als het scherm iets groter word blijft de nav rechts hangen bij  */
   @media (min-width: 20.5rem) {
     nav {
+      position: absolute;
       right: 0rem;
     }
   }
@@ -231,11 +229,12 @@
     visibility: hidden;
     opacity: 0;
     transition: 0.3s ease-in-out;
-    transform: translateX(100px);
+    translate: 100px 0px;
+    z-index: 200;
   }
   .show {
     visibility: visible;
     opacity: 1;
-    transform: translateX(0);
+    translate: 0px 0px;
   }
 </style>

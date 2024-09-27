@@ -12,7 +12,7 @@
     <form>
         <label for="site-search">zoek een bureau:</label>
         <input type="search" name="search" id="site-search"/>
-        <button>zoek een bureach</button>
+        <button>zoek een bureau</button>
     </form>
 
 

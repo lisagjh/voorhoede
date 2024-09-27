@@ -20,8 +20,6 @@
 
     <h2>de vacatures </h2>
 
-    <Vacancies data={data}/>
-
 </main>
 
 <style>

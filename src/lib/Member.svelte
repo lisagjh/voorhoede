@@ -1,35 +1,36 @@
 <script>
     export let data;
 </script>
-<div class="gridcontainer">
+
+
+<article class="gridcontainer" >
     {#each data.members as member}
-        <div class="card">
-                <picture>
-                    <img src="https://fdnd-agency.directus.app/assets/687ea821-1626-4d43-bd4a-16d7a7bb1f34?format=avif"
-                         alt="{member.title}"
-                         width="{member.photo.width}" height="{member.photo.height}">
-                </picture>
-        <ul class="cardlabel">
-            <li class="labelfilters">
-                service design
-            </li>
-            <li class="labelfilters">label</li>
-        </ul>
-        <ul>
-            <li class="Companyname">{member.title}</li>
-            <li>amsterdam</li>
-        </ul>
-        <ul class="cardlabel">
-            <li>25 tot 49 werkemers</li>
-            <li class="card__li__hiring">hiring</li>
-        </ul>
-        <ul>
-            <li class="linkdetails">details</li>
-        </ul>
-        </div>
+        <article class="card">
+            <picture>
+                <img src="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif"
+                     type="image/avif" width="{member.photo}" height="{member.photo}" alt="{member.photo}">
+            </picture>
+            <ul class="cardlabel">
+                <li class="labelfilters">
+                    service design
+                </li>
+                <li class="labelfilters">label</li>
+            </ul>
+            <ul>
+                <li class="Companyname">{member.title}</li>
+                <li>{member.address}</li>
+            </ul>
+            <ul class="cardlabel">
+                <li>{parseInt(member.colleagues)}</li>
+                <li class="card__li__hiring">hiring</li>
+            </ul>
+            <ul>
+                <li class=""><button class="linkdetails">details</button></li>
+            </ul>
+        </article>
     {/each}
 
-</div>
+</article>
 
 <style>
     .gridcontainer {
@@ -53,7 +54,7 @@
         border: var(--grey) 1px solid;
         padding: 2rem;
         display: grid;
-        grid-template-rows: auto auto auto auto auto;
+        grid-template-rows: 16rem auto auto auto auto;
         gap: 16px;
     }
     .card__li__hiring{
@@ -66,6 +67,7 @@
     img {
         object-fit: cover;
         width: 100%;
+        height: 100%;
     }
 
     .cardlabel {
@@ -89,6 +91,9 @@
     .linkdetails {
         color: var(--blue);
         font-weight: bold;
+        background-color: transparent;
+        border: none;
+        font-size: var(--font-size-small);
 
     }
 

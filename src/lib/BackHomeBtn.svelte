@@ -20,6 +20,7 @@
         text-decoration: none;
         font-size: .75em;
         gap: .5em;
+        justify-content: center;
     }
 
 </style>

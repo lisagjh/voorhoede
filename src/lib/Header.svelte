@@ -8,7 +8,7 @@
 </script>
 
 <header>
-  <img src="/dda-logo.svg" alt="" />
+  <img src="/dda-logo.svg" alt="DDA logo" width="40" height="54"/>
 
   <button on:click={toggleMenu} aria-label="navigation menu">
     <svg
@@ -122,11 +122,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--black);
+    background-color: var(--white);
     min-width: 100vw;
     width: 100%;
     position: sticky;
     top: 0;
+    z-index: 100;
   }
 
   button {
@@ -137,12 +138,13 @@
   }
 
   nav {
-    position: fixed; /* Fix to the viewport instead of absolute in the header */
-    top: 4.25rem;
+    position: absolute; /* Fix to the viewport instead of absolute in the header */
+    top: 4.5rem;
     width: 100%;
     max-width: 19.5rem;
     background-color: var(--white);
     padding: 0.5rem;
+    z-index: 2;
   }
 
   /* als het scherm iets groter word blijft de nav rechts hangen bij  */
@@ -230,13 +232,57 @@
   nav {
     visibility: hidden;
     opacity: 0;
-    transition: 0.3s ease-in-out;
-    translate: 100px 0px;
-    z-index: 200;
+    transition: 0.25s ease-in-out;
+    transform: translateY(-100px);
+    z-index: 2;
   }
   .show {
     visibility: visible;
     opacity: 1;
-    translate: 0px 0px;
+    transform: translateY(0);
+  }
+
+  @media (min-width: 54rem) {
+    button {
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      top: 0;
+      visibility: visible;
+      opacity: 1;
+      z-index: 5;
+      height: fit-content;
+      width: 100%;
+      max-width: 100vw;
+      transform: translateY(0px);
+      border: none;
+    }
+
+    nav ul {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      border: none;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    .nav-cta {
+      width: 21rem;
+    }
+
+    .nav-cta li {
+      flex-wrap: nowrap;
+      margin: 0;
+    }
   }
 </style>

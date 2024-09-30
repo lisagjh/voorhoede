@@ -9,9 +9,6 @@
             <picture>
                 <img src="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif"
                      type="image/avif" width="{member.photo}" height="{member.photo}" alt="{member.photo}">
-
-
-
             </picture>
             <ul class="cardlabel">
                 <li class="labelfilters">
@@ -21,10 +18,10 @@
             </ul>
             <ul>
                 <li class="Companyname">{member.title}</li>
-                <li>amsterdam</li>
+                <li>{member.address}</li>
             </ul>
             <ul class="cardlabel">
-                <li>25 tot 49 werkemers</li>
+                <li>{parseInt(member.colleagues)}</li>
                 <li class="card__li__hiring">hiring</li>
             </ul>
             <ul>

@@ -8,9 +8,6 @@
 </script>
 
 <main>
-    <div class="header">
-        <img src="{myImage}" class="logo" alt="Dutch Digital Agencies logo link naar home" loading="lazy">
-    </div>
 
     <a href="/">Home</a>
 

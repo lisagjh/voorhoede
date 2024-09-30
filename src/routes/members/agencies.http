@@ -1,0 +1,12 @@
+GET https://fdnd-agency.directus.app/items/dda_agencies_vacancies/
+Accept: application/json
+
+
+
+###
+### GET request to example server
+GET https://fdnd-agency.directus.app/items/dda_agencies/
+
+
+
+###

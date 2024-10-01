@@ -7,9 +7,15 @@ export async function load() {
     const vacatures = await fetchJson(ddaAgenciesVacancies)
 
     // if (error.status === 404 || error.status === 500) {
-    //     throw new Error('helaas er gaat iets mis');
+    //     // throw new Error('helaas er gaat iets mis');
+    //
+    //     export function loadtest() {
+    //         throw redirect(303, '/a');
+    //     }
+    //
     // }
     // https://kit.svelte.dev/docs/errors
+    // https://learn.svelte.dev/tutorial/redirects
     return {
         members: members.data,
         vacature:vacatures.data
@@ -17,3 +23,5 @@ export async function load() {
 
 
 }
+
+

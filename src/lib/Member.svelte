@@ -37,10 +37,8 @@
 <style>
     .gridcontainer {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
         /*gap: 2em;*/
-        border-top: 1px solid var(--grey);
-        border-bottom: 1px solid var(--grey);
         text-transform: uppercase;
     }
 
@@ -87,7 +85,7 @@
     }
 
     .Companyname {
-        font-size: 48px;
+        font-size: 38px;
     }
 
     .linkdetails {
@@ -98,5 +96,15 @@
         font-size: var(--font-size-small);
 
     }
+    @media (min-width: 425px) {
+        .gridcontainer {
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        }
+        .Companyname {
+            font-size: 42px;
+        }
+
+    }
+
 
 </style>

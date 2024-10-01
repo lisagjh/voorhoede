@@ -1,7 +1,6 @@
 <script>
-    export let data;
 </script>
-
+<main>
 <h1>This is H1</h1>
 <h2>This is H2</h2>
 <h3>This is H3</h3>
@@ -12,3 +11,5 @@
 <p class="subtext">This is subtext.</p>
 
 <a href="/members">member pagina</a>
+
+</main>

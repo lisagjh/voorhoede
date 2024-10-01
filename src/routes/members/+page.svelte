@@ -2,12 +2,9 @@
     export let data;
 
     import Member from "$lib/Member.svelte";
-    import Vacancies from "$lib/Vacancies.svelte";
-    import myImage from '../../lib/images/logo.png';
 </script>
 
 <main>
-
 
     <form>
         <label for="site-search">zoek een bureau:</label>
@@ -24,11 +21,6 @@
     main{
         line-height: 1.5;
         padding: 2em;
-    }
-
-
-    .logo{
-        width: 12em;
     }
 
 </style>

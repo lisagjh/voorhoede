@@ -28,6 +28,7 @@
                 <li class=""><button class="linkdetails">details</button></li>
             </ul>
         </article>
+
     {/each}
 
 </article>

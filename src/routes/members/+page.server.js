@@ -1,4 +1,5 @@
 import fetchJson from "$lib/fetch-json.js";
+import {error} from "@sveltejs/kit";
 
 
 export async function load() {

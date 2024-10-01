@@ -1,6 +1,6 @@
 <script>
     import Text from "$lib/Text.svelte";
-    import BackHomeBtn from "$lib/BackHomeBtn.svelte";
+    import BackToBtn from "$lib/BackToBtn.svelte";
 </script>
 
 <main>
@@ -12,9 +12,9 @@
 
     <section class="intro-section">
         
-        <BackHomeBtn>
+        <BackToBtn href="/">
             <span slot="link-text">TERUG NAAR HOME</span>
-        </BackHomeBtn>
+        </BackToBtn>
 
         <Text>
             <h1 slot="page-title">Vacatures</h1>

@@ -11,6 +11,7 @@
     </header>
 
     <section class="intro-section">
+        
         <BackHomeBtn>
             <span slot="link-text">TERUG NAAR HOME</span>
         </BackHomeBtn>
@@ -21,7 +22,7 @@
                 Verslim je carrière bij de beste digitale bureaus van Nederland. Pak je rol als developer of designer, researcher, als scrum master of marketeer, als strateeg. Start of groei door – en laat zien wat je kan.
             </p>
         </Text>
-        
+    
     </section>
 
 </main>

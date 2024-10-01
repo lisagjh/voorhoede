@@ -1,6 +1,4 @@
 <script>
-  import { slide, fly, fade } from "svelte/transition";
-
   let isMenuOpen = false;
 
   function toggleMenu() {
@@ -39,64 +37,32 @@
     </svg>
   </button>
 
-  {#if isMenuOpen}
-    <nav
-      class:show={isMenuOpen}
-      aria-hidden={!isMenuOpen}
-      in:slide={{ y: -100, duration: 300 }}
-      out:slide={{ y: -100, duration: 300 }}
-    >
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/over">Over ons</a>
-        </li>
-        <li>
-          <a href="/events">Events</a>
-        </li>
-        <li>
-          <a href="/publicaties">Publicaties</a>
-        </li>
-        <li>
-          <a href="/leden">Leden</a>
-        </li>
-        <li>
-          <a href="/vacatures">Vacatures</a>
-        </li>
-      </ul>
+  <nav class:show={isMenuOpen} aria-hidden={!isMenuOpen}>
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/over">Over ons</a>
+      </li>
+      <li>
+        <a href="/events">Events</a>
+      </li>
+      <li>
+        <a href="/publicaties">Publicaties</a>
+      </li>
+      <li>
+        <a href="/leden">Leden</a>
+      </li>
+      <li>
+        <a href="/vacatures">Vacatures</a>
+      </li>
+    </ul>
 
-      <ul class="nav-cta">
-        <li class="login">
-          <a href="/#">
-            Login
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8 3L13.0001 8.0001L8 13.0002"
-                stroke="#364BF7"
-                stroke-width="1.5"
-                stroke-miterlimit="4.62023"
-              />
-              <path
-                d="M3 8L13 8"
-                stroke="#364BF7"
-                stroke-width="1.5"
-                stroke-miterlimit="4.62023"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
-        </li>
-
-        <li class="join">
-          <a href="/#" class="join">Word lid</a>
+    <ul class="nav-cta">
+      <li class="login">
+        <a href="/#">
+          Login
           <svg
             width="16"
             height="16"
@@ -106,22 +72,47 @@
           >
             <path
               d="M8 3L13.0001 8.0001L8 13.0002"
-              stroke="#222226"
+              stroke="#364BF7"
               stroke-width="1.5"
               stroke-miterlimit="4.62023"
             />
             <path
               d="M3 8L13 8"
-              stroke="#222226"
+              stroke="#364BF7"
               stroke-width="1.5"
               stroke-miterlimit="4.62023"
               stroke-linejoin="round"
             />
           </svg>
-        </li>
-      </ul>
-    </nav>
-  {/if}
+        </a>
+      </li>
+
+      <li class="join">
+        <a href="/#" class="join">Word lid</a>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 3L13.0001 8.0001L8 13.0002"
+            stroke="#222226"
+            stroke-width="1.5"
+            stroke-miterlimit="4.62023"
+          />
+          <path
+            d="M3 8L13 8"
+            stroke="#222226"
+            stroke-width="1.5"
+            stroke-miterlimit="4.62023"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <style>
@@ -148,7 +139,7 @@
     border: 1px solid var(--black);
     height: 2.5rem;
     width: 2.5rem;
-    transition: .25s ease-in-out;
+    transition: 0.25s ease-in-out;
   }
 
   button:hover {
@@ -171,11 +162,16 @@
     z-index: 2;
     visibility: hidden;
     opacity: 0;
+    scale: 0.5;
+    translate: 50px -100px;
+    transition: 0.25s ease-in-out;
   }
 
   .show {
     visibility: visible;
     opacity: 1;
+    scale: 1;
+    translate: 0 0;
   }
 
   /* als het scherm iets groter word blijft de nav rechts hangen bij  */

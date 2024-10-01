@@ -1,14 +1,17 @@
 <script>
+  import { slide, fly, fade } from "svelte/transition"; // You can also use fade, slide, etc.
+
   let isMenuOpen = false;
+  let firstLink = [];
 
   function toggleMenu() {
     isMenuOpen = !isMenuOpen;
-    console.log("click");
+    document.querySelector("nav").setAttribute("aria-expanded", isMenuOpen);
   }
 </script>
 
 <header>
-  <img src="/dda-logo.svg" alt="DDA logo" width="40" height="54"/>
+  <img src="/dda-logo.svg" alt="DDA logo" width="40" height="54" />
 
   <button on:click={toggleMenu} aria-label="navigation menu">
     <svg
@@ -38,32 +41,64 @@
     </svg>
   </button>
 
-  <nav class:show={isMenuOpen}>
-    <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/over">Over ons</a>
-      </li>
-      <li>
-        <a href="/events">Events</a>
-      </li>
-      <li>
-        <a href="/publicaties">Publicaties</a>
-      </li>
-      <li>
-        <a href="/leden">Leden</a>
-      </li>
-      <li>
-        <a href="/vacatures">Vacatures</a>
-      </li>
-    </ul>
+  {#if isMenuOpen}
+    <nav
+      class:show={isMenuOpen}
+      aria-hidden={!isMenuOpen}
+      in:slide={{ y: -100, duration: 300 }}
+      out:slide={{ y: -100, duration: 300 }}
+    >
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/over">Over ons</a>
+        </li>
+        <li>
+          <a href="/events">Events</a>
+        </li>
+        <li>
+          <a href="/publicaties">Publicaties</a>
+        </li>
+        <li>
+          <a href="/leden">Leden</a>
+        </li>
+        <li>
+          <a href="/vacatures">Vacatures</a>
+        </li>
+      </ul>
 
-    <ul class="nav-cta">
-      <li class="login">
-        <a href="/#">
-          Login
+      <ul class="nav-cta">
+        <li class="login">
+          <a href="/#">
+            Login
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 3L13.0001 8.0001L8 13.0002"
+                stroke="#364BF7"
+                stroke-width="1.5"
+                stroke-miterlimit="4.62023"
+              />
+              <path
+                d="M3 8L13 8"
+                stroke="#364BF7"
+                stroke-width="1.5"
+                stroke-miterlimit="4.62023"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </li>
+
+        <li class="join">
+          <a href="/#" class="join">Word lid</a>
           <svg
             width="16"
             height="16"
@@ -73,50 +108,30 @@
           >
             <path
               d="M8 3L13.0001 8.0001L8 13.0002"
-              stroke="#364BF7"
+              stroke="#222226"
               stroke-width="1.5"
               stroke-miterlimit="4.62023"
             />
             <path
               d="M3 8L13 8"
-              stroke="#364BF7"
+              stroke="#222226"
               stroke-width="1.5"
               stroke-miterlimit="4.62023"
               stroke-linejoin="round"
             />
           </svg>
-        </a>
-      </li>
-
-      <li class="join">
-        <a href="/#" class="join">Word lid</a>
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M8 3L13.0001 8.0001L8 13.0002"
-            stroke="#222226"
-            stroke-width="1.5"
-            stroke-miterlimit="4.62023"
-          />
-          <path
-            d="M3 8L13 8"
-            stroke="#222226"
-            stroke-width="1.5"
-            stroke-miterlimit="4.62023"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </li>
-    </ul>
-  </nav>
+        </li>
+      </ul>
+    </nav>
+  {/if}
 </header>
 
 <style>
+  /* when i apply the font-family to the header, it doesnt work, but this way does for some reason? */
+  header * {
+    font-family: var(--martian-mono);
+  }
+
   header {
     display: flex;
     justify-content: space-between;
@@ -138,13 +153,20 @@
   }
 
   nav {
-    position: absolute; /* Fix to the viewport instead of absolute in the header */
+    position: absolute;
     top: 4.5rem;
     width: 100%;
     max-width: 19.5rem;
     background-color: var(--white);
     padding: 0.5rem;
     z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .show {
+    visibility: visible;
+    opacity: 1;
   }
 
   /* als het scherm iets groter word blijft de nav rechts hangen bij  */
@@ -153,12 +175,6 @@
       position: absolute;
       right: 0rem;
     }
-  }
-
-  /* nav * targets all elements, children and nested. nav > * will only select direct children */
-  /* ik snap niet waarom dit wel werkt, maar niet wanneer ik dit gewoon op de nav toepas */
-  nav * {
-    font-family: var(--martian-mono);
   }
 
   nav ul {
@@ -227,21 +243,6 @@
     }
   }
 
-  /* INTERACTION: menu button toggle nav visibility */
-
-  nav {
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.25s ease-in-out;
-    transform: translateY(-100px);
-    z-index: 2;
-  }
-  .show {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
   @media (min-width: 54rem) {
     button {
       display: none;
@@ -250,6 +251,7 @@
     nav {
       display: flex;
       flex-direction: row;
+      justify-content: space-evenly;
       position: relative;
       top: 0;
       visibility: visible;
@@ -265,13 +267,12 @@
     nav ul {
       flex-direction: row;
       align-items: center;
-      justify-content: space-around;
       width: 100%;
       border: none;
     }
 
     li {
-      margin: 0;
+      margin: 0 0.5rem;
       padding: 0;
       border: none;
     }

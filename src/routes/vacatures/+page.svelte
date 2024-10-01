@@ -1,6 +1,5 @@
 <script>
-    import MainTitle from "$lib/MainTitle.svelte";
-    import DescriptionText from "$lib/descriptionText.svelte";
+    import Text from "$lib/Text.svelte";
     import BackHomeBtn from "$lib/BackHomeBtn.svelte";
 </script>
 
@@ -11,44 +10,51 @@
         </nav>
     </header>
 
-    <section class="landing-section">
-        <BackHomeBtn/>
-        <MainTitle
-        label="VACATURES"
-        />
-        <DescriptionText
-        label="Verslim je carrière bij de beste digitale bureaus van Nederland. Pak je rol als developer of designer, researcher, als scrum master of marketeer, als strateeg. Start of groei door – en laat zien wat je kan."
-        />
+    <section class="intro-section">
+        <BackHomeBtn>
+            <span slot="link-text">TERUG NAAR HOME</span>
+        </BackHomeBtn>
+
+        <Text>
+            <h1 slot="page-title">Vacatures</h1>
+            <p slot="page-description">
+                Verslim je carrière bij de beste digitale bureaus van Nederland. Pak je rol als developer of designer, researcher, als scrum master of marketeer, als strateeg. Start of groei door – en laat zien wat je kan.
+            </p>
+        </Text>
+        
     </section>
 
 </main>
 
 
 <style>
-    main {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .landing-section {
+    .intro-section {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        max-width: 80%;
+        justify-content: center;
         text-align: center;
-        gap: 1.25em;
-        margin-top: 7.5em;
+        gap: .5em;
+        margin: 25% 15% 10% 15%;
     }
 
     @media (min-width: 820px){
-        .landing-section {
+        .intro-section {
             margin-top: 12.5%;
-            max-width: 50%;
         }
     }
 
+    @media (min-width: 1024px){
+        .intro-section {
+            margin: 12.5% 25% 10% 25%;
+        }
+    }
+
+    @media (min-width: 1524px){
+        .intro-section {
+            margin: 12.5% 32% 10% 32%;
+        }
+    }
 
 </style>

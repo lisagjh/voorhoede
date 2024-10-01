@@ -5,12 +5,13 @@
 </script>
 
 
-<article class="gridcontainer" >
+<article class="gridcontainer">
     {#each data.members as member}
         <article class="card">
             <picture>
-                <img src="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif"
-                     type="image/avif" width="{member.photo}" height="{member.photo}" alt="{member.photo}">
+                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
+                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
+                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="{member.title}">
             </picture>
             <ul class="cardlabel">
                 <li class="labelfilters">
@@ -27,7 +28,9 @@
                 <li class="card__li__hiring">hiring</li>
             </ul>
             <ul>
-                <li class=""><button class="linkdetails">details</button></li>
+                <li class="">
+                    <button class="linkdetails">details</button>
+                </li>
             </ul>
         </article>
     {/each}
@@ -38,7 +41,6 @@
     .gridcontainer {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
-        /*gap: 2em;*/
         text-transform: uppercase;
     }
 
@@ -57,7 +59,8 @@
         grid-template-rows: 16rem auto auto auto auto;
         gap: 16px;
     }
-    .card__li__hiring{
+
+    .card__li__hiring {
         background-color: var(--blue);
         color: var(--white);
         padding: 2px;
@@ -96,12 +99,10 @@
         font-size: var(--font-size-small);
 
     }
+
     @media (min-width: 425px) {
         .gridcontainer {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        }
-        .Companyname {
-            font-size: 42px;
         }
 
     }

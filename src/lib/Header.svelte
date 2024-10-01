@@ -1,12 +1,10 @@
 <script>
-  import { slide, fly, fade } from "svelte/transition"; // You can also use fade, slide, etc.
+  import { slide, fly, fade } from "svelte/transition";
 
   let isMenuOpen = false;
-  let firstLink = [];
 
   function toggleMenu() {
     isMenuOpen = !isMenuOpen;
-    document.querySelector("nav").setAttribute("aria-expanded", isMenuOpen);
   }
 </script>
 
@@ -150,6 +148,17 @@
     border: 1px solid var(--black);
     height: 2.5rem;
     width: 2.5rem;
+    transition: .25s ease-in-out;
+  }
+
+  button:hover {
+    box-shadow: 2px 2px 0px var(--blue);
+    scale: 1.01;
+  }
+
+  button:active {
+    box-shadow: 1px 1px 0px var(--blue);
+    scale: 0.99;
   }
 
   nav {
@@ -190,6 +199,14 @@
     margin-bottom: 1rem;
     border-bottom: 1px solid var(--black);
     transition: 0.25s ease-in-out;
+  }
+
+  li:hover {
+    border-bottom: 2px solid var(--blue);
+  }
+
+  li:hover a {
+    color: var(--blue);
   }
 
   a {

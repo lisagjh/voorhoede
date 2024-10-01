@@ -1,10 +1,41 @@
 <script>
+  import { onMount } from 'svelte';
+
   let isMenuOpen = false;
 
   function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
+    const isLargeScreen = window.matchMedia('(min-width: 54rem)').matches;
+    if (!isLargeScreen) {
+      isMenuOpen = !isMenuOpen;
+      document.querySelector('nav').classList.toggle('show', isMenuOpen);
+    } else {
+      // Always ensure nav is shown on large screens
+      document.querySelector('nav').classList.add('show');
+    }
   }
+
+  // Ensure the nav is always visible on large screens even on page load
+  function handleResize() {
+    const isLargeScreen = window.matchMedia('(min-width: 54rem)').matches;
+    const nav = document.querySelector('nav');
+    if (isLargeScreen) {
+      nav.classList.add('show');
+    } else if (!isMenuOpen) {
+      nav.classList.remove('show');
+    }
+  }
+
+  // Run handleResize when the component is mounted in the browser
+  onMount(() => {
+    handleResize(); // Handle resize on initial load
+    window.addEventListener('resize', handleResize); // Handle resize events
+
+    return () => {
+      window.removeEventListener('resize', handleResize); // Cleanup on unmount
+    };
+  });
 </script>
+
 
 <header>
   <img src="/dda-logo.svg" alt="DDA logo" width="40" height="54" />
@@ -250,12 +281,14 @@
     border: none;
   }
 
+  /* stack instead of row */
   @media (max-width: 264px) {
     .nav-cta {
       flex-direction: column;
     }
   }
 
+  /* bigger screen */
   @media (min-width: 54rem) {
     button {
       display: none;
@@ -272,7 +305,7 @@
       z-index: 5;
       height: fit-content;
       width: 100%;
-      max-width: 100vw;
+      max-width: 95vw;
       transform: translateY(0px);
       border: none;
     }
@@ -282,16 +315,19 @@
       align-items: center;
       width: 100%;
       border: none;
+      margin: 0 auto;
     }
 
     li {
       margin: 0 0.5rem;
       padding: 0;
       border: none;
+      text-wrap: nowrap;
     }
 
     .nav-cta {
-      width: 21rem;
+      width: 100%;
+      max-width: 21rem;
     }
 
     .nav-cta li {

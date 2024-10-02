@@ -1,41 +1,32 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount } from "svelte";
 
+  // variabelen voor reactivity
   let isMenuOpen = false;
+  let isLargeScreen = false;
 
+  // toggles isMenuOpen wanneer het scherm klein is
   function toggleMenu() {
-    const isLargeScreen = window.matchMedia('(min-width: 54rem)').matches;
     if (!isLargeScreen) {
       isMenuOpen = !isMenuOpen;
-      document.querySelector('nav').classList.toggle('show', isMenuOpen);
-    } else {
-      // Always ensure nav is shown on large screens
-      document.querySelector('nav').classList.add('show');
     }
   }
-
-  // Ensure the nav is always visible on large screens even on page load
-  function handleResize() {
-    const isLargeScreen = window.matchMedia('(min-width: 54rem)').matches;
-    const nav = document.querySelector('nav');
-    if (isLargeScreen) {
-      nav.classList.add('show');
-    } else if (!isMenuOpen) {
-      nav.classList.remove('show');
-    }
+  // Deze functie update de isLargeScreen variabele. Checkt met een media query de window size en returned boolean matches
+  //dus: checkt of de viewport width minstens 54rem is. zoja, matches = true dus isLargeScreen = true, anders false.
+  function updateMenuState() {
+    isLargeScreen = window.matchMedia("(min-width: 54rem)").matches;
   }
 
-  // Run handleResize when the component is mounted in the browser
+  // onMount is svelte lifecycle function die start wanneer een component gecreërd word, en stopt wanneer het destroyed word.
   onMount(() => {
-    handleResize(); // Handle resize on initial load
-    window.addEventListener('resize', handleResize); // Handle resize events
-
-    return () => {
-      window.removeEventListener('resize', handleResize); // Cleanup on unmount
-    };
+    // Deze functie word meteen aangeroepen zodat de juiste grootte van de nav ingesteld kan worden
+    updateMenuState();
+    // Dit zorgt dat wanneer de viewport width verandert, dat er weer gecheckt word of het groter of kleiner dan 54rem is, en word de
+    window.addEventListener("resize", updateMenuState);
+    // verwijdert de eventListener wanneer component destroyed word
+    return () => window.removeEventListener("resize", updateMenuState);
   });
 </script>
-
 
 <header>
   <img src="/dda-logo.svg" alt="DDA logo" width="40" height="54" />
@@ -68,7 +59,10 @@
     </svg>
   </button>
 
-  <nav class:show={isMenuOpen} aria-hidden={!isMenuOpen}>
+  <nav
+    class:show={isLargeScreen || isMenuOpen}
+    aria-hidden={!isLargeScreen && !isMenuOpen}
+  >
     <ul>
       <li>
         <a href="/">Home</a>
@@ -306,8 +300,9 @@
       height: fit-content;
       width: 100%;
       max-width: 95vw;
-      transform: translateY(0px);
+      translate: 0 -10px;
       border: none;
+      scale: 1;
     }
 
     nav ul {
@@ -326,8 +321,8 @@
     }
 
     .nav-cta {
+      justify-content: right;
       width: 100%;
-      max-width: 21rem;
     }
 
     .nav-cta li {

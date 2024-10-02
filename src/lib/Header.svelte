@@ -196,7 +196,7 @@
     visibility: visible;
     opacity: 1;
     scale: 1;
-    transform: translate(0 0);
+    transform: translateX(0) translateY(0);
   }
 
   /* als het scherm iets groter word blijft de nav rechts hangen bij  */

@@ -188,7 +188,7 @@
     visibility: hidden;
     opacity: 0;
     scale: 0.5;
-    translate: 50px -100px;
+    transform: translateX(50px) translateY(-100px);
     transition: 0.25s ease-in-out;
   }
 
@@ -196,7 +196,7 @@
     visibility: visible;
     opacity: 1;
     scale: 1;
-    translate: 0 0;
+    transform: translate(0 0);
   }
 
   /* als het scherm iets groter word blijft de nav rechts hangen bij  */
@@ -300,7 +300,7 @@
       height: fit-content;
       width: 100%;
       max-width: 95vw;
-      translate: 0 -10px;
+      transform: translateY(-10px);
       border: none;
       scale: 1;
     }

@@ -8,7 +8,9 @@
         <article class="card">
             <picture>
                 <img src="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif"
-                     type="image/avif" width="{member.photo.width}" height="{member.photo}" alt="foto van {member.title}">
+                     type="image/avif" width="{parseInt(member.photo.width)}"
+                     height="{parseInt(member.photo.height)}"
+                     alt="foto van {member.title}">
             </picture>
             <ul class="cardlabel">
                 <li class="labelfilters">

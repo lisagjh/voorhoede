@@ -1,0 +1,338 @@
+<script>
+    import { onMount } from 'svelte';
+
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+        const isLargeScreen = window.matchMedia('(min-width: 54rem)').matches;
+        if (!isLargeScreen) {
+            isMenuOpen = !isMenuOpen;
+            document.querySelector('nav').classList.toggle('show', isMenuOpen);
+        } else {
+            // Always ensure nav is shown on large screens
+            document.querySelector('nav').classList.add('show');
+        }
+    }
+
+    // Ensure the nav is always visible on large screens even on page load
+    function handleResize() {
+        const isLargeScreen = window.matchMedia('(min-width: 54rem)').matches;
+        const nav = document.querySelector('nav');
+        if (isLargeScreen) {
+            nav.classList.add('show');
+        } else if (!isMenuOpen) {
+            nav.classList.remove('show');
+        }
+    }
+
+    // Run handleResize when the component is mounted in the browser
+    onMount(() => {
+        handleResize(); // Handle resize on initial load
+        window.addEventListener('resize', handleResize); // Handle resize events
+
+        return () => {
+            window.removeEventListener('resize', handleResize); // Cleanup on unmount
+        };
+    });
+</script>
+
+
+<header>
+    <img src="/dda-logo.svg" alt="DDA logo" width="40" height="54" />
+
+    <button on:click={toggleMenu} aria-label="navigation menu">
+        <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+        >
+            <mask
+                    id="mask0_1_121"
+                    style="mask-type:alpha"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="32"
+                    height="32"
+            >
+                <rect width="32" height="32" fill="#D9D9D9" />
+            </mask>
+            <g mask="url(#mask0_1_121)">
+                <path
+                        d="M4 24V21.3333H28V24H4ZM4 17.3333V14.6667H28V17.3333H4ZM4 10.6667V8H28V10.6667H4Z"
+                        fill="#222226"
+                />
+            </g>
+        </svg>
+    </button>
+
+    <nav class:show={isMenuOpen} aria-hidden={!isMenuOpen}>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/over">Over ons</a>
+            </li>
+            <li>
+                <a href="/events">Events</a>
+            </li>
+            <li>
+                <a href="/publicaties">Publicaties</a>
+            </li>
+            <li>
+                <a href="/members">Leden</a>
+            </li>
+            <li>
+                <a href="/vacatures">Vacatures</a>
+            </li>
+        </ul>
+
+        <ul class="nav-cta">
+            <li class="login">
+                <a href="/#">
+                    Login
+                    <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                                d="M8 3L13.0001 8.0001L8 13.0002"
+                                stroke="#364BF7"
+                                stroke-width="1.5"
+                                stroke-miterlimit="4.62023"
+                        />
+                        <path
+                                d="M3 8L13 8"
+                                stroke="#364BF7"
+                                stroke-width="1.5"
+                                stroke-miterlimit="4.62023"
+                                stroke-linejoin="round"
+                        />
+                    </svg>
+                </a>
+            </li>
+
+            <li class="join">
+                <a href="/#" class="join">Word lid</a>
+                <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                            d="M8 3L13.0001 8.0001L8 13.0002"
+                            stroke="#222226"
+                            stroke-width="1.5"
+                            stroke-miterlimit="4.62023"
+                    />
+                    <path
+                            d="M3 8L13 8"
+                            stroke="#222226"
+                            stroke-width="1.5"
+                            stroke-miterlimit="4.62023"
+                            stroke-linejoin="round"
+                    />
+                </svg>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    /* when i apply the font-family to the header, it doesnt work, but this way does for some reason? */
+    header * {
+        font-family: var(--martian-mono);
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        background-color: var(--white);
+        min-width: 100vw;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    button {
+        background-color: transparent;
+        border: 1px solid var(--black);
+        height: 2.5rem;
+        width: 2.5rem;
+        transition: 0.25s ease-in-out;
+    }
+
+    button:hover {
+        box-shadow: 2px 2px 0px var(--blue);
+        scale: 1.01;
+    }
+
+    button:active {
+        box-shadow: 1px 1px 0px var(--blue);
+        scale: 0.99;
+    }
+
+    nav {
+        position: absolute;
+        top: 4.5rem;
+        width: 100%;
+        max-width: 19.5rem;
+        background-color: var(--white);
+        padding: 0.5rem;
+        z-index: 2;
+        visibility: hidden;
+        opacity: 0;
+        scale: 0.5;
+        translate: 50px -100px;
+        transition: 0.25s ease-in-out;
+    }
+
+    .show {
+        visibility: visible;
+        opacity: 1;
+        scale: 1;
+        translate: 0 0;
+    }
+
+    /* als het scherm iets groter word blijft de nav rechts hangen bij  */
+    @media (min-width: 20.5rem) {
+        nav {
+            position: absolute;
+            right: 0rem;
+        }
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        padding: 0;
+    }
+
+    li {
+        display: flex;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid var(--black);
+        transition: 0.25s ease-in-out;
+    }
+
+    li:hover {
+        border-bottom: 2px solid var(--blue);
+    }
+
+    li:hover a {
+        color: var(--blue);
+    }
+
+    a {
+        color: var(--black);
+        text-decoration: none;
+    }
+
+    .nav-cta {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-cta li {
+        padding: 0.5rem;
+    }
+
+    .login {
+        color: var(--blue);
+        border: none;
+    }
+
+    .login:hover {
+        background-color: var(--blue);
+        color: var(--white);
+    }
+
+    .login:hover a,
+    .login:hover svg path {
+        color: var(--white);
+        stroke: var(--white);
+    }
+
+    .join {
+        display: flex;
+        align-items: center;
+        border: 1px solid var(--black);
+        flex-wrap: nowrap;
+        text-wrap: nowrap;
+    }
+
+    .join a {
+        border: none;
+    }
+
+    /* stack instead of row */
+    @media (max-width: 264px) {
+        .nav-cta {
+            flex-direction: column;
+        }
+    }
+
+    /* bigger screen */
+    @media (min-width: 54rem) {
+        button {
+            display: none;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            position: relative;
+            top: 0;
+            visibility: visible;
+            opacity: 1;
+            z-index: 5;
+            height: fit-content;
+            width: 100%;
+            max-width: 95vw;
+            transform: translateY(0px);
+            border: none;
+        }
+
+        nav ul {
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            border: none;
+            margin: 0 auto;
+        }
+
+        li {
+            margin: 0 0.5rem;
+            padding: 0;
+            border: none;
+            text-wrap: nowrap;
+        }
+
+        .nav-cta {
+            width: 100%;
+            max-width: 21rem;
+        }
+
+        .nav-cta li {
+            flex-wrap: nowrap;
+            margin: 0;
+        }
+    }
+</style>

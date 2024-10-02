@@ -1,7 +1,12 @@
 <script>
     export let data;
+
+    import Intro from "$lib/descriptionText.svelte";
+    import Backhome from "$lib/BackHomeBtn.svelte";
+    import Header from "$lib/Header.svelte";
 </script>
 
+<Header/>
 <h1>This is H1</h1>
 <h2>This is H2</h2>
 <h3>This is H3</h3>

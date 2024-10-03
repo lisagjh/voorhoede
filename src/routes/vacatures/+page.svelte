@@ -2,13 +2,14 @@
   import Header from "../../lib/Header.svelte";
     import Text from "$lib/Text.svelte";
     import Link from "$lib/Link.svelte";
+    import Vacancy from "$lib/Vacancy.svelte";
 </script>
 
   <Header />
 
 <main>
     <section class="intro-section">
-        
+    
         <Link href="/" clazz="back-to-home">
             <svg slot="svg-icon-left"
                  width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -24,6 +25,27 @@
             </p>
         </Text>
     
+    </section>
+
+    <section class="vacancies-section">
+        <Vacancy>
+            <h4 slot="job-title">Design Lead</h4>
+            <span slot="language">ENG & NL</span>
+            <span slot="company">TRIPLE</span>
+            <span slot="city">AMSTERDAM</span>
+
+            <Link 
+                slot="link" 
+                href="/"
+                clazz="detail-link"
+            >
+                <span slot="link-text">BEKIJKEN</span>
+                <svg slot="svg-icon-right"
+                width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </Link>
+        </Vacancy>
     </section>
 </main>
 

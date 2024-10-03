@@ -27,9 +27,20 @@
         text-decoration: none;
         font-size: .75em;
         text-transform: uppercase;
-        gap: 5px; /* incase someone forgets to type in uppercase */
+        gap: .45em; /* incase someone forgets to type in uppercase */
     }
 
     /* Different link styles for each page ? */ 
+
+    .detail-link {
+        font-weight: bold;
+        color: var(--blue);
+        stroke:var(--blue); /* blue color for svg */
+    }
+
+    .login-link{
+        color: var(--blue);
+        stroke:var(--blue);
+    }
 
 </style>

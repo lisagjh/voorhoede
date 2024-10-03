@@ -2,6 +2,7 @@
   import BackToBtn from "$lib/BackToBtn.svelte";
   import Header from "../../lib/Header.svelte";
     import Text from "$lib/Text.svelte";
+    import Link from "$lib/Link.svelte";
 </script>
 
   <Header />
@@ -9,9 +10,13 @@
 <main>
     <section class="intro-section">
         
-        <BackToBtn href="/">
+        <Link href="/" clazz="back-to-home">
+            <svg slot="svg-icon-left"
+                 width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
             <span slot="link-text">TERUG NAAR HOME</span>
-        </BackToBtn>
+        </Link>
 
         <Text>
             <h1 slot="page-title">Vacatures</h1>

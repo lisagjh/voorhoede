@@ -8,6 +8,11 @@
   src: url(/font/Archivo-Italic-VariableFont_wdth\,wght.ttf);
 }
 
+@font-face {
+  font-family: Martian Mono;
+  src: url(/font/MartianMono-VariableFont_wdth\,wght.ttf);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,6 +25,8 @@
   --grey: #666666;
   --white: #fff;
   --blue: #364bf7;
+
+  --martian-mono: "Martian Mono", system-ui;
 }
 
 h1 {

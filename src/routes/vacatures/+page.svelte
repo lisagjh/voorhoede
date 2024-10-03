@@ -1,15 +1,12 @@
 <script>
+  import BackToBtn from "$lib/BackToBtn.svelte";
+  import Header from "../../lib/Header.svelte";
     import Text from "$lib/Text.svelte";
-    import BackToBtn from "$lib/BackToBtn.svelte";
 </script>
 
+  <Header />
+
 <main>
-    <header>
-        <nav>
-
-        </nav>
-    </header>
-
     <section class="intro-section">
         
         <BackToBtn href="/">
@@ -24,7 +21,6 @@
         </Text>
     
     </section>
-
 </main>
 
 

@@ -30,12 +30,6 @@
         gap: .45em; /* incase someone forgets to type in uppercase */
     }
 
-    a:focus{
-        outline: 1px solid orangered;
-        padding: .5em;
-    }
-
-    /* Different link styles for each page ? */ 
 
     .detail-link {
         font-weight: bold;

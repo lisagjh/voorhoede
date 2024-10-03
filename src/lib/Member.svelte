@@ -17,7 +17,8 @@
                             height="{ member.photo.height}">
                     <img src="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif"
                          alt="foto van {member.title}"
-                         height="{member.photo?.height ? parseInt(member.photo.height) : 'auto'}">
+                         height="{member.photo?.height ? parseInt(member.photo.height) : 'auto'}"
+                         width="{member.photo?.width ? parseInt(member.photo.width) : 'auto'}">
                     {/if}
             </picture>
             <ul class="cardlabel">

@@ -1,5 +1,4 @@
 <script>
-  import BackToBtn from "$lib/BackToBtn.svelte";
   import Header from "../../lib/Header.svelte";
     import Text from "$lib/Text.svelte";
     import Link from "$lib/Link.svelte";

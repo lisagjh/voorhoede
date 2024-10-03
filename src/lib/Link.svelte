@@ -6,16 +6,13 @@
 
 
 <a href={href} class={clazz}>
-
     <slot name="svg-icon-left"/>
-
+    
     <slot name="link-text">
         <!--Fallback-->
         <span>Link</span>
     </slot>
-
     <slot name="svg-icon-right"/>
-
 </a>
 
 <style>

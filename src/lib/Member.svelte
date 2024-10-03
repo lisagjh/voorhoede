@@ -7,10 +7,18 @@
     {#each data.members as member}
         <article class="card">
             <picture>
-                <img src="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif"
-                     type="image/avif" width="{parseInt(member.photo.width)}"
-                     height="{parseInt(member.photo.height)}"
-                     alt="foto van {member.title}">
+                {#if member.photo}
+                    <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif"
+                            width="{member.photo.width }"
+                            height="{member.photo.height }">
+
+                    <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp"
+                            width="{ member.photo.width}"
+                            height="{ member.photo.height}">
+                    <img src="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif"
+                         alt="foto van {member.title}"
+                         height="{member.photo?.height ? parseInt(member.photo.height) : 'auto'}">
+                    {/if}
             </picture>
             <ul class="cardlabel">
                 <li class="labelfilters">

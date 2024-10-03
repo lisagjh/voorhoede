@@ -1,6 +1,5 @@
 <script>
     import Text from "$lib/Text.svelte";
-    import BackToBtn from "$lib/BackToBtn.svelte";
     import Link from "$lib/Link.svelte";
 </script>
 
@@ -14,16 +13,11 @@
     <section class="intro-section">
         
         <Link href="/" clazz="back-to-home">
-
-            <svg fill="#000000" slot="svg-icon-left"
-            width="14px" height="14px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
-            <path d="M48.6,23H15.4c-0.9,0-1.3-1.1-0.7-1.7l9.6-9.6c0.6-0.6,0.6-1.5,0-2.1l-2.2-2.2c-0.6-0.6-1.5-0.6-2.1,0
-            L2.5,25c-0.6,0.6-0.6,1.5,0,2.1L20,44.6c0.6,0.6,1.5,0.6,2.1,0l2.1-2.1c0.6-0.6,0.6-1.5,0-2.1l-9.6-9.6C14,30.1,14.4,29,15.3,29
-            h33.2c0.8,0,1.5-0.6,1.5-1.4v-3C50,23.8,49.4,23,48.6,23z"/>
+            <svg slot="svg-icon-left"
+                 width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-
             <span slot="link-text">TERUG NAAR HOME</span>
-
         </Link>
 
         <Text>

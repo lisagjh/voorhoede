@@ -44,7 +44,7 @@
     </li>
   </ul>
 
-  <ul>
+  <ul class="address">
     <li>
       <strong> Dutch Digital Agencies</strong>
     </li>
@@ -112,7 +112,7 @@
     background-color: var(--blue);
     color: var(--white);
   }
- 
+
   .login:hover svg path {
     color: var(--white);
     stroke: var(--white);
@@ -127,7 +127,12 @@
     border-top: 1px solid var(--black);
     border-bottom: 1px solid var(--black);
   }
-  
+
+  .address li:nth-of-type(1),
+  .address li:nth-of-type(2){
+    margin: 0;
+  }
+
   ul:last-of-type {
     flex-direction: row;
   }

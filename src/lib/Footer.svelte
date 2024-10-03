@@ -127,4 +127,12 @@
     border-top: 1px solid var(--black);
     border-bottom: 1px solid var(--black);
   }
+  
+  ul:last-of-type {
+    flex-direction: row;
+  }
+
+  ul:last-of-type li {
+    margin-right: 1rem;
+  }
 </style>

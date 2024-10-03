@@ -314,7 +314,7 @@
     }
 
     li {
-      margin: 0 0.5rem;
+      margin: 0 1rem;
       padding: 0;
       border: none;
       text-wrap: nowrap;
@@ -327,7 +327,7 @@
 
     .nav-cta li {
       flex-wrap: nowrap;
-      margin: 0;
+      margin: 0.5;
     }
   }
 </style>

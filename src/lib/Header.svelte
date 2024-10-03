@@ -29,7 +29,7 @@
 </script>
 
 <header>
-  <img src="/dda-logo.svg" alt="DDA logo" width="40" height="54" />
+  <img src="/dda-logo.svg" alt="DDA logo" width="60" height="81" />
 
   <button on:click={toggleMenu} aria-label="navigation menu">
     <svg

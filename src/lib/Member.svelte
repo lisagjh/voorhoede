@@ -6,8 +6,9 @@
 <article class="gridcontainer" >
     {#each data.members as member}
         <article class="card">
+            {#if member.photo}
             <picture>
-                {#if member.photo}
+
                     <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif"
                             width="{member.photo.width }"
                             height="{member.photo.height }">
@@ -19,8 +20,9 @@
                          alt="foto van {member.title}"
                          height="{member.photo?.height ? parseInt(member.photo.height) : 'auto'}"
                          width="{member.photo?.width ? parseInt(member.photo.width) : 'auto'}">
-                    {/if}
+
             </picture>
+            {/if}
             <ul class="cardlabel">
                 <li class="labelfilters">
                     service design

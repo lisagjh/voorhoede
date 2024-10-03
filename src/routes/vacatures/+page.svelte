@@ -5,9 +5,7 @@
   import Header from "../../lib/Header.svelte";
 </script>
 
-<header>
-  <Header />
-</header>
+<Header />
 
 <main>
   <section class="landing-section">

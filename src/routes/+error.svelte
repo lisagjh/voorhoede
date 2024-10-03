@@ -39,6 +39,23 @@
         padding: 2rem;
     /*    padding zodat de tekst niet teveel tegen de kant aan staat*/
 
+        line-height: 1.5;
+    }
+
+    @media (max-width: 35em){
+        h1{
+            font-size: 1.5rem;
+        }
+        section{
+            width: 20rem;
+        }
+    }
+
+    @media (min-width: 35em){
+        h1{
+            font-size: 2rem;
+            line-height: 1.5;
+        }
     }
 
     a {

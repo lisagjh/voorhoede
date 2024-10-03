@@ -7,7 +7,7 @@
     <p>{$page.status} - {$page.error.message}</p>
 
     <p><a href="/">
-        ga terug naar home
+        Ga terug naar home
     </a>  </p>
 </section>
 
@@ -15,5 +15,6 @@
 <style>
     section{
         padding: 2rem;
+
     }
 </style>

@@ -1,17 +1,20 @@
 <script>
     //In +pave.svelte kun je de link dus aanpassen dit is een soort property
     export let href="";
+    // Dit is uiteindelijk de class die word meegegeven via de +page.svelte component
+    // de naam class word niet toegestaan in svelte.kit dus heb voor clazz gekozen, dit zou ik ook anders kunnnen noemen
+    // als het onduidelijk is.
     export let clazz="";
 </script>
 
 
 <a href={href} class={clazz}>
+    <!--Bij sommmige links staat het icoon/svg aan de linker kant deze kun je dan aanroepen met slot="svg-icon-left" 
+    in het component-->
     <slot name="svg-icon-left"/>
 
-    <slot name="link-text">
-        <!--Fallback-->
-        <span>Link</span>
-    </slot>
+    <slot name="link-text"/>
+    
     <slot name="svg-icon-right"/>
 </a>
 

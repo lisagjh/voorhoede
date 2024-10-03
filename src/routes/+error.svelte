@@ -57,6 +57,7 @@
 
     svg {
         vertical-align: middle;
+        margin-bottom: 0.2rem;
         color: var(--black);
     }
 </style>

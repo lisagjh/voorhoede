@@ -7,7 +7,7 @@
 
 <a href={href} class={clazz}>
     <slot name="svg-icon-left"/>
-    
+
     <slot name="link-text">
         <!--Fallback-->
         <span>Link</span>
@@ -25,6 +25,11 @@
         font-size: .75em;
         text-transform: uppercase;
         gap: .45em; /* incase someone forgets to type in uppercase */
+    }
+
+    a:focus{
+        outline: 1px solid orangered;
+        padding: .5em;
     }
 
     /* Different link styles for each page ? */ 

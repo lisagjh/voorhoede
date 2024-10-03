@@ -37,6 +37,7 @@
 <style>
     section {
         padding: 2rem;
+    /*    padding zodat de tekst niet teveel tegen de kant aan staat*/
 
     }
 
@@ -46,18 +47,15 @@
         text-transform: uppercase;
     }
 
-    .flip-arrow {
-        transform: scaleX(-1);
-        color: var(--black);
-    }
-
     p {
+        /*margin zodat de 404 error niet te dicht tegen de terug naar home tekst staat*/
         margin-bottom: 2rem;
     }
 
     svg {
-        vertical-align: middle;
+        vertical-align: middle;/*dit zorgt ervoor dat de pijl en de tekst op dezelfde hoogte staan */
         margin-bottom: 0.2rem;
         color: var(--black);
+        transform: scaleX(-1); /*met deze code gaat het pijltje naar links     */
     }
 </style>

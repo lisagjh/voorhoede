@@ -1,6 +1,7 @@
 <script>
   import BackToBtn from "$lib/BackToBtn.svelte";
   import Header from "../../lib/Header.svelte";
+  import Footer from "../../lib/Footer.svelte"
     import Text from "$lib/Text.svelte";
 </script>
 
@@ -22,6 +23,8 @@
     
     </section>
 </main>
+
+<Footer />
 
 
 <style>

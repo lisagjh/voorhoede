@@ -29,7 +29,9 @@
 </script>
 
 <header>
-  <a href="/"><img src="/dda-logo.svg" alt="DDA logo" width="60" height="81" /></a>
+  <a href="/"
+    ><img src="/dda-logo.svg" alt="DDA logo" width="60" height="81" /></a
+  >
 
   <button on:click={toggleMenu} aria-label="navigation menu">
     <svg
@@ -138,6 +140,10 @@
 </header>
 
 <style>
+  body {
+    overflow: hidden;
+  }
+
   /* when i apply the font-family to the header, it doesnt work, but this way does for some reason? */
   header * {
     font-family: var(--martian-mono);
@@ -149,7 +155,7 @@
     align-items: center;
     padding: 0.75rem 1rem;
     background-color: var(--white);
-    min-width: 100vw;
+    max-width: 100vw;
     width: 100%;
     position: sticky;
     top: 0;
@@ -280,7 +286,7 @@
   }
 
   /* bigger screen */
-  @media (min-width: 54rem) {
+  @media (min-width: 56rem) {
     button {
       display: none;
     }
@@ -317,14 +323,22 @@
       text-wrap: nowrap;
     }
 
+    li:first-of-type {
+      margin: 0 1rem 0 0.5rem;
+    }
+
+    li:last-of-type {
+      margin: 0 0.5rem 0 1rem;
+    }
+
     .nav-cta {
       justify-content: right;
-      width: 100%;
+      width: 90%;
     }
 
     .nav-cta li {
       flex-wrap: nowrap;
-      margin: 0.5;
+      margin: 0.12;
     }
   }
 </style>

@@ -26,39 +26,42 @@
       />
     </svg>
   </a>
-  <ul>
-    <li>
-      <a href="/over">Over ons</a>
-    </li>
-    <li>
-      <a href="/events">Events</a>
-    </li>
-    <li>
-      <a href="/publicaties">Publicaties</a>
-    </li>
-    <li>
-      <a href="/leden">Leden</a>
-    </li>
-    <li>
-      <a href="/vacatures">Vacatures</a>
-    </li>
-  </ul>
 
-  <ul class="address">
-    <li>
-      <strong> Dutch Digital Agencies</strong>
-    </li>
-    <li>Overhoeksplein 1</li>
-    <li>1031 KS Amsterdam</li>
-    <li>
-      <a href="tel:0854010391">(0)85 4010391</a>
-    </li>
-    <li>
-      <a href="mailto:info@dutchdigitalagencies.com"
-        >info@dutchdigitalagencies.com</a
-      >
-    </li>
-  </ul>
+  <div class="middle-content">
+    <ul>
+      <li>
+        <a href="/over">Over ons</a>
+      </li>
+      <li>
+        <a href="/events">Events</a>
+      </li>
+      <li>
+        <a href="/publicaties">Publicaties</a>
+      </li>
+      <li>
+        <a href="/leden">Leden</a>
+      </li>
+      <li>
+        <a href="/vacatures">Vacatures</a>
+      </li>
+    </ul>
+
+    <ul class="address">
+      <li>
+        <strong> Dutch Digital Agencies</strong>
+      </li>
+      <li>Overhoeksplein 1</li>
+      <li>1031 KS Amsterdam</li>
+      <li>
+        <a href="tel:0854010391">(0)85 4010391</a>
+      </li>
+      <li>
+        <a href="mailto:info@dutchdigitalagencies.com"
+          >info@dutchdigitalagencies.com</a
+        >
+      </li>
+    </ul>
+  </div>
 
   <ul>
     <li><a href="/#">Instagram</a></li>
@@ -72,14 +75,13 @@
   footer {
     display: flex;
     flex-direction: column;
-    padding: 0 1rem 4rem 1rem;
     border-top: 1px solid var(--black);
+    width: 100vw;
   }
 
   ul {
     display: flex;
     flex-direction: column;
-    width: 90%;
     padding: 2.5rem 0;
   }
 
@@ -129,7 +131,7 @@
   }
 
   .address li:nth-of-type(1),
-  .address li:nth-of-type(2){
+  .address li:nth-of-type(2) {
     margin: 0;
   }
 
@@ -139,5 +141,19 @@
 
   ul:last-of-type li {
     margin-right: 1rem;
+  }
+
+  @media (min-width: 36rem) {
+    .middle-content {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .nav,
+    .address {
+      flex-direction: column;
+      margin-top: 2.5rem;
+      border: none;
+    }
   }
 </style>

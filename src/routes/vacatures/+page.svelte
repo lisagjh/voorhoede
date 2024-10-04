@@ -126,6 +126,10 @@
         margin: 0 7.5% 0 7.5%;
     }
 
+    .language, .company, .workweek, .city {
+        font-family: var(--martian-mono);
+    }
+
     .job-title {
         grid-column: 1 / span 2; 
         grid-row: 1;

@@ -8,10 +8,9 @@
     import Header from "$lib/Header.svelte";
 </script>
 
+<Header/>
+
 <main>
-
-
-    <Header/>
     <Backhome/>
     <Intro
         label=" De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging.

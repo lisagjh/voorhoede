@@ -30,7 +30,7 @@
     </a>
     <h1>Er gaat iets mis zie onderstaande error?</h1>
     <p>{$page.status} - {$page.error.message}
-    <!--    page status is de statuscode -->
+        <!--    page status is de statuscode -->
     </p>
 
 </section>
@@ -48,7 +48,8 @@
 
     @media (max-width: 35em) {
         h1 {
-            font-size: 1.5rem; /*    vanwege lcp lighthouse testen of het resultaat beter is*/
+            font-size: 1.5rem; /*letters worden anders te groot*/
+
 
 
         }
@@ -57,9 +58,12 @@
 
     @media (min-width: 35em) {
         h1 {
-            font-size: 2rem; /*    vanwege lcp lighthouse testen of het resultaat beter is*/
+            font-size: 2rem; /*letters worden anders te groot*/
             line-height: 1.5;
         }
+    }
+    h1{
+        letter-spacing: 2px; /* de tekst staat te dicht tegen elkaar aan*/
     }
 
     a {

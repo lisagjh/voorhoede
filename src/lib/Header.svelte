@@ -140,10 +140,6 @@
 </header>
 
 <style>
-  body {
-    overflow: hidden;
-  }
-
   /* when i apply the font-family to the header, it doesnt work, but this way does for some reason? */
   header * {
     font-family: var(--martian-mono);
@@ -203,7 +199,7 @@
   }
 
   /* als het scherm iets groter word blijft de nav rechts hangen bij  */
-  @media (min-width: 20.5rem) {
+  @media (min-width: 22.5rem) {
     nav {
       position: absolute;
       right: 0rem;

@@ -21,6 +21,10 @@ article {
     border-bottom: 1px solid black;
 }
 
+article:last-child {
+    border-bottom: none;
+}
+
 @media (min-width: 620px){
     article {
         grid-template-columns: repeat(3, 1fr);

@@ -28,8 +28,8 @@ article:last-child {
 @media (min-width: 620px){
     article {
         grid-template-columns: repeat(3, 1fr);
-        margin-bottom: 10%;
-        padding-bottom: 10%;
+        margin-bottom: 7.5%;
+        padding-bottom: 7.5%;
         
     }
 
@@ -40,8 +40,18 @@ article:last-child {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-bottom: 5%;
-        padding-bottom: 5%;
+        margin-bottom: 4.5%;
+        padding-bottom: 4.5%;
+    }
+}
+
+@media (min-width: 1024px){
+    article {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 2.5%;
+        padding-bottom: 2.5%;
     }
 }
 

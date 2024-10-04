@@ -168,7 +168,7 @@
         }
 
         .job-title {
-            width: 20%;
+            width: 20%; /* Zorgt ervoor dat dit vakje niet breder word en de rest beinvloed */ 
         }
     }
 

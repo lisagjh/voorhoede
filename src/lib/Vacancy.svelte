@@ -17,9 +17,9 @@
 
 article {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    grid-template-rows: auto auto auto auto; /* Three rows */
-    gap: 2em 0; /* Adds spacing between the elements */
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto auto auto;
+    gap: 2em 0;
     align-items: center;
     margin-bottom: 15%;
 }

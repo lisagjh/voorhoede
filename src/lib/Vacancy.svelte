@@ -16,7 +16,7 @@ article {
     grid-template-rows: auto auto auto auto;
     gap: 2em 0;
     align-items: center;
-    margin-bottom: 15%;
+    margin-bottom: 20%;
 }
 
 @media (min-width: 620px){

@@ -116,7 +116,7 @@
         justify-content: center;
         text-align: center;
         gap: .5em;
-        margin: 25% 15% 10% 15%;
+        margin: 15% 15% 10% 15%;
     }
 
     /* #region Vacatures */
@@ -187,7 +187,7 @@
 
     @media (min-width: 820px){
         .intro-section {
-            margin-top: 12.5%;
+            margin-top: 10%;
         }
 
         .job-title {
@@ -197,7 +197,7 @@
 
     @media (min-width: 1024px){
         .intro-section {
-            margin: 12.5% 25% 10% 25%;
+            margin: 7.5% 25% 10% 25%;
         }
 
         .vacancies-section {

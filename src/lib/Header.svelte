@@ -158,6 +158,11 @@
     z-index: 100;
   }
 
+  header a:first-of-type:hover img {
+    transition: 0.25s ease-in-out;
+    scale: 1.04;
+  }
+
   button {
     background-color: transparent;
     border: 1px solid var(--black);

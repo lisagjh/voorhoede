@@ -29,10 +29,49 @@
 
     <section class="vacancies-section">
         <Vacancy>
-            <h4 slot="job-title">Design Lead</h4>
-            <span slot="language">ENG & NL</span>
-            <span slot="company">TRIPLE</span>
-            <span slot="city">AMSTERDAM</span>
+            <h4 slot="job-title" class="job-title">Design Lead</h4>
+            <span slot="language" class="language">LANUAGE</span>
+            <span slot="company" class="company">COMPANY</span>
+            <span slot="workweek-indication" class="workweek">32-40</span>
+            <span slot="city" class="city" >AMSTERDAM</span>
+
+            <Link 
+                slot="link" 
+                href="/"
+                clazz="detail-link"
+            >
+                <span slot="link-text">BEKIJKEN</span>
+                <svg slot="svg-icon-right"
+                width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </Link>
+        </Vacancy>
+        <Vacancy>
+            <h4 slot="job-title" class="job-title">React Front-End Developer</h4>
+            <span slot="language" class="language">LANUAGE</span>
+            <span slot="company" class="company">COMPANY</span>
+            <span slot="workweek-indication" class="workweek">32-40</span>
+            <span slot="city" class="city" >AMSTERDAM</span>
+
+            <Link 
+                slot="link" 
+                href="/"
+                clazz="detail-link"
+            >
+                <span slot="link-text">BEKIJKEN</span>
+                <svg slot="svg-icon-right"
+                width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </Link>
+        </Vacancy>
+        <Vacancy>
+            <h4 slot="job-title" class="job-title">Design Lead maar ook dit en dat en nog wat meer</h4>
+            <span slot="language" class="language">LANUAGE</span>
+            <span slot="company" class="company">COMPANY</span>
+            <span slot="workweek-indication" class="workweek">32-40</span>
+            <span slot="city" class="city" >AMSTERDAM</span>
 
             <Link 
                 slot="link" 
@@ -49,7 +88,6 @@
     </section>
 </main>
 
-
 <style>
 
     .intro-section {
@@ -62,9 +100,75 @@
         margin: 25% 15% 10% 15%;
     }
 
+    /* #region Vacatures */
+    .vacancies-section {
+        display: flex;
+        flex-direction: column;
+        margin: 0 10% 0 10%;
+    }
+
+    .job-title {
+        grid-column: 1 / span 2; 
+        grid-row: 1;
+    }
+
+    .language {
+        grid-column: 1;
+        grid-row: 2; 
+    }
+
+    .company {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .workweek {
+        grid-column: 1;
+        grid-row: 3; 
+    }
+
+    .city {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    /* #endregion */
+
+    @media (min-width: 620px){
+        .job-title {
+            grid-column: 1 / span 3; 
+            grid-row: 1;
+        }
+
+        .language {
+            grid-column: 1;
+            grid-row: 2; 
+        }
+
+        .company {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .workweek {
+            grid-column: 3;
+            grid-row: 2; 
+        }
+
+        .city {
+            grid-column: 1;
+            grid-row: 3;
+        }
+    }
+
+
     @media (min-width: 820px){
         .intro-section {
             margin-top: 12.5%;
+        }
+
+        .job-title {
+            width: 20%;
         }
     }
 

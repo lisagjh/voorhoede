@@ -85,6 +85,25 @@
             </svg>
             </Link>
         </Vacancy>
+        <Vacancy>
+            <h4 slot="job-title" class="job-title">Traffic Manager</h4>
+            <span slot="language" class="language">LANUAGE</span>
+            <span slot="company" class="company">COMPANY</span>
+            <span slot="workweek-indication" class="workweek">32-40</span>
+            <span slot="city" class="city" >AMSTERDAM</span>
+
+            <Link 
+                slot="link" 
+                href="/"
+                clazz="detail-link"
+            >
+                <span slot="link-text">BEKIJKEN</span>
+                <svg slot="svg-icon-right"
+                width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </Link>
+        </Vacancy>
     </section>
 </main>
 

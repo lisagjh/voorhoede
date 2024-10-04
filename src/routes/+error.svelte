@@ -46,8 +46,8 @@
 
     @media (max-width: 35em){
         h1{
-            font-size: 1.5rem;
-        /*    vanwege lcp lighthouse*/
+            font-size: 1.5rem; /*    vanwege lcp lighthouse testen of het resultaat beter is*/
+
 
         }
 
@@ -55,8 +55,7 @@
 
     @media (min-width: 35em){
         h1{
-            /*    vanwege lcp lighthouse*/
-            font-size: 2rem;
+            font-size: 2rem; /*    vanwege lcp lighthouse testen of het resultaat beter is*/
             line-height: 1.5;
         }
     }

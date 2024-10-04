@@ -1,8 +1,13 @@
 <script>
     import {page} from '$app/stores'
+    import Header from "../lib/Header.svelte";
+
 
     console.log($page.status)
 </script>
+
+<Header />
+
 <section>
     <a href="/#">
         <svg class="flip-arrow"

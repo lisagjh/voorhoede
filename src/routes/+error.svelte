@@ -75,11 +75,12 @@
     }
 
     a:hover {
-        border: 1px solid var(--blue);
+        color: var(--blue);
     }
 
-    a:active {
-        border: 1px solid var(--blue);
+    a:hover svg path {
+        stroke: var(--blue);
+
     }
 
     p {

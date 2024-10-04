@@ -1,8 +1,3 @@
-<script>
-    
-    import Link from "$lib/Link.svelte";
-
-</script>
 
 <article>
     <slot name="job-title"/>

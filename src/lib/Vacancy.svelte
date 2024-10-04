@@ -16,13 +16,16 @@ article {
     grid-template-rows: auto auto auto auto;
     gap: 2em 0;
     align-items: center;
-    margin-bottom: 20%;
+    margin-bottom: 15%;
+    padding-bottom: 15%;
+    border-bottom: 1px solid black;
 }
 
 @media (min-width: 620px){
     article {
         grid-template-columns: repeat(3, 1fr);
-        margin-bottom: 5%;
+        margin-bottom: 10%;
+        padding-bottom: 10%;
         
     }
 
@@ -33,6 +36,8 @@ article {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin-bottom: 5%;
+        padding-bottom: 5%;
     }
 }
 

@@ -123,7 +123,7 @@
     .vacancies-section {
         display: flex;
         flex-direction: column;
-        margin: 0 12.5% 0 12.5%;
+        margin: 0 7.5% 0 7.5%;
     }
 
     .job-title {

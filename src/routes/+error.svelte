@@ -30,6 +30,7 @@
     </a>
     <h1>Er gaat iets mis zie onderstaande error?</h1>
     <p>{$page.status} - {$page.error.message}
+    <!--    page status is de statuscode -->
     </p>
 
 </section>
@@ -38,14 +39,15 @@
 <style>
     section {
         padding: 2rem;
-        display: flex;justify-content: center;flex-direction: column;align-items: center;
-    /*    padding zodat de tekst niet teveel tegen de kant aan staat*/
-
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         line-height: 1.5;
     }
 
-    @media (max-width: 35em){
-        h1{
+    @media (max-width: 35em) {
+        h1 {
             font-size: 1.5rem; /*    vanwege lcp lighthouse testen of het resultaat beter is*/
 
 
@@ -53,8 +55,8 @@
 
     }
 
-    @media (min-width: 35em){
-        h1{
+    @media (min-width: 35em) {
+        h1 {
             font-size: 2rem; /*    vanwege lcp lighthouse testen of het resultaat beter is*/
             line-height: 1.5;
         }
@@ -66,9 +68,11 @@
         text-transform: uppercase;
         margin-bottom: 2rem;
     }
-    a:hover{
+
+    a:hover {
         border: 1px solid var(--blue);
     }
+
     a:active {
         border: 1px solid var(--blue);
     }
@@ -79,7 +83,7 @@
     }
 
     svg {
-        vertical-align: middle;/*dit zorgt ervoor dat de pijl en de tekst op dezelfde hoogte staan */
+        vertical-align: middle; /*dit zorgt ervoor dat de pijl en de tekst op dezelfde hoogte staan */
         margin-bottom: 0.2rem;
         color: var(--black);
         transform: scaleX(-1); /*met deze code gaat het pijltje naar links     */

@@ -123,7 +123,7 @@
     .vacancies-section {
         display: flex;
         flex-direction: column;
-        margin: 0 10% 0 10%;
+        margin: 0 12.5% 0 12.5%;
     }
 
     .job-title {
@@ -195,6 +195,10 @@
         .intro-section {
             margin: 12.5% 25% 10% 25%;
         }
+
+        .vacancies-section {
+        margin: 0 5% 0 5%;
+    }
     }
 
     @media (min-width: 1524px){

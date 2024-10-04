@@ -2,33 +2,41 @@
     export let data;
 
     import Member from "$lib/Member.svelte";
-    import Vacancies from "$lib/Vacancies.svelte";
-    import myImage from '../../lib/images/logo.png';
+    import Searchform from "$lib/Searchform.svelte";
+    import Intro from "$lib/descriptionText.svelte";
+    import Backhome from "$lib/BackHomeBtn.svelte";
+    import Header from "$lib/Header.svelte";
 </script>
 
 <main>
 
 
-    <form>
-        <label for="site-search">zoek een bureau:</label>
-        <input type="search" name="search" id="site-search"/>
-        <button>zoek een bureau</button>
-    </form>
-
+    <Header/>
+    <Backhome/>
+    <Intro
+        label=" De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging.
+        'Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie."
+    />
+    <Searchform/>
 
     <Member data={data}/>
 
 </main>
 
 <style>
-    main{
+    main {
         line-height: 1.5;
-        padding: 2em;
+        padding: 2rem;
+    }
+
+    .header {
+        background-color: var(--grey);
     }
 
 
-    .logo{
+    .logo {
         width: 12em;
     }
+
 
 </style>

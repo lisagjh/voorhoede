@@ -1,4 +1,6 @@
 <script>
+    import Link from "$lib/Link.svelte";
+
     export let data;
 
 
@@ -28,7 +30,15 @@
 
 
             </ul>
-            <a href="#" class="linkdetails">details</a>
+
+            <Link
+                    slot="link"
+                    href="/"
+                    clazz="detail-link"
+            >
+                <button slot="link-text">Details</button>
+            </Link>
+<!--            <a href="#" class="linkdetails">details</a>-->
 
         </article>
     {/each}

@@ -25,10 +25,7 @@
   outline: var(--grey);
 }
  
-ul {
-  margin: .5em 0em 0em 2em;
-}
- 
+
 .search-bar::placeholder {
   color: var(--grey)
 }

@@ -28,7 +28,7 @@
 
 
             </ul>
-            <button class="linkdetails">details</button>
+            <a href="#" class="linkdetails">details</a>
 
         </article>
     {/each}

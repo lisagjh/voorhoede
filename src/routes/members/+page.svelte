@@ -13,7 +13,7 @@
   // $: Is een dynamisch element wat zich instant aanpast op de data die erin zit. 
   // .filter is een built in JS functie die een nieuwe arraay aanmaakt met de juiste items op basis van de requirements die er
   // na volgen onder andere .ToLowerCase en .Includes met de member array waar op dit moment alle agencies in staan.
-  $: filteredMembers = data.members.filter(member =>
+  $: filteredAgencies = data.members.filter(member =>
     member.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 </script>
@@ -33,14 +33,19 @@
         bind:searchTerm={searchTerm}
     />
 
-    <!--Het door pasen van de filteredMembers array naar members zodat die alleen de gefilterde items laat zien-->
-    <Member data={{ members: filteredMembers }}/>
+    <!--Het door pasen van de filteredAgencies array naar members zodat die alleen de gefilterde items laat zien-->
+    {#if filteredAgencies.length > 0}
+         <Member data={{ members: filteredAgencies}}/>
+    {:else}
+        <h5>Helaas geen agencies kunnen vinden</h5>
+    {/if}
       
     </main>
 <style>
     main {
         line-height: 1.5;
         padding: 2rem;
+
     }
 
     .header {

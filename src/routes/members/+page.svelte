@@ -37,7 +37,7 @@
     {#if filteredAgencies.length > 0}
          <Member data={{ members: filteredAgencies}}/>
     {:else}
-        <h5>Helaas geen agencies kunnen vinden</h5>
+        <p>Helaas geen agencies kunnen vinden...</p>
     {/if}
       
     </main>

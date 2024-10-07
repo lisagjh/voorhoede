@@ -1,4 +1,5 @@
 <script>
+	import { fonts } from './../../.svelte-kit/output/server/nodes/1.js';
   import { onMount } from "svelte";
 
   // variabelen voor reactivity
@@ -30,7 +31,7 @@
 
 <header>
   <a href="/"
-    ><img src="/dda-logo.svg" alt="DDA logo" width="60" height="81" /></a
+    ><img src="/dda-logo.svg" alt="DDA logo" width="60" /></a
   >
 
   <button on:click={toggleMenu} aria-label="navigation menu">
@@ -149,8 +150,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 1rem;
-    background-color: var(--white);
+    padding: 0.5rem 1rem;
     max-width: 100vw;
     width: 100%;
     position: sticky;
@@ -159,7 +159,7 @@
   }
 
   button {
-    background-color: transparent;
+    background-color: var(--white);
     border: 1px solid var(--black);
     height: 2.5rem;
     width: 2.5rem;
@@ -177,11 +177,11 @@
   }
 
   nav {
+    background-color: var(--white);
     position: absolute;
     top: 4.5rem;
     width: 100%;
     max-width: 19.5rem;
-    background-color: var(--white);
     padding: 0.5rem;
     z-index: 2;
     visibility: hidden;
@@ -198,10 +198,6 @@
     transform: translateX(0) translateY(0);
   }
 
-  svg {
-    vertical-align: middle;
-    margin-bottom: 0.2em;
-  }
   /* als het scherm iets groter word blijft de nav rechts hangen bij  */
   @media (min-width: 22.5rem) {
     nav {
@@ -285,13 +281,25 @@
     }
   }
 
+  @media (min-width: 43rem) {
+    img {
+      width: 80px;
+    }
+  }
+
   /* bigger screen */
-  @media (min-width: 56rem) {
+  @media (min-width: 58rem) {
+    header {
+      border-bottom: 1px solid var(--black);
+      backdrop-filter: blur(.5rem);
+    }
+
     button {
       display: none;
     }
 
     nav {
+      background-color: transparent;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
@@ -317,6 +325,7 @@
     }
 
     li {
+      font-size: 0.9rem;
       margin: 0 1rem;
       padding: 0;
       border: none;

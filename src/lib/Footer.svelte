@@ -1,7 +1,7 @@
 <footer>
   <div class="top-content">
     <a href="/" class="logo">
-      <img src="/dda-logo.svg" alt="DDA logo" width="106" height="106" />
+      <img src="/dda-logo.svg" alt="DDA logo" width="106" height="80" />
     </a>
     <a href="/login" class="login">
       Inloggen
@@ -91,6 +91,7 @@
   .top-content {
     display: flex;
     flex-direction: column;
+    padding-top: 2.5rem;
   }
 
   ul {
@@ -209,8 +210,6 @@
       justify-content: space-between;
       padding: 0.5rem 1rem;
       margin: 0;
-      border: solid var(--black);
-      border-width: 0px 0px 1px 0px;
     }
   }
 

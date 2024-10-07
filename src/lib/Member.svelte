@@ -45,6 +45,11 @@
         grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
         text-transform: uppercase;
     }
+    h2{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 
     ul {
         list-style: none;
@@ -58,7 +63,7 @@
         border: var(--grey) 1px solid;
         padding: 2rem;
         display: grid;
-        grid-template-rows: 16rem auto auto auto auto;
+        grid-template-rows: 16rem auto auto 5em auto;
         gap: 16px;
     }
 

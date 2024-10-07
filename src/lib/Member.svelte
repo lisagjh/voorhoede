@@ -5,7 +5,7 @@
 </script>
 
 
-<article class="gridcontainer">
+<article class="gridcontainer" aria-live="polite">
     {#each data.members as member}
         <article class="card">
             <picture>

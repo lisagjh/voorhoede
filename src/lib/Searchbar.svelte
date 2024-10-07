@@ -16,7 +16,7 @@
 <style>
  
 .search-bar {
-  min-width: 304px;
+  min-width: 17.5em;
   padding: 1em 2px;
   margin: 1em;
   border: none;
@@ -39,5 +39,7 @@ input[type="search"]::-webkit-search-cancel-button {
   width: .5em;
   background: rgb(238, 92, 7);
 }
+
+
  
 </style>

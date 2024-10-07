@@ -131,6 +131,7 @@
     }
 
     .job-title {
+        font-family: "Archivo", sans-serif;
         grid-column: 1 / span 2; 
         grid-row: 1;
     }

@@ -65,14 +65,14 @@
     </ul>
   </div>
 
- <div class="bottom-content">
+  <div class="bottom-content">
     <ul class="social">
       <li><a href="/#">Instagram</a></li>
       <li><a href="/#">Facebook</a></li>
       <li><a href="/#">LinkedIn</a></li>
     </ul>
     <p>Copyright © 2023 Dutch Digital Agencies</p>
- </div>
+  </div>
 </footer>
 
 <style>
@@ -124,6 +124,11 @@
     width: fit-content;
   }
 
+  .login svg {
+    vertical-align: middle;
+    margin-bottom: .2em;
+  }
+  
   .login:hover {
     background-color: var(--blue);
     color: var(--white);
@@ -206,6 +211,17 @@
       margin: 0;
       border: solid var(--black);
       border-width: 0px 0px 1px 0px;
+    }
+  }
+
+  @media (min-width: 67rem) {
+    .top-content {
+      align-items: flex-end;
+      padding-right: 2.5rem;
+    }
+
+    .bottom-content {
+      justify-content: space-evenly;
     }
   }
 </style>

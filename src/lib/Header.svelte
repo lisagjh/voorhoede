@@ -76,7 +76,7 @@
         <a href="/publicaties">Publicaties</a>
       </li>
       <li>
-        <a href="/leden">Leden</a>
+        <a href="/members">Leden</a>
       </li>
       <li>
         <a href="/vacatures">Vacatures</a>
@@ -198,6 +198,10 @@
     transform: translateX(0) translateY(0);
   }
 
+  svg {
+    vertical-align: middle;
+    margin-bottom: 0.2em;
+  }
   /* als het scherm iets groter word blijft de nav rechts hangen bij  */
   @media (min-width: 22.5rem) {
     nav {

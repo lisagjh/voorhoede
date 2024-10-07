@@ -347,7 +347,7 @@
 
     .nav-cta li {
       flex-wrap: nowrap;
-      margin: 0.12;
+      margin: 0.1rem;
     }
   }
 </style>

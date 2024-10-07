@@ -14,7 +14,7 @@ article {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     grid-template-rows: auto auto auto auto;
-    gap: 1.5em 0;
+    gap: 1.75em 0;
     align-items: center;
     margin-bottom: 15%;
     padding-bottom: 15%;

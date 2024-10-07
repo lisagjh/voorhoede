@@ -1,31 +1,33 @@
 <footer>
-  <a href="/">
-    <img src="/dda-logo.svg" alt="DDA logo" width="80" height="106" />
-  </a>
-  <a href="/login" class="login">
-    Inloggen
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M8 3L13.0001 8.0001L8 13.0002"
-        stroke="#364BF7"
-        stroke-width="1.5"
-        stroke-miterlimit="4.62023"
-      />
-      <path
-        d="M3 8L13 8"
-        stroke="#364BF7"
-        stroke-width="1.5"
-        stroke-miterlimit="4.62023"
-        stroke-linejoin="round"
-      />
-    </svg>
-  </a>
+  <div class="top-content">
+    <a href="/" class="logo">
+      <img src="/dda-logo.svg" alt="DDA logo" width="106" height="106" />
+    </a>
+    <a href="/login" class="login">
+      Inloggen
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 3L13.0001 8.0001L8 13.0002"
+          stroke="#364BF7"
+          stroke-width="1.5"
+          stroke-miterlimit="4.62023"
+        />
+        <path
+          d="M3 8L13 8"
+          stroke="#364BF7"
+          stroke-width="1.5"
+          stroke-miterlimit="4.62023"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </a>
+  </div>
 
   <div class="middle-content">
     <ul>
@@ -63,12 +65,14 @@
     </ul>
   </div>
 
-  <ul>
-    <li><a href="/#">Instagram</a></li>
-    <li><a href="/#">Facebook</a></li>
-    <li><a href="/#">LinkedIn</a></li>
-  </ul>
-  <p>Copyright © 2023 Dutch Digital Agencies</p>
+ <div class="bottom-content">
+    <ul class="social">
+      <li><a href="/#">Instagram</a></li>
+      <li><a href="/#">Facebook</a></li>
+      <li><a href="/#">LinkedIn</a></li>
+    </ul>
+    <p>Copyright © 2023 Dutch Digital Agencies</p>
+ </div>
 </footer>
 
 <style>
@@ -76,16 +80,23 @@
     display: flex;
     flex-direction: column;
     border-top: 1px solid var(--black);
-    width: 100vw;
+    width: 100%;
   }
 
-  footer > *, a.login {
+  footer > *,
+  a.login {
     padding: 0 2.5rem;
+  }
+
+  .top-content {
+    display: flex;
+    flex-direction: column;
   }
 
   ul {
     display: flex;
     flex-direction: column;
+    margin: 2.5rem 0;
   }
 
   li {
@@ -95,7 +106,7 @@
     transition: 0.25s ease-in-out;
   }
 
-  li:hover a {
+  a:hover {
     color: var(--blue);
   }
 
@@ -108,7 +119,9 @@
   a.login {
     color: var(--blue);
     text-decoration: none;
-    margin-top: 2.5rem;
+    padding: 0.5rem;
+    margin: 0 0 2.5rem 0rem;
+    width: fit-content;
   }
 
   .login:hover {
@@ -122,6 +135,7 @@
   }
 
   .middle-content {
+    gap: 2.5rem;
   }
 
   .address li:nth-of-type(1),
@@ -134,10 +148,6 @@
   }
 
   @media (min-width: 35rem) {
-    footer {
-      background-color: palegoldenrod;
-    }
-
     .middle-content {
       display: flex;
       flex-direction: row;
@@ -148,6 +158,54 @@
       flex-direction: column;
       margin-top: 2.5rem;
       border: none;
+    }
+
+    .social {
+      flex-direction: row;
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 43rem) {
+    footer {
+      display: grid;
+      grid-template-areas:
+        "top middle"
+        "top middle"
+        "bottom bottom";
+    }
+
+    .top-content {
+      grid-area: top;
+      border: solid var(--black);
+      border-width: 0px 1px 1px 0px;
+      padding-top: 2.5rem;
+    }
+
+    .middle-content {
+      grid-area: middle;
+      gap: 2rem;
+      margin: 0;
+      padding: 1rem 2.5rem;
+      border: solid var(--black);
+      border-width: 0px 0px 1px 0px;
+    }
+
+    .social li {
+      padding: 0;
+      margin: 0;
+    }
+
+    .bottom-content {
+      grid-area: bottom;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      margin: 0;
+      border: solid var(--black);
+      border-width: 0px 0px 1px 0px;
     }
   }
 </style>

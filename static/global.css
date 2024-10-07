@@ -111,3 +111,11 @@ p {
     line-height: 2rem;
   }
 }
+
+@media (min-width: 43rem) {
+  body {
+    margin: 1rem;
+    border: 1px solid var(--black);
+  }
+
+}

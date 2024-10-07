@@ -11,7 +11,7 @@
             <picture>
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
-                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="{member.title}">
+                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="">
             </picture>
             <ul class="cardlabel">
                 <li class="labelfilters">
@@ -19,19 +19,17 @@
                 </li>
                 <li class="labelfilters">label</li>
             </ul>
-            <ul>
-                <li class="Companyname">{member.title}</li>
-                <li>{member.address}</li>
-            </ul>
+                <h2 class="Companyname">{member.title}</h2>
+                <p>{member.address}</p>
+
             <ul class="cardlabel">
                 <li>{parseInt(member.colleagues)}</li>
                 <li class="card__li__hiring">hiring</li>
+
+
             </ul>
-            <ul>
-                <li class="">
-                    <button class="linkdetails">details</button>
-                </li>
-            </ul>
+            <button class="linkdetails">details</button>
+
         </article>
     {/each}
 

@@ -31,13 +31,7 @@
 
             </ul>
 
-            <Link
-                    slot="link"
-                    href="/"
-                    clazz="detail-link"
-            >
-                <button slot="link-text">Details</button>
-            </Link>
+            <Link href="/" clazz="detail-link"><span slot="link-text">Details</span><svg width="16" height="16" slot="svg-icon-right"viewBox="0 0 24 24" fill="none"><path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></Link>
 <!--            <a href="#" class="linkdetails">details</a>-->
 
         </article>

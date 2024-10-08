@@ -61,10 +61,6 @@
 </main>
 
 <style>
-    span:nth-child(1){
-        text-decoration: underline;
-    }
-
 
 
     main {
@@ -81,6 +77,9 @@
         margin: 15% 15% 10% 15%;
     }
 
+    span:nth-child(1){
+        text-decoration: underline;
+    }
     .filter-section {
         padding: 1em;
         border: 1px solid black;

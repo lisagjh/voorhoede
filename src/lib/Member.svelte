@@ -7,7 +7,7 @@
 </script>
 
 
-<article class="gridcontainer">
+<article class="grid-container">
     {#each data.members as member}
         <article class="card">
             <picture>
@@ -15,24 +15,23 @@
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
                 <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="">
             </picture>
-            <ul class="cardlabelFilters">
-                <li class="labelfilters">
+            <ul class="card-label-filters">
+                <li class="label-filters">
                     service design
                 </li>
-                <li class="labelfilters">label</li>
+                <li class="label-filters">label</li>
             </ul>
-                <h2 class="Companyname">{member.title}</h2>
+                <h2 class="company-name">{member.title}</h2>
                 <p>{member.address}</p>
 
-            <ul class="cardlabel">
+            <ul class="card-label">
                 <li>{parseInt(member.colleagues)}  werknemers</li>
-                <li class="card__li__hiring">hiring</li>
+                <li class="card-hiring">hiring</li>
 
 
             </ul>
 
             <Link href="/" clazz="detail-link"><span slot="link-text">Details</span><svg width="16" height="16" slot="svg-icon-right"viewBox="0 0 24 24" fill="none"><path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></Link>
-<!--            <a href="#" class="linkdetails">details</a>-->
 
         </article>
     {/each}
@@ -40,7 +39,7 @@
 </article>
 
 <style>
-    .gridcontainer {
+    .grid-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
         text-transform: uppercase;
@@ -67,7 +66,7 @@
         gap: 16px;
     }
 
-    .card__li__hiring {
+    .card-hiring {
         background-color: var(--blue);
         color: var(--white);
         padding: 2px;
@@ -79,7 +78,7 @@
         width: 100%;
         height: 100%;
     }
-    .cardlabelFilters{
+    .card-label-filters{
         display: flex;
         flex-direction: row;
         text-overflow: ellipsis;
@@ -87,7 +86,7 @@
 
     }
 
-    .cardlabel {
+    .card-label {
         display: flex;
         flex-direction: row;
         text-overflow: ellipsis;
@@ -95,19 +94,19 @@
         height: 2rem;
     }
 
-    .labelfilters {
+    .label-filters {
         border: 2px solid var(--black);
         width: max-content;
         padding: 3px;
     }
 
-    .Companyname {
+    .company-name {
         font-size: 38px;
     }
 
     @media (max-width: 350px) {
 
-        .gridcontainer {
+        .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
             text-transform: uppercase;
@@ -128,7 +127,7 @@
     }
 
     @media (min-width: 425px) {
-        .gridcontainer {
+        .grid-container {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         }
 
@@ -137,7 +136,6 @@
 
     @media (min-width: 825px) {
         .card{
-
             grid-template-rows: 16rem auto auto 4rem auto;
         }
 

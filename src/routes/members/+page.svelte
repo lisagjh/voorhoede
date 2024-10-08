@@ -38,8 +38,11 @@
             <h1 slot="page-title">Leden</h1>
             <p slot="page-description">
                 De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging.
-                'Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie  </p>
+                  </p>
         </Text>
+        <p>
+            Ook DDA lid worden? Ga dan naar <span>deze pagina</span> voor meer informatie
+        </p>
 
     </section>
 
@@ -58,6 +61,11 @@
 </main>
 
 <style>
+    span:nth-child(1){
+        text-decoration: underline;
+    }
+
+
 
     main {
         line-height: 1.5;
@@ -78,7 +86,6 @@
         border: 1px solid black;
         border-bottom: none;
     }
-
 
     @media (min-width: 820px){
         .intro-section {

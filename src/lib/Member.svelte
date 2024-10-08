@@ -25,7 +25,7 @@
                 <p>{member.address}</p>
 
             <ul class="cardlabel">
-                <li>Mederwerks: {parseInt(member.colleagues)}</li>
+                <li>{parseInt(member.colleagues)}  werknemers</li>
                 <li class="card__li__hiring">hiring</li>
 
 
@@ -103,15 +103,6 @@
 
     .Companyname {
         font-size: 38px;
-    }
-
-    .linkdetails {
-        color: var(--blue);
-        font-weight: bold;
-        background-color: transparent;
-        border: none;
-        font-size: var(--font-size-small);
-
     }
 
     @media (max-width: 350px) {

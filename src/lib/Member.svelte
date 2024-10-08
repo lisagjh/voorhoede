@@ -84,7 +84,7 @@
         display: flex;
         flex-direction: row;
         text-overflow: ellipsis;
-        gap: 1rem;
+        gap: 0.8rem;
         height: 2rem;
     }
 
@@ -108,9 +108,12 @@
     }
 
     @media (max-width: 425px) {
-       /*img{*/
-       /*    width: 85%;*/
-       /*}*/
+       img{
+           width: 92%;
+       }
+        .card{
+            padding: 1rem;
+        }
 
     }
 

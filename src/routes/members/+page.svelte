@@ -42,7 +42,7 @@
                   </p>
         </Text>
         <p>
-            Ook DDA lid worden? Ga dan naar <span>deze pagina</span> voor meer informatie
+            Ook DDA lid worden? Ga dan naar <span class="specific-text-decoration">deze pagina</span> voor meer informatie
         </p>
 
     </section>
@@ -59,6 +59,16 @@
     <!--Het door pasen van de filteredMembers array naar members zodat die alleen de gefilterde items laat zien-->
     <Member data={{ members: filteredMembers }}/>
 
+    <div class="working-vacatures">
+        <p class="textvacature">Kom werken bij de beste digitale bureaus van Nederland</p>
+        <Link href="/"  clazz="detail-link" class="more-events"><span slot="link-text" class="text-cacatures">bekijk vacatures (54)</span><svg width="16" height="16" slot="svg-icon-right"viewBox="0 0 24 24" fill="none"><path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></Link>
+
+    </div>
+
+    <div class="link-more-events">
+    <Link href="/"  clazz="detail-link" class="more-events"><span slot="link-text" class="text-more-events">Meer events laden</span><svg width="16" height="16" slot="svg-icon-right"viewBox="0 0 24 24" fill="none"><path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></Link>
+    </div>
+
 </main>
 <Footer/>
 
@@ -66,8 +76,7 @@
 
 
     main {
-        line-height: 1.5;
-        padding: 2rem;
+        padding: 0rem 1rem 0rem 1rem;
     }
     .intro-section {
         display: flex;
@@ -79,7 +88,7 @@
         margin: 15% 15% 10% 15%;
     }
 
-    span:nth-child(1){
+    .specific-text-decoration{
         text-decoration: underline;
     }
     .filter-section {
@@ -114,7 +123,37 @@
         justify-content: center;
 
     }
+    .working-vacatures{
+        display: flex;
+        flex-direction: row;
+        row-gap: 2rem;
+        padding: 2rem;
+        border: 1px solid;
+        justify-content: space-between;
+    }
+    .textvacature{
+        font-size: 1.2rem;
+    }
+    .text-cacatures{
+        font-size: 0.8rem;
+    }
+    .link-more-events{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        place-content: center;
+        border: 1px solid;
+        padding: 2rem;
+        text-decoration: none;
+    }
+    .text-more-events{
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
 
+    .more-events{
+        text-decoration: none;
+    }
 
 
 </style>

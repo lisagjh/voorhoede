@@ -1,5 +1,6 @@
 <script>
-	import { fonts } from './../../.svelte-kit/output/server/nodes/1.js';
+  import Header from "./Header.svelte";
+  import { fonts } from "./../../.svelte-kit/output/server/nodes/1.js";
   import { onMount } from "svelte";
 
   // variabelen voor reactivity
@@ -15,7 +16,7 @@
   // Deze functie update de isLargeScreen variabele. Checkt met een media query de window size en returned boolean matches
   //dus: checkt of de viewport width minstens 54rem is. zoja, matches = true dus isLargeScreen = true, anders false.
   function updateMenuState() {
-    isLargeScreen = window.matchMedia("(min-width: 54rem)").matches;
+    isLargeScreen = window.matchMedia("(min-width: 58rem)").matches;
   }
 
   // onMount is svelte lifecycle function die start wanneer een component gecreërd word, en stopt wanneer het destroyed word.
@@ -31,7 +32,7 @@
 
 <header>
   <a href="/"
-    ><img src="/dda-logo.svg" alt="DDA logo" width="60" /></a
+    ><img src="/dda-logo.svg" alt="DDA logo" width="60" height="45.5" /></a
   >
 
   <button on:click={toggleMenu} aria-label="navigation menu">
@@ -147,11 +148,13 @@
   }
 
   header {
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
-    max-width: 100vw;
     width: 100%;
     position: sticky;
     top: 0;
@@ -284,16 +287,12 @@
   @media (min-width: 43rem) {
     img {
       width: 80px;
+      height: 60.55px;
     }
   }
 
   /* bigger screen */
   @media (min-width: 58rem) {
-    header {
-      border-bottom: 1px solid var(--black);
-      backdrop-filter: blur(.5rem);
-    }
-
     button {
       display: none;
     }
@@ -310,7 +309,7 @@
       z-index: 5;
       height: fit-content;
       width: 100%;
-      max-width: 95vw;
+      max-width: calc(100% - 7rem);
       transform: translateY(-10px);
       border: none;
       scale: 1;

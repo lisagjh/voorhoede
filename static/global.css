@@ -113,9 +113,29 @@ p {
 }
 
 @media (min-width: 43rem) {
-  body {
-    margin: 1rem;
-    border: 1px solid var(--black);
+  header,
+  main,
+  footer {
+    width: 100%;
+    max-width: calc(100vw - 2rem);
   }
 
+  header {
+    margin: 1rem;
+    margin-bottom: 0;
+    border: solid var(--black);
+    border-width: 1px;
+  }
+
+  main {
+    margin: 0 1rem;
+    border: solid var(--black);
+    border-width: 0px 1px 1px 1px;
+  }
+
+  footer {
+    margin: 0 1rem 1rem 1rem;
+    border: solid var(--black);
+    border-width: 0px 1px 1px 1px;
+  }
 }

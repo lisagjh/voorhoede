@@ -79,7 +79,6 @@
   footer {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid var(--black);
     width: 100%;
   }
 
@@ -159,7 +158,6 @@
       flex-direction: row;
     }
 
-    .nav,
     .address {
       flex-direction: column;
       margin-top: 2.5rem;

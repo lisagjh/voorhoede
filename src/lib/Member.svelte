@@ -11,11 +11,11 @@
     {#each data.members as member}
         <article class="card">
             <picture>
-                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
-                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
+                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/avif">
+                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/webp">
                 <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="">
             </picture>
-            <ul class="cardlabel">
+            <ul class="cardlabelFilters">
                 <li class="labelfilters">
                     service design
                 </li>
@@ -25,7 +25,7 @@
                 <p>{member.address}</p>
 
             <ul class="cardlabel">
-                <li>Aantal mederwerks: {parseInt(member.colleagues)}</li>
+                <li>Mederwerks: {parseInt(member.colleagues)}</li>
                 <li class="card__li__hiring">hiring</li>
 
 
@@ -79,12 +79,19 @@
         width: 100%;
         height: 100%;
     }
+    .cardlabelFilters{
+        display: flex;
+        flex-direction: row;
+        text-overflow: ellipsis;
+        gap: 0.8rem;
+
+    }
 
     .cardlabel {
         display: flex;
         flex-direction: row;
         text-overflow: ellipsis;
-        gap: 0.8rem;
+        gap: 0.5rem;
         height: 2rem;
     }
 
@@ -107,13 +114,25 @@
 
     }
 
-    @media (max-width: 425px) {
+    @media (max-width: 350px) {
+
+        .gridcontainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
+            text-transform: uppercase;
+        }
        img{
            width: 92%;
        }
         .card{
             padding: 1rem;
         }
+        .card{
+            grid-template-rows: 16rem auto auto auto auto;
+            grid-template-columns: 14em;
+            row-gap: 2em;
+        }
+
 
     }
 
@@ -124,18 +143,11 @@
 
     }
 
-    @media (max-width: 425px) {
-        .card{
-
-            grid-template-rows: 16rem auto auto 5rem auto;
-        }
-
-    }
 
     @media (min-width: 825px) {
         .card{
 
-            grid-template-rows: 16rem auto auto 8rem auto;
+            grid-template-rows: 16rem auto auto 5rem auto;
         }
 
     }

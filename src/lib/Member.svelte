@@ -1,13 +1,13 @@
 <script>
     import Link from "$lib/Link.svelte";
-
     export let data;
-
 
 </script>
 
 
 <article class="grid-container">
+
+
     {#each data.members as member}
         <article class="card">
             <picture>
@@ -35,6 +35,9 @@
 
         </article>
     {/each}
+
+
+
 
 </article>
 

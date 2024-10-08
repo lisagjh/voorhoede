@@ -5,6 +5,7 @@
     import Link from "$lib/Link.svelte";
     import Member from "$lib/Member.svelte";
     import Header from "$lib/Header.svelte";
+    import Footer from "$lib/footer.svelte";
     import Text from "$lib/Text.svelte";
     import Searchbar from "$lib/Searchbar.svelte";
 
@@ -59,6 +60,7 @@
     <Member data={{ members: filteredMembers }}/>
 
 </main>
+<Footer/>
 
 <style>
 

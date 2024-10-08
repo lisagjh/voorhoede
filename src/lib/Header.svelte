@@ -152,7 +152,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
     width: 100%;
     position: sticky;
     top: 0;

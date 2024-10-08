@@ -63,7 +63,7 @@
         border: var(--grey) 1px solid;
         padding: 2rem;
         display: grid;
-        grid-template-rows: 16rem auto auto 5em auto;
+        grid-template-rows: 16rem auto auto 3rem auto;
         gap: 16px;
     }
 
@@ -120,6 +120,22 @@
     @media (min-width: 425px) {
         .gridcontainer {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        }
+
+    }
+
+    @media (max-width: 425px) {
+        .card{
+
+            grid-template-rows: 16rem auto auto 5rem auto;
+        }
+
+    }
+
+    @media (min-width: 825px) {
+        .card{
+
+            grid-template-rows: 16rem auto auto 8rem auto;
         }
 
     }

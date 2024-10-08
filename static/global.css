@@ -112,6 +112,10 @@ p {
   }
 }
 
+main {
+  border-bottom: 1px solid var(--black);
+}
+
 @media (min-width: 43rem) {
   header,
   main,
@@ -124,6 +128,7 @@ p {
     margin: 1rem 1rem 0;
     border: solid var(--black);
     border-width: 1px;
+    border-bottom: 0px;
   }
 
   main {

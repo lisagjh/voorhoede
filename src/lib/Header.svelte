@@ -1,6 +1,4 @@
 <script>
-  import Header from "./Header.svelte";
-  import { fonts } from "./../../.svelte-kit/output/server/nodes/1.js";
   import { onMount } from "svelte";
 
   // variabelen voor reactivity

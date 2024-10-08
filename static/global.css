@@ -121,8 +121,7 @@ p {
   }
 
   header {
-    margin: 1rem;
-    margin-bottom: 0;
+    margin: 1rem 1rem 0;
     border: solid var(--black);
     border-width: 1px;
   }
@@ -131,6 +130,8 @@ p {
     margin: 0 1rem;
     border: solid var(--black);
     border-width: 0px 1px 1px 1px;
+    border-top: none;
+    padding: 1rem;
   }
 
   footer {

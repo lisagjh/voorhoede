@@ -25,7 +25,7 @@
                 <p>{member.address}</p>
 
             <ul class="cardlabel">
-                <li>{parseInt(member.colleagues)}</li>
+                <li>Aantal mederwerks: {parseInt(member.colleagues)}</li>
                 <li class="card__li__hiring">hiring</li>
 
 

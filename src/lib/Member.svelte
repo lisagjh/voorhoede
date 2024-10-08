@@ -11,8 +11,8 @@
     {#each data.members as member}
         <article class="card">
             <picture>
-                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/avif">
-                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/webp">
+                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
+                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
                 <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="">
             </picture>
             <ul class="cardlabelFilters">

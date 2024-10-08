@@ -63,7 +63,7 @@
         border: var(--grey) 1px solid;
         padding: 2rem;
         display: grid;
-        grid-template-rows: 16rem auto auto 3rem auto;
+        grid-template-rows: 16rem auto auto 4rem auto;
         gap: 16px;
     }
 
@@ -138,7 +138,7 @@
     @media (min-width: 825px) {
         .card{
 
-            grid-template-rows: 16rem auto auto 5rem auto;
+            grid-template-rows: 16rem auto auto 4rem auto;
         }
 
     }

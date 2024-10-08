@@ -133,10 +133,15 @@ main {
 
   main {
     margin: 0 1rem;
+<<<<<<< Updated upstream
     border: solid var(--black);
     border-width: 0px 1px 1px 1px;
     border-top: none;
     padding: 1rem;
+=======
+    border: 1px solid var(--black);
+    border-top: 0;
+>>>>>>> Stashed changes
   }
 
   footer {

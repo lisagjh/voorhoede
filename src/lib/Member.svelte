@@ -107,6 +107,13 @@
 
     }
 
+    @media (max-width: 425px) {
+       /*img{*/
+       /*    width: 85%;*/
+       /*}*/
+
+    }
+
     @media (min-width: 425px) {
         .gridcontainer {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));

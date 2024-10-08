@@ -1,11 +1,23 @@
 <script>
-    import Link from "$lib/Link.svelte";
 
     export let data;
 
+    import Link from "$lib/Link.svelte";
     import Member from "$lib/Member.svelte";
     import Header from "$lib/Header.svelte";
     import Text from "$lib/Text.svelte";
+    import Searchbar from "$lib/Searchbar.svelte";
+
+        // Input van de gebruiker
+        let searchTerm = "";
+ 
+        // $: Is een dynamisch element wat zich instant aanpast op de data die erin zit.
+        // .filter is een built in JS functie die een nieuwe arraay aanmaakt met de juiste items op basis van de requirements die er
+        // na volgen onder andere .ToLowerCase en .Includes met de member array waar op dit moment alle agencies in staan.
+        $: filteredMembers = data.members.filter(member =>
+        member.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
 </script>
 
 <Header/>
@@ -31,7 +43,17 @@
 
     </section>
 
-    <Member data={data}/>
+    <section class="filter-section">
+            <!--To build : een delay functie, instant feedback is misschien niet user friendlyg-->
+    <Searchbar
+    placeholderText="Zoek een bureau"
+    bind:searchTerm={searchTerm}
+    />
+
+    </section>
+
+    <!--Het door pasen van de filteredMembers array naar members zodat die alleen de gefilterde items laat zien-->
+    <Member data={{ members: filteredMembers }}/>
 
 </main>
 
@@ -49,6 +71,12 @@
         text-align: center;
         gap: .5em;
         margin: 15% 15% 10% 15%;
+    }
+
+    .filter-section {
+        padding: 1em;
+        border: 1px solid black;
+        border-bottom: none;
     }
 
 

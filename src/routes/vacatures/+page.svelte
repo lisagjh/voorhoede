@@ -1,13 +1,9 @@
 <script>
-  import Header from "../../lib/Header.svelte";
     import Text from "$lib/Text.svelte";
     import Link from "$lib/Link.svelte";
     import Vacancy from "$lib/Vacancy.svelte";
 </script>
 
-  <Header />
-
-<main>
     <section class="intro-section">
     
         <Link href="/" clazz="back-to-home">
@@ -105,7 +101,6 @@
             </Link>
         </Vacancy>
     </section>
-</main>
 
 <style>
 

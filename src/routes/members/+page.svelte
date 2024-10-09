@@ -5,12 +5,8 @@
     import Searchform from "$lib/Searchform.svelte";
     import Intro from "$lib/descriptionText.svelte";
     import Backhome from "$lib/BackHomeBtn.svelte";
-    import Header from "$lib/Header.svelte";
 </script>
 
-<Header/>
-
-<main>
     <Backhome/>
     <Intro
         label=" De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging.
@@ -19,8 +15,6 @@
     <Searchform/>
 
     <Member data={data}/>
-
-</main>
 
 <style>
     main {

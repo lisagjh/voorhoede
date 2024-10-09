@@ -30,7 +30,7 @@
 
 <header>
 <a href="/" aria-label="home">
-    <img src="/dda-logo.svg" alt="DDA logo" width="60" height="81" />
+    <img src="/dda-logo.svg" alt="DDA logo" width="60" height="45" />
 </a>
 
   <button on:click={toggleMenu} aria-label="navigation menu">

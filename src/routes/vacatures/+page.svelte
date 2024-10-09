@@ -15,8 +15,8 @@
         </Link>
 
         <Text>
-            <h1 slot="page-title" tabindex="0">Vacatures</h1>
-            <p slot="page-description" tabindex="0">
+            <h1 slot="page-title">Vacatures</h1>
+            <p slot="page-description">
                 Verslim je carrière bij de beste digitale bureaus van Nederland. Pak je rol als developer of designer, researcher, als scrum master of marketeer, als strateeg. Start of groei door – en laat zien wat je kan.
             </p>
         </Text>
@@ -24,8 +24,9 @@
     </section>
 
     <section class="vacancies-section">
+        <!--Tabindex op ieder element is niet DRY coding, wat is hiervoor de oplossing-->
         <Vacancy>
-            <h4 slot="job-title" class="job-title">Design Lead</h4>
+            <h3 slot="job-title" class="job-title">Design Lead</h3>
             <span slot="language" class="language">LANUAGE</span>
             <span slot="company" class="company">COMPANY</span>
             <span slot="workweek-indication" class="workweek">32-40</span>
@@ -44,7 +45,7 @@
             </Link>
         </Vacancy>
         <Vacancy>
-            <h4 slot="job-title" class="job-title">React Front-End Developer</h4>
+            <h3 slot="job-title" class="job-title">React Front-End Developer</h3>
             <span slot="language" class="language">LANUAGE</span>
             <span slot="company" class="company">COMPANY</span>
             <span slot="workweek-indication" class="workweek">32-40</span>
@@ -63,7 +64,7 @@
             </Link>
         </Vacancy>
         <Vacancy>
-            <h4 slot="job-title" class="job-title">Design Lead maar ook dit en dat en nog wat meer</h4>
+            <h3 slot="job-title" class="job-title">Design Lead maar ook dit en dat en nog wat meer</h3>
             <span slot="language" class="language">LANUAGE</span>
             <span slot="company" class="company">COMPANY</span>
             <span slot="workweek-indication" class="workweek">32-40</span>
@@ -82,7 +83,7 @@
             </Link>
         </Vacancy>
         <Vacancy>
-            <h4 slot="job-title" class="job-title">Traffic Manager</h4>
+            <h3 slot="job-title" class="job-title">Traffic Manager</h3>
             <span slot="language" class="language">LANUAGE</span>
             <span slot="company" class="company">COMPANY</span>
             <span slot="workweek-indication" class="workweek">32-40</span>

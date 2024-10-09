@@ -25,7 +25,6 @@
 
 <main>
 
-
     <section class="intro-section">
         <Link href="/" clazz="back-to-home">
             <svg slot="svg-icon-left"

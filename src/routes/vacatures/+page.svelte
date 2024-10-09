@@ -1,13 +1,9 @@
 <script>
-  import Header from "../../lib/Header.svelte";
     import Text from "$lib/Text.svelte";
     import Link from "$lib/Link.svelte";
     import Vacancy from "$lib/Vacancy.svelte";
 </script>
 
-  <Header />
-
-<main>
     <section class="intro-section">
     
         <Link href="/" clazz="back-to-home">
@@ -105,7 +101,6 @@
             </Link>
         </Vacancy>
     </section>
-</main>
 
 <style>
 
@@ -115,7 +110,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        gap: .5em;
+        gap: .75em;
         margin: 15% 15% 10% 15%;
     }
 
@@ -131,6 +126,7 @@
     }
 
     .job-title {
+        font-family: "Archivo", sans-serif;
         grid-column: 1 / span 2; 
         grid-row: 1;
     }
@@ -207,7 +203,7 @@
 
     @media (min-width: 1524px){
         .intro-section {
-            margin: 12.5% 32% 10% 32%;
+            margin: 6.5% 35% 10% 35%;
         }
     }
 

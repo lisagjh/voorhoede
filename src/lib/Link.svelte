@@ -26,15 +26,18 @@
         color: inherit;
         text-decoration: none;
         font-size: .75em;
-        text-transform: uppercase;
-        gap: .45em; /* incase someone forgets to type in uppercase */
+        text-transform: uppercase; /* incase someone forgets to type in uppercase */
+        gap: .45em; 
     }
 
+    .back-to-home{
+        font-size: 1em;
+    }
 
     .detail-link {
         font-weight: bold;
         color: var(--blue);
-        stroke:var(--blue); /* blue color for svg */
+        stroke: var(--blue); /* blue color for svg */
     }
 
     .login-link{

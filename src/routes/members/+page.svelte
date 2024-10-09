@@ -4,8 +4,6 @@
 
     import Link from "$lib/Link.svelte";
     import Member from "$lib/Member.svelte";
-    import Header from "$lib/Header.svelte";
-    import Footer from "$lib/footer.svelte";
     import Text from "$lib/Text.svelte";
     import Searchbar from "$lib/Searchbar.svelte";
 
@@ -20,10 +18,6 @@
     );
 
 </script>
-
-<Header/>
-
-<main>
 
     <section class="intro-section">
         <Link href="/" clazz="back-to-home">
@@ -81,15 +75,11 @@
         </Link>
     </div>
 
-</main>
-<Footer/>
+
 
 <style>
 
 
-    main {
-        padding: 0rem 1rem 0rem 2rem;
-    }
 
     .specific-text-decoration {
         text-decoration: underline;

@@ -6,7 +6,6 @@
     console.log($page.status)
 </script>
 
-<Header />
 
 <section>
     <a href="/#">
@@ -33,7 +32,7 @@
         </svg>
         terug naar home
     </a>
-    <h1>Er gaat iets mis zie onderstaande error?</h1>
+    <h1>Er gaat iets mis, zie onderstaande error.</h1>
     <p>{$page.status} - {$page.error.message}
         <!--    page status is de statuscode -->
     </p>

@@ -183,7 +183,7 @@
     top: 4.5rem;
     width: 100%;
     max-width: 19.5rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
     z-index: 2;
     visibility: hidden;
     opacity: 0;

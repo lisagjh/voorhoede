@@ -1,14 +1,12 @@
 <script>
-
     export let data;
+    let searchTerm = "";
 
     import Link from "$lib/Link.svelte";
     import Member from "$lib/Member.svelte";
     import Text from "$lib/Text.svelte";
     import Searchbar from "$lib/Searchbar.svelte";
 
-    // Input van de gebruiker
-    let searchTerm = "";
 
     // $: Is een dynamisch element wat zich instant aanpast op de data die erin zit.
     // .filter is een built in JS functie die een nieuwe arraay aanmaakt met de juiste items op basis van de requirements die er

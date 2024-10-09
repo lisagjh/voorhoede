@@ -112,6 +112,10 @@ p {
   }
 }
 
+header {
+  border-bottom: 1px solid var(--black);
+}
+
 main {
   border-bottom: 1px solid var(--black);
 }
@@ -125,10 +129,10 @@ main {
   }
 
   header {
-    margin: 1rem 1rem 0;
+    margin: 1rem;
+    margin-bottom: 0;
     border: solid var(--black);
     border-width: 1px;
-    border-bottom: 0px;
   }
 
   main {

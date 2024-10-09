@@ -30,13 +30,13 @@
         </Link>
 
         <Text>
-            <h1 slot="page-title">Leden</h1>
-            <p slot="page-description">
+            <h1 slot="page-title" tabindex="0">Leden</h1>
+            <p slot="page-description" tabindex="0">
                 De <span class="page-numbers">[nummer]</span> beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste
                 filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging.
             </p>
         </Text>
-        <p>
+        <p tabindex="0">
             Ook DDA lid worden? Ga dan naar <span class="specific-text-decoration">deze pagina</span> voor meer
             informatie
         </p>

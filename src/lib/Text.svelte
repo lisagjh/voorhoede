@@ -3,13 +3,9 @@
     
 </script>
 
-<div>
     <slot name="page-title"/>
-</div>
 
-<div>
     <slot name="page-description"/> 
-</div>
 
 <!--More text elements if needed-->
 

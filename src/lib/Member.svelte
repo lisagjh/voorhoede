@@ -23,12 +23,12 @@
                 <li class="label-filters">label</li>
             </ul>
 
-            <h2>{member.title}</h2>
-            <p>{member.address}</p>
+            <h2 tabindex="0">{member.title}</h2>
+            <p tabindex="0">{member.address}</p>
 
             <ul class="card-label">
-                <li>{parseInt(member.colleagues)}  werknemers</li>
-                <li class="card-hiring">hiring</li>
+                <li tabindex="0">{parseInt(member.colleagues)}  werknemers</li>
+                <li class="card-hiring" tabindex="0">hiring</li>
 
             </ul>
 

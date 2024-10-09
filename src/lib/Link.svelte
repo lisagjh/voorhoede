@@ -8,7 +8,7 @@
 </script>
 
 
-<a href={href} class={clazz}>
+<a href={href} class={clazz} tabindex="0">
     <!--Bij sommmige links staat het icoon/svg aan de linker kant deze kun je dan aanroepen met slot="svg-icon-left" 
     in het component-->
     <slot name="svg-icon-left"/>

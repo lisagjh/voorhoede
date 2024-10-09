@@ -4,10 +4,10 @@
 
 <section class="intro-section">
   <Text>
-    <h1 slot="page-title">
+    <h1 slot="page-title" tabindex="0">
       De beste digitale bureaus van nederland
     </h1>
-    <p slot="page-description">
+    <p slot="page-description" tabindex="0">
       Dutch Digital Agencies (DDA) verenigt en verbindt toonaangevende digitale
       bureaus. Samen maken we de wereld elke dag een beetje slimmer.
     </p>

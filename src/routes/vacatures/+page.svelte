@@ -15,8 +15,8 @@
         </Link>
 
         <Text>
-            <h1 slot="page-title">Vacatures</h1>
-            <p slot="page-description">
+            <h1 slot="page-title" tabindex="0">Vacatures</h1>
+            <p slot="page-description" tabindex="0">
                 Verslim je carrière bij de beste digitale bureaus van Nederland. Pak je rol als developer of designer, researcher, als scrum master of marketeer, als strateeg. Start of groei door – en laat zien wat je kan.
             </p>
         </Text>
@@ -29,7 +29,7 @@
             <span slot="language" class="language">LANUAGE</span>
             <span slot="company" class="company">COMPANY</span>
             <span slot="workweek-indication" class="workweek">32-40</span>
-            <span slot="city" class="city" >AMSTERDAM</span>
+            <span slot="city" class="city">AMSTERDAM</span>
 
             <Link 
                 slot="link" 

@@ -81,7 +81,7 @@
 
 
     .page-numbers{
-        color: red;
+        color: rgb(215, 32, 32);
     }
 
     .specific-text-decoration {

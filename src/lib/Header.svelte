@@ -1,44 +1,37 @@
 <script>
-    import { onMount } from 'svelte';
+    import { onMount } from "svelte";
 
+    // variabelen voor reactivity
     let isMenuOpen = false;
+    let isLargeScreen = false;
 
+    // toggles isMenuOpen wanneer het scherm klein is
     function toggleMenu() {
-        const isLargeScreen = window.matchMedia('(min-width: 54rem)').matches;
         if (!isLargeScreen) {
             isMenuOpen = !isMenuOpen;
-            document.querySelector('nav').classList.toggle('show', isMenuOpen);
-        } else {
-            // Always ensure nav is shown on large screens
-            document.querySelector('nav').classList.add('show');
         }
     }
-
-    // Ensure the nav is always visible on large screens even on page load
-    function handleResize() {
-        const isLargeScreen = window.matchMedia('(min-width: 54rem)').matches;
-        const nav = document.querySelector('nav');
-        if (isLargeScreen) {
-            nav.classList.add('show');
-        } else if (!isMenuOpen) {
-            nav.classList.remove('show');
-        }
+    // Deze functie update de isLargeScreen variabele. Checkt met een media query de window size en returned boolean matches
+    //dus: checkt of de viewport width minstens 54rem is. zoja, matches = true dus isLargeScreen = true, anders false.
+    function updateMenuState() {
+        isLargeScreen = window.matchMedia("(min-width: 58rem)").matches;
     }
 
-    // Run handleResize when the component is mounted in the browser
-
+    // onMount is svelte lifecycle function die start wanneer een component gecreërd word, en stopt wanneer het destroyed word.
     onMount(() => {
-        handleResize(); // Handle resize on initial load
-        window.addEventListener('resize', handleResize); // Handle resize events
-
-        return () => {
-            window.removeEventListener('resize', handleResize); // Cleanup on unmount
-        };
+        // Deze functie word meteen aangeroepen zodat de juiste grootte van de nav ingesteld kan worden
+        updateMenuState();
+        // Dit zorgt dat wanneer de viewport width verandert, dat er weer gecheckt word of het groter of kleiner dan 54rem is, en word de
+        window.addEventListener("resize", updateMenuState);
+        // verwijdert de eventListener wanneer component destroyed word
+        return () => window.removeEventListener("resize", updateMenuState);
     });
 </script>
 
-
 <header>
+    <a href="/"
+    ><img src="/dda-logo.svg" alt="DDA logo" width="60" height="45.5" /></a
+    >
 
     <button on:click={toggleMenu} aria-label="navigation menu">
         <svg
@@ -68,11 +61,11 @@
         </svg>
     </button>
 
-    <nav class:show={isMenuOpen} aria-hidden={!isMenuOpen}>
+    <nav
+            class:show={isLargeScreen || isMenuOpen}
+            aria-hidden={!isLargeScreen && !isMenuOpen}
+    >
         <ul>
-            <li>
-                <a href="/">Home</a>
-            </li>
             <li>
                 <a href="/over">Over ons</a>
             </li>
@@ -83,7 +76,7 @@
                 <a href="/publicaties">Publicaties</a>
             </li>
             <li>
-                <a href="/leden">Leden</a>
+                <a href="/members">Leden</a>
             </li>
             <li>
                 <a href="/vacatures">Vacatures</a>
@@ -153,12 +146,13 @@
     }
 
     header {
+        backdrop-filter: blur(5px);
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0.75rem 1rem;
-        background-color: var(--white);
-        min-width: 100vw;
+        padding: 0.5rem 1rem;
         width: 100%;
         position: sticky;
         top: 0;
@@ -166,7 +160,7 @@
     }
 
     button {
-        background-color: transparent;
+        background-color: var(--white);
         border: 1px solid var(--black);
         height: 2.5rem;
         width: 2.5rem;
@@ -184,17 +178,17 @@
     }
 
     nav {
+        background-color: var(--white);
         position: absolute;
         top: 4.5rem;
         width: 100%;
         max-width: 19.5rem;
-        background-color: var(--white);
         padding: 0.5rem;
         z-index: 2;
         visibility: hidden;
         opacity: 0;
         scale: 0.5;
-        translate: 50px -100px;
+        transform: translateX(50px) translateY(-100px);
         transition: 0.25s ease-in-out;
     }
 
@@ -202,11 +196,11 @@
         visibility: visible;
         opacity: 1;
         scale: 1;
-        translate: 0 0;
+        transform: translateX(0) translateY(0);
     }
 
     /* als het scherm iets groter word blijft de nav rechts hangen bij  */
-    @media (min-width: 20.5rem) {
+    @media (min-width: 22.5rem) {
         nav {
             position: absolute;
             right: 0rem;
@@ -288,13 +282,21 @@
         }
     }
 
+    @media (min-width: 43rem) {
+        img {
+            width: 80px;
+            height: 60.55px;
+        }
+    }
+
     /* bigger screen */
-    @media (min-width: 54rem) {
+    @media (min-width: 58rem) {
         button {
             display: none;
         }
 
         nav {
+            background-color: transparent;
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
@@ -305,9 +307,10 @@
             z-index: 5;
             height: fit-content;
             width: 100%;
-            max-width: 95vw;
-            transform: translateY(0px);
+            max-width: calc(100% - 7rem);
+            transform: translateY(-10px);
             border: none;
+            scale: 1;
         }
 
         nav ul {
@@ -319,20 +322,29 @@
         }
 
         li {
-            margin: 0 0.5rem;
+            font-size: 0.9rem;
+            margin: 0 1rem;
             padding: 0;
             border: none;
             text-wrap: nowrap;
         }
 
+        li:first-of-type {
+            margin: 0 1rem 0 0.5rem;
+        }
+
+        li:last-of-type {
+            margin: 0 0.5rem 0 1rem;
+        }
+
         .nav-cta {
-            width: 100%;
-            max-width: 21rem;
+            justify-content: right;
+            width: 90%;
         }
 
         .nav-cta li {
             flex-wrap: nowrap;
-            margin: 0;
+            margin: 0.1rem;
         }
     }
 </style>

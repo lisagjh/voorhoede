@@ -29,41 +29,38 @@
 </script>
 
 <header>
-<a href="/" aria-label="home">
-    <img src="/dda-logo.svg" alt="DDA logo" width="60" height="45" />
-</a>
 
   <button on:click={toggleMenu} aria-label="navigation menu">
     <svg
-      width="32"
-      height="32"
-      viewBox="0 0 32 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
     >
       <mask
-        id="mask0_1_121"
-        style="mask-type:alpha"
-        maskUnits="userSpaceOnUse"
-        x="0"
-        y="0"
-        width="32"
-        height="32"
+              id="mask0_1_121"
+              style="mask-type:alpha"
+              maskUnits="userSpaceOnUse"
+              x="0"
+              y="0"
+              width="32"
+              height="32"
       >
         <rect width="32" height="32" fill="#D9D9D9" />
       </mask>
       <g mask="url(#mask0_1_121)">
         <path
-          d="M4 24V21.3333H28V24H4ZM4 17.3333V14.6667H28V17.3333H4ZM4 10.6667V8H28V10.6667H4Z"
-          fill="#222226"
+                d="M4 24V21.3333H28V24H4ZM4 17.3333V14.6667H28V17.3333H4ZM4 10.6667V8H28V10.6667H4Z"
+                fill="#222226"
         />
       </g>
     </svg>
   </button>
 
   <nav
-    class:show={isLargeScreen || isMenuOpen}
-    aria-hidden={!isLargeScreen && !isMenuOpen}
+          class:show={isLargeScreen || isMenuOpen}
+          aria-hidden={!isLargeScreen && !isMenuOpen}
   >
     <ul>
       <li>
@@ -88,24 +85,24 @@
         <a href="/#">
           Login
           <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M8 3L13.0001 8.0001L8 13.0002"
-              stroke="#364BF7"
-              stroke-width="1.5"
-              stroke-miterlimit="4.62023"
+                    d="M8 3L13.0001 8.0001L8 13.0002"
+                    stroke="#364BF7"
+                    stroke-width="1.5"
+                    stroke-miterlimit="4.62023"
             />
             <path
-              d="M3 8L13 8"
-              stroke="#364BF7"
-              stroke-width="1.5"
-              stroke-miterlimit="4.62023"
-              stroke-linejoin="round"
+                    d="M3 8L13 8"
+                    stroke="#364BF7"
+                    stroke-width="1.5"
+                    stroke-miterlimit="4.62023"
+                    stroke-linejoin="round"
             />
           </svg>
         </a>
@@ -114,24 +111,24 @@
       <li class="join">
         <a href="/#" class="join">Word lid</a>
         <svg
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M8 3L13.0001 8.0001L8 13.0002"
-            stroke="#222226"
-            stroke-width="1.5"
-            stroke-miterlimit="4.62023"
+                  d="M8 3L13.0001 8.0001L8 13.0002"
+                  stroke="#222226"
+                  stroke-width="1.5"
+                  stroke-miterlimit="4.62023"
           />
           <path
-            d="M3 8L13 8"
-            stroke="#222226"
-            stroke-width="1.5"
-            stroke-miterlimit="4.62023"
-            stroke-linejoin="round"
+                  d="M3 8L13 8"
+                  stroke="#222226"
+                  stroke-width="1.5"
+                  stroke-miterlimit="4.62023"
+                  stroke-linejoin="round"
           />
         </svg>
       </li>
@@ -148,19 +145,15 @@
   header {
     backdrop-filter: blur(5px);
     background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 100;
-  }
-
-  header a:first-of-type:hover img {
-    transition: 0.25s ease-in-out;
-    scale: 1.04;
   }
 
   button {

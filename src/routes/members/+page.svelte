@@ -73,10 +73,7 @@
         </Link>
     </div>
 
-
-
 <style>
-
 
     .page-numbers{
         color: rgb(215, 32, 32);

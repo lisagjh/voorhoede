@@ -40,7 +40,6 @@
 
 </section>
 
-
 <style>
     section {
         padding: 2rem;

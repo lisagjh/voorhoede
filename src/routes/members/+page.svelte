@@ -32,7 +32,7 @@
         <Text>
             <h1 slot="page-title">Leden</h1>
             <p slot="page-description">
-                De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste
+                De <span class="page-numbers">[nummer]</span> beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste
                 filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging.
             </p>
         </Text>
@@ -80,6 +80,9 @@
 <style>
 
 
+    .page-numbers{
+        color: red;
+    }
 
     .specific-text-decoration {
         text-decoration: underline;

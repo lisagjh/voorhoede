@@ -14,7 +14,7 @@
   // Deze functie update de isLargeScreen variabele. Checkt met een media query de window size en returned boolean matches
   //dus: checkt of de viewport width minstens 54rem is. zoja, matches = true dus isLargeScreen = true, anders false.
   function updateMenuState() {
-    isLargeScreen = window.matchMedia("(min-width: 54rem)").matches;
+    isLargeScreen = window.matchMedia("(min-width: 58rem)").matches;
   }
 
   // onMount is svelte lifecycle function die start wanneer een component gecreërd word, en stopt wanneer het destroyed word.
@@ -146,12 +146,12 @@
   }
 
   header {
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.7);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 1rem;
-    background-color: var(--white);
-    min-width: 100vw;
+    padding: 0.5rem 1rem;
     width: 100%;
     position: sticky;
     top: 0;
@@ -164,7 +164,7 @@
   }
 
   button {
-    background-color: transparent;
+    background-color: var(--white);
     border: 1px solid var(--black);
     height: 2.5rem;
     width: 2.5rem;
@@ -182,11 +182,11 @@
   }
 
   nav {
+    background-color: var(--white);
     position: absolute;
     top: 4.5rem;
     width: 100%;
     max-width: 19.5rem;
-    background-color: var(--white);
     padding: 0.5rem;
     z-index: 2;
     visibility: hidden;
@@ -204,7 +204,7 @@
   }
 
   /* als het scherm iets groter word blijft de nav rechts hangen bij  */
-  @media (min-width: 20.5rem) {
+  @media (min-width: 22.5rem) {
     nav {
       position: absolute;
       right: 0rem;
@@ -286,13 +286,21 @@
     }
   }
 
+  @media (min-width: 43rem) {
+    img {
+      width: 80px;
+      height: 60.55px;
+    }
+  }
+
   /* bigger screen */
-  @media (min-width: 54rem) {
+  @media (min-width: 58rem) {
     button {
       display: none;
     }
 
     nav {
+      background-color: transparent;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
@@ -303,7 +311,7 @@
       z-index: 5;
       height: fit-content;
       width: 100%;
-      max-width: 95vw;
+      max-width: calc(100% - 7rem);
       transform: translateY(-10px);
       border: none;
       scale: 1;
@@ -318,20 +326,29 @@
     }
 
     li {
+      font-size: 0.9rem;
       margin: 0 1rem;
       padding: 0;
       border: none;
       text-wrap: nowrap;
     }
 
+    li:first-of-type {
+      margin: 0 1rem 0 0.5rem;
+    }
+
+    li:last-of-type {
+      margin: 0 0.5rem 0 1rem;
+    }
+
     .nav-cta {
       justify-content: right;
-      width: 100%;
+      width: 90%;
     }
 
     .nav-cta li {
       flex-wrap: nowrap;
-      margin: 0.5;
+      margin: 0.1rem;
     }
   }
 </style>

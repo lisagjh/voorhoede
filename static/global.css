@@ -111,3 +111,41 @@ p {
     line-height: 2rem;
   }
 }
+
+header {
+  border-bottom: 1px solid var(--black);
+}
+
+main {
+  border-bottom: 1px solid var(--black);
+}
+
+@media (min-width: 43rem) {
+  header,
+  main,
+  footer {
+    width: 100%;
+    max-width: calc(100vw - 2rem);
+  }
+
+  header {
+    margin: 1rem;
+    margin-bottom: 0;
+    border: solid var(--black);
+    border-width: 1px;
+  }
+
+  main {
+    margin: 0 1rem;
+    border: solid var(--black);
+    border-width: 0px 1px 1px 1px;
+    border-top: none;
+    padding: 1rem;
+  }
+
+  footer {
+    margin: 0 1rem 1rem 1rem;
+    border: solid var(--black);
+    border-width: 0px 1px 1px 1px;
+  }
+}

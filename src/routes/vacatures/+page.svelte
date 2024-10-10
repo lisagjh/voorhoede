@@ -5,98 +5,98 @@
 </script>
 
     <section class="intro-section">
-    
+
         <Link href="/" clazz="back-to-home">
             <svg slot="svg-icon-left"
-                 width="16" height="16" viewBox="0 0 24 24" fill="none">
+                 width="16" height="16" viewBox="0 0 24 24" fill="none" aria-label="ga naar home">
                 <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <span slot="link-text">TERUG NAAR HOME</span>
         </Link>
 
         <Text>
-            <h1 slot="page-title">Vacatures</h1>
+            <h1 aria-label="Vavatures" slot="page-title" >Vacatures</h1>
             <p slot="page-description">
                 Verslim je carrière bij de beste digitale bureaus van Nederland. Pak je rol als developer of designer, researcher, als scrum master of marketeer, als strateeg. Start of groei door – en laat zien wat je kan.
             </p>
         </Text>
-    
+
     </section>
 
     <section class="vacancies-section">
         <!--Tabindex op ieder element is niet DRY coding, wat is hiervoor de oplossing-->
         <Vacancy>
-            <h3 slot="job-title" class="job-title">Design Lead</h3>
-            <span slot="language" class="language">LANUAGE</span>
+            <h3 slot="job-title" class="job-title" aria-label="Design lead">Design Lead</h3>
+            <span slot="language" class="language">LANGUAGE</span>
             <span slot="company" class="company">COMPANY</span>
             <span slot="workweek-indication" class="workweek">32-40</span>
             <span slot="city" class="city">AMSTERDAM</span>
 
-            <Link 
-                slot="link" 
+            <Link
+                slot="link"
                 href="/"
                 clazz="detail-link"
             >
                 <span slot="link-text">BEKIJKEN</span>
                 <svg slot="svg-icon-right"
-                width="16" height="16" viewBox="0 0 24 24" fill="none">
+                width="16" height="16" viewBox="0 0 24 24" fill="none" aria-label="ga naar bekijken">
                 <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             </Link>
         </Vacancy>
         <Vacancy>
-            <h3 slot="job-title" class="job-title">React Front-End Developer</h3>
-            <span slot="language" class="language">LANUAGE</span>
+            <h3 slot="job-title" class="job-title" aria-label="React Front-End Develope">React Front-End Developer</h3>
+            <span slot="language" class="language">LANGUAGE</span>
             <span slot="company" class="company">COMPANY</span>
             <span slot="workweek-indication" class="workweek">32-40</span>
             <span slot="city" class="city" >AMSTERDAM</span>
 
-            <Link 
-                slot="link" 
+            <Link
+                slot="link"
                 href="/"
                 clazz="detail-link"
             >
                 <span slot="link-text">BEKIJKEN</span>
                 <svg slot="svg-icon-right"
-                width="16" height="16" viewBox="0 0 24 24" fill="none">
+                width="16" height="16" viewBox="0 0 24 24" fill="none" aria-label="ga naar bekijken">
                 <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             </Link>
         </Vacancy>
         <Vacancy>
-            <h3 slot="job-title" class="job-title">Design Lead maar ook dit en dat en nog wat meer</h3>
-            <span slot="language" class="language">LANUAGE</span>
+            <h3 slot="job-title" class="job-title" aria-label="Design Lead maar ook dit en dat en nog wat meer">Design Lead maar ook dit en dat en nog wat meer</h3>
+            <span slot="language" class="language">LANGUAGE</span>
             <span slot="company" class="company">COMPANY</span>
             <span slot="workweek-indication" class="workweek">32-40</span>
             <span slot="city" class="city" >AMSTERDAM</span>
 
-            <Link 
-                slot="link" 
+            <Link
+                slot="link"
                 href="/"
                 clazz="detail-link"
             >
                 <span slot="link-text">BEKIJKEN</span>
                 <svg slot="svg-icon-right"
-                width="16" height="16" viewBox="0 0 24 24" fill="none">
+                width="16" height="16" viewBox="0 0 24 24" fill="none" aria-label="ga naar bekijken">
                 <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             </Link>
         </Vacancy>
         <Vacancy>
-            <h3 slot="job-title" class="job-title">Traffic Manager</h3>
-            <span slot="language" class="language">LANUAGE</span>
+            <h3 slot="job-title" class="job-title" aria-label="Traffic Manager">Traffic Manager</h3>
+            <span slot="language" class="language">LANGUAGE</span>
             <span slot="company" class="company">COMPANY</span>
             <span slot="workweek-indication" class="workweek">32-40</span>
             <span slot="city" class="city" >AMSTERDAM</span>
 
-            <Link 
-                slot="link" 
+            <Link
+                slot="link"
                 href="/"
                 clazz="detail-link"
             >
                 <span slot="link-text">BEKIJKEN</span>
                 <svg slot="svg-icon-right"
-                width="16" height="16" viewBox="0 0 24 24" fill="none">
+                width="16" height="16" viewBox="0 0 24 24" fill="none" aria-label="ga naar bekijken">
                 <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             </Link>
@@ -128,13 +128,13 @@
 
     .job-title {
         font-family: "Archivo", sans-serif;
-        grid-column: 1 / span 2; 
+        grid-column: 1 / span 2;
         grid-row: 1;
     }
 
     .language {
         grid-column: 1;
-        grid-row: 2; 
+        grid-row: 2;
     }
 
     .company {
@@ -144,7 +144,7 @@
 
     .workweek {
         grid-column: 1;
-        grid-row: 3; 
+        grid-row: 3;
     }
 
     .city {
@@ -156,13 +156,13 @@
 
     @media (min-width: 620px){
         .job-title {
-            grid-column: 1 / span 3; 
+            grid-column: 1 / span 3;
             grid-row: 1;
         }
 
         .language {
             grid-column: 1;
-            grid-row: 2; 
+            grid-row: 2;
         }
 
         .company {
@@ -172,7 +172,7 @@
 
         .workweek {
             grid-column: 3;
-            grid-row: 2; 
+            grid-row: 2;
         }
 
         .city {
@@ -188,7 +188,7 @@
         }
 
         .job-title {
-            width: 20%; /* Zorgt ervoor dat dit vakje niet breder word en de rest beinvloed */ 
+            width: 20%; /* Zorgt ervoor dat dit vakje niet breder word en de rest beinvloed */
         }
     }
 

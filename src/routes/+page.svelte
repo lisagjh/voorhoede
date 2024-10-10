@@ -1,5 +1,5 @@
 <script>
-  import Text from "./../lib/Text.svelte";
+  import Text from "$lib/Text.svelte";
 </script>
 
 <section class="intro-section">

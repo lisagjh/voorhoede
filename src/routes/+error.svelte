@@ -1,8 +1,7 @@
 <script>
     import {page} from '$app/stores'
     import Header from "../lib/Header.svelte";
-
-
+    
     console.log($page.status)
 </script>
 
@@ -38,7 +37,6 @@
     </p>
 
 </section>
-
 
 <style>
     section {

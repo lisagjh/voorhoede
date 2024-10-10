@@ -1,6 +1,7 @@
 <script>
     export let data;
 </script>
+
 {#each data.vacature as member}
     <ul>
         <li>{member.Title}  title</li>

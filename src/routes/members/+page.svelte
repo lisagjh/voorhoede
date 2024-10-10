@@ -28,7 +28,7 @@
         </Link>
 
         <Text>
-            <h1 slot="page-title">Leden</h1>
+            <h1 aria-label="Leden" slot="page-title">Leden</h1>
             <p slot="page-description">
                 De <span class="page-numbers">[nummer]</span> beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste
                 filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging.

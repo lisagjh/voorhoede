@@ -23,17 +23,18 @@
                 <li class="label-filters">label</li>
             </ul>
 
-            <h2>{member.title}</h2>
+            <h2 aria-label="{member.title}">{member.title}</h2>
             <p>{member.address}</p>
 
             <ul class="card-label">
-                <li>{parseInt(member.colleagues)}  werknemers</li>
+                <li>{parseInt(member.colleagues)}  </li>
+                <li>werknemers</li>
                 <li class="card-hiring">hiring</li>
 
             </ul>
 
             <Link href="/" clazz="detail-link"><span slot="link-text">Details</span>
-                <svg width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none">
+                <svg width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none" aria-label="pijltje ga naar details">
                     <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round"
                           stroke-linejoin="round"/>
                 </svg>

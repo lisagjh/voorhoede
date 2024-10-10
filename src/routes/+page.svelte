@@ -4,7 +4,7 @@
 
 <section class="intro-section">
   <Text>
-    <h1 slot="page-title">
+    <h1 slot="page-title" aria-label="De beste digitale bureaus van nederland">
       De beste digitale bureaus van nederland
     </h1>
     <p slot="page-description">

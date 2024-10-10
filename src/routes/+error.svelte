@@ -15,6 +15,7 @@
              viewBox="0 0 16 16"
              fill="none"
              xmlns="http://www.w3.org/2000/svg"
+             aria-label="ga naar terug naar home"
         >
             <path
                     d="M8 3L13.0001 8.0001L8 13.0002"
@@ -32,7 +33,7 @@
         </svg>
         terug naar home
     </a>
-    <h1>Er gaat iets mis zie onderstaande error?</h1>
+    <h1 aria-label="Er gaat iets mis zie onderstaande error"> Er gaat iets mis zie onderstaande error?</h1>
     <p>{$page.status} - {$page.error.message}
         <!--    page status is de statuscode -->
     </p>

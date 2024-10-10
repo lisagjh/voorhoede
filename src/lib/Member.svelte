@@ -6,7 +6,7 @@
 </script>
 
 
-<article class="grid-container">
+<section class="grid-container">
     <h2 class="hide-members">Leden</h2>
     {#each data.members as member}
 
@@ -44,7 +44,7 @@
     {/each}
 
 
-</article>
+</section>
 
 <style>
     .grid-container {

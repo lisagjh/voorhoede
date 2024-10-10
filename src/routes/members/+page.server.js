@@ -2,18 +2,16 @@ import fetchJson from "$lib/fetch-json.js";
 
 
 export async function load() {
-    const ddaAgencies = 'https://fdnd-agency.directus.app/items/dda_agencies/'
-    const members = await fetchJson(ddaAgencies)
+
+    const baseUrl = 'https://fdnd-agency.directus.app/items'
+    const members = await fetchJson(`${baseUrl}/dda_agencies/`)
+    const vacancies = await fetchJson(`${baseUrl}/dda_agencies_vacancies/`)
 
 
-
-    const first6Items = members.data.slice(0, 6);
-
+    // todo array.slice gebruiken om de eerste 6 items te laten zien en vervolgens
     return {
-        // first6Items: first6Items.data,
-        // members: members.data
+
 
         members: members.data,
-        fosr: first6Items.data
     }
 }

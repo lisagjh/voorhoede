@@ -29,6 +29,9 @@
 </script>
 
 <header>
+  <a href="/"
+  ><img src="/dda-logo.svg" alt="DDA logo" width="60" height="45" /></a
+  >
 
   <button on:click={toggleMenu} aria-label="navigation menu">
     <svg
@@ -149,7 +152,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem;
     width: 100%;
     position: sticky;
     top: 0;
@@ -180,7 +183,7 @@
     top: 4.5rem;
     width: 100%;
     max-width: 19.5rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
     z-index: 2;
     visibility: hidden;
     opacity: 0;

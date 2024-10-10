@@ -7,9 +7,11 @@
 
 
 <article class="grid-container">
+    <h2 class="hide-members">Leden</h2>
     {#each data.members as member}
 
         <article class="card">
+            <h2 class="hide-members">cards</h2>
             <picture>
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
@@ -61,6 +63,9 @@
         grid-template-rows: 16rem auto auto 4rem auto;
         gap: 16px;
     }
+    .hide-members{
+        display: none;
+         }
 
     .card-label-filters {
         display: flex;

@@ -13,7 +13,7 @@
             <picture>
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
-                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="">
+                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="foto van het bedrijf{member.title}">
             </picture>
 
             <ul class="card-label-filters">

@@ -5,7 +5,7 @@
     console.log($page.status)
 </script>
 
-<Header />
+
 
 <section>
     <a href="/#">

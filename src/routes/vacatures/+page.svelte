@@ -15,7 +15,7 @@
         </Link>
 
         <Text>
-            <h1 aria-label="Vavatures" slot="page-title" >Vacatures</h1>
+            <h1 aria-label="vacatures" slot="page-title" >Vacatures</h1>
             <p slot="page-description">
                 Verslim je carrière bij de beste digitale bureaus van Nederland. Pak je rol als developer of designer, researcher, als scrum master of marketeer, als strateeg. Start of groei door – en laat zien wat je kan.
             </p>

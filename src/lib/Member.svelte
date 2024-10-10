@@ -34,7 +34,7 @@
             </ul>
 
             <Link href="/" clazz="detail-link"><span slot="link-text">Details</span>
-                <svg width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none" aria-label="pijltje ga naar details">
+                <svg width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none" aria-label="ga naar details">
                     <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round"
                           stroke-linejoin="round"/>
                 </svg>

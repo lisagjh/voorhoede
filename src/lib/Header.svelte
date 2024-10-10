@@ -87,7 +87,7 @@
       <li class="login">
         <a href="/#">
           Login
-          <svg
+          <svg  aria-label="ga naar login"
                   width="16"
                   height="16"
                   viewBox="0 0 16 16"
@@ -113,7 +113,7 @@
 
       <li class="join">
         <a href="/#" class="join">Word lid</a>
-        <svg
+        <svg aria-label="ga naar word lid"
                 width="16"
                 height="16"
                 viewBox="0 0 16 16"

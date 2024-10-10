@@ -32,8 +32,8 @@
 
             </ul>
 
-            <Link href="/" clazz="detail-link"><span slot="link-text">Details</span>
-                <svg width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none">
+            <Link href="/"  clazz="detail-link"><span slot="link-text" class="details-hover" >Details</span>
+                <svg class="details-hover" width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none">
                     <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round"
                           stroke-linejoin="round"/>
                 </svg>
@@ -102,6 +102,9 @@
         color: var(--white);
         padding: 2px;
         height: 1.6rem;
+    }
+    .details-hover:hover{
+        color: var(--black);
     }
 
     img {

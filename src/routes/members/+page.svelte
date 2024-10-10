@@ -21,9 +21,8 @@
 
 </script>
 
-<Header/>
 
-<main>
+
 
     <section class="intro-section">
         <Link href="/" clazz="back-to-home">
@@ -81,8 +80,6 @@
         </Link>
     </div>
 
-</main>
-<Footer/>
 
 <style>
 

@@ -24,7 +24,7 @@
                 <li class="label-filters">label</li>
             </ul>
 
-            <h2>{member.title}</h2>
+            <h3>{member.title}</h3>
             <p>{member.address}</p>
 
             <ul class="card-label">

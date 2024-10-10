@@ -1,11 +1,10 @@
 <script>
-
     import Link from "$lib/Link.svelte";
     import Member from "$lib/Member.svelte";
     import Text from "$lib/Text.svelte";
     import Searchbar from "$lib/Searchbar.svelte";
-    export let data;
 
+    export let data;
 
     // Input van de gebruiker
     let searchTerm = "";
@@ -20,63 +19,61 @@
 </script>
 
 
+<section class="intro-section">
+    <Link clazz="back-to-home" href="/">
+        <svg fill="none"
+             height="16" slot="svg-icon-left" viewBox="0 0 24 24" width="16">
+            <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2"/>
+        </svg>
+        <span slot="link-text">TERUG NAAR HOME</span>
+    </Link>
 
-
-    <section class="intro-section">
-        <Link href="/" clazz="back-to-home">
-            <svg slot="svg-icon-left"
-                 width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-            </svg>
-            <span slot="link-text">TERUG NAAR HOME</span>
-        </Link>
-
-        <Text>
-            <h1 slot="page-title">Leden</h1>
-            <p slot="page-description">
-                De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste
-                filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging.
-            </p>
-        </Text>
-        <p>
-            Ook DDA lid worden? Ga dan naar <span class="specific-text-decoration">deze pagina</span> voor meer
-            informatie
+    <Text>
+        <h1 slot="page-title">Leden</h1>
+        <p slot="page-description">
+            De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste
+            filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging.
         </p>
+    </Text>
+    <p>
+        Ook DDA lid worden? Ga dan naar <span class="specific-text-decoration">deze pagina</span> voor meer
+        informatie
+    </p>
 
-    </section>
+</section>
 
-    <section class="filter-section">
-        <!--To build : een delay functie, instant feedback is misschien niet user friendlyg-->
-        <Searchbar
-                placeholderText="Zoek een bureau"
-                bind:searchTerm={searchTerm}
-        />
+<section class="filter-section">
+    <!--To build : een delay functie, instant feedback is misschien niet user friendlyg-->
+    <Searchbar
+            bind:searchTerm={searchTerm}
+            placeholderText="Zoek een bureau"
+    />
 
-    </section>
+</section>
 
-    <!--Het door pasen van de filteredMembers array naar members zodat die alleen de gefilterde items laat zien-->
-    <Member data={{ members: filteredMembers }}/>
+<!--Het door pasen van de filteredMembers array naar members zodat die alleen de gefilterde items laat zien-->
+<Member data={{ members: filteredMembers }}/>
 
-    <div class="working-vacatures">
-        <p class="textvacature">Kom werken bij de beste digitale bureaus van Nederland</p>
-        <Link href="/" clazz="detail-link" class="more-events"><span slot="link-text" class="number-vacatures">bekijk vacatures (54)</span>
-            <svg width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none">
-                <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-            </svg>
-        </Link>
+<div class="working-vacatures">
+    <p class="textvacature">Kom werken bij de beste digitale bureaus van Nederland</p>
+    <Link class="more-events" clazz="detail-link" href="/"><span class="number-vacatures" slot="link-text">bekijk vacatures (54)</span>
+        <svg fill="none" height="16" slot="svg-icon-right" viewBox="0 0 24 24" width="16">
+            <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2"/>
+        </svg>
+    </Link>
 
-    </div>
+</div>
 
-    <div class="link-more-events">
-        <Link href="/" clazz="detail-link" class=""><span slot="link-text">Meer events laden</span>
-            <svg width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none">
-                <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-            </svg>
-        </Link>
-    </div>
+<div class="link-more-events">
+    <Link class="" clazz="detail-link" href="/"><span slot="link-text">Meer events laden</span>
+        <svg fill="none" height="16" slot="svg-icon-right" viewBox="0 0 24 24" width="16">
+            <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2"/>
+        </svg>
+    </Link>
+</div>
 
 
 <style>
@@ -175,7 +172,6 @@
             margin: 12.5% 32% 10% 32%;
         }
     }
-
 
 
 </style>

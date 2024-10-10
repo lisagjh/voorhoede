@@ -11,7 +11,6 @@
     {#each data.members as member}
 
         <article class="card">
-            <h2 class="hide-members">cards</h2>
             <picture>
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
@@ -34,7 +33,7 @@
 
             </ul>
 
-            <Link href="/"  clazz="detail-link"><span slot="link-text" class="details-hover" >Details</span>
+            <Link href="/" clazz="detail-link"><span slot="link-text" class="details-hover">Details</span>
                 <svg class="details-hover" width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none">
                     <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round"
                           stroke-linejoin="round"/>
@@ -63,9 +62,10 @@
         grid-template-rows: 16rem auto auto 4rem auto;
         gap: 16px;
     }
-    .hide-members{
+
+    .hide-members {
         display: none;
-         }
+    }
 
     .card-label-filters {
         display: flex;
@@ -108,7 +108,8 @@
         padding: 2px;
         height: 1.6rem;
     }
-    .details-hover:hover{
+
+    .details-hover:hover {
         color: var(--black);
     }
 

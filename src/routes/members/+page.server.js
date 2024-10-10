@@ -4,7 +4,7 @@ import fetchJson from "$lib/fetch-json.js";
 export async function load() {
 
     const baseUrl = 'https://fdnd-agency.directus.app/items'
-    const members = await fetchJson(`${baseUrl}/dda_agencies/`)
+    const agencies = await fetchJson(`${baseUrl}/dda_agencies/`)
     const vacancies = await fetchJson(`${baseUrl}/dda_agencies_vacancies/`)
 
 
@@ -12,6 +12,6 @@ export async function load() {
     return {
 
 
-        members: members.data,
+        members: agencies.data,
     }
 }

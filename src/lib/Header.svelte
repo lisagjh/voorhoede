@@ -1,30 +1,16 @@
 <script>
+  // without an onMount it gives the error 'document is not defined'
+  // bron: https://www.okupter.com/blog/sveltekit-document-is-not-defined
   import { onMount } from "svelte";
 
-  // variabelen voor reactivity
-  let isMenuOpen = false;
-  let isLargeScreen = false;
-
-  // toggles isMenuOpen wanneer het scherm klein is
-  function toggleMenu() {
-    if (!isLargeScreen) {
-      isMenuOpen = !isMenuOpen;
-    }
-  }
-  // Deze functie update de isLargeScreen variabele. Checkt met een media query de window size en returned boolean matches
-  //dus: checkt of de viewport width minstens 54rem is. zoja, matches = true dus isLargeScreen = true, anders false.
-  function updateMenuState() {
-    isLargeScreen = window.matchMedia("(min-width: 58rem)").matches;
-  }
-
-  // onMount is svelte lifecycle function die start wanneer een component gecreërd word, en stopt wanneer het destroyed word.
   onMount(() => {
-    // Deze functie word meteen aangeroepen zodat de juiste grootte van de nav ingesteld kan worden
-    updateMenuState();
-    // Dit zorgt dat wanneer de viewport width verandert, dat er weer gecheckt word of het groter of kleiner dan 54rem is, en word de
-    window.addEventListener("resize", updateMenuState);
-    // verwijdert de eventListener wanneer component destroyed word
-    return () => window.removeEventListener("resize", updateMenuState);
+    const nav = document.querySelector("nav");
+    const button = document.querySelector("button");
+
+    button.addEventListener("click", () => {
+      console.log("click!");
+      nav.classList.toggle("show");
+    });
   });
 </script>
 
@@ -33,38 +19,35 @@
     ><img src="/dda-logo.svg" alt="DDA logo" width="60" height="45" /></a
   >
 
-  <button on:click={toggleMenu} aria-label="navigation menu">
+  <button aria-label="navigation menu">
     <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <mask
-              id="mask0_1_121"
-              style="mask-type:alpha"
-              maskUnits="userSpaceOnUse"
-              x="0"
-              y="0"
-              width="32"
-              height="32"
+        id="mask0_1_121"
+        style="mask-type:alpha"
+        maskUnits="userSpaceOnUse"
+        x="0"
+        y="0"
+        width="32"
+        height="32"
       >
         <rect width="32" height="32" fill="#D9D9D9" />
       </mask>
       <g mask="url(#mask0_1_121)">
         <path
-                d="M4 24V21.3333H28V24H4ZM4 17.3333V14.6667H28V17.3333H4ZM4 10.6667V8H28V10.6667H4Z"
-                fill="#222226"
+          d="M4 24V21.3333H28V24H4ZM4 17.3333V14.6667H28V17.3333H4ZM4 10.6667V8H28V10.6667H4Z"
+          fill="#222226"
         />
       </g>
     </svg>
   </button>
 
-  <nav
-          class:show={isLargeScreen || isMenuOpen}
-          aria-hidden={!isLargeScreen && !isMenuOpen}
-  >
+  <nav>
     <ul>
       <li>
         <a href="/over">Over ons</a>
@@ -88,24 +71,24 @@
         <a href="/#">
           Login
           <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-                    d="M8 3L13.0001 8.0001L8 13.0002"
-                    stroke="#364BF7"
-                    stroke-width="1.5"
-                    stroke-miterlimit="4.62023"
+              d="M8 3L13.0001 8.0001L8 13.0002"
+              stroke="#364BF7"
+              stroke-width="1.5"
+              stroke-miterlimit="4.62023"
             />
             <path
-                    d="M3 8L13 8"
-                    stroke="#364BF7"
-                    stroke-width="1.5"
-                    stroke-miterlimit="4.62023"
-                    stroke-linejoin="round"
+              d="M3 8L13 8"
+              stroke="#364BF7"
+              stroke-width="1.5"
+              stroke-miterlimit="4.62023"
+              stroke-linejoin="round"
             />
           </svg>
         </a>
@@ -114,24 +97,24 @@
       <li class="join">
         <a href="/#" class="join">Word lid</a>
         <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
-                  d="M8 3L13.0001 8.0001L8 13.0002"
-                  stroke="#222226"
-                  stroke-width="1.5"
-                  stroke-miterlimit="4.62023"
+            d="M8 3L13.0001 8.0001L8 13.0002"
+            stroke="#222226"
+            stroke-width="1.5"
+            stroke-miterlimit="4.62023"
           />
           <path
-                  d="M3 8L13 8"
-                  stroke="#222226"
-                  stroke-width="1.5"
-                  stroke-miterlimit="4.62023"
-                  stroke-linejoin="round"
+            d="M3 8L13 8"
+            stroke="#222226"
+            stroke-width="1.5"
+            stroke-miterlimit="4.62023"
+            stroke-linejoin="round"
           />
         </svg>
       </li>
@@ -148,7 +131,6 @@
   header {
     backdrop-filter: blur(5px);
     background: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -183,8 +165,9 @@
     top: 4.5rem;
     width: 100%;
     max-width: 19.5rem;
-    padding: 0.5rem 0;
-    z-index: 2;
+    padding: 0.5rem;
+    padding-left: 0.5rem;
+    z-index: 20;
     visibility: hidden;
     opacity: 0;
     scale: 0.5;

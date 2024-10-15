@@ -25,18 +25,18 @@
 
 <style> 
     article {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.75em;
-            padding-bottom: 10%;
-            margin-bottom: 10%;
-            border-bottom: 1px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.75em;
+        padding-bottom: 10%;
+        margin-bottom: 10%;
+        border-bottom: 1px solid black;
     }
     .job-title {
-            width: 100%;
+        width: 100%;
     }
     .company, .language, .workweek, .city {
-            width: 40%;
+        width: 37.5%;
     }
 
     @media (min-width: 540px){

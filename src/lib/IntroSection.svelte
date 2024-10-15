@@ -32,8 +32,6 @@
   <p><slot name="subtitle">{subtitle}</slot></p>
 </section>
 
-<!--More text elements if needed-->
-
 <style>
   .intro-section {
     display: flex;
@@ -42,6 +40,18 @@
     justify-content: center;
     text-align: center;
     gap: 0.75em;
-    margin: 10% 15% 10% 15%;
+    margin: 7.5% 0 10% 0;
+  }
+
+  @media (min-width: 842px ){
+      .intro-section {
+        margin: 7.5% 20% 15% 20%;
+      }
+  }
+
+  @media (min-width: 1332px ){
+      .intro-section {
+        margin: 7.5% 25% 15% 25%;
+      }
   }
 </style>

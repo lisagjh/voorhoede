@@ -28,7 +28,7 @@
 article {
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto;
     gap: 1.75em 0;
     align-items: center;
     margin-bottom: 15%;
@@ -47,7 +47,6 @@ article:last-child {
         padding-bottom: 7.5%;
         
     }
-
 }
 
 @media (min-width: 820px){

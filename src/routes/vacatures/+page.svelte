@@ -3,35 +3,35 @@
   import Vacancy from "$lib/Vacancy.svelte";
   let vacancies = [
     {
-      title: "Design Lead",
-      language: "Dutch",
-      company: "Company",
-      hours: "hours",
-      city: "city",
+      title: "Digital Product Designer",
+      language: "ENG & NL",
+      company: "Valsplat",
+      hours: "32-40",
+      city: "NIEWUWERSLUIS",
+      href: "href",
+    },
+    {
+      title: "Traffic Manager",
+      language: "ENG & NL",
+      company: "Triple",
+      hours: "32-40",
+      city: "ALKMAAR",
+      href: "href",
+    },
+    {
+      title: "Astro Frontend Specialist",
+      language: "NL",
+      company: "Valsplat",
+      hours: "32-40",
+      city: "NIEUWERSLUIS",
       href: "href",
     },
     {
       title: "Design Lead",
-      language: "Dutch",
-      company: "Company",
-      hours: "hours",
-      city: "city",
-      href: "href",
-    },
-    {
-      title: "Design Lead",
-      language: "Dutch",
-      company: "Company",
-      hours: "hours",
-      city: "city",
-      href: "href",
-    },
-    {
-      title: "Design Lead",
-      language: "Dutch",
-      company: "Company",
-      hours: "hours",
-      city: "city",
+      language: "ENG & NL",
+      company: "Fabrique",
+      hours: "32-40",
+      city: "AMSTERDAM",
       href: "href",
     },
   ];
@@ -40,7 +40,7 @@
 
 <IntroSection
 title="Vacatures"
-subtitle="subtitle"
+subtitle="Verslim je carrière bij de beste digitale bureaus van Nederland. Pak je rol als developer of designer, researcher, als scrum master of marketeer, als strateeg. Start of groei door – en laat zien wat je kan."
 />
 
 <section class="vacancies-section">
@@ -57,10 +57,16 @@ subtitle="subtitle"
 </section>
 
 <style>
-  /* #region Vacatures */
   .vacancies-section {
     display: flex;
     flex-direction: column;
-    margin: 0 7.5% 0 7.5%;
   }
+
+  @media (min-width: 686px){
+    .vacancies-section {
+      margin: 0 2.5% 0% 2.5%;
+    }
+  }
+
+
 </style>

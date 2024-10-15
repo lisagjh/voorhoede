@@ -40,18 +40,18 @@
     justify-content: center;
     text-align: center;
     gap: 0.75em;
-    margin: 7.5% 0 10% 0;
+    margin: 7.5% 0 15% 0;
   }
 
   @media (min-width: 842px ){
       .intro-section {
-        margin: 7.5% 20% 15% 20%;
+        margin: 7.5% 20% 5% 20%;
       }
   }
 
   @media (min-width: 1332px ){
       .intro-section {
-        margin: 7.5% 25% 15% 25%;
+        margin: 7.5% 25% 5% 25%;
       }
   }
 </style>

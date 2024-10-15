@@ -42,6 +42,6 @@
     justify-content: center;
     text-align: center;
     gap: 0.75em;
-    margin: 15% 15% 10% 15%;
+    margin: 10% 15% 10% 15%;
   }
 </style>

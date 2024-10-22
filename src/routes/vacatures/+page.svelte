@@ -4,32 +4,32 @@
   let vacancies = [
     {
       title: "Digital Product Designer",
-      language: "ENG & NL",
       company: "Valsplat",
+      language: "ENG & NL",
       hours: "32-40",
       city: "NIEWUWERSLUIS",
       href: "href",
     },
     {
       title: "Traffic Manager",
-      language: "ENG & NL",
       company: "Triple",
+      language: "ENG & NL",
       hours: "32-40",
       city: "ALKMAAR",
       href: "href",
     },
     {
       title: "Astro Frontend Specialist",
-      language: "NL",
       company: "Valsplat",
+      language: "NL",
       hours: "32-40",
       city: "NIEUWERSLUIS",
       href: "href",
     },
     {
       title: "Design Lead",
-      language: "ENG & NL",
       company: "Fabrique",
+      language: "ENG & NL",
       hours: "32-40",
       city: "AMSTERDAM",
       href: "href",
@@ -47,8 +47,8 @@ subtitle="Verslim je carrière bij de beste digitale bureaus van Nederland. Pak 
   {#each vacancies as vacancy}
     <Vacancy
       title={vacancy.title}
-      language={vacancy.language}
       company={vacancy.company}
+      language={vacancy.language}
       hours={vacancy.hours}
       city={vacancy.city}
       href={vacancy.href}
@@ -67,6 +67,5 @@ subtitle="Verslim je carrière bij de beste digitale bureaus van Nederland. Pak 
       margin: 0 2.5% 0% 2.5%;
     }
   }
-
 
 </style>

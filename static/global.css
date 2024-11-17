@@ -1,11 +1,11 @@
 @font-face {
   font-family: Archivo;
-  src: url(/font/Archivo-VariableFont_wdth\,wght.ttf);
+  src: url(/font/Archivo-VariableFont_wdth\,wght.woff2);
 }
 
 @font-face {
   font-family: Archivo Italic;
-  src: url(/font/Archivo-Italic-VariableFont_wdth\,wght.ttf);
+  src: url(/static/font/Archivo-Italic-VariableFont_wdth\,wght.woff2);
 }
 
 @font-face {

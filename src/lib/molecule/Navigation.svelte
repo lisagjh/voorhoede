@@ -1,23 +1,40 @@
 <script>
+  import { onMount } from "svelte";
   import NavItem from "$lib/atom/NavItem.svelte";
   import MenuToggleBtn from "$lib/atom/MenuToggleBtn.svelte";
 
-  let isOpen = false; // standard state
+  let isOpen = false; // Initial state of the menu
 
   function toggle() {
-    console.log("Clicked");
-    isOpen = !isOpen;
+    isOpen = !isOpen; // Toggle the menu state
   }
+
+  onMount(() => {
+    function handleBackdropClick(event) {
+      if (isOpen) {
+        isOpen = false; // Close the menu when clicking the backdrop
+      }
+    }
+
+    // Add the event listener to the backdrop
+    const backdrop = document.getElementById("backdrop");
+    backdrop.addEventListener("click", handleBackdropClick);
+
+    // Cleanup listener when the component is destroyed
+    return () => {
+      backdrop.removeEventListener("click", handleBackdropClick);
+    };
+  });
 </script>
 
 <MenuToggleBtn {isOpen} {toggle} />
 <nav class:is-open={isOpen}>
   <ul>
-    <NavItem />
+    <NavItem {toggle} />
   </ul>
 </nav>
 
-<div class:is-open={isOpen}></div>
+<div id="backdrop" class:is-open={isOpen}></div>
 
 <style>
   nav {
@@ -47,9 +64,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateX(5%);
-    clip-path: circle(50% at 50% 50%);
-    transition: all 0.2s ease-in-out;
+    opacity: 0.1;
+    transform: translateX(-10%);
+    clip-path: circle(29.3% at 86% 89%);
+    transition: all 0.25s ease-in-out;
   }
 
   div.is-open {

@@ -5,9 +5,9 @@
 
 <button on:click={toggle}>
   {#if isOpen}
-    <span>Close</span>
+    <span class="close">Close</span>
   {:else}
-    <span>Menu</span>
+    <span class="menu">Menu</span>
   {/if}
 </button>
 
@@ -30,22 +30,23 @@
     transition: 0.25s ease-in-out;
   }
 
-  span:first-of-type {
+  span.close {
     animation: close 0.35s ease-in-out 0s;
   }
 
   @keyframes close {
     from {
       opacity: 0;
-      transform: translateY(100px);
+      transform: translateX(-100px);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0);
     }
   }
-  span:last-of-type {
+  span.menu {
     animation: menu 0.35s ease-in-out 0s;
+    animation-fill-mode: both;
   }
 
 
@@ -53,12 +54,12 @@
     from {
       scale: 0.5;
       opacity: 0;
-      transform: translateY(-100px);
+      transform: translateX(100px);
     }
     to {
       scale: 1;
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0);
     }
   }
 </style>

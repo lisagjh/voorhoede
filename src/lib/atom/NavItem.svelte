@@ -51,12 +51,17 @@
     { title: "Publicaties", ref: "/publicaties" },
     { title: "Leden", ref: "/members" },
     { title: "Vacatures", ref: "/vacatures" },
+    { title: "Inloggen", ref: "/inloggen" },
+    { title: "Join", ref: "/join" }
   ];
+
+
+  export let toggle;
 </script>
 
 {#each pages as page}
   <li>
-    <a href={page.ref}>
+    <a href={page.ref} on:click={toggle}>
       {page.title}
       {#if page.ref === "/vacatures"}
         <span id="badge">{displayedVacancies}</span>

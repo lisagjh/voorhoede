@@ -1,10 +1,9 @@
 <script>
-
-  import Navigation from "$lib/molecule/Navigation.svelte";
+  import Header from "../lib/organism/Header.svelte";
   import Footer from "$lib/footer.svelte";
 </script>
 
-<Navigation /> 
+<Header />
 
 <main>
   <slot></slot>

@@ -35,7 +35,6 @@
       href: "href",
     },
   ];
-  // fetch data for vacancies
 </script>
 
 <IntroSection

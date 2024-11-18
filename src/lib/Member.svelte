@@ -141,44 +141,12 @@
 
     }
 
-
-
-
     @media (min-width: 325px) {
         .grid-container {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         }
 
-        .card {
-
-            /*border-right: 1px solid var(--grey);*/
-            /*border-left: 1px solid var(--grey);*/
-            /*border-top: 1px solid var(--grey);*/
-            /*border-bottom: 1px solid var(--grey);*/
-
-        }
-
     }
-
-    /* Clear the top border for the first four cards */
-    /*.card:nth-child(-n+4) {*/
-    /*    border-top: none;*/
-    /*    border-right: none;*/
-    /*}*/
-
-    /* Alternate the side borders for even and odd rows */
-    /*.card:nth-child(2n) {*/
-    /*    !*border-right: none;*!*/
-    /*}*/
-
-    /*.card:nth-child(2n+1) {*/
-    /*    border-left: none;*/
-    /*}*/
-
-    /*!* Handle the last row separately *!*/
-    /*.card:nth-last-child(-n+3) {*/
-    /*    border-bottom: none;*/
-    /*}*/
     @media (max-width: 720px) {
         .card {
 
@@ -194,51 +162,24 @@
     @media (min-width: 720px) {
         .card:nth-child(-n+4) {
             border-top: none;
-            /*border-right: none;*/
 
         }
 
-
         .card:nth-child(1n) {
-            border-right: 1px solid var(--grey);
+
             border-bottom: 1px solid var(--grey);
 
         }
+
+        .card:nth-child(2n-1) {
+            border-right: 1px solid var(--grey);
+        }
+
 
         .card:nth-child(2n+1) {
             border-left: none;
         }
 
-    }
-
-
-    @media (min-width: 1100px) {
-        .card:nth-child(-n+4) {
-            /*border-top: none;*/
-            /*border-right: none;*/
-        }
-
-
-        .card:nth-child(2n) {
-            /*border-right: none;*/
-            border-right: 1px solid var(--grey);
-        }
-
-
-
-        .card:nth-child(3n) {
-            border-right: none;
-        }
-
-
-
-    }
-
-    @media (min-width: 1470px) {
-        .card:nth-child(3n) {
-            /*border-right: none;*/
-            border-right: 1px solid var(--grey);
-        }
     }
 
     @media (min-width: 825px) {
@@ -247,6 +188,35 @@
         }
 
     }
+
+    @media (min-width: 1000px) {
+        .card:nth-child(2n) {
+            border-right: 1px solid var(--grey);
+        }
+
+
+
+
+    }
+
+    @media (min-width: 1440px) {
+
+        .card:nth-child(3n) {
+            border-right: 1px solid var(--grey);
+            /*background-color: red;*/
+        }
+
+
+    }
+
+    @media (min-width: 1825px) {
+        .card:nth-child(4n) {
+            border-right: 1px solid var(--grey);
+            /*background-color: red;*/
+        }
+    }
+
+
 
 
 </style>

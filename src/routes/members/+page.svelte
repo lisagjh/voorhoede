@@ -95,7 +95,8 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
   .filter-section {
     padding: 1em;
     border: 1px solid black;
-    border-bottom: none;
+    margin: -1rem;
+    /*border-bottom: none;*/
   }
 
   .textvacature {

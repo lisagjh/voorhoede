@@ -45,9 +45,11 @@
 
 <style>
     .grid-container {
+
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
         text-transform: uppercase;
+        margin: 1rem -1rem 0rem;
     }
 
     .card {
@@ -61,6 +63,9 @@
         grid-template-rows: 16rem auto auto 4rem auto;
         gap: 16px;
     }
+
+
+
 
     .card-label-filters {
         display: flex;
@@ -136,13 +141,105 @@
 
     }
 
-    @media (min-width: 425px) {
+
+
+
+    @media (min-width: 325px) {
         .grid-container {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         }
 
+        .card {
+
+            /*border-right: 1px solid var(--grey);*/
+            /*border-left: 1px solid var(--grey);*/
+            /*border-top: 1px solid var(--grey);*/
+            /*border-bottom: 1px solid var(--grey);*/
+
+        }
+
     }
 
+    /* Clear the top border for the first four cards */
+    /*.card:nth-child(-n+4) {*/
+    /*    border-top: none;*/
+    /*    border-right: none;*/
+    /*}*/
+
+    /* Alternate the side borders for even and odd rows */
+    /*.card:nth-child(2n) {*/
+    /*    !*border-right: none;*!*/
+    /*}*/
+
+    /*.card:nth-child(2n+1) {*/
+    /*    border-left: none;*/
+    /*}*/
+
+    /*!* Handle the last row separately *!*/
+    /*.card:nth-last-child(-n+3) {*/
+    /*    border-bottom: none;*/
+    /*}*/
+    @media (max-width: 720px) {
+        .card {
+
+            border-right: 1px solid var(--grey);
+            border-left: 1px solid var(--grey);
+            border-top: 1px solid var(--grey);
+            border-bottom: 1px solid var(--grey);
+
+        }
+
+    }
+    /*voor 725px is het opgelost */
+    @media (min-width: 720px) {
+        .card:nth-child(-n+4) {
+            border-top: none;
+            /*border-right: none;*/
+
+        }
+
+
+        .card:nth-child(1n) {
+            border-right: 1px solid var(--grey);
+            border-bottom: 1px solid var(--grey);
+
+        }
+
+        .card:nth-child(2n+1) {
+            border-left: none;
+        }
+
+    }
+
+
+    @media (min-width: 1100px) {
+        .card:nth-child(-n+4) {
+            /*border-top: none;*/
+            /*border-right: none;*/
+        }
+
+
+        .card:nth-child(2n) {
+            /*border-right: none;*/
+            border-right: 1px solid var(--grey);
+        }
+
+
+
+        .card:nth-child(3n) {
+            border-right: none;
+        }
+
+
+
+    }
+
+    @media (min-width: 1470px) {
+        .card:nth-child(3n) {
+            /*border-right: none;*/
+            border-right: 1px solid var(--grey);
+        }
+    }
 
     @media (min-width: 825px) {
         .card {

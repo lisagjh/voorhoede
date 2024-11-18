@@ -43,9 +43,10 @@
     right: 0;
     top: 0;
     height: 100vh;
-    width: 50%;
+    /* clamp(min, val, max) - clamp means it will use the preferred value (val) when its between the min or max value. */
+    width: clamp(190px, 50%, 300px);
     z-index: 1;
-    backdrop-filter: drop-shadow(4px 4px 10px black);
+    border-left: 1px solid var(--black);
 
     transition:
       transform 0.3s ease-out,

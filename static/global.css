@@ -83,6 +83,10 @@ p {
   letter-spacing: -0.25px;
 }
 
+a:focus {
+  border: 3px dashed var(--blue);
+}
+
 @media (max-width: 35em) {
   h1 {
     font-size: 3rem;

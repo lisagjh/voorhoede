@@ -1,8 +1,6 @@
 <script>
     import Link from "$lib/Link.svelte";
-
     export let data;
-
 </script>
 
 
@@ -55,7 +53,9 @@
     .card {
         width: 100%;
         overflow: hidden;
-        border: var(--grey) 1px solid;
+        /*todo this border change to the design*/
+        /*border: var(--grey) 1px solid;*/
+
         padding: 2rem;
         display: grid;
         grid-template-rows: 16rem auto auto 4rem auto;

@@ -1,12 +1,11 @@
 <script>
   export let data;
 
-  let count = $state(0);
-
   import Link from "$lib/Link.svelte";
   import Member from "$lib/Member.svelte";
   import Searchbar from "$lib/Searchbar.svelte";
   import IntroSection from "$lib/IntroSection.svelte";
+
 
   // Input van de gebruiker
   let searchTerm = "";
@@ -86,9 +85,7 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
   </Link>
 </div>
 
-<button onclick={() => count++}>
-  clicks: {count}
-</button>
+
 
 <style>
   .page-numbers {

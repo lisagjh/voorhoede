@@ -1,6 +1,19 @@
 <script>
+  import { onNavigate } from "$app/navigation";
+
   import Header from "../lib/organism/Header.svelte";
   import Footer from "$lib/footer.svelte";
+
+  onNavigate((navigation) => {
+    if (!document.startViewTransition) return;
+
+    return new Promise((resolve) => {
+      document.startViewTransition(async () => {
+        resolve();
+        await navigation.complete;
+      });
+    });
+  });
 </script>
 
 <Header />
@@ -10,3 +23,10 @@
 </main>
 
 <Footer />
+
+<style>
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 4s;
+  }
+</style>

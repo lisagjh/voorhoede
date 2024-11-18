@@ -147,19 +147,27 @@
         }
 
     }
-    @media (max-width: 720px) {
+    @media (max-width: 734px) {
         .card {
 
             border-right: 1px solid var(--grey);
             border-left: 1px solid var(--grey);
-            border-top: 1px solid var(--grey);
+            border-bottom: 1px solid var(--grey);
+
+        }
+
+    } @media (max-width: 734px) {
+        .card {
+
+            /*border-right: 1px solid var(--grey);*/
+            /*border-left: 1px solid var(--grey);*/
             border-bottom: 1px solid var(--grey);
 
         }
 
     }
     /*voor 725px is het opgelost */
-    @media (min-width: 720px) {
+    @media (min-width: 734px) {
         .card:nth-child(-n+4) {
             border-top: none;
 

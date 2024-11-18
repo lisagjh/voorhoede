@@ -48,5 +48,7 @@ input[type="search"]::-webkit-search-cancel-button {
         min-width: 13em; /* for small phone screens */
     }
 }
+
+
  
 </style>

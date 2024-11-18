@@ -1,41 +1,10 @@
 <script>
+
+  export let data;
+
   import IntroSection from "$lib/IntroSection.svelte";
   import Vacancy from "$lib/Vacancy.svelte";
-  let vacancies = [
-    {
-      title: "Digital Product Designer",
-      company: "Valsplat",
-      language: "ENG & NL",
-      hours: "32-40",
-      city: "NIEWUWERSLUIS",
-      href: "href",
-    },
-    {
-      title: "Traffic Manager",
-      company: "Triple",
-      language: "ENG & NL",
-      hours: "32-40",
-      city: "ALKMAAR",
-      href: "href",
-    },
-    {
-      title: "Astro Frontend Specialist",
-      company: "Valsplat",
-      language: "NL",
-      hours: "32-40",
-      city: "NIEUWERSLUIS",
-      href: "href",
-    },
-    {
-      title: "Design Lead",
-      company: "Fabrique",
-      language: "ENG & NL",
-      hours: "32-40",
-      city: "AMSTERDAM",
-      href: "href",
-    },
-  ];
-  // fetch data for vacancies
+
 </script>
 
 <IntroSection
@@ -44,16 +13,16 @@ subtitle="Verslim je carrière bij de beste digitale bureaus van Nederland. Pak 
 />
 
 <section class="vacancies-section">
-  {#each vacancies as vacancy}
-    <Vacancy
-      title={vacancy.title}
-      company={vacancy.company}
-      language={vacancy.language}
-      hours={vacancy.hours}
-      city={vacancy.city}
-      href={vacancy.href}
-    />
-  {/each}
+  {#each data.vacatures as vacature}
+  <Vacancy
+    title={vacature.title}
+    language="/"
+    company="/"
+    hours={vacature.hours}
+    city={vacature.locatie}
+    href={vacature.href}
+  />
+{/each}
 </section>
 
 <style>

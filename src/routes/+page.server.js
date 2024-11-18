@@ -10,7 +10,5 @@ export async function load() {
   const vacatures = await fetchJson(ddaAgenciesVacancies);
   const openVacancies = vacatures.data;
 
-  console.log("server found vacancies:", openVacancies.length);
-
   return { members, vacatures, openVacancies };
 }

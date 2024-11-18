@@ -83,7 +83,7 @@ p {
   letter-spacing: -0.25px;
 }
 
-a:focus {
+a:focus-visible {
   border: 3px dashed var(--blue);
 }
 

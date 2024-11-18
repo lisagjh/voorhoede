@@ -19,11 +19,6 @@
     // Add the event listener to the backdrop
     const backdrop = document.getElementById("backdrop");
     backdrop.addEventListener("click", handleBackdropClick);
-
-    // Cleanup listener when the component is destroyed
-    return () => {
-      backdrop.removeEventListener("click", handleBackdropClick);
-    };
   });
 </script>
 

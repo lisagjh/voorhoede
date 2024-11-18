@@ -1,4 +1,4 @@
-*Wil je een issue inschieten? Wij zouden het fijn vinden als je dat doet in de [FDND Agency repo](https://github.com/fdnd-agency/voorhoede). Zo kunnen wij de issue meenemen is ons projectboard, en blijft alles op een plaats!
+*Wil je een issue inschieten? Wij zouden het fijn vinden als je dat doet in de [FDND Agency repo](https://github.com/fdnd-agency/voorhoede). Zo kunnen wij de issue meenemen is ons projectboard, en blijft alles op een plaats!*
 
 # DDA
 

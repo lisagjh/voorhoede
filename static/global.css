@@ -1,17 +1,19 @@
 /*@font-face {*/
 /*  font-family: Archivo;*/
 /*  font-display: swap;*/
-/*  src: url(/font/Archivo-VariableFont_wdth\,wght.woff2);*/
+/*  src: url(/font/Archivo-VariableFont_wdth\,wght.woff2) format('woff2');*/
 /*}*/
 
 /*@font-face {*/
 /*  font-family: Archivo Italic;*/
-/*  src: url(/font/Archivo-Italic-VariableFont_wdth\,wght.woff2);*/
+/*  font-display: swap;*/
+/*  src: url(/font/Archivo-Italic-VariableFont_wdth\,wght.woff2) format('woff2');*/
 /*}*/
 
 /*@font-face {*/
 /*  font-family: Martian Mono;*/
-/*  src: url(/font/MartianMono-VariableFont_wdth\,wght.woff2);*/
+/*  font-display: swap;*/
+/*  src: url(/font/MartianMono-VariableFont_wdth\,wght.woff2) format('woff2');*/
 /*}*/
 
 

@@ -1,3 +1,5 @@
+*Wil je een issue inschieten? Wij zouden het fijn vinden als je dat doet in de [FDND Agency repo](https://github.com/fdnd-agency/voorhoede). Zo kunnen wij de issue meenemen is ons projectboard, en blijft alles op een plaats!
+
 # DDA
 
 Voor de voorhoede gaan wij aan de slag om de DDA website deels te realiseren 

@@ -1,17 +1,37 @@
+/*@font-face {*/
+/*  font-family: Archivo;*/
+/*  font-display: swap;*/
+/*  src: url(/font/Archivo-VariableFont_wdth\,wght.woff2);*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: Archivo Italic;*/
+/*  src: url(/font/Archivo-Italic-VariableFont_wdth\,wght.woff2);*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: Martian Mono;*/
+/*  src: url(/font/MartianMono-VariableFont_wdth\,wght.woff2);*/
+/*}*/
+
+
+/*ander font*/
+
 @font-face {
-  font-family: Archivo;
-  src: url(/font/Archivo-VariableFont_wdth\,wght.woff2);
+  font-family: 'Archivo';
+  font-display: swap;
+  src: url('/font/font2/archivo-v19-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: Archivo Italic;
-  src: url(/font/Archivo-Italic-VariableFont_wdth\,wght.woff2);
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Martian Mono';
+  src: url('/font/font2/martian-mono-v3-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-@font-face {
-  font-family: Martian Mono;
-  src: url(/font/MartianMono-VariableFont_wdth\,wght.woff2);
-}
+/*bij geen font is de performance heel hoog*/
+
+
 
 * {
   box-sizing: border-box;

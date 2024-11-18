@@ -1,5 +1,5 @@
 <div class="div-styling">
-    <a href="/bedankt" class="button">SCHRIJF MIJ IN <svg aria-label="pijltje ga naar schrijf me in"
+    <a href="/bedankt" class="button">SCHRIJF MIJ IN <svg
         width="16"
         height="16"
         viewBox="0 0 16 16"

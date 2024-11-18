@@ -1,6 +1,8 @@
 <script>
   export let data;
 
+  let count = $state(0);
+
   import Link from "$lib/Link.svelte";
   import Member from "$lib/Member.svelte";
   import Searchbar from "$lib/Searchbar.svelte";
@@ -83,6 +85,10 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
     </svg>
   </Link>
 </div>
+
+<button onclick={() => count++}>
+  clicks: {count}
+</button>
 
 <style>
   .page-numbers {

@@ -28,37 +28,6 @@
 
 <style>
 
-div {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: auto auto auto;
-    gap: 1.75em 0;
-    align-items: center;
-    margin-bottom: 15%;
-    padding-bottom: 15%;
-    border-bottom: 1px solid black;
-}
-
-h2 {
-    font-size: 2em;
-    font-weight: 400;
-}
-
-div:last-child {
-    border-bottom: none;
-}
-
-
-@media (min-width: 620px){
-    div {
-        grid-template-columns: repeat(3, 1fr);
-        margin-bottom: 7.5%;
-        padding-bottom: 7.5%;
-        
-    }
-}
-
-@media (min-width: 820px){
     div {
         display: flex;
         flex-wrap: wrap;
@@ -70,23 +39,38 @@ div:last-child {
     .job-title {
         width: 100%;
     }
+    h2 {
+        font-weight: 400;
+        font-size: 2em;
+    }
     .company, .language, .workweek, .city {
         width: 37.5%;
     }
-
-
-@media (min-width: 1024px){
-    div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 2.5%;
-        padding-bottom: 2.5%;
-
     @media (min-width: 540px){
         .company, .language, .workweek, .city {
             width: 29%;
         }
-
-
+    }
+    @media (min-width: 560px){
+        div {
+            padding-bottom: 5%;
+            margin-bottom: 5%;
+        }
+    }
+    @media (min-width: 812px){
+        div {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        .job-title {
+            width: 30%;
+        }
+        .company, .language{
+            width: 10%;
+        }
+        .workweek, .city {
+            width: 20%;
+        }
+    }
 </style>

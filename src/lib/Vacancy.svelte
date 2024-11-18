@@ -3,10 +3,13 @@
     export let title, language, company, hours, city, href
 </script>
 
+
 <div>
     <h2 class="job-title">{title}</h2>
     <span class="language">{language}</span>
+
     <span class="company">{company}</span>
+    <span class="language">{language}</span>
     <span class="workweek">{hours}</span>
     <span class="city" >{city}</span>
 
@@ -58,12 +61,19 @@ div:last-child {
 @media (min-width: 820px){
     div {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 4.5%;
-        padding-bottom: 4.5%;
+        flex-wrap: wrap;
+        gap: 1.75em;
+        padding-bottom: 10%;
+        margin-bottom: 10%;
+        border-bottom: 1px solid black;
     }
-}
+    .job-title {
+        width: 100%;
+    }
+    .company, .language, .workweek, .city {
+        width: 37.5%;
+    }
+
 
 @media (min-width: 1024px){
     div {
@@ -72,8 +82,11 @@ div:last-child {
         justify-content: space-between;
         margin-bottom: 2.5%;
         padding-bottom: 2.5%;
-    }
-}
+
+    @media (min-width: 540px){
+        .company, .language, .workweek, .city {
+            width: 29%;
+        }
 
 
 </style>

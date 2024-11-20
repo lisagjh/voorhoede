@@ -1,7 +1,8 @@
+<!-- svelte-ignore missing-declaration -->
+<!-- Nav.svelte -->
 <script>
   import { onMount } from "svelte";
   import NavItem from "$lib/atom/NavItem.svelte";
-  import Badge from "$lib/atom/CounterBadge.svelte";
 
   let pages = [
     { title: "Home", ref: "/" },
@@ -19,7 +20,7 @@
 
   let allPages = [...pages, ...pagesCTA];
 
-  let openVacancies = 0;
+  let openVacancies = $state(0);
 
   onMount(async () => {
     try {
@@ -40,12 +41,11 @@
   <ul>
     {#each allPages as page}
       <li>
-        <NavItem title={page.title} href={page.ref}>
-            {#if page.ref === "/vacatures"}
-              <Badge count={openVacancies} />
-            {/if}
-          </NavItem>
-          
+        <NavItem
+          title={page.title}
+          href={page.ref}
+          badge={page.ref === "/vacatures" ? openVacancies : null}
+        />
       </li>
     {/each}
   </ul>

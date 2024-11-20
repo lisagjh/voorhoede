@@ -1,5 +1,3 @@
-<!-- svelte-ignore missing-declaration -->
-<!-- Nav.svelte -->
 <script>
   import { onMount } from "svelte";
   import NavItem from "$lib/atom/NavItem.svelte";
@@ -21,6 +19,7 @@
   let allPages = [...pages, ...pagesCTA];
 
   let openVacancies = $state(0);
+  const delay = 750; // Delay on the animation
 
   onMount(async () => {
     try {
@@ -35,6 +34,23 @@
       console.error("Error fetching vacancies:", error);
     }
   });
+
+  // Animate the counter
+  function animateCounter(start, end, duration) {
+    const range = end - start; // Difference to animate, so from 0 to amount of openVacancies
+    const startTime = performance.now();
+
+    function update(currentTime) {
+      const elapsedTime = currentTime - startTime;
+      const progress = Math.min(elapsedTime / duration, 1); // how far is the animation, 0 is start, 1 is end
+      // Calculate current value
+      openVacancies = Math.floor(start + range * progress);
+      if (progress < 1) {
+        requestAnimationFrame(update); // Continue the animation
+      }
+    }
+    requestAnimationFrame(update);
+  }
 </script>
 
 <nav>

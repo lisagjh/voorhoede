@@ -11,6 +11,7 @@
 
 <style>
   span {
+    border: 3px solid red;
     background-color: var(--blue);
     color: var(--white);
   }

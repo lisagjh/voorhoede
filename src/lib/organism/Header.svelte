@@ -1,12 +1,19 @@
 <script>
+	import MenuToggleBtn from './../atom/MenuToggleBtn.svelte';
   import Logo from "$lib/atom/Logo.svelte";
-  import Navigation from "$lib/molecule/Navigation.svelte";
+  import Nav from "$lib/molecule/Nav.svelte";
 
-</script>
+  let isOpen = false; // Initial state of the menu
+
+  function toggle() {
+    isOpen = !isOpen; // Toggle the menu state
+    console.log("click")
+  }</script>
 
 <header>
     <Logo />
-    <Navigation />
+    <MenuToggleBtn {toggle} />
+    <Nav/>
 </header>
 
 <style>

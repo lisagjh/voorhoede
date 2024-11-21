@@ -12,7 +12,6 @@
 <style>
   span {
     display: inline-block;
-    border: 3px solid red;
     background-color: var(--blue);
     color: var(--white);
   }

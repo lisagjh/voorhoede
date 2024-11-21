@@ -46,7 +46,7 @@
 
     function update(currentTime) {
       const elapsedTime = currentTime - startTime;
-      const normalizedTime = Math.min(elapsedTime / duration, 1); // Clamp time to [0, 1]
+      const normalizedTime = Math.min(elapsedTime / duration, 1); 
       const easedProgress = easeOut(normalizedTime); // Apply easing function
       openVacancies = Math.floor(start + range * easedProgress);
 

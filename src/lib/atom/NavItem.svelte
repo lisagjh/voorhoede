@@ -1,5 +1,5 @@
 <script>
-  export let title, href, badge;
+  let {title, href, badge} = $props();
 </script>
 
 <a {href}>

@@ -18,7 +18,7 @@
 
   let allPages = [...pages, ...pagesCTA];
 
-  let openVacancies = $state(0);
+  let openVacancies = 0; // Starting count for vacancies
   const delay = 750; // Delay on the animation
 
   onMount(async () => {
@@ -27,28 +27,34 @@
         "https://fdnd-agency.directus.app/items/dda_agencies_vacancies/"
       );
       const vacatures = await response.json();
-      console.log("Vacatures response:", vacatures);
-      openVacancies = vacatures.data ? vacatures.data.length : 0;
-      console.log("found vacancies:", openVacancies);
+      const totalVacancies = vacatures.data ? vacatures.data.length : 0;
+
+      // Animate the counter to transition from 0 to the fetched vacancy count
+      animateCounter(openVacancies, totalVacancies, delay);
     } catch (error) {
       console.error("Error fetching vacancies:", error);
     }
   });
 
-  // Animate the counter
   function animateCounter(start, end, duration) {
-    const range = end - start; // Difference to animate, so from 0 to amount of openVacancies
+    const range = end - start;
     const startTime = performance.now();
+
+    function easeOut(t) {
+      return t * (2 - t);
+    }
 
     function update(currentTime) {
       const elapsedTime = currentTime - startTime;
-      const progress = Math.min(elapsedTime / duration, 1); // how far is the animation, 0 is start, 1 is end
-      // Calculate current value
-      openVacancies = Math.floor(start + range * progress);
-      if (progress < 1) {
+      const normalizedTime = Math.min(elapsedTime / duration, 1); // Clamp time to [0, 1]
+      const easedProgress = easeOut(normalizedTime); // Apply easing function
+      openVacancies = Math.floor(start + range * easedProgress);
+
+      if (normalizedTime < 1) {
         requestAnimationFrame(update); // Continue the animation
       }
     }
+
     requestAnimationFrame(update);
   }
 </script>

@@ -37,6 +37,9 @@
     }
   });
 
+  //! koppelen aan de menu toggle bij eerste keer 
+  // standaard = false, na eerste keer true
+  // local storage bihhouden
   function animateCounter(start, end, duration) {
     const range = end - start;
     const startTime = performance.now();

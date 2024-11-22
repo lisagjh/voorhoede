@@ -39,7 +39,7 @@
 
   //! koppelen aan de menu toggle bij eerste keer 
   // standaard = false, na eerste keer true
-  // local storage bihhouden
+  // local storage bijhouden
   function animateCounter(start, end, duration) {
     const range = end - start;
     const startTime = performance.now();

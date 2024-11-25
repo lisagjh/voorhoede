@@ -8,13 +8,15 @@
   {#if data.length === 0}
     <p>Sorry, something went wrong.</p>
   {:else}
-    <ul>
-      {#each data as item}
-        <li>
-          {item.title}
-        </li>
-      {/each}
-    </ul>
+    {#each data as item}
+      <article>
+        <h3>{item.title}</h3>
+        <p>{item.locatie}</p>
+        <p>{item.company}</p>
+        <p>{item.hours}</p>
+        <p>{item.agency_id}</p>
+      </article>
+    {/each}
   {/if}
 </div>
 

@@ -7,6 +7,8 @@ export async function load() {
 
   const first6Items = vacatures.data.slice(0, 10);
 
+  let lastFiveItems = vacatures.data.slice(0, 4)
+
   const allVacatures = vacatures.data
 
   console.log("Server received data:", allVacatures.length);
@@ -15,6 +17,7 @@ export async function load() {
   // console.log("First 6 vacancies:", first6Items); // Log first 6 vacancies
 
   return {
+    latestVacancies: lastFiveItems,
     vacatures: allVacatures
   };
 }

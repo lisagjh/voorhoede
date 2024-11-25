@@ -19,10 +19,10 @@
 
   let allPages = [...pages, ...pagesCTA];
 
-  let openVacancies = 0; 
-  const delay = 1750; // Delay on the animation
-  let hasAnimated = false; // Tracks if the animation has already run
-  let isOpen = false; // Initial state of the menu
+  let openVacancies = 0;
+  const delay = 1750;
+  let hasAnimated = false;
+  let isOpen = false;
 
   function toggle() {
     isOpen = !isOpen;

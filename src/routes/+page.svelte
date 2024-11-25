@@ -11,17 +11,11 @@ onMount(() => {
 });
 </script>
 
-<<<<<<< Updated upstream
-<IntroSection title="Home" displayHomeLink=false>
-  <!-- svelte:fragment ipv p -->
-  <svelte:fragment slot="subtitle">subtitle</svelte:fragment>
-=======
 <IntroSection title="De Beste Bureau's van Nederland">
   <svelte:fragment slot="subtitle"
     >Dutch Digital Agencies (DDA) verenigt en verbindt toonaangevende digitale
     bureaus. Samen maken we de wereld elke dag een beetje slimmer.</svelte:fragment
   >
->>>>>>> Stashed changes
 </IntroSection>
 
 {#if vacatures.length > 0}

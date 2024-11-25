@@ -1,8 +1,4 @@
 <script>
-<<<<<<< Updated upstream
-  import Header from "../lib/Header.svelte";
-  import Footer from "../lib/Footer.svelte";
-=======
   import { onNavigate } from "$app/navigation";
 
   import Header from "../lib/display/Header.svelte";
@@ -19,7 +15,6 @@
       });
     });
   });
->>>>>>> Stashed changes
 </script>
 
 <Header />

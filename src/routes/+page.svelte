@@ -5,9 +5,26 @@
 
   export let data;
 
+  console.log("Page received data:", data.vacatures.length);
+
   // onMount(() => {
   //   console.log("Vacatures data in +page.svelte:", data.vacatures);
   // });
+
+  let testData = [ 
+    {
+      id: "1",
+      title: "vacature 1",
+    },
+    {
+      id: "2",
+      title: "vacature 2",
+    },
+    {
+      id: "3",
+      title: "vacature 3",
+    },
+  ]
 </script>
 
 <IntroSection title="De Beste Bureau's van Nederland">
@@ -17,7 +34,4 @@
   </svelte:fragment>
 </IntroSection>
 
-<Card 
-  data={data.vacatures} 
-  className="vacancies" 
-/>
+<Card data={data.vacatures} className="vacancies" />

@@ -1,7 +1,7 @@
 <script>
   let { className, data = [] } = $props();
 
-  console.log("Card received data:", data);
+  console.log("Card received data:", data.length);
 </script>
 
 <div class={className}>
@@ -9,7 +9,7 @@
     <p>Sorry, something went wrong.</p>
   {:else}
     <ul>
-      {#each data.id as item}
+      {#each data as item}
         <li>
           {item.title}
         </li>

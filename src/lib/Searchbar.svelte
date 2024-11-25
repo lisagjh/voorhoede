@@ -13,10 +13,14 @@
 </script>
  
 <form action="#" method="GET" on:submit|preventDefault>
-<input type="search" name="" 
-    class="search-bar" placeholder={placeholderText}
-    aria-label="Search" bind:value={searchTerm}
-    />
+  <input
+    type="search"
+    name="" 
+    class="search-bar"
+    placeholder={placeholderText}
+    aria-label="Search"
+    bind:value={searchTerm}
+  />
 </form>
  
 <style>
@@ -30,7 +34,6 @@
   font-size: 1em;
   outline: var(--grey);
 }
- 
  
 .search-bar::placeholder {
   color: var(--grey)

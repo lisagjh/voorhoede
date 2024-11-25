@@ -37,4 +37,8 @@ subtitle="Verslim je carrière bij de beste digitale bureaus van Nederland. Pak 
     }
   }
 
+<<<<<<< Updated upstream
 </style>
+=======
+</style>
+>>>>>>> Stashed changes

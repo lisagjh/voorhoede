@@ -7,7 +7,7 @@ export async function load() {
 
   const first6Items = vacatures.data.slice(0, 10);
 
-  let lastFiveItems = vacatures.data.slice(0, 4)
+  let lastFiveItems = vacatures.data.slice(0, 6)
 
   const allVacatures = vacatures.data
 

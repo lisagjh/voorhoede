@@ -1,7 +1,7 @@
 <script>
   import Card from "../lib/display/Card.svelte";
   import IntroSection from "./../lib/IntroSection.svelte";
-  import { onMount } from "svelte";
+  import Banner from "../lib/display/Banner.svelte";
 
   export let data;
 
@@ -19,6 +19,9 @@
     bureaus. Samen maken we de wereld elke dag een beetje slimmer.
   </svelte:fragment>
 </IntroSection>
+
+<Banner data={data.agencyLogos} />
+
 
 <section class="vacancy-section">
   <div class="top">
@@ -49,6 +52,7 @@
     font-family: var(--martian-mono);
     border: 1px solid var(--black);
     height: fit-content;
+    padding: 0 0.25rem;
     margin: 0.5rem;
   }
 

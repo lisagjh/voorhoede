@@ -1,7 +1,9 @@
 <script>
-  export let data = []; // The main data array
-  export let className = ""; // CSS class for styling
-  export let extraFields = []; // Array of extra fields to display
+  let {
+    data = [],
+    className = "", 
+    extraFields = [],
+  } = $props();
 </script>
 
 <div class={className}>

@@ -5,6 +5,8 @@
 
 
 <article class="grid-container">
+
+<!--    todo hier moetden de eerste 6 komen -->
     {#each data.members as member}
 
         <article class="card">

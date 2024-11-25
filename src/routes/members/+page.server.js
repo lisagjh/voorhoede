@@ -9,11 +9,12 @@ export async function load() {
 
     const first6Items = members.data.slice(0, 6);
 
+    console.log(first6Items);
     return {
         // first6Items: first6Items.data,
         // members: members.data
 
         members: members.data,
-        fosr: first6Items.data
+        membersSix: first6Items.data
     }
 }

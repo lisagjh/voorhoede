@@ -19,10 +19,22 @@
 
   let allPages = [...pages, ...pagesCTA];
 
-  let openVacancies = 0; // Starting count for vacancies
+  let openVacancies = 0; 
   const delay = 1750; // Delay on the animation
+  let hasAnimated = false; // Tracks if the animation has already run
+  let isOpen = false; // Initial state of the menu
 
-  onMount(async () => {
+  function toggle() {
+    isOpen = !isOpen;
+
+    // Trigger the animation only the first time the menu opens
+    if (isOpen && !hasAnimated) {
+      hasAnimated = true; // Mark animation as done
+      startVacancyAnimation();
+    }
+  }
+
+  async function startVacancyAnimation() {
     try {
       const response = await fetch(
         "https://fdnd-agency.directus.app/items/dda_agencies_vacancies/"
@@ -35,11 +47,8 @@
     } catch (error) {
       console.error("Error fetching vacancies:", error);
     }
-  });
+  }
 
-  //! koppelen aan de menu toggle bij eerste keer 
-  // standaard = false, na eerste keer true
-  // local storage bijhouden
   function animateCounter(start, end, duration) {
     const range = end - start;
     const startTime = performance.now();
@@ -60,12 +69,6 @@
     }
 
     requestAnimationFrame(update);
-  }
-
-  let isOpen = false; // Initial state of the menu
-
-  function toggle() {
-    isOpen = !isOpen; // Toggle the menu state
   }
 </script>
 

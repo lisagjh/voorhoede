@@ -15,4 +15,47 @@
   </svelte:fragment>
 </IntroSection>
 
-<Card data={data.latestVacancies} className="vacancies" />
+<section class="vacancy-section">
+  <div class="top">
+    <span class="tag">Vacatures</span>
+    <h2>De beste agencies zoeken de beste mensen</h2>
+    <a href="/vacatures">Bekijk alle vacatures</a>
+  </div>
+
+  <Card data={data.latestVacancies} className="vacancies" />
+</section>
+
+<style>
+  .vacancy-section {
+    border-top: 1px solid var(--black);
+  }
+
+  .vacancy-section .top {
+    display: grid;
+    padding-top: 1rem;
+    min-height: 250px;
+    height: 100%;
+    max-height: 400px;
+  }
+
+  .tag {
+    display: inline-block;
+    justify-self: center;
+    font-family: var(--martian-mono);
+    border: 1px solid var(--black);
+    height: fit-content;
+    margin: 0.5rem;
+  }
+
+  h2 {
+    align-self: center;
+    text-align: center;
+    text-transform: uppercase;
+    text-wrap: balance;
+    margin: 1rem;
+  }
+
+  a {
+    justify-self: center;
+  }
+</style>

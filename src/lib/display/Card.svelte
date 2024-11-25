@@ -33,12 +33,16 @@
     align-items: center;
     padding: 1rem 0.5rem;
     margin: 1rem 0;
-
-    border-top: 2px solid var(--black);
+    border-top: 1px solid var(--black);
   }
 
   article:last-of-type {
-    border-bottom: 2px solid var(--black);
+    border-bottom: 1px solid var(--black);
+  }
+
+  article p,
+  a {
+    text-transform: uppercase;
   }
 
   .title {
@@ -52,9 +56,9 @@
 
   a {
     color: var(--blue);
-    font-weight: 600;
     text-decoration: none;
     margin-top: 0.5rem;
+    text-wrap: nowrap;
   }
 
   a:hover {
@@ -86,7 +90,7 @@
 
   .vacancies .expertise {
     grid-column: 1;
-    grid-row: 3;    
+    grid-row: 3;
     justify-self: start;
     font-size: smaller;
     border: 1px solid var(--black);
@@ -97,5 +101,39 @@
     grid-column: 3;
     grid-row: 3;
     justify-self: flex-end;
+  }
+
+  /* animation */
+
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      @keyframes animate-in {
+        entry 0% {
+          opacity: 0;
+          transform: translateY(100%);
+        }
+        entry 100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes animate-out {
+        exit 0% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        exit 100% {
+          opacity: 0;
+          transform: translateY(-100%);
+        }
+      }
+
+      article {
+        animation: animate-in linear forwards, animate-out linear forwards;
+        animation-timeline: view();
+        animation-range: entry, exit;
+      }
+    }
   }
 </style>

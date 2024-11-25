@@ -74,6 +74,13 @@ p {
   line-height: 2rem;
 }
 
+a {
+  font-family: var(--martian-mono);
+  color: var(--blue);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 .subtext {
   font-size: 1rem;
   line-height: 1.5rem;

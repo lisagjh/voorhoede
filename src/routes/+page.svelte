@@ -5,9 +5,9 @@
 
   export let data;
 
-  onMount(() => {
-    console.log("Vacatures data in +page.svelte:", data.vacatures);
-  });
+  // onMount(() => {
+  //   console.log("Vacatures data in +page.svelte:", data.vacatures);
+  // });
 </script>
 
 <IntroSection title="De Beste Bureau's van Nederland">
@@ -20,4 +20,4 @@
 <Card 
   data={data.vacatures} 
   className="vacancies" 
-  />
+/>

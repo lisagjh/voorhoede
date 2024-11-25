@@ -1,16 +1,16 @@
 import fetchJson from "$lib/fetch-json.js";
 
-
 export async function load() {
-  const ddaAgenciesVacancies =
-    "https://fdnd-agency.directus.app/items/dda_agencies_vacancies/";
+  const ddaAgencies =
+    "https://fdnd-agency.directus.app/items/dda_agencies_vacancies";
+  const vacatures = await fetchJson(ddaAgencies);
 
-  let allVacatures = [];
+  const first6Items = vacatures.data.slice(0, 10);
 
-  allVacatures = await fetchJson(ddaAgenciesVacancies);
+  const allVacatures = vacatures.data
 
-  console.log("vacatures in server:", allVacatures.data[0])
-  // Make sure to return the data properly
+  // console.log("First 6 vacancies:", first6Items); // Log first 6 vacancies
+
   return {
     vacatures: allVacatures
   };

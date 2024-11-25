@@ -1,5 +1,4 @@
 <script>
-  import { fonts } from "./../../../.svelte-kit/output/server/nodes/1.js";
   let { className, data = [] } = $props();
 
   console.log("Card received data:", data.length);
@@ -15,7 +14,7 @@
         <p class="location">{item.locatie}</p>
         <p class="hours">{item.hours} hrs</p>
 
-        <!-- de vacancies zijn met id aan de  -->
+        <!-- de vacancies zijn met id aan de agencies gekoppeld. Dit op een of andere manier aan elkaar koppelen  -->
         <!-- <p class="agency">{item.agency_id}</p> -->
         {#if item.expertise}
           <p class="expertise">{item.expertise}</p>

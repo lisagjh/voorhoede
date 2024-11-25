@@ -1,6 +1,7 @@
 @font-face {
   font-family: Archivo;
   src: url(/font/Archivo-VariableFont_wdth\,wght.woff2);
+  font-display: swap;
 }
 
 @font-face {

@@ -36,9 +36,4 @@ subtitle="Verslim je carrière bij de beste digitale bureaus van Nederland. Pak 
       margin: 0 2.5% 0% 2.5%;
     }
   }
-
-<<<<<<< Updated upstream
 </style>
-=======
-</style>
->>>>>>> Stashed changes

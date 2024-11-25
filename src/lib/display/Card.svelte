@@ -1,25 +1,24 @@
 <script>
   let { className, data = [] } = $props();
 
-  console.log("Card received data:", data); // Log data in Card to verify
+  console.log("Card received data:", data);
 </script>
 
 <div class={className}>
   {#if data.length === 0}
-    <p>A problem has occurred.</p>
+    <p>Sorry, something went wrong.</p>
   {:else}
     <ul>
-      {#each data as item}
-        <!-- Assuming each item has a unique 'id' -->
-        <li>{item.title}</li>
-        <!-- You can adjust this depending on your data structure -->
+      {#each data.id as item}
+        <li>
+          {item.title}
+        </li>
       {/each}
     </ul>
   {/if}
 </div>
 
 <style>
-  /* Default styles here */
   ul {
     list-style: none;
     padding: 0;

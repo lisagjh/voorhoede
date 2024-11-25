@@ -9,9 +9,9 @@ export async function load() {
 
   allVacatures = await fetchJson(ddaAgenciesVacancies);
 
-  console.log("vacatures in server:", allVacatures)
+  console.log("vacatures in server:", allVacatures.data[0])
   // Make sure to return the data properly
   return {
-    vacatures: allVacatures.data || [], // Ensure vacatures contains data or an empty array
+    vacatures: allVacatures
   };
 }

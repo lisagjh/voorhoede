@@ -1,23 +1,33 @@
 import fetchJson from "$lib/fetch-json.js";
 
 export async function load() {
-  const ddaAgencies =
-    "https://fdnd-agency.directus.app/items/dda_agencies_vacancies";
-  const vacatures = await fetchJson(ddaAgencies);
+  const ddaVacancies = "https://fdnd-agency.directus.app/items/dda_agencies_vacancies";
+  const ddaAgencies = "https://fdnd-agency.directus.app/items/dda_agencies/";
 
-  const first6Items = vacatures.data.slice(0, 10);
+  const vacatures = await fetchJson(ddaVacancies);
+  const agencies = await fetchJson(ddaAgencies);
 
-  let lastFiveItems = vacatures.data.slice(0, 6)
+  // Access the `data` property from both API responses
+  const allVacatures = vacatures.data;
+  const agencyData = agencies.data;
 
-  const allVacatures = vacatures.data
+  // Create a Map for efficient agency lookups
+  const agencyMap = new Map(agencies.data.map(agency => [agency.id, agency.title]));
+
+  // Enrich vacancies with agency names
+  const enrichedVacancies = allVacatures.map(vacancy => ({
+    ...vacancy,
+    agencyName: agencyMap.get(vacancy.agency_id) || 'Unknown Agency',
+  }));
+
+  // Take the first 6 vacancies for latest items
+  const lastFiveItems = enrichedVacancies.slice(0, 6);
 
   console.log("Server received data:", allVacatures.length);
 
-
-  // console.log("First 6 vacancies:", first6Items); // Log first 6 vacancies
-
   return {
+    vacancyAgencies: enrichedVacancies,
     latestVacancies: lastFiveItems,
-    vacatures: allVacatures
+    vacatures: allVacatures,
   };
 }

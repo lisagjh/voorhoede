@@ -5,7 +5,12 @@
 
   export let data;
 
-  console.log("Page received data:", data.vacatures.length);
+  const extraFields = [
+    { key: "agencyName" },
+    { key: "hours" },
+    { key: "location" },
+    { key: "expertise" },
+  ];
 </script>
 
 <IntroSection title="De Beste Bureau's van Nederland">
@@ -22,7 +27,7 @@
     <a href="/vacatures">Bekijk alle vacatures</a>
   </div>
 
-  <Card data={data.latestVacancies} className="vacancies" />
+  <Card data={data.latestVacancies} className="vacancies" {extraFields} />
 </section>
 
 <style>

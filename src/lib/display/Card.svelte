@@ -1,7 +1,7 @@
 <script>
-  let { className, data = [] } = $props();
-
-  console.log("Card received data:", data.length);
+  export let data = []; // The main data array
+  export let className = ""; // CSS class for styling
+  export let extraFields = []; // Array of extra fields to display
 </script>
 
 <div class={className}>
@@ -11,14 +11,14 @@
     {#each data as item}
       <article>
         <h3 class="title">{item.title}</h3>
-        <p class="location">{item.locatie}</p>
-        <p class="hours">{item.hours} hrs</p>
 
-        <!-- de vacancies zijn met id aan de agencies gekoppeld. Dit op een of andere manier aan elkaar koppelen  -->
-        <!-- <p class="agency">{item.agency_id}</p> -->
-        {#if item.expertise}
-          <p class="expertise">{item.expertise}</p>
-        {/if}
+        <!-- Render extra fields dynamically -->
+        {#each extraFields as field}
+          {#if item[field.key]}
+            <p>{item[field.key]}</p>
+          {/if}
+        {/each}
+
         <a href="/#">VIEW HERE</a>
       </article>
     {/each}
@@ -75,26 +75,12 @@
     grid-column: span 3;
   }
 
-  .vacancies .hours {
-    grid-column: 3;
-    justify-self: end;
-  }
-
   .vacancies p:first-of-type {
     justify-self: start;
   }
 
   .vacancies p {
     justify-self: end;
-  }
-
-  .vacancies .expertise {
-    grid-column: 1;
-    grid-row: 3;
-    justify-self: start;
-    font-size: smaller;
-    border: 1px solid var(--black);
-    padding: 0 0.25rem;
   }
 
   .vacancies a {
@@ -130,7 +116,9 @@
       }
 
       article {
-        animation: animate-in linear forwards, animate-out linear forwards;
+        animation:
+          animate-in linear forwards,
+          animate-out linear forwards;
         animation-timeline: view();
         animation-range: entry, exit;
       }

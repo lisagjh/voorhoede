@@ -1,35 +1,22 @@
 <script>
   export let data;
+  // De input van de gebruiker verbonden aan de zoekbalk
+  let searchTerm = "";
 
   import Link from "$lib/Link.svelte";
   import Member from "$lib/Member.svelte";
   import Searchbar from "$lib/Searchbar.svelte";
   import IntroSection from "$lib/IntroSection.svelte";
 
-  // Input van de gebruiker
-  let searchTerm = "";
-
-  // $: Is een dynamisch element wat zich instant aanpast op de data die erin zit.
-  // .filter is een built in JS functie die een nieuwe arraay aanmaakt met de juiste items op basis van de requirements die er
-  // na volgen onder andere .ToLowerCase en .Includes met de member array waar op dit moment alle agencies in staan.
   $: filteredMembers = data.members.filter((member) =>
     member.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 </script>
 
-<!--<IntroSection title="Leden">-->
-<!--  <slot name="subtitle"-->
-<!--    >Ook DDA lid worden? Ga dan naar <span class="specific-text-decoration"-->
-<!--      >deze pagina</span-->
-<!--    > voor meer informatie</slot-->
-<!--  >-->
-<!--</IntroSection>-->
 
 <IntroSection
-        title="Leden"
-        subtitle="De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging.
-
-Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
+  title="Leden"
+  subtitle="De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging. Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
 />
 
 <section class="filter-section">

@@ -1,5 +1,6 @@
 <script>
     export let placeholderText = '';
+    export let searchbarName = "";
     export let searchTerm='';
     export let listToSearch = [];
 
@@ -14,9 +15,9 @@
  
 <form action="#" method="GET" on:submit|preventDefault>
   <input
+    tabindex="0"
     type="search"
-    name="" 
-    class="search-bar"
+    name={searchbarName} 
     placeholder={placeholderText}
     aria-label="Search"
     bind:value={searchTerm}
@@ -25,18 +26,21 @@
  
 <style>
  
-.search-bar {
+input {
   min-width: 19em;
   padding: 1em 2px;
   margin: 1em;
   border: none;
-  border-bottom: 1.35px solid var(--black);
+  border-bottom: 1.5px solid var(--black);
   font-size: 1em;
-  outline: var(--grey);
 }
- 
-.search-bar::placeholder {
-  color: var(--grey)
+
+input::placeholder {
+  color: var(--black);
+}
+
+input:focus {
+  outline: none;
 }
  
 input[type="search"]::-webkit-search-cancel-button {
@@ -47,8 +51,8 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 @media (max-width: 402px) {
-    .search-bar {
-        min-width: 13em; /* for small phone screens */
+    input {
+        min-width: 14em; /* for small phone screens */
     }
 }
  

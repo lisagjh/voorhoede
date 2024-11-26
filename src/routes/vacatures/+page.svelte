@@ -37,7 +37,7 @@
   }
 
   .filter-section {
-    padding: 2em;
+    padding: 2em 0em;
     margin-bottom: 3em;
     border: 1px solid black;
     border-right: none;

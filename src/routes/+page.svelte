@@ -30,7 +30,7 @@
     <a href="/vacatures">Bekijk alle vacatures</a>
   </div>
 
-  <Card data={data.latestVacancies} className="vacancies" {extraFields} />
+  <Card data={data.latestVacancies} className="vacancies" anchorText="View" {extraFields} />
 </section>
 
 <style>

@@ -1,9 +1,5 @@
 <script>
-  let {
-    data = [],
-    className = "", 
-    extraFields = [],
-  } = $props();
+  let { data = [], className = "", extraFields = [], anchorText } = $props();
 </script>
 
 <div class={className}>
@@ -21,7 +17,7 @@
           {/if}
         {/each}
 
-        <a href="/#">VIEW HERE</a>
+        <a href="/#">{anchorText}</a>
       </article>
     {/each}
   {/if}
@@ -30,11 +26,13 @@
 <style>
   article {
     height: clamp(150px, 100%, 500px);
-    min-height: 150px;
+    min-height: 170px;
+    width: 100%;
+    max-width: 100vw;
     display: grid;
-    align-items: center;
+
     padding: 1rem 0.5rem;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     border-top: 1px solid var(--black);
   }
 
@@ -57,10 +55,13 @@
   }
 
   a {
-    color: var(--blue);
-    text-decoration: none;
-    margin-top: 0.5rem;
+    width: 100%;
     text-wrap: nowrap;
+    justify-self: self-end;
+    text-align: right;
+    margin-top: 0.5rem;
+
+    text-decoration: none;
   }
 
   a:hover {
@@ -70,25 +71,31 @@
   /* className="vacancies" styling */
 
   .vacancies article {
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .vacancies .title {
-    grid-column: span 3;
+    width: 100%;
   }
 
   .vacancies p:first-of-type {
     justify-self: start;
   }
 
-  .vacancies p {
-    justify-self: end;
+  .vacancies p::after {
+    content: "/";
+    margin: 0 1rem;
   }
 
-  .vacancies a {
-    grid-column: 3;
-    grid-row: 3;
-    justify-self: flex-end;
+  .vacancies p:last-of-type::after {
+    content: "";
+  }
+
+  .vacancies p {
+    justify-self: end;
+    align-self: center;
   }
 
   /* animation */

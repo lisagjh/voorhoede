@@ -91,6 +91,7 @@
 
 <style>
   nav {
+    display: none;
     background-color: var(--white);
     position: absolute;
     right: 0;
@@ -109,6 +110,7 @@
   }
 
   nav.is-open {
+    display: flex;
     transform: translateY(0); /* Slide into view */
     opacity: 1; /* Fully visible */
     backdrop-filter: drop-shadow(40px 40px 100px black);
@@ -140,6 +142,7 @@
     list-style: none;
     margin: 0;
     margin-top: 5rem;
+    margin-bottom: 1rem;
     padding: 0;
   }
 

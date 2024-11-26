@@ -15,6 +15,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        overflow-x: hidden;
         padding: 0.5rem 1rem;
         width: 100%;
     }

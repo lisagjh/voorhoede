@@ -19,12 +19,18 @@
   let allPages = [...pages, ...pagesCTA];
 
   let openVacancies = 0;
-  const delay = 1750;
   let hasAnimated = false;
   let isOpen = false;
+  const delay = 1750;
 
   function toggle() {
     isOpen = !isOpen;
+
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
 
     // Trigger the animation only the first time the menu opens
     if (isOpen && !hasAnimated) {
@@ -69,6 +75,7 @@
 
     requestAnimationFrame(update);
   }
+
 </script>
 
 <MenuToggleBtn {isOpen} {toggle} />
@@ -81,6 +88,7 @@
           title={page.title}
           href={page.ref}
           badge={page.ref === "/vacatures" ? openVacancies : null}
+          action={menuAction}
         />
       </li>
     {/each}

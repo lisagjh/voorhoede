@@ -31,13 +31,11 @@
     container-type: inline-size;
     container-name: wrapper;
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(250px, 50%));  */
     place-items: center;
   }
 
   article {
     height: clamp(150px, 100%, 500px);
-    /* min-height: 170px; */
     max-width: 100vw;
     display: grid;
     place-items: center;

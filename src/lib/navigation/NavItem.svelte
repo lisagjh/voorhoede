@@ -1,8 +1,15 @@
 <script>
-  let { title, href, badge } = $props();
+  import { page } from "$app/stores";
+
+  let { title, href, badge, action } = $props();
+
+  // in order to add an active state to the navItem, u need to know what the url path is.
+  let path = $page.url.pathname;
+  let currentPath = $page.url.pathname; // Update path reactively
+  console.log(path);
 </script>
 
-<a {href}>
+<a {href} use:action class:active={currentPath == page.ref}>
   {title}
   {#if badge}
     <span>{badge}</span>
@@ -29,5 +36,9 @@
     display: inline-block;
     background-color: var(--blue);
     color: var(--white);
+  }
+
+  .active {
+    background-color: red;
   }
 </style>

@@ -11,14 +11,14 @@
         <h3 class="title">{item.title}</h3>
 
         {#each extraFields as field}
-        {#if item[field.key]}
-          {#if field.key === "hours"}
-            <p>{item[field.key]} uur</p>
-          {:else}
-            <p>{item[field.key]}</p>
+          {#if item[field.key]}
+            {#if field.key === "hours"}
+              <p>{item[field.key]} uur</p>
+            {:else}
+              <p>{item[field.key]}</p>
+            {/if}
           {/if}
-        {/if}
-      {/each}
+        {/each}
 
         <a href="/#">{anchorText}</a>
       </article>
@@ -31,14 +31,12 @@
     container-type: inline-size;
     container-name: wrapper;
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(250px, 50%));  */
     place-items: center;
   }
 
   article {
     height: clamp(150px, 100%, 500px);
-    /* min-height: 170px; */
-    max-width: 100vw;
+    max-width: 100%;
     display: grid;
     place-items: center;
     padding: 1.25rem 0.5rem;
@@ -78,8 +76,6 @@
     text-decoration: underline;
   }
 
-  /* className="vacancies" styling */
-
   .vacancies article {
     display: flex;
     flex-direction: row;
@@ -107,8 +103,6 @@
     justify-self: end;
     align-self: center;
   }
-
-  /* query */
 
   @media (width > 46rem) {
     div {

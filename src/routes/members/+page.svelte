@@ -75,12 +75,6 @@
   .page-numbers {
     color: red;
   }
-  
-  .filter-section {
-    padding: 1em;
-    border: 1px solid black;
-    border-bottom: none;
-  }
 
   .textvacature {
     font-size: 1.2rem;
@@ -118,24 +112,6 @@
       padding: 2rem;
       border: 1px solid;
       justify-content: space-between;
-    }
-  }
-
-  @media (min-width: 820px) {
-    .intro-section {
-      margin-top: 10%;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .intro-section {
-      margin: 7.5% 25% 10% 25%;
-    }
-  }
-
-  @media (min-width: 1524px) {
-    .intro-section {
-      margin: 12.5% 32% 10% 32%;
     }
   }
 </style>

@@ -5,10 +5,6 @@
 
   export let data;
 
-  for (const agency of data.agencies) {
-  console.log(agency.photo); // Access individual agency photos
-}
-
   const extraFields = [
     { key: "agencyName" },
     { key: "locatie" },

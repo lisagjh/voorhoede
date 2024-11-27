@@ -13,7 +13,9 @@
     in het component-->
     <slot name="svg-icon-left"/>
 
-    <slot name="link-text"/>
+    <slot name="link-text">
+        link
+    </slot>
     
     <slot name="svg-icon-right"/>
 </a>

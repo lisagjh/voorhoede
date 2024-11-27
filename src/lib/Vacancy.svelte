@@ -3,8 +3,11 @@
     export let title, language, company, hours, city, href
 </script>
 
-<article>
-    <h4 class="job-title">{title}</h4>
+
+<div>
+    <h2 class="job-title">{title}</h2>
+    <span class="language">{language}</span>
+
     <span class="company">{company}</span>
     <span class="language">{language}</span>
     <span class="workweek">{hours}</span>
@@ -20,11 +23,12 @@
         <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     </Link>
-</article>
+</div>
 
 
-<style> 
-    article {
+<style>
+
+    div {
         display: flex;
         flex-wrap: wrap;
         gap: 1.75em;
@@ -35,25 +39,26 @@
     .job-title {
         width: 100%;
     }
+    h2 {
+        font-weight: 400;
+        font-size: 2em;
+    }
     .company, .language, .workweek, .city {
         width: 37.5%;
     }
-
     @media (min-width: 540px){
         .company, .language, .workweek, .city {
             width: 29%;
         }
     }
-
     @media (min-width: 560px){
-        article {
+        div {
             padding-bottom: 5%;
             margin-bottom: 5%;
         }
     }
-
     @media (min-width: 812px){
-        article {
+        div {
             flex-direction: row;
             flex-wrap: nowrap;
             align-items: center;

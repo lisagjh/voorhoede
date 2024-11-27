@@ -1,5 +1,5 @@
-<div class="styling-button-div">
-    <a href="/bedankt" class="button">SCHRIJF MIJ IN <svg
+<div class="">
+    <button  type="submit" class="button">SCHRIJF MIJ IN <svg aria-label="pijltje ga naar schrijf me in"
         width="16"
         height="16"
         viewBox="0 0 16 16"
@@ -20,34 +20,39 @@
             stroke-linejoin="round"
     />
 </svg>
-    </a>
+    </button>
 </div>
 
 
+
 <style>
-    .styling-button-div{
+    div{
         margin-top: 2rem;
         grid-row: 8;
         font-family: 'Martian Mono';
     }
     .button{
         border-left: 1px solid var(--grey);
+        border-right: 1px solid var(--grey);
         border-top: 1px solid var(--grey);
         border-bottom: 1px solid var(--grey);
         margin-right: -0.3rem;
         color: var(--black);
         text-decoration: none;
-        padding: 0.55rem 0 0.55rem 0.55rem;
+        padding: 0px 2px 0px 3px;
+        background-color: transparent;
 
-    }
-    svg{
-        /* border: 1px solid var(--grey); */
-        padding: 0.66rem;
-        margin-bottom: -0.8rem;
-        border-right: 1px solid;
-        border-left: 1px solid;
     }
     .button:hover{
         color: var(--blue);
     }
+
+    button:focus {
+        outline: 2px solid var(--blue);
+    }
+    svg{
+        border-left: 1px solid var(--grey);
+        margin: -1px 1px -2px 4px;
+    }
+
 </style>

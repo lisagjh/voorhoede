@@ -2,7 +2,6 @@
     import Link from "$lib/Link.svelte";
 
     export let data;
-
 </script>
 
 
@@ -47,20 +46,25 @@
 
 <style>
     .grid-container {
+
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
         text-transform: uppercase;
+        margin: 1rem -1rem 0rem;
     }
 
     .card {
         width: 100%;
         overflow: hidden;
-        border: var(--grey) 1px solid;
+        /*todo this border change to the design*/
+
+
         padding: 2rem;
         display: grid;
         grid-template-rows: 16rem auto auto 4rem auto;
         gap: 16px;
     }
+
 
     .card-label-filters {
         display: flex;
@@ -136,19 +140,85 @@
 
     }
 
-    @media (min-width: 425px) {
+    @media (min-width: 325px) {
         .grid-container {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         }
 
     }
 
+    @media (max-width: 734px) {
+        .card {
+
+            border-right: 1px solid var(--grey);
+            border-left: 1px solid var(--grey);
+            border-bottom: 1px solid var(--grey);
+
+        }
+
+    }
+
+    @media (max-width: 734px) {
+        .card {
+            border-bottom: 1px solid var(--grey);
+
+        }
+
+    }
+
+    /*voor 725px is het opgelost */
+    @media (min-width: 734px) {
+        .card:nth-child(-n+4) {
+            border-top: none;
+
+        }
+
+        .card:nth-child(1n) {
+
+            border-bottom: 1px solid var(--grey);
+
+        }
+
+        .card:nth-child(2n-1) {
+            border-right: 1px solid var(--grey);
+        }
+
+
+        .card:nth-child(2n+1) {
+            border-left: none;
+        }
+
+    }
 
     @media (min-width: 825px) {
         .card {
             grid-template-rows: 16rem auto auto 4rem auto;
         }
 
+    }
+
+    @media (min-width: 1000px) {
+        .card:nth-child(2n) {
+            border-right: 1px solid var(--grey);
+        }
+
+
+    }
+
+    @media (min-width: 1440px) {
+
+        .card:nth-child(3n) {
+            border-right: 1px solid var(--grey);
+        }
+
+
+    }
+
+    @media (min-width: 1825px) {
+        .card:nth-child(4n) {
+            border-right: 1px solid var(--grey);
+
+        }
     }
 
 

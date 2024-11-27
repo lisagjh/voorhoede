@@ -6,6 +6,7 @@
   import Searchbar from "$lib/Searchbar.svelte";
   import IntroSection from "$lib/IntroSection.svelte";
 
+
   // Input van de gebruiker
   let searchTerm = "";
 
@@ -17,13 +18,6 @@
   );
 </script>
 
-<!--<IntroSection title="Leden">-->
-<!--  <slot name="subtitle"-->
-<!--    >Ook DDA lid worden? Ga dan naar <span class="specific-text-decoration"-->
-<!--      >deze pagina</span-->
-<!--    > voor meer informatie</slot-->
-<!--  >-->
-<!--</IntroSection>-->
 
 <IntroSection
         title="Leden"
@@ -84,15 +78,22 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
   </Link>
 </div>
 
+
+
 <style>
-  .page-numbers {
-    color: red;
-  }
-  
   .filter-section {
     padding: 1em;
-    border: 1px solid black;
-    border-bottom: none;
+    /*border: 1px solid black;*/
+    border-bottom: 1px solid var(--grey);
+    border-top: 1px solid var(--grey);
+    margin: -1rem;
+  }
+
+  @media (max-width: 690px) {
+    .filter-section {
+      border-left:  1px solid var(--grey);
+      border-right:  1px solid var(--grey);
+    }
   }
 
   .textvacature {
@@ -108,7 +109,7 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
     justify-content: center;
     align-items: center;
     place-content: center;
-    border: 1px solid;
+    margin: -1rem;
     padding: 2rem;
     text-decoration: none;
   }
@@ -119,8 +120,17 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
       grid-template-rows: 5rem auto;
       row-gap: 2rem;
 
-      border: 1px solid;
+      border-bottom: 1px solid;
+      border-left: 1px solid;
+      border-right: 1px solid;
+      margin: -1rem;
       padding: 2rem;
+    }
+
+    .link-more-events{
+      border-bottom: 1px solid;
+      border-left: 1px solid;
+      border-right: 1px solid;
     }
   }
 
@@ -129,26 +139,14 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
       display: flex;
       flex-direction: row;
       padding: 2rem;
-      border: 1px solid;
+      border-bottom: 1px solid;
+      border-top: 1px solid;
+
       justify-content: space-between;
+      margin-top: 2rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
     }
   }
 
-  @media (min-width: 820px) {
-    .intro-section {
-      margin-top: 10%;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .intro-section {
-      margin: 7.5% 25% 10% 25%;
-    }
-  }
-
-  @media (min-width: 1524px) {
-    .intro-section {
-      margin: 12.5% 32% 10% 32%;
-    }
-  }
 </style>

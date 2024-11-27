@@ -24,15 +24,22 @@
 </div>
 
 <style>
+  div {
+    container-type: inline-size;
+    container-name: wrapper;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(250px, 50%));  */
+    place-items: center;
+  }
+
   article {
     height: clamp(150px, 100%, 500px);
-    min-height: 170px;
-    width: 100%;
+    /* min-height: 170px; */
     max-width: 100vw;
     display: grid;
-
-    padding: 1rem 0.5rem;
-    margin: 1.5rem 0;
+    place-items: center;
+    padding: 1.25rem 0.5rem;
+    margin: 1.25rem 0;
     border-top: 1px solid var(--black);
   }
 
@@ -96,6 +103,30 @@
   .vacancies p {
     justify-self: end;
     align-self: center;
+  }
+
+  /* query */
+
+  @media (width > 46rem) {
+    div {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 50%));
+    }
+
+    article {
+      border-bottom: 1px solid black;
+      border-top: 0px solid black;
+      padding: 1.25rem 1.5rem;
+      word-break: break-word;
+    }
+
+    article:nth-of-type(2n + 1) {
+      border-right: 1px solid var(--black);
+    }
+
+    article:nth-of-type(1),
+    article:nth-of-type(2) {
+      border-top: 1px solid var(--black);
+    }
   }
 
   /* animation */

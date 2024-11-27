@@ -13,6 +13,7 @@
   ];
 </script>
 
+
 <IntroSection title="De Beste Bureau's van Nederland">
   <svelte:fragment slot="subtitle">
     Dutch Digital Agencies (DDA) verenigt en verbindt toonaangevende digitale
@@ -20,7 +21,7 @@
   </svelte:fragment>
 </IntroSection>
 
-<Banner data={data.agencyLogos} />
+<Banner data={data.agencies} />
 
 
 <section class="vacancy-section">
@@ -36,11 +37,12 @@
 <style>
   .vacancy-section {
     border-top: 1px solid var(--black);
+    margin-bottom: 8rem;
   }
 
   .vacancy-section .top {
     display: grid;
-    padding-top: 1rem;
+    padding: 1.5rem 0;
     min-height: 250px;
     height: 100%;
     max-height: 400px;

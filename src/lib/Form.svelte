@@ -1,5 +1,6 @@
 <script>
     import TextButton from '$lib/Subscribe-button.svelte';
+
     let selectedValue = "";
 </script>
 
@@ -10,56 +11,56 @@
         <label class="form-label" for="functie">
             <span class="star"> Functie</span>
             <input aria-required="true"
-                   name="functie"
                    id="functie"
+                   name="functie"
                    required type="text"/>
         </label>
 
         <label class="form-label" for="Voornaam">
             <span class="star">Voornaam</span>
             <input aria-required="true"
-                   required type="text"
+                   autocomplete="given-name" id="Voornaam"
                    name="voornaam"
-                   id="Voornaam"
-                   autocomplete="given-name"
+                   required
+                   type="text"
             />
         </label>
 
         <label class="form-label" for="functie">
             <span class="no-star">Tussenvoegsel</span>
             <input aria-required="true"
+                   autocomplete="additional-name"
                    id="tussenvoegsel"
                    name="tussenvoegesel"
-                   autocomplete="additional-name"
                    type="text"/>
         </label>
 
         <label class="form-label" for="Achternaam">
             <span class="star">Achternaam</span>
             <input aria-required="true"
-                   name="Achternaam"
-                   id="Achternaam"
                    autocomplete="family-name"
+                   id="Achternaam"
+                   name="Achternaam"
                    required type="text"/>
         </label>
 
         <label class="form-label" for="email">
             <span class="star">E-mail</span>
             <input aria-required="true"
-                   name="email"
+                   autocomplete="email"
                    id="email"
 
-                   autocomplete="email"
+                   name="email"
                    required type="email"/>
         </label>
 
         <label class="form-label" for="Mobiel">
             <span class="star">Mobiel</span>
             <input aria-required="true"
-                   required
-                   name="Mobiel"
-                   id="Mobiel"
                    autocomplete="tel"
+                   id="Mobiel"
+                   name="Mobiel"
+                   required
                    type="number"/>
         </label>
 
@@ -67,8 +68,8 @@
 
             <span class="star">Bedrijfsnaam</span>
             <input aria-required="true"
-                   name="Bedrijfsnaam"
                    id="Bedrijfsnaam"
+                   name="Bedrijfsnaam"
 
                    required type="text"/>
         </label>
@@ -76,23 +77,29 @@
 
             <span class="star">Bedrijfswebsite</span>
             <input aria-required="true"
-                   name="Bedrijfswebsite"
                    id="Bedrijfswebsite"
+                   name="Bedrijfswebsite"
                    required type="text"/>
         </label>
 
 
         <label class="form-label input-textfield" for="ik-wil-graag-lid-worden-omdat">
             <span class="star">Ik wil graag lid worden omdat </span>
-            <textarea required aria-required="true" cols="5" placeholder="" name="Textarea" id="Textarea" rows="1"></textarea>
+            <textarea aria-required="true" cols="5" id="Textarea"
+                      name="Textarea"
+                      placeholder=""
+                      required
+                      rows="1">
+
+</textarea>
         </label>
 
         <label class="dropown" for="FTE">
             <span class="star">FTE</span>
-            <select aria-required="true" bind:value={selectedValue}
-                    name="FTE"
+            <select aria-required="true"
+                    bind:value={selectedValue}
                     id="FTE"
-
+                    name="FTE"
                     required>
 
                 <option value="">
@@ -182,7 +189,6 @@
         content: "";
     }
 
-
     /*ui states*/
     input:focus, textarea:focus, select:focus, option:focus {
         outline: 2px solid var(--blue);
@@ -191,6 +197,7 @@
     textarea {
         width: 100%; /* Make it full width */
     }
+
     /* form focus valid  */
 
 

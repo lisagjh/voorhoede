@@ -25,7 +25,6 @@
         terug naar home
     </a>
     <h1>Bedankt uw aanmelding is verzonden</h1>
-
 </section>
 
 
@@ -41,18 +40,18 @@
 
     @media (max-width: 35em) {
         h1 {
-            font-size: 1.5rem; /*letters worden anders te groot*/
+            font-size: 1.5rem;
         }
     }
 
     @media (min-width: 35em) {
         h1 {
-            font-size: 2rem; /*letters worden anders te groot*/
+            font-size: 2rem;
             line-height: 1.5;
         }
     }
     h1{
-        letter-spacing: 2px; /* de tekst staat te dicht tegen elkaar aan*/
+        letter-spacing: 2px;
     }
 
     a {
@@ -72,14 +71,14 @@
     }
 
     p {
-        /*margin zodat de 404 error niet te dicht tegen de terug naar home tekst staat*/
+
         margin-bottom: 2rem;
     }
 
     svg {
-        vertical-align: middle; /*dit zorgt ervoor dat de pijl en de tekst op dezelfde hoogte staan */
+        vertical-align: middle;
         margin-bottom: 0.2rem;
         color: var(--black);
-        transform: scaleX(-1); /*met deze code gaat het pijltje naar links     */
+        transform: scaleX(-1);
     }
 </style>

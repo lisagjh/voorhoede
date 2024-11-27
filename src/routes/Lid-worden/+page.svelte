@@ -1,7 +1,5 @@
 <script>
 
-
-  import Link from "$lib/Link.svelte";
   import IntroSection from "$lib/IntroSection.svelte";
 
   import Form from "$lib/Form.svelte";

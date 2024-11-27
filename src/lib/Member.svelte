@@ -1,5 +1,6 @@
 <script>
     import Link from "$lib/Link.svelte";
+
     export let data;
 </script>
 
@@ -63,8 +64,6 @@
         grid-template-rows: 16rem auto auto 4rem auto;
         gap: 16px;
     }
-
-
 
 
     .card-label-filters {
@@ -147,6 +146,7 @@
         }
 
     }
+
     @media (max-width: 734px) {
         .card {
 
@@ -156,13 +156,16 @@
 
         }
 
-    } @media (max-width: 734px) {
+    }
+
+    @media (max-width: 734px) {
         .card {
             border-bottom: 1px solid var(--grey);
 
         }
 
     }
+
     /*voor 725px is het opgelost */
     @media (min-width: 734px) {
         .card:nth-child(-n+4) {
@@ -200,8 +203,6 @@
         }
 
 
-
-
     }
 
     @media (min-width: 1440px) {
@@ -219,8 +220,6 @@
 
         }
     }
-
-
 
 
 </style>

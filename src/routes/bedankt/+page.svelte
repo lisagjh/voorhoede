@@ -70,10 +70,7 @@
 
     }
 
-    p {
 
-        margin-bottom: 2rem;
-    }
 
     svg {
         vertical-align: middle;

@@ -20,8 +20,6 @@
             stroke-linejoin="round"
     />
 </svg>
-
-<!--        button gebruiken met submit -->
     </button>
 </div>
 
@@ -41,8 +39,7 @@
         margin-right: -0.3rem;
         color: var(--black);
         text-decoration: none;
-        /*padding: 0px 0.2rem 0.4rem 0.4rem;*/
-        padding: 2px 1px 0px 6px;
+        padding: 0px 2px 0px 3px;
         background-color: transparent;
 
     }
@@ -54,11 +51,8 @@
         outline: 2px solid var(--blue);
     }
     svg{
-        /*margin-bottom: -0.6rem;*/
         border-left: 1px solid var(--grey);
-        /*padding: 0.2rem 0.2rem 0.4rem 0.4em;*/
         margin: -1px 1px -2px 4px;
-        /*padding: 0.5rem 0.5rem 0.7rem 0.8em;*/
     }
 
 </style>

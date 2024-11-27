@@ -1,13 +1,17 @@
 <script>
-  // add class props here if needed so we can style each text element differently
+  import { page } from '$app/stores'; // Import the $page store to get current route
   import Link from "$lib/Link.svelte";
+  
   export let title,
     subtitle,
     displayHomeLink = true;
+
+  // Check if current page is the homepage
+  $: isHomePage = $page.url.pathname === '/';
 </script>
 
 <section class="intro-section">
-  {#if displayHomeLink}
+  {#if displayHomeLink && !isHomePage} <!-- Only show if not on the homepage -->
     <Link href="/" clazz="back-to-home">
       <svg
         slot="svg-icon-left"

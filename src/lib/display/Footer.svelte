@@ -77,14 +77,15 @@
 
 <style>
   footer {
+    font-size: 0.9rem;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
   }
 
   footer > *,
   a.login {
-    padding: 0 2.5rem;
+    padding: 0 .5rem;
   }
 
   .top-content {
@@ -106,14 +107,11 @@
     transition: 0.25s ease-in-out;
   }
 
-  a:hover {
-    color: var(--blue);
-  }
-
   a {
     color: var(--black);
     width: fit-content;
     text-underline-offset: 0.2rem;
+    text-wrap: wrap;
   }
 
   a.login {

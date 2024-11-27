@@ -1,4 +1,4 @@
-<div class="styling-button-div">
+<div class="">
     <button  type="submit" class="button">SCHRIJF MIJ IN <svg aria-label="pijltje ga naar schrijf me in"
         width="16"
         height="16"
@@ -26,7 +26,7 @@
 
 
 <style>
-    .styling-button-div{
+    div{
         margin-top: 2rem;
         grid-row: 8;
         font-family: 'Martian Mono';

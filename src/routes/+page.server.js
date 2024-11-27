@@ -37,7 +37,7 @@ export async function load() {
   });
 
   // Get the first 6 vacancies for latest items
-  const latestVacancies = enrichedVacancies.slice(-1, 0);
+  const latestVacancies = enrichedVacancies.slice(0, 6);
 
   return {
     agencies: agencyData, // Agencies data

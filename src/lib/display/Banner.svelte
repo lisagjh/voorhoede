@@ -50,7 +50,6 @@
 
 <style>
   .rows {
-    position: absolute;
 
     background-color: black;
     width: 100vw;

@@ -22,7 +22,7 @@ export async function load() {
   }));
 
   // Take the first 6 vacancies for latest items
-  let lastFiveItems = enrichedVacancies.slice(0, 6);
+  let lastFiveItems = enrichedVacancies.slice(-6).reverse();
 
   console.log("Server received data:", allVacatures.length);
 

@@ -28,8 +28,6 @@
 
 <style>
   div {
-    container-type: inline-size;
-    container-name: wrapper;
     display: grid;
     place-items: center;
   }
@@ -42,6 +40,7 @@
     padding: 1.25rem 0.5rem;
     margin: 1.25rem 0;
     border-top: 1px solid var(--black);
+    transition: .25s ease-in-out;
   }
 
   article:last-of-type {
@@ -108,9 +107,10 @@
 
   /* query */
 
-  @media (width > 46rem) {
+  @media (width > 50rem) {
     div {
       grid-template-columns: repeat(auto-fill, minmax(250px, 50%));
+      column-gap: 0;
     }
 
     article {
@@ -118,6 +118,7 @@
       border-top: 0px solid black;
       padding: 1.25rem 1.5rem;
       word-break: break-word;
+      width: 100%;
     }
 
     article:nth-of-type(2n + 1) {

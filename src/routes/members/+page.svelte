@@ -76,6 +76,14 @@
 
 <style>
 
+  .filter-section{
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      margin-left: -15px;
+      margin-right: -16px;
+    }
+
+
 
   .textvacature {
     font-size: 1.2rem;

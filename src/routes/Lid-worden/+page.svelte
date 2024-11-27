@@ -11,7 +11,7 @@
 
 <!--http://localhost:5173/Lid-worden-->
 <IntroSection
-        title="Inschrijven"
+        title="INSCHRIJVEN"
         subtitle=""
 />
 

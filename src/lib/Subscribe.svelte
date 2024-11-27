@@ -1,4 +1,4 @@
-<div class="div-styling">
+<div class="styling-button-div">
     <a href="/bedankt" class="button">SCHRIJF MIJ IN <svg
         width="16"
         height="16"
@@ -25,7 +25,7 @@
 
 
 <style>
-    .div-styling{
+    .styling-button-div{
         margin-top: 2rem;
         grid-row: 8;
         font-family: 'Martian Mono';

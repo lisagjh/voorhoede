@@ -194,8 +194,6 @@
     /* form focus valid  */
 
 
-    /* form focus valid  */
-
     input[type='text']:user-valid,
     input[type='email']:valid,
     input[type='number']:valid,

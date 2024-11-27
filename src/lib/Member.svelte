@@ -5,8 +5,6 @@
 
 
 <article class="grid-container">
-
-<!--    todo hier moetden de eerste 6 komen -->
     {#each data.members as member}
 
         <article class="card">
@@ -58,7 +56,7 @@
         width: 100%;
         overflow: hidden;
         /*todo this border change to the design*/
-        /*border: var(--grey) 1px solid;*/
+
 
         padding: 2rem;
         display: grid;
@@ -160,9 +158,6 @@
 
     } @media (max-width: 734px) {
         .card {
-
-            /*border-right: 1px solid var(--grey);*/
-            /*border-left: 1px solid var(--grey);*/
             border-bottom: 1px solid var(--grey);
 
         }
@@ -213,7 +208,6 @@
 
         .card:nth-child(3n) {
             border-right: 1px solid var(--grey);
-            /*background-color: red;*/
         }
 
 
@@ -222,7 +216,7 @@
     @media (min-width: 1825px) {
         .card:nth-child(4n) {
             border-right: 1px solid var(--grey);
-            /*background-color: red;*/
+
         }
     }
 

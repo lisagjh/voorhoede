@@ -18,13 +18,6 @@
   );
 </script>
 
-<!--<IntroSection title="Leden">-->
-<!--  <slot name="subtitle"-->
-<!--    >Ook DDA lid worden? Ga dan naar <span class="specific-text-decoration"-->
-<!--      >deze pagina</span-->
-<!--    > voor meer informatie</slot-->
-<!--  >-->
-<!--</IntroSection>-->
 
 <IntroSection
         title="Leden"
@@ -132,7 +125,6 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
       grid-template-rows: 5rem auto;
       row-gap: 2rem;
 
-      /*border: 1px solid;*/
       border-bottom: 1px solid;
       border-left: 1px solid;
       border-right: 1px solid;
@@ -152,11 +144,9 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
       display: flex;
       flex-direction: row;
       padding: 2rem;
-      /* margin: -1rem; */
       border-bottom: 1px solid;
       border-top: 1px solid;
-      /*border-left: 1px solid;*/
-      /*border-right: 1px solid;*/
+
       justify-content: space-between;
       margin-top: 2rem;
       margin-left: -1rem;
@@ -164,21 +154,4 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
     }
   }
 
-  /*@media (min-width: 820px) {*/
-  /*  .intro-section {*/
-  /*    margin-top: 10%;*/
-  /*  }*/
-  /*}*/
-
-  /*@media (min-width: 1024px) {*/
-  /*  .intro-section {*/
-  /*    margin: 7.5% 25% 10% 25%;*/
-  /*  }*/
-  /*}*/
-
-  /*@media (min-width: 1524px) {*/
-  /*  .intro-section {*/
-  /*    margin: 12.5% 32% 10% 32%;*/
-  /*  }*/
-  /*}*/
 </style>

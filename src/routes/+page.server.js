@@ -1,47 +1,46 @@
 import fetchJson from "$lib/fetch-json.js";
 
 export async function load() {
-  let ddaVacancies =
-    "https://fdnd-agency.directus.app/items/dda_agencies_vacancies";
-  let ddaAgencies = "https://fdnd-agency.directus.app/items/dda_agencies/";
+  // API endpoints
+  const vacanciesUrl = "https://fdnd-agency.directus.app/items/dda_agencies_vacancies";
+  const agenciesUrl = "https://fdnd-agency.directus.app/items/dda_agencies/";
 
-  // Fetch vacancies and agencies data
-  const vacatures = await fetchJson(ddaVacancies);
-  const agencies = await fetchJson(ddaAgencies);
+  // fetch data
+  const vacanciesData = await fetchJson(vacanciesUrl);
+  const agenciesData = await fetchJson(agenciesUrl);
 
-  // Ensure data exists
-  if (!vacatures.data || !agencies.data) {
-    throw new Error("Failed to load data");
+  // map of agencies
+  const agencyMap = {};
+  for (const agency of agenciesData.data) {
+    agencyMap[agency.id] = {
+      title: agency.title,
+      photo: agency.photo,
+      logo: agency.logo,
+    };
   }
 
-  // Process agency data
-  const agencyData = agencies.data.map((agency) => ({
-    id: agency.id,
-    title: agency.title,
-    photo: agency.photo,
-    logo: agency.logo,
-  }));
-
-  // Create a Map for fast lookups of agencies by ID
-  const agencyMap = new Map(agencyData.map((agency) => [agency.id, agency]));
-
-  // Enrich vacancies with agency details (name, logo, photo, etc.)
-  const enrichedVacancies = vacatures.data.map((vacancy) => {
-    const agency = agencyMap.get(vacancy.agency_id);
+  // Add agency details to each vacancy
+  const enrichedVacancies = vacanciesData.data.map((vacancy) => {
+    const agency = agencyMap[vacancy.agency_id] || {}; // If it cant find agency, default to empty array
     return {
       ...vacancy,
-      agencyName: agency ? agency.title : "Unknown Agency",
-      agencyLogo: agency ? agency.logo : null,
-      agencyPhoto: agency ? agency.photo : null,
+      agencyName: agency.title || "Unknown Agency", // If it cant find agency name, use unkown agency
+      agencyLogo: agency.logo || null,
+      agencyPhoto: agency.photo || null,
     };
   });
 
-  // Get the first 6 vacancies for latest items
-  const latestVacancies = enrichedVacancies.slice(0, 6);
+  // Get the newest vacancies, sort by newest
+  const latestVacancies = enrichedVacancies.slice(-6).reverse();
 
   return {
-    agencies: agencyData, // Agencies data
-    vacancyAgencies: enrichedVacancies, // Enriched vacancies data
-    latestVacancies: latestVacancies, // Latest vacancies data
+    agencies: agenciesData.data.map((agency) => ({
+      id: agency.id,
+      title: agency.title,
+      photo: agency.photo,
+      logo: agency.logo,
+    })),
+    vacancyAgencies: enrichedVacancies, // All vacancies with agency details
+    latestVacancies: latestVacancies, // First 6 vacancies
   };
 }

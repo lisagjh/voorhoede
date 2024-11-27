@@ -28,7 +28,7 @@
  
 input {
   min-width: 19em;
-  padding: 1em 2px;
+  padding: 1em 0;
   margin: 1em;
   border: none;
   border-bottom: 1.5px solid var(--black);
@@ -39,14 +39,22 @@ input::placeholder {
   color: var(--black);
 }
 
+input::placeholder:focus {
+  color: var(--gray);
+}
+
 input:focus {
-  outline: none;
+  color: black;
+  transition: .35s;
+  outline: 1.75px solid var(--blue);
+  padding: 1em .85em;
+  border-radius: .25em;
 }
  
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
-  height: .5em;
-  width: .5em;
+  height: .55em;
+  width: .55em;
   background: rgb(238, 92, 7);
 }
 

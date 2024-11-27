@@ -38,15 +38,15 @@ Make sure you have the following installed:
 
 3. Install the required dependencies using npm:
 
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
 
 4. Start the development server:
 
-```bash
-npm run dev
-```
+    ```bash
+    npm run dev
+    ```
 
 5. Click the link to view the website, and have fun coding.
 

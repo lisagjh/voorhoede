@@ -134,6 +134,7 @@
 
 <style>
   nav {
+    display: none;
     visibility: hidden;
     background-color: var(--white);
     position: absolute;

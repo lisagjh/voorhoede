@@ -1,7 +1,6 @@
 <script>
   import Card from "../lib/display/Card.svelte";
   import IntroSection from "./../lib/IntroSection.svelte";
-  import Banner from "../lib/display/Banner.svelte";
 
   export let data;
 
@@ -20,9 +19,6 @@
     bureaus. Samen maken we de wereld elke dag een beetje slimmer.
   </svelte:fragment>
 </IntroSection>
-
-<Banner data={data.agencies} />
-
 
 <section class="vacancy-section">
   <div class="top">

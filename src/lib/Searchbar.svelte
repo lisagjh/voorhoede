@@ -15,7 +15,6 @@
  
 <form action="#" method="GET" on:submit|preventDefault>
   <input
-    tabindex="0"
     type="search"
     name={searchbarName} 
     placeholder={placeholderText}

@@ -84,13 +84,7 @@
 
         <label class="form-label input-textfield" for="ik-wil-graag-lid-worden-omdat">
             <span class="star">Ik wil graag lid worden omdat </span>
-            <textarea aria-required="true"
-                      cols="5"
-                      required
-                      name="ik-wil-graag-lid-worden-omdat"
-                      id="ik-wil-graag-lid-worden-omdat"
-                      rows="1">
-            </textarea>
+            <textarea required aria-required="true" cols="5" placeholder="" name="Textarea" id="Textarea" rows="1"></textarea>
         </label>
 
         <label class="dropown" for="FTE">
@@ -98,6 +92,7 @@
             <select aria-required="true" bind:value={selectedValue}
                     name="FTE"
                     id="FTE"
+
                     required>
 
                 <option value="">
@@ -198,10 +193,13 @@
     }
     /* form focus valid  */
 
+
+    /* form focus valid  */
+
     input[type='text']:user-valid,
     input[type='email']:valid,
     input[type='number']:valid,
-    textarea:valid,
+    textarea:user-valid,
     select:user-valid {
         outline: 2px solid green;
 
@@ -216,7 +214,6 @@
     select:user-invalid {
         outline: 2px solid red;
     }
-
 
     /*contianer queries */
     form {

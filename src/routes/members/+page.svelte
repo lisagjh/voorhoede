@@ -99,7 +99,6 @@
       display: grid;
       grid-template-rows: 5rem auto;
       row-gap: 2rem;
-
       border: 1px solid;
       padding: 2rem;
     }

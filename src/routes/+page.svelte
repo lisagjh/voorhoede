@@ -7,8 +7,8 @@
 
   const extraFields = [
     { key: "agencyName" },
+    { key: "locatie" },
     { key: "hours" },
-    { key: "location" },
     { key: "expertise" },
   ];
 </script>

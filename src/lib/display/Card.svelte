@@ -10,12 +10,15 @@
       <article>
         <h3 class="title">{item.title}</h3>
 
-        <!-- Render extra fields dynamically -->
         {#each extraFields as field}
-          {#if item[field.key]}
+        {#if item[field.key]}
+          {#if field.key === "hours"}
+            <p>{item[field.key]} uur</p>
+          {:else}
             <p>{item[field.key]}</p>
           {/if}
-        {/each}
+        {/if}
+      {/each}
 
         <a href="/#">{anchorText}</a>
       </article>

@@ -50,20 +50,18 @@
 
 <style>
   .rows {
-
-    background-color: black;
-    width: 100vw;
+    width: 100%;
     align-self: center;
     height: fit-content;
     overflow: hidden;
-    /* background-image: linear-gradient(
-      var(--black),
-      #262640,
-      #323c74,
-      #3354ad,
-      var(--blue)
-    ); */
+    padding: 0.25rem;
+    margin-bottom: 2rem;
   }
+
+  .row img {
+    padding-top: 0.5rem;
+  }
+
   .row,
   .row-reverse {
     display: flex;
@@ -77,7 +75,9 @@
     animation-direction: reverse;
   }
 
-  picture {
+  picture,
+  img {
+    background-color: black;
     align-items: center;
   }
 
@@ -101,21 +101,22 @@
 
     @supports (animation-timeline: view()) {
       /* .row {
+        animation: adjust-position linear forwards;
         animation-timeline: scroll(root block);
       }
       .row-reverse {
+        animation: adjust-position linear forwards;
         animation-timeline: scroll(root block);
       } */
 
-      /* @keyframes adjust-position {
+      @keyframes adjust-position {
         from {
           transform: translateX(calc(-100% + 100vh));
         }
         to {
           transform: translateX(calc(100% - 100vh));
-        } 
-    }
-        */
+        }
+      }
     }
   }
 </style>

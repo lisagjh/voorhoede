@@ -1,34 +1,47 @@
 import fetchJson from "$lib/fetch-json.js";
 
 export async function load() {
-  let ddaVacancies = "https://fdnd-agency.directus.app/items/dda_agencies_vacancies";
+  let ddaVacancies =
+    "https://fdnd-agency.directus.app/items/dda_agencies_vacancies";
   let ddaAgencies = "https://fdnd-agency.directus.app/items/dda_agencies/";
 
-  let vacatures = await fetchJson(ddaVacancies);
-  let agencies = await fetchJson(ddaAgencies);
+  // Fetch vacancies and agencies data
+  const vacatures = await fetchJson(ddaVacancies);
+  const agencies = await fetchJson(ddaAgencies);
 
-  // Access the `data` property from both API responses
-  let allVacatures = vacatures.data;
-  let agencyData = agencies.data;
+  // Ensure data exists
+  if (!vacatures.data || !agencies.data) {
+    throw new Error("Failed to load data");
+  }
 
-  
-  // Create a Map for efficient agency lookups
-  let agencyMap = new Map(agencies.data.map(agency => [agency.id, agency.title]));
-
-  // Enrich vacancies with agency names
-  let enrichedVacancies = allVacatures.map(vacancy => ({
-    ...vacancy,
-    agencyName: agencyMap.get(vacancy.agency_id) || 'Unknown Agency',
+  // Process agency data
+  const agencyData = agencies.data.map((agency) => ({
+    id: agency.id,
+    title: agency.title,
+    photo: agency.photo,
+    logo: agency.logo,
   }));
 
-  // Take the first 6 vacancies for latest items
-  let lastFiveItems = enrichedVacancies.slice(0, 6);
+  // Create a Map for fast lookups of agencies by ID
+  const agencyMap = new Map(agencyData.map((agency) => [agency.id, agency]));
 
-  console.log("Server received data:", allVacatures.length);
+  // Enrich vacancies with agency details (name, logo, photo, etc.)
+  const enrichedVacancies = vacatures.data.map((vacancy) => {
+    const agency = agencyMap.get(vacancy.agency_id);
+    return {
+      ...vacancy,
+      agencyName: agency ? agency.title : "Unknown Agency",
+      agencyLogo: agency ? agency.logo : null,
+      agencyPhoto: agency ? agency.photo : null,
+    };
+  });
+
+  // Get the first 6 vacancies for latest items
+  const latestVacancies = enrichedVacancies.slice(-1, 0);
 
   return {
-    vacancyAgencies: enrichedVacancies,
-    latestVacancies: lastFiveItems,
-    vacatures: allVacatures,
+    agencies: agencyData, // Agencies data
+    vacancyAgencies: enrichedVacancies, // Enriched vacancies data
+    latestVacancies: latestVacancies, // Latest vacancies data
   };
 }

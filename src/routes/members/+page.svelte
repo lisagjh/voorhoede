@@ -81,6 +81,7 @@
       border-bottom: 1px solid;
       margin-left: -15px;
       margin-right: -16px;
+    margin-bottom: -1rem;
     }
 
 

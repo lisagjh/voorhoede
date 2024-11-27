@@ -1,7 +1,15 @@
-<script>
-  import MenuToggleBtn from "$lib/input/MenuToggleBtn.svelte";
-  import NavItem from "$lib/navigation/NavItem.svelte";
+<script lang="ts">
+  import { onMount } from "svelte";
+  import MenuToggleBtn from "./../input/MenuToggleBtn.svelte";
+  import NavItem from "./NavItem.svelte";
 
+  // Menu state
+  let isOpen = false; // Initialize state for menu visibility
+  let openVacancies = 0;
+  let hasAnimated = false;
+  const delay = 1750;
+
+  // Pages data
   let pages = [
     { title: "Home", ref: "/" },
     { title: "Over Ons", ref: "/over" },
@@ -18,27 +26,17 @@
 
   let allPages = [...pages, ...pagesCTA];
 
-  let openVacancies = 0;
-  let hasAnimated = false;
-  let isOpen = false;
-  const delay = 1750;
-
+  // Toggle menu visibility and handle body overflow
   function toggle() {
     isOpen = !isOpen;
-
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
-    // Trigger the animation only the first time the menu opens
+    document.body.style.overflow = isOpen ? "hidden" : ""; // Disable/enable scrolling
     if (isOpen && !hasAnimated) {
-      hasAnimated = true; // Mark animation as done
+      hasAnimated = true;
       startVacancyAnimation();
     }
   }
 
+  // Fetch vacancies and animate counter
   async function startVacancyAnimation() {
     try {
       const response = await fetch(
@@ -46,36 +44,74 @@
       );
       const vacatures = await response.json();
       const totalVacancies = vacatures.data ? vacatures.data.length : 0;
-
-      // Animate the counter to transition from 0 to the fetched vacancy count
       animateCounter(openVacancies, totalVacancies, delay);
     } catch (error) {
       console.error("Error fetching vacancies:", error);
     }
   }
 
+  // Function to animate the vacancy badge in the nav menu
   function animateCounter(start, end, duration) {
+    // Calculate the range of the animation
     const range = end - start;
+
+    // when it starts
     const startTime = performance.now();
 
+    // Easing function to make the animation slow down at the end
     function easeOut(t) {
       return t * (2 - t);
     }
 
+    // Function to update the animation on each frame
     function update(currentTime) {
+      // Calculate how much time has passed since the animation started
       const elapsedTime = currentTime - startTime;
+      // Translates the elapsedtime to a number between 0 (start) and 1 (end)
       const normalizedTime = Math.min(elapsedTime / duration, 1);
-      const easedProgress = easeOut(normalizedTime); // Apply easing function
+      // Apply the easing function
+      const easedProgress = easeOut(normalizedTime);
+      // Update the number of the counter
       openVacancies = Math.floor(start + range * easedProgress);
-
+      // checks if the animation is finished or not
       if (normalizedTime < 1) {
-        requestAnimationFrame(update); // Continue the animation
+        // if not keeps updating
+        requestAnimationFrame(update);
       }
     }
-
+    // Start the animation by calling the update function
     requestAnimationFrame(update);
   }
 
+  // to close the menu after a menu item or backdrop gets clicked
+  const menuToggle: Action = (node) => {
+    const handleClick = () => {
+      toggle(); // Call the toggle function when clicked
+    };
+
+    node.addEventListener("click", handleClick);
+
+    // Cleanup when the element is removed
+    return {
+      destroy() {
+        node.removeEventListener("click", handleClick);
+      },
+    };
+  };
+
+  // close menu when esc is pressed
+  function closeMenuOnEsc(event) {
+    // check if esc key is pressed
+    if (event.key === "Escape") {
+      // close menu
+      isOpen = false;
+    }
+  }
+
+  onMount(async () => {
+    // event listener for keydown event
+    document.addEventListener("keydown", closeMenuOnEsc);
+  });
 </script>
 
 <MenuToggleBtn {isOpen} {toggle} />
@@ -83,23 +119,22 @@
 <nav class:is-open={isOpen}>
   <ul>
     {#each allPages as page}
-      <li>
+      <li use:menuToggle>
         <NavItem
           title={page.title}
           href={page.ref}
           badge={page.ref === "/vacatures" ? openVacancies : null}
-          action={menuAction}
         />
       </li>
     {/each}
   </ul>
 </nav>
 
-<div id="backdrop" class:is-open={isOpen} {toggle}></div>
+<div id="backdrop" class:is-open={isOpen} use:menuToggle></div>
 
 <style>
   nav {
-    display: none;
+    visibility: hidden;
     background-color: var(--white);
     position: absolute;
     right: 0;
@@ -111,17 +146,17 @@
     border-left: 1px solid var(--black);
 
     transition:
-      transform 0.3s ease-out,
+      transform 0.3s ease-in-out,
       opacity 0.3s ease-in-out;
-    transform: translateX(100%); /* Start off-screen */
-    opacity: 0; /* Start invisible */
+    transform: translateX(100%);
+    opacity: 0;
   }
 
   nav.is-open {
+    visibility: visible;
     display: flex;
-    transform: translateY(0); /* Slide into view */
-    opacity: 1; /* Fully visible */
-    backdrop-filter: drop-shadow(40px 40px 100px black);
+    transform: translateY(0);
+    opacity: 1;
   }
 
   div {
@@ -144,6 +179,7 @@
   }
 
   ul {
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -156,6 +192,6 @@
 
   li {
     font-family: var(--martian-mono);
-    margin: 0.5rem 1rem;
+    margin: 1rem;
   }
 </style>

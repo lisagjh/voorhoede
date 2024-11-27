@@ -1,40 +1,53 @@
 *Wil je een issue inschieten? Wij zouden het fijn vinden als je dat doet in de [FDND Agency repo](https://github.com/fdnd-agency/voorhoede). Zo kunnen wij de issue meenemen is ons projectboard, en blijft alles op een plaats!*
 
-# DDA
+# Dutch Digital Agencies
 
-Voor de voorhoede gaan wij aan de slag om de DDA website deels te realiseren 
-voor deze sprint gaan wij aan de slag om de homepagina deels te realiseren en
-de members en vacaturepagina volledig
+[View this project here](https://dda-liard.vercel.app/)
 
 
-![image](https://github.com/user-attachments/assets/a4cb6b31-f5cd-4649-88f5-ef77eedb61d9)
+![readmee](https://github.com/user-attachments/assets/e7100b8a-0d7e-4945-8d30-d5ace0f499dc)
 
 
+## Project Overview
+
+This project is focused on creating a dynamic, responsive, accessible and performant website. For now, we have decided to focus on the home page, the members overview page, and the vacancy overview page.
 
 
-## How to use
+## Installation
 
-Je drukt op de groene knop en dan heb je diverse opties hoe je dit project wil gebruiken
-![image](https://github.com/user-attachments/assets/3edf0242-a69d-4895-b95a-111f7633a6ee)
+Follow these steps to clone and run the project locally.
 
-<br>
-je kan dit project clonen in de terminal kopieer je de link en typ je dit in
+Make sure you have the following installed:
 
-```bash
-git clone https://github.com/lisagjh/voorhoede.git
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) (version 18.x or higher recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
 
-```
-vervolgens doe je 
-```
-npm install
-```
-daarna doe je 
-```
-npm run dev
-```
-en dan zie je vervolgens dit in je editor en dan kan je op de link drukken om de website te openen
-```
-http://localhost:5175/
-```
 
+1. Clone this repository to your local machine using the following command in your terminal:
+
+    ```bash
+    git clone https://github.com/fdnd-agency/voorhoede.git
+    ```
+
+2. Navigate to the project folder:
+
+    ```bash
+    cd voorhoede
+    ```
+
+
+3. Install the required dependencies using npm:
+
+    ```bash
+    npm install
+    ```
+
+4. Start the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+5. Click the link to view the website, and have fun coding.
 

@@ -8,6 +8,7 @@
   import Searchbar from "$lib/Searchbar.svelte";
   import IntroSection from "$lib/IntroSection.svelte";
 
+
   $: filteredMembers = data.members.filter((member) =>
     member.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -71,10 +72,10 @@
   </Link>
 </div>
 
+
+
 <style>
-  .page-numbers {
-    color: red;
-  }
+
 
   .textvacature {
     font-size: 1.2rem;
@@ -89,7 +90,7 @@
     justify-content: center;
     align-items: center;
     place-content: center;
-    border: 1px solid;
+    margin: -1rem;
     padding: 2rem;
     text-decoration: none;
   }
@@ -100,7 +101,17 @@
       grid-template-rows: 5rem auto;
       row-gap: 2rem;
       border: 1px solid;
+      border-bottom: 1px solid;
+      border-left: 1px solid;
+      border-right: 1px solid;
+      margin: -1rem;
       padding: 2rem;
+    }
+
+    .link-more-events{
+      border-bottom: 1px solid;
+      border-left: 1px solid;
+      border-right: 1px solid;
     }
   }
 
@@ -109,8 +120,17 @@
       display: flex;
       flex-direction: row;
       padding: 2rem;
+      border-bottom: 1px solid;
+      border-top: 1px solid;
+
+      justify-content: space-between;
+      margin-top: 2rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
       border: 1px solid;
       justify-content: space-between;
     }
   }
+
+  
 </style>

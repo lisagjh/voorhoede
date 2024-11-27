@@ -6,8 +6,6 @@
 
 <div>
     <h2 class="job-title">{title}</h2>
-    <span class="language">{language}</span>
-
     <span class="company">{company}</span>
     <span class="language">{language}</span>
     <span class="workweek">{hours}</span>

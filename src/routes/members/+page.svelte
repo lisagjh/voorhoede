@@ -1,5 +1,7 @@
 <script>
   export let data;
+  // De input van de gebruiker verbonden aan de zoekbalk
+  let searchTerm = "";
 
   import Link from "$lib/Link.svelte";
   import Member from "$lib/Member.svelte";
@@ -7,12 +9,6 @@
   import IntroSection from "$lib/IntroSection.svelte";
 
 
-  // Input van de gebruiker
-  let searchTerm = "";
-
-  // $: Is een dynamisch element wat zich instant aanpast op de data die erin zit.
-  // .filter is een built in JS functie die een nieuwe arraay aanmaakt met de juiste items op basis van de requirements die er
-  // na volgen onder andere .ToLowerCase en .Includes met de member array waar op dit moment alle agencies in staan.
   $: filteredMembers = data.members.filter((member) =>
     member.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -20,10 +16,8 @@
 
 
 <IntroSection
-        title="Leden"
-        subtitle="De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging.
-
-Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
+  title="Leden"
+  subtitle="De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging. Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
 />
 
 <section class="filter-section">
@@ -81,20 +75,7 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
 
 
 <style>
-  .filter-section {
-    padding: 1em;
-    /*border: 1px solid black;*/
-    border-bottom: 1px solid var(--grey);
-    border-top: 1px solid var(--grey);
-    margin: -1rem;
-  }
 
-  @media (max-width: 690px) {
-    .filter-section {
-      border-left:  1px solid var(--grey);
-      border-right:  1px solid var(--grey);
-    }
-  }
 
   .textvacature {
     font-size: 1.2rem;
@@ -119,7 +100,7 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
       display: grid;
       grid-template-rows: 5rem auto;
       row-gap: 2rem;
-
+      border: 1px solid;
       border-bottom: 1px solid;
       border-left: 1px solid;
       border-right: 1px solid;
@@ -146,7 +127,10 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
       margin-top: 2rem;
       margin-left: -1rem;
       margin-right: -1rem;
+      border: 1px solid;
+      justify-content: space-between;
     }
   }
 
+  
 </style>

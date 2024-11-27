@@ -9,6 +9,6 @@ export async function load() {
 
     return {
         members: members.data,
-        membersFirst6: first6Items.data
+        first6Members: first6Items.data
     }
 }

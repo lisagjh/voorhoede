@@ -4,7 +4,7 @@
 
 <div class="rows">
   <div class="row">
-    {#each data as item, index}
+    {#each data as item}
       {#if item.logo}
         <picture>
           <source
@@ -65,10 +65,7 @@
   .row,
   .row-reverse {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
     width: fit-content;
-    white-space: nowrap;
   }
 
   .row-reverse {

@@ -147,78 +147,221 @@
 
     }
 
-    @media (max-width: 734px) {
-        .card {
-
-            border-right: 1px solid var(--grey);
-            border-left: 1px solid var(--grey);
-            border-bottom: 1px solid var(--grey);
-
-        }
-
-    }
-
-    @media (max-width: 734px) {
-        .card {
-            border-bottom: 1px solid var(--grey);
-
-        }
-
+    .card {
+        border-bottom: 1px solid var(--grey);
     }
 
     /*voor 725px is het opgelost */
-    @media (min-width: 734px) {
+    @media (min-width: 765px) and (max-width: 1127px) {
         .card:nth-child(-n+4) {
             border-top: none;
 
         }
 
-        .card:nth-child(1n) {
-
-            border-bottom: 1px solid var(--grey);
-
-        }
-
-        .card:nth-child(2n-1) {
+        .card:nth-child(odd) {
             border-right: 1px solid var(--grey);
         }
 
 
-        .card:nth-child(2n+1) {
-            border-left: none;
+
+
+
+    }
+
+    /*3koloms*/
+
+    @media (min-width: 1127px) and (max-width: 1466px) {
+
+
+        .card:nth-child(1),
+        .card:nth-child(2),
+        .card:nth-child(4),
+        .card:nth-child(5),
+        .card:nth-child(7),
+        .card:nth-child(8),
+        .card:nth-child(10),
+        .card:nth-child(11),
+        .card:nth-child(13),
+        .card:nth-child(14),
+        .card:nth-child(16),
+        .card:nth-child(17),
+        .card:nth-child(19),
+        .card:nth-child(20),
+        .card:nth-child(22),
+        .card:nth-child(23),
+        .card:nth-child(25),
+        .card:nth-child(26)
+        {
+            border-right: 1px solid var(--grey);
         }
 
     }
 
-    @media (min-width: 825px) {
-        .card {
-            grid-template-rows: 16rem auto auto 4rem auto;
+    /*4koloms*/
+    @media (min-width: 1466px) and (max-width: 1815px) {
+
+        .card:nth-child(1),
+        .card:nth-child(2),
+        .card:nth-child(3),
+
+
+        .card:nth-child(5),
+        .card:nth-child(6),
+        .card:nth-child(7),
+
+        .card:nth-child(9),
+            /*.card:nth-child(10),*/
+        .card:nth-child(10),
+
+        .card:nth-child(11),
+        .card:nth-child(13),
+        .card:nth-child(14),
+
+        .card:nth-child(15),
+
+        .card:nth-child(17),
+        .card:nth-child(18),
+
+        .card:nth-child(19),
+        .card:nth-child(21),
+        .card:nth-child(22),
+
+        .card:nth-child(23),
+        .card:nth-child(25),
+        .card:nth-child(26)
+        {
+            border-right: 1px solid var(--grey);
         }
+
+
 
     }
 
-    @media (min-width: 1000px) {
-        .card:nth-child(2n) {
+
+    /*5colums */
+
+    @media (min-width: 1815px) and (max-width: 2165px) {
+
+        .card:nth-child(1),
+        .card:nth-child(2),
+        .card:nth-child(3),
+        .card:nth-child(4),
+
+            /*5 niet*/
+        .card:nth-child(6),
+        .card:nth-child(7),
+        .card:nth-child(8),
+        .card:nth-child(9),
+        .card:nth-child(11),
+        .card:nth-child(12),
+
+
+        .card:nth-child(13),
+        .card:nth-child(14),
+
+        .card:nth-child(16),
+        .card:nth-child(17),
+        .card:nth-child(18),
+        .card:nth-child(19),
+            /*.card:nth-child(20),*/
+
+        .card:nth-child(21),
+        .card:nth-child(22),
+        .card:nth-child(23),
+        .card:nth-child(24),
+        .card:nth-child(26)
+
+        {
+            border-right: 1px solid var(--grey);
+        }
+
+
+
+    }
+
+    /*6colums */
+    @media (min-width: 2165px) and (max-width: 2515px) {
+        .card:nth-child(1),
+        .card:nth-child(2),
+        .card:nth-child(3),
+        .card:nth-child(4),
+        .card:nth-child(5),
+
+            /*6 niet*/
+
+        .card:nth-child(7),
+        .card:nth-child(8),
+        .card:nth-child(9),
+        .card:nth-child(11),
+
+
+
+        .card:nth-child(13),
+        .card:nth-child(14),
+
+        .card:nth-child(16),
+        .card:nth-child(17),
+        .card:nth-child(19),
+            /*.card:nth-child(20),*/
+
+        .card:nth-child(21),
+        .card:nth-child(22),
+        .card:nth-child(23),
+        .card:nth-child(25),
+
+        .card:nth-child(26)
+
+        {
             border-right: 1px solid var(--grey);
         }
 
 
     }
 
-    @media (min-width: 1440px) {
+    /*7 colums*/
+    @media (min-width: 2516px) {
+        .card:nth-child(1),
+        .card:nth-child(2),
+        .card:nth-child(3),
+        .card:nth-child(4),
+        .card:nth-child(5),
+        .card:nth-child(6),
 
-        .card:nth-child(3n) {
+            /*7 niet*/
+
+
+
+        .card:nth-child(8),
+        .card:nth-child(9),
+        .card:nth-child(10),
+        .card:nth-child(11),
+        .card:nth-child(12),
+
+
+
+        .card:nth-child(13),
+
+
+        .card:nth-child(15),
+        .card:nth-child(16),
+        .card:nth-child(17),
+        .card:nth-child(18),
+        .card:nth-child(19),
+        .card:nth-child(20),
+            /*.card:nth-child(20),*/
+
+        .card:nth-child(22),
+        .card:nth-child(23),
+        .card:nth-child(24),
+        .card:nth-child(25),
+
+        .card:nth-child(26)
+
+        {
             border-right: 1px solid var(--grey);
         }
 
 
-    }
-
-    @media (min-width: 1825px) {
-        .card:nth-child(4n) {
-            border-right: 1px solid var(--grey);
-
-        }
     }
 
 

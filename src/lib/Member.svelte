@@ -146,36 +146,28 @@
         }
 
     }
-    @media (max-width: 734px) {
+
+    @media (max-width: 43rem) {
         .card {
     
-            border-right: 1px solid var(--grey);
-            border-left: 1px solid var(--grey);
-            }
+    border-right: none;
+    border-left: none;
     }
 
-    @media (max-width: 734px) {
-        /* .card {
-
-            border-right: 1px solid var(--grey);
-            border-left: 1px solid var(--grey);
-            border-bottom: 1px solid var(--grey);
-
-        } */
-
     }
+ 
 
-    @media (max-width: 734px) {
+
+
+    @media (max-width: 854px) {
         .card {
             border-bottom: 1px solid var(--grey);
-            border-right: 1px solid var(--grey);
-            border-left: 1px solid var(--grey);
         }
     }
 
  
     /*voor 725px is het opgelost */
-    @media (min-width: 854px) {
+    @media (min-width: 800px) {
         .card:nth-child(-n+4) {
             border-top: none;
 
@@ -209,21 +201,29 @@
 
     @media (min-width: 1000px) {
         .card:nth-child(2n) {
+            /* border-right: 1px solid var(--grey); */
+        }
+
+
+    }
+
+    
+    @media (min-width: 1000px) {
+        .card:nth-child(2n) {
             border-right: 1px solid var(--grey);
         }
 
 
     }
 
-    @media (min-width: 1440px) {
+    /* todo vanaf 1095px komter een 3de  card bij */
 
-        /* .card:nth-child(3n) {
+    @media (min-width: 1095px) {
+        .card:nth-child(3n) {
             border-right: 1px solid var(--grey);
-        } */
-
-
+        }
     }
-
+    /* todo vanaf 1519px  komter een 4de de card bij */
     @media (min-width: 1825px) {
         .card:nth-child(4n) {
             border-right: 1px solid var(--grey);

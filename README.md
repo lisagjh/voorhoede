@@ -10,7 +10,7 @@
 
 ## Project Overview
 
-This project is focused on creating a dynamic, responsive, accessible and performant website. For now, we have decided to focus on the home page, the members overview page, and the vacancy overview page.
+This project is focused on creating a dynamic, responsive, accessible and performant website for Dutch Digital Agencies. For now, we have decided to focus on the home page, the members overview page, and the vacancy overview page.
 
 
 ## Installation

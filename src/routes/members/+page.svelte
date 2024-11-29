@@ -87,7 +87,7 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
       /*border: 1px solid black;*/
       border-bottom: 1px solid var(--grey);
       border-top: 1px solid var(--grey);
-      margin:0px -33px 0px -33px;
+      margin:0px -15px 0px -15px;
     }
   }
 

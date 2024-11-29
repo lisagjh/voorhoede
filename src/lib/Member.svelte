@@ -146,38 +146,13 @@
         }
 
     }
-    /*@media (max-width: 43rem) {*/
-    /*    .card {*/
-
-    /*        border-right: solid 1px black;*/
-    /*        border-left: solid 1px black;*/
-    /*    }*/
-    /*}*/
-
-
-    @media (max-width: 43rem) {
-        .card {
-
-    /*border-right: none;*/
-    /*border-left: none;*/
-    }
-
-    }
 
     .card {
         border-bottom: 1px solid var(--grey);
     }
 
-
-    @media (max-width: 854px) {
-
-
-
-    }
-
-
     /*voor 725px is het opgelost */
-    @media (min-width: 800px) and (max-width: 1162px) {
+    @media (min-width: 765px) and (max-width: 1127px) {
         .card:nth-child(-n+4) {
             border-top: none;
 
@@ -195,7 +170,7 @@
 
         /*3koloms*/
 
-        @media (min-width: 1162px) and (max-width: 1502px) {
+        @media (min-width: 1127px) and (max-width: 1466px) {
 
 
         .card:nth-child(1),
@@ -223,7 +198,7 @@
     }
 
     /*4koloms*/
-    @media (min-width: 1502px) and (max-width: 1854px) {
+    @media (min-width: 1466px) and (max-width: 1815px) {
 
         .card:nth-child(1),
         .card:nth-child(2),
@@ -265,7 +240,7 @@
 
     /*5colums */
 
-    @media (min-width: 1854px) and (max-width: 2190px) {
+    @media (min-width: 1815px) and (max-width: 2165px) {
 
         .card:nth-child(1),
         .card:nth-child(2),
@@ -305,7 +280,7 @@
     }
 
     /*6colums */
-    @media (min-width: 2190px) and (max-width: 2517px) {
+    @media (min-width: 2165px) and (max-width: 2515px) {
         .card:nth-child(1),
         .card:nth-child(2),
         .card:nth-child(3),
@@ -344,7 +319,7 @@
     }
 
     /*7 colums*/
-    @media (min-width: 2517px) {
+    @media (min-width: 2516px) {
         .card:nth-child(1),
         .card:nth-child(2),
         .card:nth-child(3),

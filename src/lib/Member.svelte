@@ -50,7 +50,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
         text-transform: uppercase;
-        margin: 1rem -1rem 0rem;
+        margin: rem -1rem 0rem;
     }
 
     .card {
@@ -146,28 +146,36 @@
         }
 
     }
-
     @media (max-width: 734px) {
         .card {
+    
+            border-right: 1px solid var(--grey);
+            border-left: 1px solid var(--grey);
+            }
+    }
+
+    @media (max-width: 734px) {
+        /* .card {
 
             border-right: 1px solid var(--grey);
             border-left: 1px solid var(--grey);
             border-bottom: 1px solid var(--grey);
 
-        }
+        } */
 
     }
 
     @media (max-width: 734px) {
         .card {
             border-bottom: 1px solid var(--grey);
-
+            border-right: 1px solid var(--grey);
+            border-left: 1px solid var(--grey);
         }
-
     }
 
+ 
     /*voor 725px is het opgelost */
-    @media (min-width: 734px) {
+    @media (min-width: 854px) {
         .card:nth-child(-n+4) {
             border-top: none;
 
@@ -175,6 +183,7 @@
 
         .card:nth-child(1n) {
 
+           
             border-bottom: 1px solid var(--grey);
 
         }
@@ -186,6 +195,7 @@
 
         .card:nth-child(2n+1) {
             border-left: none;
+            
         }
 
     }
@@ -207,9 +217,9 @@
 
     @media (min-width: 1440px) {
 
-        .card:nth-child(3n) {
+        /* .card:nth-child(3n) {
             border-right: 1px solid var(--grey);
-        }
+        } */
 
 
     }

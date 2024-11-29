@@ -165,7 +165,6 @@ main {
     border: solid var(--black);
     border-width: 0px 1px 1px 1px;
     border-top: none;
-    padding: 1rem;
   }
 
   footer {

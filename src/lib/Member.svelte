@@ -146,90 +146,210 @@
         }
 
     }
+    @media (max-width: 43rem) {
+        .card {
+
+            border-right: solid 1px black;
+            border-left: solid 1px black;
+        }
+    }
+
 
     @media (max-width: 43rem) {
         .card {
     
-    border-right: none;
-    border-left: none;
+    /*border-right: none;*/
+    /*border-left: none;*/
     }
 
     }
- 
 
+    .card {
+        border-bottom: 1px solid var(--grey);
+    }
 
 
     @media (max-width: 854px) {
-        .card {
-            border-bottom: 1px solid var(--grey);
-        }
+
+
+
     }
 
  
     /*voor 725px is het opgelost */
-    @media (min-width: 800px) {
+    @media (min-width: 800px) and (max-width: 1162px) {
         .card:nth-child(-n+4) {
             border-top: none;
 
         }
 
-        .card:nth-child(1n) {
-
-           
-            border-bottom: 1px solid var(--grey);
-
-        }
-
-        .card:nth-child(2n-1) {
+        .card:nth-child(odd) {
             border-right: 1px solid var(--grey);
         }
 
 
-        .card:nth-child(2n+1) {
-            border-left: none;
-            
-        }
+        /*.card:nth-child(2n-1) {*/
+        /*    border-right: 1px solid var(--grey);*/
+        /*}*/
 
-    }
 
-    @media (min-width: 825px) {
-        .card {
-            grid-template-rows: 16rem auto auto 4rem auto;
-        }
-
-    }
-
-    @media (min-width: 1000px) {
-        .card:nth-child(2n) {
-            /* border-right: 1px solid var(--grey); */
-        }
 
 
     }
+
+        @media (min-width: 1162px) and (max-width: 1545px) {
+        .card:nth-child(odd) {
+            border-right: none;
+
+
+        }
+
+        .card:nth-child(1),
+        .card:nth-child(2),
+        .card:nth-child(4),
+        .card:nth-child(5),
+        .card:nth-child(7),
+        .card:nth-child(8),
+        .card:nth-child(10),
+        .card:nth-child(11),
+        .card:nth-child(13),
+        .card:nth-child(14),
+        .card:nth-child(16),
+        .card:nth-child(17),
+        .card:nth-child(19),
+        .card:nth-child(20),
+        .card:nth-child(22),
+        .card:nth-child(23),
+        .card:nth-child(25),
+        .card:nth-child(26)
+          {
+            border-right: 1px solid var(--grey);
+        }
+
+        /*.card:nth-child(2n),*/
+        /*.card:nth-child(1),*/
+        /*.card:nth-child(2) {*/
+        /*    border-right: 1px solid var(--grey);*/
+        /*}*/
+
+    }
+    @media (min-width: 1545px) and (max-width: 1848px) {
+
+        .card:nth-child(1),
+        .card:nth-child(2),
+        .card:nth-child(3),
+        .card:nth-child(4),
+        .card:nth-child(6),
+        .card:nth-child(7),
+        .card:nth-child(8),
+        .card:nth-child(9),
+        .card:nth-child(11),
+        .card:nth-child(12),
+
+        .card:nth-child(13),
+        .card:nth-child(14),
+        .card:nth-child(16),
+        .card:nth-child(17),
+        .card:nth-child(18),
+        .card:nth-child(19),
+
+        .card:nth-child(21),
+        .card:nth-child(22),
+        .card:nth-child(23),
+        .card:nth-child(24),
+        .card:nth-child(26)
+        {
+            border-right: 1px solid var(--grey);
+        }
+
+        /*.card:nth-child(2n),*/
+        /*.card:nth-child(1),*/
+        /*.card:nth-child(2) {*/
+        /*    border-right: 1px solid var(--grey);*/
+        /*}*/
+
+    }
+
+
+    @media (min-width: 1881px) and (max-width: 2282px) {
+
+        .card:nth-child(1),
+        .card:nth-child(2),
+        .card:nth-child(3),
+        .card:nth-child(4),
+        .card:nth-child(5),
+        /*6 niet*/
+        .card:nth-child(7),
+        .card:nth-child(8),
+        .card:nth-child(9),
+        .card:nth-child(10),
+        .card:nth-child(11),
+
+
+        .card:nth-child(13),
+        .card:nth-child(14),
+        .card:nth-child(15),
+        .card:nth-child(16),
+        .card:nth-child(17),
+
+        .card:nth-child(21),
+        .card:nth-child(22),
+        .card:nth-child(23),
+
+
+        .card:nth-child(25),
+        .card:nth-child(26)
+
+        {
+            border-right: 1px solid var(--grey);
+        }
+
+        /*.card:nth-child(2n),*/
+        /*.card:nth-child(1),*/
+        /*.card:nth-child(2) {*/
+        /*    border-right: 1px solid var(--grey);*/
+        /*}*/
+
+    }
+
+    /*@media (min-width: 825px) {*/
+    /*    .card {*/
+    /*        grid-template-rows: 16rem auto auto 4rem auto;*/
+    /*    }*/
+
+    /*}*/
+
+    /*@media (min-width: 1000px) {*/
+    /*    .card:nth-child(2n) {*/
+    /*
+    /*    }*/
+
+
+    /*}*/
 
     
-    @media (min-width: 1000px) {
-        .card:nth-child(2n) {
-            border-right: 1px solid var(--grey);
-        }
+    /*@media (min-width: 1000px) {*/
+    /*    .card:nth-child(2n) {*/
+    /*        border-right: 1px solid var(--grey);*/
+    /*    }*/
 
 
-    }
+    /*}*/
 
-    /* todo vanaf 1095px komter een 3de  card bij */
+    /*!* todo vanaf 1095px komter een 3de  card bij *!*/
 
-    @media (min-width: 1095px) {
-        .card:nth-child(3n) {
-            border-right: 1px solid var(--grey);
-        }
-    }
-    /* todo vanaf 1519px  komter een 4de de card bij */
-    @media (min-width: 1825px) {
-        .card:nth-child(4n) {
-            border-right: 1px solid var(--grey);
+    /*@media (min-width: 1095px) {*/
+    /*    .card:nth-child(3n) {*/
+    /*        border-right: 1px solid var(--grey);*/
+    /*    }*/
+    /*}*/
+    /*!* todo vanaf 1519px  komter een 4de de card bij *!*/
+    /*@media (min-width: 1825px) {*/
+    /*    .card:nth-child(4n) {*/
+    /*        border-right: 1px solid var(--grey);*/
 
-        }
-    }
+    /*    }*/
+    /*}*/
 
 
 </style>

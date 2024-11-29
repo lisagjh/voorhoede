@@ -81,13 +81,23 @@ Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
 
 
 <style>
+  @media (min-width: 43rem) {
+    .filter-section {
+      padding: 1em;
+      /*border: 1px solid black;*/
+      border-bottom: 1px solid var(--grey);
+      border-top: 1px solid var(--grey);
+      margin:0px -33px 0px -33px;
+    }
+  }
+
   .filter-section {
     padding: 1em;
     /*border: 1px solid black;*/
     border-bottom: 1px solid var(--grey);
     border-top: 1px solid var(--grey);
-    margin:0px -31px 0px -30px;
   }
+
 
   @media (max-width: 690px) {
     .filter-section {

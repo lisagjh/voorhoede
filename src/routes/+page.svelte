@@ -1,4 +1,5 @@
 <script>
+	import { fonts } from './../../.svelte-kit/output/server/nodes/0.js';
   import Card from "../lib/display/Card.svelte";
   import IntroSection from "./../lib/IntroSection.svelte";
 
@@ -22,8 +23,8 @@
 
 <section class="vacancy-section">
   <div class="top">
-    <span class="tag">Vacatures</span>
-    <h2>De beste agencies zoeken de beste mensen</h2>
+    <h2 class="tag">Vacatures</h2>
+    <p>De beste agencies zoeken de beste mensen</p>
     <a href="/vacatures">Bekijk alle vacatures</a>
   </div>
 
@@ -44,17 +45,21 @@
     max-height: 400px;
   }
 
-  .tag {
+  h2.tag {
+    font-size: 1rem;
     display: inline-block;
     justify-self: center;
     font-family: var(--martian-mono);
     border: 1px solid var(--black);
     height: fit-content;
     padding: 0 0.25rem;
-    margin: 0.5rem;
+    margin: 0 0.5rem;
   }
 
-  h2 {
+  p {
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+    font-weight: 800;
     align-self: center;
     text-align: center;
     text-transform: uppercase;

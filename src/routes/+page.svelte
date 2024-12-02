@@ -1,5 +1,4 @@
 <script>
-  import { fonts } from "./../../.svelte-kit/output/server/nodes/0.js";
   import Card from "../lib/display/Card.svelte";
   import IntroSection from "./../lib/IntroSection.svelte";
 
@@ -50,13 +49,14 @@
   }
 
   h2.tag {
+    line-height: 1;
     font-size: 1rem;
     display: inline-block;
     justify-self: center;
     font-family: var(--martian-mono);
     border: 1px solid var(--black);
     height: fit-content;
-    padding: 0 0.25rem;
+    padding: 0.25rem;
     margin: 0 0.5rem;
   }
 

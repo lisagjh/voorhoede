@@ -43,12 +43,17 @@
     margin-bottom: 8rem;
   }
 
+  .vacancy-section p {
+    font-family: "Unique", sans-serif;
+    font-variation-settings: "wdth" 550;
+    line-height: 1.2;
+  }
+
   .vacancy-section .top {
     display: grid;
     padding: 1.5rem 0;
     min-height: 250px;
     height: 100%;
-    max-height: 400px;
   }
 
   h2.tag {
@@ -65,13 +70,19 @@
 
   p {
     letter-spacing: 1px;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: 800;
     align-self: center;
     text-align: center;
     text-transform: uppercase;
     text-wrap: balance;
     margin: 1rem;
+  }
+
+  @media (width > 30em) {
+    p {
+      font-size: 2.5rem;
+    }
   }
 
   a {

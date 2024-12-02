@@ -1,5 +1,6 @@
 <script>
   import Card from "../lib/display/Card.svelte";
+  import Graphic from "../lib/display/Graphic.svelte";
   import IntroSection from "./../lib/IntroSection.svelte";
 
   export let data;
@@ -18,6 +19,8 @@
     bureaus. Samen maken we de wereld elke dag een beetje slimmer.
   </svelte:fragment>
 </IntroSection>
+
+<Graphic />
 
 <section class="vacancy-section">
   <div class="top">

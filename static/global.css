@@ -5,19 +5,18 @@
 }
 
 @font-face {
-  font-family: 'Archivo';
+  font-family: "Archivo";
   font-display: swap;
-  src: url('/font/font2/archivo-v19-latin-regular.woff2') format('woff2');
+  src: url("/font/font2/archivo-v19-latin-regular.woff2") format("woff2");
 }
 
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Martian Mono';
-  src: url('/font/font2/martian-mono-v3-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  font-family: "Martian Mono";
+  src: url("/font/font2/martian-mono-v3-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 * {
-  /*todo uitzoekenw aarom border box de subscribe button text aanpaast*/
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -25,12 +24,36 @@
 }
 
 :root {
-  --black: #222226;
+  --black: #bfbfc8;
   --grey: #666666;
-  --white: #fff;
-  --blue: #364bf7;
+  --white: #262525;
+  --blue: #f7d436;
 
   --martian-mono: "Martian Mono", system-ui;
+}
+
+img {
+  display: none;
+}
+
+body {
+  background-color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a, li,
+button {
+  color: var(--black);
+}
+
+svg path {
+  stroke: var(--black);
 }
 
 h1 {
@@ -85,9 +108,8 @@ a {
   text-decoration: none;
 }
 
-
-
-a:focus-visible, button:focus-visible {
+a:focus-visible,
+button:focus-visible {
   color: var(--blue);
   font-weight: bolder;
   border: 3px dashed var(--blue);

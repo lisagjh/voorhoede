@@ -1,5 +1,5 @@
 <script>
-	import { fonts } from './../../.svelte-kit/output/server/nodes/0.js';
+  import { fonts } from "./../../.svelte-kit/output/server/nodes/0.js";
   import Card from "../lib/display/Card.svelte";
   import IntroSection from "./../lib/IntroSection.svelte";
 
@@ -12,7 +12,6 @@
     { key: "expertise" },
   ];
 </script>
-
 
 <IntroSection title="De Beste Bureau's van Nederland">
   <svelte:fragment slot="subtitle">
@@ -28,7 +27,12 @@
     <a href="/vacatures">Bekijk alle vacatures</a>
   </div>
 
-  <Card data={data.latestVacancies} className="vacancies" anchorText="View" {extraFields} />
+  <Card
+    data={data.latestVacancies}
+    className="vacancies"
+    anchorText="View"
+    {extraFields}
+  />
 </section>
 
 <style>
@@ -69,5 +73,15 @@
 
   a {
     justify-self: center;
+  }
+
+  @media (width > 35em) {
+    p {
+      letter-spacing: -2px;
+      line-height: 1;
+      font-size: 4rem;
+      font-weight: 800;
+      text-wrap: balance;
+    }
   }
 </style>

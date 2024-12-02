@@ -85,6 +85,12 @@ a {
   text-decoration: none;
 }
 
+
+
+a:focus-visible, button:focus-visible {
+  border: 2px dashed var(--blue);
+}
+
 .subtext {
   font-size: 1rem;
   line-height: 1.5rem;

@@ -172,11 +172,7 @@
         .card:nth-child(19),
         .card:nth-child(21),
         .card:nth-child(23),
-        .card:nth-child(25)
-        {
-            animation: slideLeftAnimation both;
-            animation-timeline: view();
-        }
+        .card:nth-child(25),
 
         .card:nth-child(2),
         .card:nth-child(4),
@@ -192,8 +188,8 @@
         .card:nth-child(24),
         .card:nth-child(26)
         {
-                animation: slideRightAnimation both;
-                animation-timeline: view();
+            animation: slideLeftAnimation both;
+            animation-timeline: view();
         }
 
         /*}*/
@@ -208,6 +204,15 @@
         }
 
 
+        /*@keyframes slideRightAnimation {*/
+        /*    0% {*/
+        /*        transform: translateX(5000px);*/
+        /*    }*/
+
+        /*    50% {*/
+        /*        transform: translateX(0px);*/
+        /*    }*/
+        /*}*/
     }
 
     /*2 koloms */
@@ -222,20 +227,43 @@
         }
 
         /*animatie*/
-        .card:nth-child(1) {
+
+        .card:nth-child(odd)
+        {
             animation: slideLeftAnimation both;
             animation-timeline: view();
         }
 
 
-        article:nth-child(2){
+        /*}*/
+        @keyframes slideLeftAnimation {
+            0% {
+                transform: translateX(-5000rem);
+            }
+
+            50% {
+                transform: translateX(0px);
+            }
+        }
+
+
+        .card:nth-child(even)
+        {
             animation: slideRightAnimation both;
             animation-timeline: view();
         }
 
+        @keyframes slideRightAnimation {
+            0% {
+                transform: translateY(5000rem);
+            }
 
-
+            50% {
+                transform: translateY(0px);
+            }
+        }
     }
+
 
     /*3koloms*/
 

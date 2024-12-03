@@ -5,7 +5,7 @@
 </script>
 
 
-<article class="grid-container">
+<section class="grid-container">
     {#each data.members as member}
 
         <article class="card">
@@ -42,9 +42,11 @@
     {/each}
 
 
-</article>
-
+</section>
 <style>
+
+
+    /*hieronder normale code*/
     .grid-container {
 
         display: grid;
@@ -55,8 +57,6 @@
 
     .card {
         width: 100%;
-        overflow: hidden;
-        /*todo this border change to the design*/
 
 
         padding: 2rem;
@@ -136,10 +136,50 @@
             grid-template-columns: 14em;
             row-gap: 2em;
         }
+        /*    animatie*/
+        .card:nth-child(1) {
+            animation: slideLeftAnimation both;
+            animation-timeline: view();
+        }
+
+        @keyframes slideLeftAnimation {
+            0% {
+                transform: translateX(-5000rem);
+            }
+
+            50% {
+                transform: translateX(0px);
+            }
+        }
+
+        article:nth-child(2){
+            animation: slideRightAnimation both;
+            animation-timeline: view();
+        }
+        @keyframes slideRightAnimation {
+            0% {
+                transform: translateX(25000px);
+            }
+
+            50% {
+                transform: translateX(0px);
+            }
+        }
+
 
 
     }
 
+    @media (max-width: 43rem) {
+        .card  {
+            border: 1px solid var(--grey);
+        }
+    }
+    @media (min-width: 43rem) {
+        .card {
+            border-bottom: 1px solid var(--grey);
+        }
+    }
     @media (min-width: 325px) {
         .grid-container {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -147,9 +187,7 @@
 
     }
 
-    .card {
-        border-bottom: 1px solid var(--grey);
-    }
+
 
     /*voor 725px is het opgelost */
     @media (min-width: 765px) and (max-width: 1127px) {
@@ -161,9 +199,6 @@
         .card:nth-child(odd) {
             border-right: 1px solid var(--grey);
         }
-
-
-
 
 
     }

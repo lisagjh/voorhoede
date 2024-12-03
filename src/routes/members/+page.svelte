@@ -75,17 +75,30 @@
 
 
 <style>
-
   .filter-section{
-      border-top: 1px solid;
-      border-bottom: 1px solid;
-      margin-left: -15px;
+    border-top: 1px solid;
+  }
+
+  @media (max-width: 43rem) {
+    .filter-section{
+      border-right: 1px solid;
+      border-left: 1px solid;
+
+      margin-left: -16px;
       margin-right: -16px;
-    margin-bottom: -1rem;
+      margin-bottom: -1rem;
     }
 
+  }
+  @media (min-width: 43rem) {
+    .filter-section{
+      border-bottom: 1px solid;
+      margin-left: -16px;
+      margin-right: -16px;
+      margin-bottom: -1rem;
+    }
 
-
+  }
   .textvacature {
     font-size: 1.2rem;
   }
@@ -104,16 +117,16 @@
     text-decoration: none;
   }
 
-  @media (max-width: 725px) {
+  @media (max-width: 43rem) {
     .working-vacatures {
       display: grid;
       grid-template-rows: 5rem auto;
       row-gap: 2rem;
-      border: 1px solid;
       border-bottom: 1px solid;
       border-left: 1px solid;
       border-right: 1px solid;
-      margin: -1rem;
+      border-top: 1px solid;
+      margin: 0px -16px 11px -16px;
       padding: 2rem;
     }
 
@@ -124,19 +137,18 @@
     }
   }
 
-  @media (min-width: 725px) {
+  @media (min-width: 43rem) {
     .working-vacatures {
       display: flex;
       flex-direction: row;
       padding: 2rem;
-      border-bottom: 1px solid;
-      border-top: 1px solid;
-
       justify-content: space-between;
+
       margin-top: 2rem;
       margin-left: -1rem;
       margin-right: -1rem;
       border: 1px solid;
+      /*border-bottom: 1px solid ;*/
       justify-content: space-between;
     }
   }

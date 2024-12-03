@@ -131,34 +131,87 @@
             clip-path: inset(0% 0% 0% 0%);
         }
     }
+
     @keyframes slideLeftAnimation {
         0% {
-            transform: translateX(-5000rem);
+            transform: translateX(-50em);
+
+        }
+        25% {
+            transform: translateX(-25em);
         }
 
-        50% {
-            transform: translateX(0px);
+        50%{
+            background: rgb(2,0,36);
+            background: linear-gradient(139deg, rgba(2,0,36,1) 0%, rgb(212, 212, 248) 47%, rgba(0,212,255,1) 100%);
+            transform: translateX(0em);
         }
     }
+
+
     @keyframes slide-in-up {
         0% {
-            transform: translateY(5000rem);
+            transform: translateY(50em);
+            background: rgb(98,194,6);
+            background: linear-gradient(76deg, rgba(98,194,6,1) 0%, rgba(230,39,39,1) 12%, rgba(170,255,253,1) 47%, rgba(117,114,140,1) 100%);
         }
-
+        25% {
+            transform: translateY(25em);
+            background: linear-gradient(225deg, rgba(98,194,6,1) 0%, rgba(230,39,39,1) 12%, rgba(170,255,253,1) 47%, rgba(117,114,140,1) 100%);
+        }
         50% {
-            transform: translateY(0px);
+            transform: translateY(0em);
+            background: rgb(98,194,6);
+            background: radial-gradient(circle, rgba(98,194,6,1) 0%, rgba(230,39,39,1) 12%, rgba(170,255,253,1) 47%, rgba(117,114,140,1) 100%);
         }
     }
-
-    @keyframes slide-in-right {
+    @keyframes gradient-animation {
         0% {
-            transform: translateX(5000em);
+            background-position: 0% 50%;
+            background: rgb(98,194,6);
+            background: linear-gradient(300deg, rgba(98,194,6,1) 0%, rgb(235, 235, 255) 47%, rgba(0,212,255,1) 100%);
         }
+        100% {
+            background-position: 100% 50%;
+            /*background: rgb(98,194,6);*/
 
-        50% {
-            transform: translateX(0);
+            background: rgb(129, 228, 168);
+            background: linear-gradient(139deg, rgba(2,0,36,1) 0%, rgb(194, 250, 243) 47%, rgb(182, 57, 173) 100%);
         }
     }
+
+    /*slide in down is onhandig vanwege de leesbaarheid*/
+    /*@keyframes slide-in-down {*/
+    /*    0% {*/
+    /*        transform: translateY(-50em);*/
+    /*        background: rgb(98,194,6);*/
+    /*        background: linear-gradient(76deg, rgba(98,194,6,1) 0%, rgba(230,39,39,1) 12%, rgba(170,255,253,1) 47%, rgba(117,114,140,1) 100%);*/
+    /*    }*/
+    /*    25% {*/
+    /*        transform: translateY(-25em);*/
+    /*        background: linear-gradient(225deg, rgba(98,194,6,1) 0%, rgba(230,39,39,1) 12%, rgba(170,255,253,1) 47%, rgba(117,114,140,1) 100%);*/
+    /*    }*/
+    /*    50% {*/
+    /*        transform: translateY(0em);*/
+    /*        background: rgb(98,194,6);*/
+    /*        background: radial-gradient(circle, rgba(98,194,6,1) 0%, rgba(230,39,39,1) 12%, rgba(170,255,253,1) 47%, rgba(117,114,140,1) 100%);*/
+    /*    }*/
+    /*}*/
+    /*met overflow is dit nitet op te lossen zonder de animatie stuk te maken */
+    @keyframes slide-in-right {
+        from {
+            transform: translateX(20vh);
+            background-color: red;
+        }
+        25% {
+            transform: translateX(10vh);
+        }
+        50% {
+            transform: translateX(0em);
+        }
+    }
+
+
     @media (max-width: 350px) {
 
         .grid-container {
@@ -204,14 +257,20 @@
     }
 
     @media (max-width: 765px)  {
-
+        .grid-container {
+            /*overflow-x: hidden;*/
+        }
 
         .card
         {
 
-            animation: slideLeftAnimation both;
+            animation: slideLeftAnimation both ,gradient-animation 2s infinite;
             animation-timeline: view();
         }
+
+
+
+
 
 
 
@@ -228,7 +287,6 @@
         }
 
         .card:nth-child(odd) {
-
             border-right: 1px solid var(--grey);
         }
 
@@ -249,6 +307,25 @@
             animation-timeline: view();
         }
 
+        /*2de animatie*/
+        /*https://codepen.io/argyleink/pen/wvOKbyL/2d672362df9ac37cf6920b5b6bc3a243*/
+
+        /*todo voeg tutorial toe aan issue deze*/
+        @keyframes spin {
+            to {
+                transform: rotateY(1turn);
+            }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .card {
+                animation: spin linear;
+                animation-timeline: view();
+                animation-range: contain;
+            }
+        }
+
+
 
     }
 
@@ -257,6 +334,13 @@
 
     @media (min-width: 1127px) and (max-width: 1466px) {
 
+        .grid-container{
+            width: 100%;
+            /*met paddidng maak je er 2 cardss van met overflow hidden stop je de extra ruimte aan de rechterkant
+            en het laten inkomen van rechts is niet mogelijk*/
+            /*padding: 10em;*/
+            /*overflow: hidden;*/
+        }
 
         .card:nth-child(3n+1),
         .card:nth-child(3n+2)
@@ -274,21 +358,21 @@
         /*alle 3 tegelijk kan niet*/
 
         .card:nth-child(3n){
-            animation: slide-in-right   both  ;
+            /*slide-in-rigth*/
+            animation: slide-in-down   1s ease-in-out   ;
             animation-timeline: view();
         }
 
         .card:nth-child(3n+2){
-            animation: slide-in-up both;
+            animation: slide-in-up 1s ease-in-out;
             animation-timeline: view();
         }
 
         .card:nth-child(3n+4),
         .card:nth-child(1){
-            animation:   slideLeftAnimation both;
+            animation:   slideLeftAnimation 1s ease-in-out;
             animation-timeline: view();
         }
-
 
 
     }
@@ -304,13 +388,22 @@
             border-right: 1px solid var(--grey);
         }
 
+        /*https://codepen.io/argyleink/pen/wvOKbyL/2d672362df9ac37cf6920b5b6bc3a243*/
 
-        .card{
-            animation:  slide-in-right   ;
-            animation-timeline: view();
+        /*todo voeg tutorial toe aan issue deze*/
+        @keyframes spin {
+            to {
+                transform: rotateY(1turn);
+            }
         }
 
-
+        @media (prefers-reduced-motion: no-preference) {
+            .card {
+                animation: spin linear;
+                animation-timeline: view();
+                animation-range: contain;
+            }
+        }
 
 
     }
@@ -328,6 +421,19 @@
         .card:nth-child(5n-4) {
             border-right: 1px solid var(--grey);
         }
+        .card:nth-child(5n-3),
+        .card:nth-child(5n-4)
+        {
+            animation:  slideLeftAnimation   ;
+            animation-timeline: view();
+        }
+
+        .card:nth-child(5n-1),
+        .card:nth-child(5n-2){
+            animation:  slideLeftAnimation   ;
+            animation-timeline: view();
+        }
+
 
 
     }

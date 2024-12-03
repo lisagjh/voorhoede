@@ -209,67 +209,78 @@
     @media (min-width: 1127px) and (max-width: 1466px) {
 
 
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(4),
-        .card:nth-child(5),
-        .card:nth-child(7),
-        .card:nth-child(8),
-        .card:nth-child(10),
-        .card:nth-child(11),
-        .card:nth-child(13),
-        .card:nth-child(14),
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(19),
-        .card:nth-child(20),
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(25),
-        .card:nth-child(26)
-        {
+        /*.card:nth-child(1),*/
+        /*.card:nth-child(2),*/
+        /*.card:nth-child(4),*/
+
+        /*.card:nth-child(5),*/
+        /*.card:nth-child(7),*/
+        /*.card:nth-child(8),*/
+
+        /*.card:nth-child(10),*/
+        /*.card:nth-child(11),*/
+        /*.card:nth-child(13),*/
+        /*.card:nth-child(14),*/
+        /*.card:nth-child(16),*/
+        /*.card:nth-child(17),*/
+        /*.card:nth-child(19),*/
+        /*.card:nth-child(20),*/
+        /*.card:nth-child(22),*/
+        /*.card:nth-child(23),*/
+        /*.card:nth-child(25),*/
+        /*.card:nth-child(26)*/
+        /*{*/
+        /*    border-right: 1px solid var(--grey);*/
+        /*}*/
+
+        .card:nth-child(3n+1),
+        .card:nth-child(3n+2){
             border-right: 1px solid var(--grey);
         }
-
     }
 
     /*4koloms*/
     @media (min-width: 1466px) and (max-width: 1815px) {
 
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
+        /*.card:nth-child(1),*/
+        /*.card:nth-child(2),*/
+        /*.card:nth-child(3),*/
 
 
-        .card:nth-child(5),
-        .card:nth-child(6),
-        .card:nth-child(7),
+        /*.card:nth-child(5),*/
+        /*.card:nth-child(6),*/
+        /*.card:nth-child(7),*/
 
-        .card:nth-child(9),
-            /*.card:nth-child(10),*/
-        .card:nth-child(10),
+        /*.card:nth-child(9),*/
+        /*.card:nth-child(10),*/
+        /*.card:nth-child(11),*/
 
-        .card:nth-child(11),
-        .card:nth-child(13),
-        .card:nth-child(14),
 
-        .card:nth-child(15),
+        /*.card:nth-child(13),*/
+        /*.card:nth-child(14),*/
+        /*.card:nth-child(15),*/
 
-        .card:nth-child(17),
-        .card:nth-child(18),
+        /*.card:nth-child(17),*/
+        /*.card:nth-child(18),*/
+        /*.card:nth-child(19),*/
 
-        .card:nth-child(19),
-        .card:nth-child(21),
-        .card:nth-child(22),
+        /*.card:nth-child(21),*/
+        /*.card:nth-child(22),*/
+        /*.card:nth-child(23),*/
 
-        .card:nth-child(23),
-        .card:nth-child(25),
-        .card:nth-child(26)
-        {
+        /*.card:nth-child(25),*/
+        /*.card:nth-child(26)*/
+
+        /*    */
+        /*{*/
+        /*    border-right: 1px solid var(--grey);*/
+        /*}*/
+
+        .card:nth-child(4n-1),
+        .card:nth-child(4n-2),
+        .card:nth-child(4n-3){
             border-right: 1px solid var(--grey);
         }
-
-
 
     }
 
@@ -278,125 +289,161 @@
 
     @media (min-width: 1815px) and (max-width: 2165px) {
 
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-        .card:nth-child(4),
+        /*.card:nth-child(1),*/
+        /*.card:nth-child(2),*/
+        /*.card:nth-child(3),*/
+        /*.card:nth-child(4),*/
 
-            /*5 niet*/
-        .card:nth-child(6),
-        .card:nth-child(7),
-        .card:nth-child(8),
-        .card:nth-child(9),
-        .card:nth-child(11),
-        .card:nth-child(12),
+        /*    !*5 niet*!*/
+        /*.card:nth-child(6),*/
+        /*.card:nth-child(7),*/
+        /*.card:nth-child(8),*/
+        /*.card:nth-child(9),*/
+        /*.card:nth-child(11),*/
+        /*.card:nth-child(12),*/
 
 
-        .card:nth-child(13),
-        .card:nth-child(14),
+        /*.card:nth-child(13),*/
+        /*.card:nth-child(14),*/
 
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(18),
-        .card:nth-child(19),
-            /*.card:nth-child(20),*/
+        /*.card:nth-child(16),*/
+        /*.card:nth-child(17),*/
+        /*.card:nth-child(18),*/
+        /*.card:nth-child(19),*/
+        /*    !*.card:nth-child(20),*!*/
 
-        .card:nth-child(21),
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(24),
-        .card:nth-child(26)
+        /*.card:nth-child(21),*/
+        /*.card:nth-child(22),*/
+        /*.card:nth-child(23),*/
+        /*.card:nth-child(24),*/
+        /*.card:nth-child(26)*/
 
-        {
+        .card:nth-child(5n-1),
+        .card:nth-child(5n-2),
+        .card:nth-child(5n-3),
+        .card:nth-child(5n-4) {
             border-right: 1px solid var(--grey);
         }
+
+
 
 
 
     }
 
     /*6colums */
-    @media (min-width: 2165px) and (max-width: 2515px) {
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-        .card:nth-child(4),
-        .card:nth-child(5),
+    @media (min-width: 2165px) and (max-width: 2516px) {
+        /*.card:nth-child(1),*/
+        /*.card:nth-child(2),*/
+        /*.card:nth-child(3),*/
+        /*.card:nth-child(4),*/
+        /*.card:nth-child(5),*/
 
-            /*6 niet*/
+        /*    !*6 niet*!*/
 
-        .card:nth-child(7),
-        .card:nth-child(8),
-        .card:nth-child(9),
-        .card:nth-child(11),
+        /*.card:nth-child(7),*/
+        /*.card:nth-child(8),*/
+        /*.card:nth-child(9),*/
+        /*.card:nth-child(11),*/
 
 
 
-        .card:nth-child(13),
-        .card:nth-child(14),
+        /*.card:nth-child(13),*/
+        /*.card:nth-child(14),*/
 
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(19),
-            /*.card:nth-child(20),*/
+        /*.card:nth-child(16),*/
+        /*.card:nth-child(17),*/
+        /*.card:nth-child(19),*/
+        /*    !*.card:nth-child(20),*!*/
 
-        .card:nth-child(21),
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(25),
+        /*.card:nth-child(21),*/
+        /*.card:nth-child(22),*/
+        /*.card:nth-child(23),*/
+        /*.card:nth-child(25),*/
 
-        .card:nth-child(26)
+        /*.card:nth-child(26)*/
 
+        /*{*/
+        /*    border-right: 1px solid var(--grey);*/
+        /*}*/
+
+        .card:nth-child(6n-1),
+        .card:nth-child(6n-2),
+        .card:nth-child(6n-3),
+        .card:nth-child(6n-4),
+        .card:nth-child(6n-5)
         {
             border-right: 1px solid var(--grey);
         }
-
-
     }
 
     /*7 colums*/
     @media (min-width: 2516px) {
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-        .card:nth-child(4),
-        .card:nth-child(5),
-        .card:nth-child(6),
+        /*.card:nth-child(1),*/
+        /*.card:nth-child(2),*/
+        /*.card:nth-child(3),*/
+        /*.card:nth-child(4),*/
+        /*.card:nth-child(5),*/
+        /*.card:nth-child(6),*/
 
-            /*7 niet*/
-
-
-
-        .card:nth-child(8),
-        .card:nth-child(9),
-        .card:nth-child(10),
-        .card:nth-child(11),
-        .card:nth-child(12),
+        /*    !*7 niet*!*/
 
 
+
+        /*.card:nth-child(8),*/
+        /*.card:nth-child(9),*/
+        /*.card:nth-child(10),*/
+        /*.card:nth-child(11),*/
+        /*.card:nth-child(12),*/
+
+
+
+        /*.card:nth-child(13),*/
+
+
+        /*.card:nth-child(15),*/
+        /*.card:nth-child(16),*/
+        /*.card:nth-child(17),*/
+        /*.card:nth-child(18),*/
+        /*.card:nth-child(19),*/
+        /*.card:nth-child(20),*/
+        /*    !*.card:nth-child(20),*!*/
+
+        /*.card:nth-child(22),*/
+        /*.card:nth-child(23),*/
+        /*.card:nth-child(24),*/
+        /*.card:nth-child(25),*/
+
+        /*.card:nth-child(26)*/
+
+        /*{*/
+        /*    border-right: 1px solid var(--grey);*/
+        /*}*/
+
+
+        .card:nth-child(6n),
+        .card:nth-child(6n-1),
+        .card:nth-child(6n-2),
+        .card:nth-child(6n-3),
+        .card:nth-child(6n-4),
 
         .card:nth-child(13),
-
-
-        .card:nth-child(15),
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(18),
-        .card:nth-child(19),
-        .card:nth-child(20),
-            /*.card:nth-child(20),*/
-
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(24),
-        .card:nth-child(25),
-
         .card:nth-child(26)
-
         {
             border-right: 1px solid var(--grey);
         }
 
+        .card:nth-child(7n){
+            border-right: none;
+        }
+
+        /*.card:nth-child(6n-6){*/
+        /*    background-color: red;*/
+        /*}*/
+
+        /*.card:nth-child(6n-5){*/
+        /*    background-color: green;*/
+        /*}*/
 
     }
 

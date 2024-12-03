@@ -137,35 +137,35 @@
             row-gap: 2em;
         }
 
-        /*    animatie*/
-        /*.card:nth-child(1) {*/
-        /*    animation: slideLeftAnimation both;*/
-        /*    animation-timeline: view();*/
-        /*}*/
+            /*animatie*/
+        .card:nth-child(1) {
+            animation: slideLeftAnimation both;
+            animation-timeline: view();
+        }
 
-        /*@keyframes slideLeftAnimation {*/
-        /*    0% {*/
-        /*        transform: translateX(-5000rem);*/
-        /*    }*/
+        @keyframes slideLeftAnimation {
+            0% {
+                transform: translateX(-5000rem);
+            }
 
-        /*    50% {*/
-        /*        transform: translateX(0px);*/
-        /*    }*/
-        /*}*/
+            50% {
+                transform: translateX(0px);
+            }
+        }
 
-        /*article:nth-child(2){*/
-        /*    animation: slideRightAnimation both;*/
-        /*    animation-timeline: view();*/
-        /*}*/
-        /*@keyframes slideRightAnimation {*/
-        /*    0% {*/
-        /*        transform: translateX(25000px);*/
-        /*    }*/
+        article:nth-child(2){
+            animation: slideRightAnimation both;
+            animation-timeline: view();
+        }
+        @keyframes slideRightAnimation {
+            0% {
+                transform: translateX(25000px);
+            }
 
-        /*    50% {*/
-        /*        transform: translateX(0px);*/
-        /*    }*/
-        /*}*/
+            50% {
+                transform: translateX(0px);
+            }
+        }
 
 
 
@@ -190,7 +190,7 @@
 
 
 
-    /*voor 725px is het opgelost */
+    /*2 koloms */
     @media (min-width: 765px) and (max-width: 1127px) {
         .card:nth-child(-n+4) {
             border-top: none;

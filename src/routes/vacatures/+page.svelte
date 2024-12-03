@@ -8,6 +8,14 @@
 
 </script>
 
+<div class="bubblegum">
+  <svg width="80"viewBox="0 0 100 100" fill="none">
+    <circle cx="50" cy="50" r="48.5" fill="#F194C0" stroke="#B54D7E" stroke-width="3"/>
+    <circle cx="18" cy="39" r="5" fill="white"/>
+    <ellipse cx="31.7925" cy="22.5113" rx="5" ry="10.8314" transform="rotate(40 31.7925 22.5113)" fill="white"/>
+    </svg>
+</div>
+
 <IntroSection
   title="Vacatures"
   subtitle="Verslim je carrière bij de beste digitale bureaus van Nederland. Pak je rol als developer of designer, researcher, als scrum master of marketeer, als strateeg. Start of groei door – en laat zien wat je kan."
@@ -31,6 +39,16 @@
 </section>
 
 <style>
+
+.bubblegum {
+  position: fixed;
+  top: 50%;
+  left: 46.5%;
+  transform: translate(0%, -250%);
+  z-index: 10;
+  opacity: 97.5%;
+}
+
   .vacancies-section {
     display: flex;
     flex-direction: column;

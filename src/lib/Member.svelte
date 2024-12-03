@@ -136,35 +136,36 @@
             grid-template-columns: 14em;
             row-gap: 2em;
         }
+
         /*    animatie*/
-        .card:nth-child(1) {
-            animation: slideLeftAnimation both;
-            animation-timeline: view();
-        }
+        /*.card:nth-child(1) {*/
+        /*    animation: slideLeftAnimation both;*/
+        /*    animation-timeline: view();*/
+        /*}*/
 
-        @keyframes slideLeftAnimation {
-            0% {
-                transform: translateX(-5000rem);
-            }
+        /*@keyframes slideLeftAnimation {*/
+        /*    0% {*/
+        /*        transform: translateX(-5000rem);*/
+        /*    }*/
 
-            50% {
-                transform: translateX(0px);
-            }
-        }
+        /*    50% {*/
+        /*        transform: translateX(0px);*/
+        /*    }*/
+        /*}*/
 
-        article:nth-child(2){
-            animation: slideRightAnimation both;
-            animation-timeline: view();
-        }
-        @keyframes slideRightAnimation {
-            0% {
-                transform: translateX(25000px);
-            }
+        /*article:nth-child(2){*/
+        /*    animation: slideRightAnimation both;*/
+        /*    animation-timeline: view();*/
+        /*}*/
+        /*@keyframes slideRightAnimation {*/
+        /*    0% {*/
+        /*        transform: translateX(25000px);*/
+        /*    }*/
 
-            50% {
-                transform: translateX(0px);
-            }
-        }
+        /*    50% {*/
+        /*        transform: translateX(0px);*/
+        /*    }*/
+        /*}*/
 
 
 

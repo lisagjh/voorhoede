@@ -125,7 +125,6 @@
       border-bottom: 1px solid;
       border-left: 1px solid;
       border-right: 1px solid;
-      border-top: 1px solid;
       margin: 0px -16px 11px -16px;
       padding: 2rem;
     }
@@ -144,11 +143,12 @@
       padding: 2rem;
       justify-content: space-between;
 
-      margin-top: 2rem;
       margin-left: -1rem;
       margin-right: -1rem;
-      border: 1px solid;
-      /*border-bottom: 1px solid ;*/
+
+
+      border-bottom: 1px solid ;
+      border-top: 1px solid ;
       justify-content: space-between;
     }
   }

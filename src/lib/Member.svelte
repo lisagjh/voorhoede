@@ -164,6 +164,7 @@
 
         .card
         {
+
             animation: slideLeftAnimation both;
             animation-timeline: view();
         }
@@ -210,6 +211,7 @@
         }
 
         .card:nth-child(odd) {
+
             border-right: 1px solid var(--grey);
         }
 
@@ -217,6 +219,7 @@
 
         .card:nth-child(odd)
         {
+
             animation: slideLeftAnimation both ;
             animation-timeline: view();
         }
@@ -224,6 +227,7 @@
 
         .card:nth-child(even)
         {
+
             animation: slide-in-up both ;
             animation-timeline: view();
         }
@@ -272,28 +276,28 @@
         }
 
 
-        .card{
-            animation:  slide-in-right   ;
-            animation-timeline: view();
-        }
+        /*.card{*/
+        /*    animation:  slide-in-right   ;*/
+        /*    animation-timeline: view();*/
+        /*}*/
 
         /*alle 3 tegelijk kan niet*/
 
-        /*.card:nth-child(3n){*/
-        /*    animation: slide-in-right   both  ;*/
-        /*    animation-timeline: view();*/
-        /*}*/
+        .card:nth-child(3n){
+            animation: slide-in-right   both  ;
+            animation-timeline: view();
+        }
 
-        /*.card:nth-child(3n+2){*/
-        /*    animation: slide-in-up both;*/
-        /*    animation-timeline: view();*/
-        /*}*/
+        .card:nth-child(3n+2){
+            animation: slide-in-up both;
+            animation-timeline: view();
+        }
 
-        /*.card:nth-child(3n+4),*/
-        /*.card:nth-child(1){*/
-        /*    animation:   slideLeftAnimation both;*/
-        /*    animation-timeline: view();*/
-        /*}*/
+        .card:nth-child(3n+4),
+        .card:nth-child(1){
+            animation:   slideLeftAnimation both;
+            animation-timeline: view();
+        }
 
 
         @keyframes slideLeftAnimation {

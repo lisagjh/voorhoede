@@ -160,39 +160,14 @@
     }
 
     @media (max-width: 765px)  {
-        .card:nth-child(1),
-        .card:nth-child(3),
-        .card:nth-child(5),
-        .card:nth-child(7),
-        .card:nth-child(9),
-        .card:nth-child(11),
-        .card:nth-child(13),
-        .card:nth-child(15),
-        .card:nth-child(17),
-        .card:nth-child(19),
-        .card:nth-child(21),
-        .card:nth-child(23),
-        .card:nth-child(25),
 
-        .card:nth-child(2),
-        .card:nth-child(4),
-        .card:nth-child(6),
-        .card:nth-child(8),
-        .card:nth-child(10),
-        .card:nth-child(12),
-        .card:nth-child(14),
-        .card:nth-child(16),
-        .card:nth-child(18),
-        .card:nth-child(20),
-        .card:nth-child(22),
-        .card:nth-child(24),
-        .card:nth-child(26)
+
+        .card
         {
             animation: slideLeftAnimation both;
             animation-timeline: view();
         }
 
-        /*}*/
         @keyframes slideLeftAnimation {
             0% {
                 transform: translateX(-5000rem);
@@ -202,18 +177,30 @@
                 transform: translateX(0px);
             }
         }
+        @keyframes slide-in-up {
+            0% {
+                transform: translateY(5000rem);
+            }
 
+            50% {
+                transform: translateY(0px);
+            }
+        }
 
-        /*@keyframes slideRightAnimation {*/
-        /*    0% {*/
-        /*        transform: translateX(5000px);*/
-        /*    }*/
+        @keyframes slide-in-right {
+            0% {
+                transform: translateX(5000em);
+            }
 
-        /*    50% {*/
-        /*        transform: translateX(0px);*/
-        /*    }*/
-        /*}*/
+            50% {
+                transform: translateX(0);
+            }
+        }
+
     }
+
+    /*aniamtie keyframes*/
+
 
     /*2 koloms */
     @media (min-width: 765px) and (max-width: 1127px) {
@@ -230,12 +217,17 @@
 
         .card:nth-child(odd)
         {
-            animation: slideLeftAnimation both;
+            animation: slideLeftAnimation both ;
             animation-timeline: view();
         }
 
 
-        /*}*/
+        .card:nth-child(even)
+        {
+            animation: slide-in-up both ;
+            animation-timeline: view();
+        }
+
         @keyframes slideLeftAnimation {
             0% {
                 transform: translateX(-5000rem);
@@ -245,21 +237,23 @@
                 transform: translateX(0px);
             }
         }
-
-
-        .card:nth-child(even)
-        {
-            animation: slideRightAnimation both;
-            animation-timeline: view();
-        }
-
-        @keyframes slideRightAnimation {
+        @keyframes slide-in-up {
             0% {
                 transform: translateY(5000rem);
             }
 
             50% {
                 transform: translateY(0px);
+            }
+        }
+
+        @keyframes slide-in-right {
+            0% {
+                transform: translateX(5000em);
+            }
+
+            50% {
+                transform: translateX(0);
             }
         }
     }
@@ -271,8 +265,64 @@
 
 
         .card:nth-child(3n+1),
-        .card:nth-child(3n+2){
+        .card:nth-child(3n+2)
+        {
             border-right: 1px solid var(--grey);
+
+        }
+
+
+        .card{
+            animation:  slide-in-right   ;
+            animation-timeline: view();
+        }
+
+        /*alle 3 tegelijk kan niet*/
+
+        /*.card:nth-child(3n){*/
+        /*    animation: slide-in-right   both  ;*/
+        /*    animation-timeline: view();*/
+        /*}*/
+
+        /*.card:nth-child(3n+2){*/
+        /*    animation: slide-in-up both;*/
+        /*    animation-timeline: view();*/
+        /*}*/
+
+        /*.card:nth-child(3n+4),*/
+        /*.card:nth-child(1){*/
+        /*    animation:   slideLeftAnimation both;*/
+        /*    animation-timeline: view();*/
+        /*}*/
+
+
+        @keyframes slideLeftAnimation {
+            0% {
+                transform: translateX(-5000rem);
+            }
+
+            50% {
+                transform: translateX(0px);
+            }
+        }
+        @keyframes slide-in-up {
+            0% {
+                transform: translateY(5000rem);
+            }
+
+            50% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes slide-in-right {
+            0% {
+                transform: translateX(5000em);
+            }
+
+            40% {
+                transform: translateX(0);
+            }
         }
     }
 
@@ -287,6 +337,42 @@
             border-right: 1px solid var(--grey);
         }
 
+
+        .card{
+            animation:  slide-in-right   ;
+            animation-timeline: view();
+        }
+
+
+
+        @keyframes slideLeftAnimation {
+            0% {
+                transform: translateX(-50000rem);
+            }
+
+            50% {
+                transform: translateX(0px);
+            }
+        }
+        @keyframes slide-in-up {
+            0% {
+                transform: translateY(5000rem);
+            }
+
+            50% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes slide-in-right {
+            0% {
+                transform: translateX(50000em);
+            }
+
+            40% {
+                transform: translateX(0);
+            }
+        }
     }
 
 
@@ -303,7 +389,41 @@
             border-right: 1px solid var(--grey);
         }
 
+        .card{
+            animation:  slide-in-right   ;
+            animation-timeline: view();
+        }
 
+
+
+        @keyframes slideLeftAnimation {
+            0% {
+                transform: translateX(50000000rem);
+            }
+
+            50% {
+                transform: translateX(0px);
+            }
+        }
+        @keyframes slide-in-up {
+            0% {
+                transform: translateY(50000rem);
+            }
+
+            50% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes slide-in-right {
+            0% {
+                transform: translateX(50000000em);
+            }
+
+            40% {
+                transform: translateX(0);
+            }
+        }
 
 
 

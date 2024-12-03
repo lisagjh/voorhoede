@@ -114,7 +114,51 @@
         height: 100%;
     }
 
+    /*animatie*/
+    img{
+        animation: reveal 1s linear both;
+        /* Rember to declare the timeline after the shorthand */
+        animation-timeline: view();
+    }
 
+    @keyframes reveal {
+        from {
+            opacity: 0;
+            clip-path: inset(30% 30% 25% 30%);
+        }
+        50% {
+            opacity: 1;
+            clip-path: inset(0% 0% 0% 0%);
+        }
+    }
+    @keyframes slideLeftAnimation {
+        0% {
+            transform: translateX(-5000rem);
+        }
+
+        50% {
+            transform: translateX(0px);
+        }
+    }
+    @keyframes slide-in-up {
+        0% {
+            transform: translateY(5000rem);
+        }
+
+        50% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes slide-in-right {
+        0% {
+            transform: translateX(5000em);
+        }
+
+        50% {
+            transform: translateX(0);
+        }
+    }
     @media (max-width: 350px) {
 
         .grid-container {
@@ -169,34 +213,7 @@
             animation-timeline: view();
         }
 
-        @keyframes slideLeftAnimation {
-            0% {
-                transform: translateX(-5000rem);
-            }
 
-            50% {
-                transform: translateX(0px);
-            }
-        }
-        @keyframes slide-in-up {
-            0% {
-                transform: translateY(5000rem);
-            }
-
-            50% {
-                transform: translateY(0px);
-            }
-        }
-
-        @keyframes slide-in-right {
-            0% {
-                transform: translateX(5000em);
-            }
-
-            50% {
-                transform: translateX(0);
-            }
-        }
 
     }
 
@@ -232,34 +249,7 @@
             animation-timeline: view();
         }
 
-        @keyframes slideLeftAnimation {
-            0% {
-                transform: translateX(-5000rem);
-            }
 
-            50% {
-                transform: translateX(0px);
-            }
-        }
-        @keyframes slide-in-up {
-            0% {
-                transform: translateY(5000rem);
-            }
-
-            50% {
-                transform: translateY(0px);
-            }
-        }
-
-        @keyframes slide-in-right {
-            0% {
-                transform: translateX(5000em);
-            }
-
-            50% {
-                transform: translateX(0);
-            }
-        }
     }
 
 
@@ -300,34 +290,7 @@
         }
 
 
-        @keyframes slideLeftAnimation {
-            0% {
-                transform: translateX(-5000rem);
-            }
 
-            50% {
-                transform: translateX(0px);
-            }
-        }
-        @keyframes slide-in-up {
-            0% {
-                transform: translateY(5000rem);
-            }
-
-            50% {
-                transform: translateY(0px);
-            }
-        }
-
-        @keyframes slide-in-right {
-            0% {
-                transform: translateX(5000em);
-            }
-
-            40% {
-                transform: translateX(0);
-            }
-        }
     }
 
     /*4koloms*/
@@ -349,34 +312,7 @@
 
 
 
-        @keyframes slideLeftAnimation {
-            0% {
-                transform: translateX(-50000rem);
-            }
 
-            50% {
-                transform: translateX(0px);
-            }
-        }
-        @keyframes slide-in-up {
-            0% {
-                transform: translateY(5000rem);
-            }
-
-            50% {
-                transform: translateY(0px);
-            }
-        }
-
-        @keyframes slide-in-right {
-            0% {
-                transform: translateX(50000em);
-            }
-
-            40% {
-                transform: translateX(0);
-            }
-        }
     }
 
 
@@ -392,43 +328,6 @@
         .card:nth-child(5n-4) {
             border-right: 1px solid var(--grey);
         }
-
-        .card{
-            animation:  slide-in-right   ;
-            animation-timeline: view();
-        }
-
-
-
-        @keyframes slideLeftAnimation {
-            0% {
-                transform: translateX(50000000rem);
-            }
-
-            50% {
-                transform: translateX(0px);
-            }
-        }
-        @keyframes slide-in-up {
-            0% {
-                transform: translateY(50000rem);
-            }
-
-            50% {
-                transform: translateY(0px);
-            }
-        }
-
-        @keyframes slide-in-right {
-            0% {
-                transform: translateX(50000000em);
-            }
-
-            40% {
-                transform: translateX(0);
-            }
-        }
-
 
 
     }

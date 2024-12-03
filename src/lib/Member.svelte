@@ -199,15 +199,19 @@
     /*}*/
     /*met overflow is dit nitet op te lossen zonder de animatie stuk te maken */
     @keyframes slide-in-right {
-        from {
-            transform: translateX(20vh);
-            background-color: red;
+        0% {
+            transform: translateX(50em);
+            opacity: 0;
+            background-color: #34ff25;
         }
         25% {
-            transform: translateX(10vh);
+            overflow: hidden;
+            opacity: 1;
+            transform: translateX(25vh);
         }
         50% {
             transform: translateX(0em);
+            opacity: 2;
         }
     }
 
@@ -359,7 +363,7 @@
 
         .card:nth-child(3n){
             /*slide-in-rigth*/
-            animation: slide-in-down   1s ease-in-out   ;
+            animation: slide-in-right    1s ease-in-out   ;
             animation-timeline: view();
         }
 

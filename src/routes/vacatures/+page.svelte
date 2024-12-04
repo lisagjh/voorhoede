@@ -39,7 +39,7 @@
   .filter-section {
     padding: 2em 0em;
     margin-bottom: 3em;
-    border: 1px solid black;
+    border: 1px solid var(--white);
     border-right: none;
     border-left: none ;
   }

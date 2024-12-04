@@ -30,9 +30,10 @@
         display: flex;
         flex-wrap: wrap;
         gap: 1.75em;
+        color: red;
         padding-bottom: 10%;
         margin-bottom: 10%;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid var(--white);
     }
     .job-title {
         width: 100%;

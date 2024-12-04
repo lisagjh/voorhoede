@@ -31,12 +31,12 @@ input {
   padding: 1em 0;
   margin: 1em;
   border: none;
-  border-bottom: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--white);
   font-size: 1em;
 }
 
 input::placeholder {
-  color: var(--black);
+  color: var(--white);
 }
 
 input::placeholder:focus {

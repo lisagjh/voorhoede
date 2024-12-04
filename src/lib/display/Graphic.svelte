@@ -64,30 +64,20 @@
     // STEP 5: scroll animation
     let previousScrollPosition = window.scrollY;
     let targetRotation = 0; // The rotation value we want to reach
-    const easingFactor = 0.02; // Adjust this value to control the smoothness (lower = smoother)
-
-    // Function to align the torus upright
-    function alignUpright() {
-      targetRotation =
-      // calculates the upright position
-        Math.round(torus.rotation.x / (Math.PI / 2)) * (Math.PI / 2);
-    }
+    const easingFactor = 0.1; // Adjust this value to control the smoothness (lower = smoother)
 
     function moveCamera() {
       const currentScrollPosition = window.scrollY;
       const delta = currentScrollPosition - previousScrollPosition;
 
+      // Update the target rotation based on scroll direction
       if (delta > 0) {
-        targetRotation += 0.1; // Scrolling down
+        targetRotation += 0.1; // Scrolling down increases target rotation
       } else if (delta < 0) {
-        targetRotation -= 0.1; // Scrolling up
+        targetRotation -= 0.1; // Scrolling up decreases target rotation
       }
 
       previousScrollPosition = currentScrollPosition;
-
-      // Delay upright alignment slightly to ensure smoothness
-      clearTimeout(alignTimeout);
-      alignTimeout = setTimeout(alignUpright, 150); // Adjust delay as needed
     }
 
     // Attach the scroll handler

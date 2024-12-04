@@ -29,11 +29,18 @@
   --grey: #666666;
   --white: #fff;
   --blue: #364bf7;
+  --red: #DF4A39;
 
   --martian-mono: "Martian Mono", system-ui;
 }
 
+body {
+  background-color: #192140;
+  color: white;
+}
+
 h1 {
+  color: var(--red);
   font-size: 6rem;
   letter-spacing: -2px;
   line-height: 6rem;
@@ -41,6 +48,7 @@ h1 {
 }
 
 h2 {
+  color: var(--red);
   font-size: 4rem;
   letter-spacing: -2px;
   line-height: 4rem;
@@ -48,6 +56,7 @@ h2 {
 }
 
 h3 {
+  color: var(--red);
   font-size: 3rem;
   letter-spacing: -2px;
   line-height: 3rem;
@@ -56,18 +65,21 @@ h3 {
 }
 
 h4 {
+  color: var(--red);
   font-size: 2rem;
   line-height: 2.5rem;
   font-weight: normal;
 }
 
 h5 {
+  color: var(--red);
   font-size: 1.5rem;
   line-height: 2.5rem;
   font-weight: 600;
 }
 
 h6 {
+  color: var(--red);
   font-size: 1.5rem;
   line-height: 2.5rem;
   font-weight: normal;

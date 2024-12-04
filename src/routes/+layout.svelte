@@ -30,6 +30,8 @@
 <style>
       @media (width > 50rem) {
         main {
+          margin-top: 1rem;
+          padding-top: 2.5rem;
           justify-self: end;
           max-width: calc(100% - 11rem);
         }

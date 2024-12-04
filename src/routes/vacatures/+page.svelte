@@ -54,11 +54,11 @@
 }
 
 svg {
-  animation: testAni ease-out;
+  animation: bubble-increase ease-out;
 	animation-timeline: scroll(root);
   animation-range: 0 75%; 
 }
-@keyframes testAni {
+@keyframes bubble-increase {
   50%{
     width: 2500px;
   }

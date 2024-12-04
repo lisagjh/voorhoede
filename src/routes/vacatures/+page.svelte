@@ -9,7 +9,7 @@
 </script>
 
 <div class="bubblegum">
-  <svg width="80"viewBox="0 0 100 100" fill="none">
+  <svg width="150" viewBox="0 0 100 100" fill="none">
     <circle cx="50" cy="50" r="48.5" fill="#F194C0" stroke="#B54D7E" stroke-width="3"/>
     <circle cx="18" cy="39" r="5" fill="white"/>
     <ellipse cx="31.7925" cy="22.5113" rx="5" ry="10.8314" transform="rotate(40 31.7925 22.5113)" fill="white"/>
@@ -41,12 +41,33 @@
 <style>
 
 .bubblegum {
-  position: fixed;
-  top: 50%;
-  left: 46.5%;
-  transform: translate(0%, -250%);
-  z-index: 10;
-  opacity: 97.5%;
+  position: sticky;
+  top: 40%;
+  z-index: 1000;
+  opacity: 96.5%;
+}
+
+svg {
+  animation: testAni ease-out;
+	animation-timeline: scroll(root);
+  /* animation-range: 0 35%; */
+}
+@keyframes testAni {
+  /* 25% {
+    width: 55%;
+  } */
+   /* 33.33% {
+    width: 33.3333%;
+  }  */
+  50%{
+    width: 65%;
+  }
+  /* 66.6666% {
+    width: 66.6666%;
+  } */
+  100% {
+    width: 100%;
+  }
 }
 
   .vacancies-section {

@@ -282,7 +282,7 @@
 
     /*aniamtie keyframes*/
 
-
+    /*animtiate moet vna boven naar beneden zijn*/
     /*2 koloms */
     @media (min-width: 765px) and (max-width: 1127px) {
         .card:nth-child(-n+4) {

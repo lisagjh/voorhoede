@@ -11,10 +11,10 @@
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(
-      75, // Field of view (FOV) in degrees
+      60, // Field of view (FOV) in degrees
       window.innerWidth / window.innerHeight, // Aspect ratio to match window size
-      0.1, // Near clipping plane (closest objects visible to camera)
-      1000 // Far clipping plane (farthest objects visible to camera)
+      1, // Near clipping plane (closest objects visible to camera)
+      100 // Far clipping plane (farthest objects visible to camera)
     );
 
     const renderer = new THREE.WebGLRenderer({
@@ -74,7 +74,7 @@
       if (delta > 0) {
         targetRotation += 0.1; // Scrolling down increases target rotation
       } else if (delta < 0) {
-        targetRotation -= 0.1; // Scrolling up decreases target rotation
+        targetRotation -= 0.15; // Scrolling up decreases target rotation
       }
 
       previousScrollPosition = currentScrollPosition;

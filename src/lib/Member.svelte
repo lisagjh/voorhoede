@@ -299,7 +299,8 @@
         .card:nth-child(odd)
         {
 
-            animation: slideLeftAnimation both ;
+            animation: spin both ;
+            /*animation: slideLeftAnimation both ;*/
             animation-timeline: view();
         }
 

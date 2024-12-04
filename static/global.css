@@ -27,10 +27,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Archivo", sans-serif;
+  /* font-family: "Archivo", sans-serif; */
+}
 
-  /* This font when shows when the bubblegum pops */ 
-  /* font-family: "Bubblegum", sans-serif;  */
+body {
+  font-family: 'Archivo', sans-serif;
 }
 
 :root {

@@ -38,13 +38,13 @@
 
     .detail-link {
         font-weight: bold;
-        color: var(--white);
-        stroke: var(--white); /* blue color for svg */
+        color: var(--black);
+        stroke: var(--blue); /* blue color for svg */
     }
 
     .login-link{
-        color: var(--white);
-        stroke:var(--white);
+        color: var(--black);
+        stroke:var(--black);
     }
 
 </style>

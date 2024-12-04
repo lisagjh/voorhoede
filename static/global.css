@@ -22,8 +22,6 @@
   margin: 0;
   padding: 0;
   font-family: "Archivo", sans-serif;
-  background-color: #183F20;
-  color: var(--white);
 }
 
 :root {
@@ -31,7 +29,6 @@
   --grey: #666666;
   --white: #fff;
   --blue: #364bf7;
-  --christmas-red: #DF4A39;
 
   --martian-mono: "Martian Mono", system-ui;
 }
@@ -41,7 +38,6 @@ h1 {
   letter-spacing: -2px;
   line-height: 6rem;
   font-weight: 600;
-  color: var(--christmas-red);
 }
 
 h2 {
@@ -142,7 +138,7 @@ header {
 main {
   line-height: 1.5;
   padding: 2rem;
-  border-bottom: 1px solid var(--white);
+  border-bottom: 1px solid var(--black);
 }
 
 @media (min-width: 43rem) {
@@ -156,13 +152,13 @@ main {
   header {
     margin: 1rem;
     margin-bottom: 0;
-    border: solid var(--white);
+    border: solid var(--black);
     border-width: 1px;
   }
 
   main {
     margin: 0 1rem;
-    border: solid var(--white);
+    border: solid var(--black);
     border-width: 0px 1px 1px 1px;
     border-top: none;
     padding: 1rem;
@@ -170,7 +166,7 @@ main {
 
   footer {
     margin: 0 1rem 1rem 1rem;
-    border: solid var(--white);
+    border: solid var(--black);
     border-width: 0px 1px 1px 1px;
   }
 }

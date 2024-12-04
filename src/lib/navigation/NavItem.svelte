@@ -14,7 +14,7 @@
     display: inline-block;
     height: 100%;
     width: 100%;
-    color: var(--white);
+    color: var(--black);
     text-decoration: none;
     transition: 0.15s ease-in-out;
   }

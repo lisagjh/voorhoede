@@ -17,7 +17,7 @@
 }
 
 @font-face {
-  font-family: Unique;
+  font-family: Flux;
   src: url(/font/Flux.woff2);
 }
 
@@ -68,12 +68,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Unique", sans-serif;
+  font-family: "Flux", sans-serif;
   line-height: 1.5;
 }
 
 p {
-  font-family: "Unique", sans-serif;
+  font-family: "Flux", sans-serif;
   font-family: Arial, Helvetica, sans-serif;
 }
 

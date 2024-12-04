@@ -9,7 +9,7 @@
 </script>
 
 <div class="bubblegum">
-  <svg width="150" viewBox="0 0 100 100" fill="none">
+  <svg width="100" viewBox="0 0 100 100" fill="none">
     <circle cx="50" cy="50" r="48.5" fill="#F194C0" stroke="#B54D7E" stroke-width="3"/>
     <circle cx="18" cy="39" r="5" fill="white"/>
     <ellipse cx="31.7925" cy="22.5113" rx="5" ry="10.8314" transform="rotate(40 31.7925 22.5113)" fill="white"/>
@@ -41,32 +41,27 @@
 <style>
 
 .bubblegum {
-  position: sticky;
+  position: fixed;
   top: 40%;
-  z-index: 1000;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
   opacity: 96.5%;
 }
 
 svg {
   animation: testAni ease-out;
 	animation-timeline: scroll(root);
-  /* animation-range: 0 35%; */
+  animation-range: 0 70%; 
 }
 @keyframes testAni {
-  /* 25% {
-    width: 55%;
-  } */
-   /* 33.33% {
-    width: 33.3333%;
-  }  */
   50%{
-    width: 65%;
+    width: 3500px;
+    /* transform: rotate(320deg); */
   }
-  /* 66.6666% {
-    width: 66.6666%;
-  } */
   100% {
-    width: 100%;
+    width: 10000px;
+
   }
 }
 

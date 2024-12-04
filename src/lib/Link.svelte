@@ -1,50 +1,50 @@
 <script>
-    //In +pave.svelte kun je de link dus aanpassen dit is een soort property
-    export let href="";
-    // Dit is uiteindelijk de class die word meegegeven via de +page.svelte component
-    // de naam class word niet toegestaan in svelte.kit dus heb voor clazz gekozen, dit zou ik ook anders kunnnen noemen
-    // als het onduidelijk is.
-    export let clazz="";
+  //In +pave.svelte kun je de link dus aanpassen dit is een soort property
+  export let href = "";
+  // Dit is uiteindelijk de class die word meegegeven via de +page.svelte component
+  // de naam class word niet toegestaan in svelte.kit dus heb voor clazz gekozen, dit zou ik ook anders kunnnen noemen
+  // als het onduidelijk is.
+  export let clazz = "";
 </script>
 
-
-<a href={href} class={clazz}>
-    <!--Bij sommmige links staat het icoon/svg aan de linker kant deze kun je dan aanroepen met slot="svg-icon-left" 
+<a {href} class={clazz}>
+  <!--Bij sommmige links staat het icoon/svg aan de linker kant deze kun je dan aanroepen met slot="svg-icon-left" 
     in het component-->
-    <slot name="svg-icon-left"/>
+  <slot name="svg-icon-left" />
 
-    <slot name="link-text">
-        link
-    </slot>
-    
-    <slot name="svg-icon-right"/>
+  <slot name="link-text">link</slot>
+
+  <slot name="svg-icon-right" />
 </a>
 
 <style>
+  a {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.75em;
+    text-transform: uppercase; /* incase someone forgets to type in uppercase */
+    gap: 0.45em;
+  }
 
-    a {
-        display: flex;
-        align-items: center;
-        color: inherit;
-        text-decoration: none;
-        font-size: .75em;
-        text-transform: uppercase; /* incase someone forgets to type in uppercase */
-        gap: .45em; 
-    }
+  .back-to-home {
+    font-size: 1em;
+  }
 
-    .back-to-home{
-        font-size: 1em;
-    }
+  .detail-link {
+    font-weight: bold;
+    color: var(--blue);
+    stroke: var(--blue); /* blue color for svg */
+  }
 
-    .detail-link {
-        font-weight: bold;
-        color: var(--blue);
-        stroke: var(--blue); /* blue color for svg */
-    }
+  .detail-link svg path {
+    fill: var(--blue);
+    stroke: var(--blue)
+  }
 
-    .login-link{
-        color: var(--blue);
-        stroke:var(--blue);
-    }
-
+  .login-link {
+    color: var(--blue);
+    stroke: var(--blue);
+  }
 </style>

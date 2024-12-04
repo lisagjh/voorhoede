@@ -1,8 +1,10 @@
+<script>
+  import Logo from "./Logo.svelte";
+</script>
+
 <footer>
   <div class="top-content">
-    <a href="/" class="logo">
-      <img src="/dda-logo.svg" alt="DDA logo" width="106" height="80" />
-    </a>
+    <Logo />
     <a href="/login" class="login">
       Inloggen
       <svg
@@ -76,8 +78,17 @@
 </footer>
 
 <style>
-  footer {
+  svg path {
+    fill: var(--blue);
+    stroke: var(--blue);
+  }
+
+  footer * {
+    font-family: var(--martian-mono);
     font-size: 0.9rem;
+  }
+
+  footer {
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -85,7 +96,7 @@
 
   footer > *,
   a.login {
-    padding: 0 .5rem;
+    padding: 0 0.5rem;
   }
 
   .top-content {
@@ -124,9 +135,9 @@
 
   .login svg {
     vertical-align: middle;
-    margin-bottom: .2em;
+    margin-bottom: 0.2em;
   }
-  
+
   .login:hover {
     background-color: var(--blue);
     color: var(--white);

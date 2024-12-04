@@ -1,6 +1,5 @@
 <script>
   import Card from "../lib/display/Card.svelte";
-  import Graphic from "../lib/display/Graphic.svelte";
   import IntroSection from "./../lib/IntroSection.svelte";
 
   export let data;
@@ -20,7 +19,6 @@
   </svelte:fragment>
 </IntroSection>
 
-<Graphic />
 
 <section class="vacancy-section">
   <div class="top">
@@ -44,9 +42,14 @@
   }
 
   .vacancy-section p {
-    font-family: "Unique", sans-serif;
-    font-variation-settings: "wdth" 550;
-    line-height: 1.2;
+    font-family: "Flux", sans-serif;
+    font-variation-settings: "wdth" 500;
+
+    align-self: center;
+    text-align: center;
+    text-transform: uppercase;
+    text-wrap: balance;
+    margin: 1rem;
   }
 
   .vacancy-section .top {
@@ -66,18 +69,6 @@
     height: fit-content;
     padding: 0.25rem;
     margin: 0 0.5rem;
-  }
-
-  p {
-    
-    letter-spacing: 1px;
-    font-size: 1.75rem;
-    font-weight: 800;
-    align-self: center;
-    text-align: center;
-    text-transform: uppercase;
-    text-wrap: balance;
-    margin: 1rem;
   }
 
   @media (width > 30em) {

@@ -1,80 +1,115 @@
 <script>
   import { onMount } from "svelte";
-  // Ensure this code runs only in the browser
   import * as THREE from "three";
 
   let canvas;
 
-  // Ensure the code is wrapped to prevent execution during SSR
   onMount(() => {
-    // STAP 1: setup
+    // STEP 1: setup
+    // Create scene, camera, and renderer
+    // Scene is like a container for all objects
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
+      75, // Field of view (FOV) in degrees
+      window.innerWidth / window.innerHeight, // Aspect ratio to match window size
+      0.1, // Near clipping plane (closest objects visible to camera)
+      1000 // Far clipping plane (farthest objects visible to camera)
     );
 
     const renderer = new THREE.WebGLRenderer({
-      // renderer moet weten welk dom element gebruikt moet worden
+      // Renderer needs to know what DOM element to use
+      // Link the renderer to our canvas element
       canvas: canvas,
     });
 
-    renderer.setPixelRatio(window.devicePixelRatio);
-    // maakt het canvas full screen
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    // de standaard positie van de camera is in het midden van de scene,
-    camera.position.setZ(30);
+    renderer.setPixelRatio(window.devicePixelRatio); // Set pixel ratio for high-DPI screens
+    renderer.setSize(window.innerWidth, window.innerHeight); // Make canvas full screen
+    camera.position.setZ(30); // Move the camera away from the center for better viewing
+    renderer.render(scene, camera); // Render the scene and camera
 
-    renderer.render(scene, camera);
+    // STEP 2: geometry
+    // Create the geometry - this defines the shape
+    const geometry = new THREE.TorusGeometry(8, 4, 10, 20); // Torus shape (doughnut)
 
-    // STAP 2: geometry
-    const geometry = new THREE.TorusGeometry(8, 4, 10, 20);
+    // Create the material - defines how the surface looks
     const material = new THREE.MeshBasicMaterial({
-      color: 0x666666,
-      wireframe: true,
+      color: 0x666666, // Color of the torus
+      wireframe: true, // Show the wireframe (edges of the shape)
     });
 
+    // Combine geometry and material into a mesh
     const torus = new THREE.Mesh(geometry, material);
 
+    // Add the mesh to the scene
     scene.add(torus);
 
-    const pointLight = new THREE.PointLight(0x666666);
-    pointLight.position.set(0, 0, 0);
-
+    // STEP 3: lighting
+    // Create ambient light for general illumination
     const ambientLight = new THREE.AmbientLight(0x666666);
-    scene.add(pointLight, ambientLight);
+    // Add both lights to the scene
+    scene.add(ambientLight);
 
-    // scroll animatie ?
+    // STEP 4: resize handler
+    function onWindowResize() {
+      // Update renderer size
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+      // Update camera aspect ratio
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix(); // Apply the aspect ratio changes
+    }
+    window.addEventListener("resize", onWindowResize); // Attach resize handler
+
+    // STEP 5: scroll animation
     let previousScrollPosition = window.scrollY;
+    let targetRotation = 0; // The rotation value we want to reach
+    const easingFactor = 0.02; // Adjust this value to control the smoothness (lower = smoother)
+
+    // Function to align the torus upright
+    function alignUpright() {
+      targetRotation =
+      // calculates the upright position
+        Math.round(torus.rotation.x / (Math.PI / 2)) * (Math.PI / 2);
+    }
 
     function moveCamera() {
       const currentScrollPosition = window.scrollY;
       const delta = currentScrollPosition - previousScrollPosition;
 
       if (delta > 0) {
-        torus.rotation.x += 0.01;
+        targetRotation += 0.1; // Scrolling down
       } else if (delta < 0) {
-        torus.rotation.x -= 0.05;
+        targetRotation -= 0.1; // Scrolling up
       }
 
       previousScrollPosition = currentScrollPosition;
+
+      // Delay upright alignment slightly to ensure smoothness
+      clearTimeout(alignTimeout);
+      alignTimeout = setTimeout(alignUpright, 150); // Adjust delay as needed
     }
+
+    // Attach the scroll handler
     document.body.onscroll = moveCamera;
 
+    // STEP 6: animation loop
     function animate() {
       requestAnimationFrame(animate);
-      torus.rotation.x += 0.01;
+
+      // Smoothly interpolate the torus rotation towards the target
+      torus.rotation.x += (targetRotation - torus.rotation.x) * easingFactor;
+
       renderer.render(scene, camera);
     }
-
+    // Start the animation loop
     animate();
 
     return () => {
-      // Cleanup if needed when component is destroyed
+      // Remove scroll event listener
       window.onscroll = null;
+      // Remove resize listener
+      window.removeEventListener("resize", onWindowResize);
     };
   });
 </script>

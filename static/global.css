@@ -25,7 +25,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* font-family: "Archivo", sans-serif; */
+  font-family: "Flux", sans-serif;
 }
 
 :root {
@@ -35,10 +35,6 @@
   --blue: #f7d436;
 
   --martian-mono: "Martian Mono", system-ui;
-}
-
-img {
-  display: none;
 }
 
 body {
@@ -59,7 +55,7 @@ button {
 }
 
 svg path {
-  stroke: var(--black);
+  fill: var(--black);
 }
 
 h1,

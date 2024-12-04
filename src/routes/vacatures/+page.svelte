@@ -6,10 +6,23 @@
   import Vacancy from "$lib/Vacancy.svelte";
   import Searchbar from "$lib/Searchbar.svelte"
 
+  let AnimationComplete = false;
+
+  function handleAnimationEnd() {
+    AnimationComplete = true;
+    document.body.classList.add("crazy-theme");
+  }
+
 </script>
 
 <div class="bubblegum">
-  <svg width="100" viewBox="0 0 100 100" fill="none">
+  <svg
+    width="100"
+    viewBox="0 0 100 100" 
+    fill="none"
+    class:is-after={AnimationComplete} 
+    on:animationend={handleAnimationEnd}
+  >
     <circle cx="50" cy="50" r="48.5" fill="#F194C0" stroke="#B54D7E" stroke-width="3"/>
     <circle cx="18" cy="39" r="5" fill="white"/>
     <ellipse cx="31.7925" cy="22.5113" rx="5" ry="10.8314" transform="rotate(40 31.7925 22.5113)" fill="white"/>
@@ -40,30 +53,50 @@
 
 <style>
 
+:global(body.crazy-theme) {
+  font-family: 'Bubblegum', sans-serif;
+  background-color: #183F20;
+  color: #DF4A39;
+  transition: .20s ease-in-out;
+}
+
 .bubblegum {
   position: fixed;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10000;
-  opacity: 90%;
-}
-
-.bubblegum-after {
-  display: none;
+  opacity: 100%;
 }
 
 svg {
   animation: bubble-increase ease-out;
 	animation-timeline: scroll(root);
-  animation-range: 0 75%; 
+  animation-range: 0 15%; 
+}
+
+svg.is-after {
+  display: none;
 }
 @keyframes bubble-increase {
+  25%{
+    scale: 2;
+    opacity: 85%;
+    transform: rotate(20deg);
+  }
   50%{
-    width: 2500px;
+    scale: 6;
+    opacity: 90%;
+    transform: rotate(-20deg);
+  }
+  75%{
+    scale: 10;
+    opacity: 95%;
+    transform: rotate(20deg);
   }
   100% {
-    width: 8000px;
+    scale: 20;
+    opacity: 100%;
   }
 }
 

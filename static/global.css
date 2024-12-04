@@ -74,13 +74,13 @@ p {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 4.25rem;
   font-weight: 800;
   font-variation-settings: "wdth" 600;
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 3.75rem;
 }
 
 h3 {
@@ -167,6 +167,7 @@ main {
   border-bottom: 1px solid var(--black);
 }
 
+
 @media (min-width: 43rem) {
   header,
   main,
@@ -194,5 +195,11 @@ main {
     margin: 0 1rem 1rem 1rem;
     border: solid var(--black);
     border-width: 0px 1px 1px 1px;
+  }
+}
+
+@media (width > 50rem) {
+  main {
+    border-left: none;
   }
 }

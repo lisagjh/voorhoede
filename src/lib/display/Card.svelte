@@ -129,6 +129,10 @@
     article:nth-of-type(2) {
       border-top: 1px solid var(--black);
     }
+
+    article:last-of-type {
+      border-bottom: none;
+    }
   }
 
   /* animation */

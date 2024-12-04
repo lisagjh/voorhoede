@@ -47,6 +47,10 @@
     margin: 7.5% 0 15% 0;
   }
 
+  h1 {
+    line-height: 1.2;
+  }
+
   @media (min-width: 842px ){
       .intro-section {
         margin: 7.5% 20% 5% 20%;

@@ -17,12 +17,21 @@
   });
 </script>
 
-<Header />
+  <Header />
 
-<Graphic />
+  <Graphic />
 
-<main>
-  <slot></slot>
-</main>
+  <main>
+    <slot></slot>
+  </main>
 
-<Footer />
+  <Footer />
+
+<style>
+      @media (width > 50rem) {
+        main {
+          justify-self: end;
+          max-width: calc(100% - 11rem);
+        }
+      }
+</style>

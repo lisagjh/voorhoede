@@ -61,4 +61,12 @@
       transform: translateX(0);
     }
   }
+
+
+  @media (width > 50rem) {
+    button {
+      display: none;
+    }
+  }
+
 </style>

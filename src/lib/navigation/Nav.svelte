@@ -111,6 +111,11 @@
   onMount(async () => {
     // event listener for keydown event
     document.addEventListener("keydown", closeMenuOnEsc);
+
+    const nav = document.querySelector("nav");
+    let viewportWidth = window.innerWidth;
+
+    console.log(viewportWidth);
   });
 </script>
 
@@ -194,5 +199,29 @@
   li {
     font-family: var(--martian-mono);
     margin: 1rem;
+  }
+
+  @media (width > 50rem) {
+    nav {
+      background-color: transparent;
+      border: none;
+      position: relative;
+
+      visibility: visible;
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+      height: fit-content;
+      margin-top: 2rem;
+    }
+
+    ul {
+      margin-top: 0;
+    }
+
+    li {
+      margin: 0;
+      margin-bottom: 1.5rem;
+    }
   }
 </style>

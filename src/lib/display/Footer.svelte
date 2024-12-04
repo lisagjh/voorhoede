@@ -108,7 +108,7 @@
   }
 
   a {
-    color: var(--black);
+    color: var(--white);
     width: fit-content;
     text-underline-offset: 0.2rem;
     text-wrap: wrap;
@@ -179,7 +179,7 @@
 
     .top-content {
       grid-area: top;
-      border: solid var(--black);
+      border: solid var(--white);
       border-width: 0px 1px 1px 0px;
       padding-top: 2.5rem;
     }
@@ -189,7 +189,7 @@
       gap: 2rem;
       margin: 0;
       padding: 1rem 2.5rem;
-      border: solid var(--black);
+      border: solid var(--white);
       border-width: 0px 0px 1px 0px;
     }
 

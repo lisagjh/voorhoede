@@ -42,26 +42,28 @@
 
 .bubblegum {
   position: fixed;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10000;
-  opacity: 96.5%;
+  opacity: 90%;
+}
+
+.bubblegum-after {
+  display: none;
 }
 
 svg {
   animation: testAni ease-out;
 	animation-timeline: scroll(root);
-  animation-range: 0 70%; 
+  animation-range: 0 75%; 
 }
 @keyframes testAni {
   50%{
-    width: 3500px;
-    /* transform: rotate(320deg); */
+    width: 2500px;
   }
   100% {
-    width: 10000px;
-
+    width: 8000px;
   }
 }
 

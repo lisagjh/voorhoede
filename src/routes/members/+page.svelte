@@ -77,8 +77,8 @@
 <style>
 
   .filter-section{
-      border-top: 1px solid;
-      border-bottom: 1px solid;
+      border-top: 1px solid var(--white);
+      border-bottom: 1px solid var(--white);
       margin-left: -15px;
       margin-right: -16px;
     margin-bottom: -1rem;

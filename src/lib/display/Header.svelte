@@ -19,5 +19,6 @@
         overflow: hidden;
         padding: 0.5rem 1rem;
         width: 100%;
+        border: 1px solid var(--white);
     }
 </style>

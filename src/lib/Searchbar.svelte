@@ -31,22 +31,23 @@ input {
   padding: 1em 0;
   margin: 1em;
   border: none;
-  border-bottom: 1.5px solid var(--black);
+  background-color: inherit;
+  border-bottom: 1.5px solid var(--red);
   font-size: 1em;
 }
 
 input::placeholder {
-  color: var(--black);
+  color: var(--red);
 }
 
 input::placeholder:focus {
-  color: var(--gray);
+  color: var(--red);
 }
 
 input:focus {
-  color: black;
+  color: var(--red);
   transition: .35s;
-  outline: 1.75px solid var(--blue);
+  outline: 1.75px solid var(--red);
   padding: 1em .85em;
   border-radius: .25em;
 }

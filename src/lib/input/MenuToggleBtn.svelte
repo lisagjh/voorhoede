@@ -32,6 +32,7 @@
 
   span.close {
     animation: close 0.35s ease-in-out 0s;
+    color: var(--red);
   }
 
   @keyframes close {
@@ -47,6 +48,7 @@
   span.menu {
     animation: menu 0.35s ease-in-out 0s;
     animation-fill-mode: both;
+    color: var(--red);
   }
 
 

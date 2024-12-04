@@ -57,8 +57,7 @@
         width: 100%;
         overflow: hidden;
         /*todo this border change to the design*/
-
-
+        border: 1px solid var(--white);
         padding: 2rem;
         display: grid;
         grid-template-rows: 16rem auto auto 4rem auto;
@@ -83,7 +82,7 @@
     }
 
     .label-filters {
-        border: 2px solid var(--black);
+        border: 2px solid var(--white);
         width: max-content;
         padding: 3px;
     }

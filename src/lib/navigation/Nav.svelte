@@ -136,7 +136,7 @@
   nav {
     display: none;
     visibility: hidden;
-    background-color: var(--white);
+    background-color: #192140;
     position: absolute;
     right: 0;
     top: 0;

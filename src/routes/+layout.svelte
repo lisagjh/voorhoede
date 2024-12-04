@@ -17,23 +17,24 @@
   });
 </script>
 
-  <Header />
+<Header />
 
-  <Graphic />
+<Graphic />
 
-  <main>
-    <slot></slot>
-  </main>
+<main>
+  <slot></slot>
+</main>
 
-  <Footer />
+<Footer />
 
 <style>
-      @media (width > 50rem) {
-        main {
-          margin-top: 1rem;
-          padding-top: 2.5rem;
-          justify-self: end;
-          max-width: calc(100% - 11rem);
-        }
-      }
+  @media (width > 50rem) {
+    main {
+      margin: 0;
+      margin-top: 1rem;
+      padding-top: 2.5rem;
+      justify-self: end;
+      max-width: calc(100% - 22%);
+    }
+  }
 </style>

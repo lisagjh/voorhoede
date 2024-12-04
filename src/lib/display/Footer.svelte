@@ -91,7 +91,15 @@
   footer {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+  }
+
+  @media (width >50rem) {
+    footer {
+      justify-self: end;
+      max-width: calc(100% - 22%);
+      margin: 0;
+      border-left: none;
+    }
   }
 
   footer > *,

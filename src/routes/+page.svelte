@@ -69,6 +69,7 @@
   }
 
   p {
+    
     letter-spacing: 1px;
     font-size: 1.75rem;
     font-weight: 800;

@@ -33,6 +33,10 @@
   --martian-mono: "Martian Mono", system-ui;
 }
 
+body{
+  background: rgb(129, 228, 168);
+  background: linear-gradient(83deg, rgb(240 184 184) 0%, rgb(194, 250, 243) 47%, rgb(255 174 249) 100%);
+}
 h1 {
   font-size: 6rem;
   letter-spacing: -2px;

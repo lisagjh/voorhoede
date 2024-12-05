@@ -162,6 +162,12 @@
         }
     }
 
+    @media (prefers-reduced-motion: no-preference) {
+        .card {
+            animation: slide-in-up both, white-background-cards 2s infinite;
+            animation-timeline: view();
+        }
+    }
     @media (max-width: 350px) {
 
         .grid-container {
@@ -208,12 +214,7 @@
 
     @media (max-width: 766px) {
 
-        @media (prefers-reduced-motion: no-preference) {
-            .card {
-                animation: slide-in-up both, white-background-cards 2s infinite;
-                animation-timeline: view();
-            }
-        }
+
 
     }
 
@@ -229,33 +230,6 @@
 
         .card:nth-child(odd) {
             border-right: 1px solid var(--grey);
-        }
-
-        /*animatie*/
-        .card:nth-child(odd) {
-
-
-            animation: slide-in-up both;
-            animation-timeline: view();
-        }
-
-
-        .card:nth-child(even) {
-
-            animation: slide-in-up both;
-            animation-timeline: view();
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotateY(1turn);
-            }
-        }
-
-        @media (prefers-reduced-motion: no-preference) {
-            .card {
-                animation-timeline: view();
-            }
         }
 
 
@@ -278,22 +252,19 @@
             .card:nth-child(3n) {
 
                 border-right: 1px solid var(--grey);
-                animation: slide-in-up both, white-background-cards;
-                animation-timeline: view();
+
 
             }
 
             .card:nth-child(3n+2) {
                 border-right: 1px solid var(--grey);
-                animation: slide-in-up both, white-background-cards;
-                animation-timeline: view();
+
             }
 
             .card:nth-child(3n+4),
             .card:nth-child(1) {
                 border-right: 1px solid var(--grey);
-                animation: slide-in-up both, white-background-cards;
-                animation-timeline: view();
+
 
             }
         }
@@ -314,19 +285,7 @@
     }
 
     @media (min-width: 1466px) {
-        @media (prefers-reduced-motion: no-preference) {
-            .card:nth-child(4n-2),
-            .card:nth-child(4n-3) {
-                animation: slide-in-up both, white-background-cards;
-                animation-timeline: view();
-            }
 
-            .card:nth-child(4n-1),
-            .card:nth-child(4n-4) {
-                animation: slide-in-up both, white-background-cards;
-                animation-timeline: view();
-            }
-        }
     }
 
     /*5colums */

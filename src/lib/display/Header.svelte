@@ -28,10 +28,10 @@
       position: fixed;
       left: 0;
       top: 0;
-      width: 20%;
+      width: 16%;
       height: 100%;
       max-height: 100vh;
-      padding: 0.25rem;
+      padding: 1rem;
       justify-content: flex-start;
     }
   }

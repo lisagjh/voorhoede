@@ -10,20 +10,20 @@
   src: url("/font/font2/archivo-v19-latin-regular.woff2") format("woff2");
 }
 
-/* @font-face {
+@font-face {
   font-display: swap;
   font-family: "Martian Mono";
   src: url("/font/font2/martian-mono-v3-latin-regular.woff2") format("woff2");
-} */
-
-@font-face {
-  font-family: "Martian Mono";
-  src: url("/font/Globs.ttf");
 }
 
 @font-face {
-  font-family: Flux;
+  font-family: "Flux";
   src: url(/font/paplane.woff2);
+}
+
+@font-face {
+  font-family: "Martian Mono";
+  src: url("/font/supermolot.ttf");
 }
 
 * {
@@ -76,7 +76,6 @@ h6 {
 p {
   font-family: "Flux", sans-serif;
   font-family: Arial, Helvetica, sans-serif;
-  
 }
 
 h1 {

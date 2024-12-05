@@ -29,10 +29,12 @@
   @media (width > 50rem) {
     main {
       margin: 0;
+
+      margin: 0.25rem;
       margin-top: 1rem;
       padding-top: 2.5rem;
       justify-self: end;
-      max-width: calc(100% - 22%);
+      max-width: calc(100% - 18%);
     }
   }
 </style>

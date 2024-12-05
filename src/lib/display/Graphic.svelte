@@ -34,7 +34,7 @@
 
     // Create the material - defines how the surface looks
     const material = new THREE.MeshBasicMaterial({
-      color: 0x666666, // Color of the torus
+      color: 0x433F3F, // Color of the torus
       wireframe: true, // Show the wireframe (edges of the shape)
     });
 
@@ -104,7 +104,7 @@
   });
 </script>
 
-<canvas id="bg" bind:this={canvas}></canvas>
+<canvas bind:this={canvas}></canvas>
 
 <style>
   canvas {

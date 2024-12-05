@@ -96,7 +96,7 @@
   @media (width >50rem) {
     footer {
       justify-self: end;
-      max-width: calc(100% - 22%);
+      max-width: calc(100% - 18%);
       margin: 0;
       border-left: none;
     }

@@ -52,13 +52,10 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
         text-transform: uppercase;
-        /*margin: 1rem -1rem 0rem;*/
     }
 
     .card {
         width: 100%;
-
-
         padding: 2rem;
         display: grid;
         grid-template-rows: 16rem auto auto 4rem auto;
@@ -123,6 +120,7 @@
         }
     }
 
+    /*animatie tonen image van klein naar groot*/
     @keyframes reveal {
         from {
             opacity: 0;
@@ -134,29 +132,30 @@
         }
     }
 
-
+    /*animatie slide up om de card te tonen van beneden naar boven*/
     @keyframes slide-in-up {
 
 
         0% {
 
             transform: translateY(10em);
-    background-color: white;
+            background-color: white;
         }
         25% {
             transform: translateY(5em);
-    background-color: white;
+            background-color: white;
         }
         50% {
-        background-color: white;
+            background-color: white;
         }
 
     }
 
-
-    @keyframes gradient-animation {
+    /*gradient animation white*/
+    @keyframes white-background-cards {
         0% {
-            background-position: 0% 50%;   background-color: white;
+            background-position: 0% 50%;
+            background-color: white;
         }
         100% {
             background-position: 100% 50%;
@@ -211,7 +210,7 @@
 
         @media (prefers-reduced-motion: no-preference) {
             .card {
-                animation: slide-in-up both, gradient-animation 2s infinite;
+                animation: slide-in-up both, white-background-cards 2s infinite;
                 animation-timeline: view();
             }
         }
@@ -236,7 +235,7 @@
         .card:nth-child(odd) {
 
 
-            animation: slide-in-up  both;
+            animation: slide-in-up both;
             animation-timeline: view();
         }
 
@@ -279,21 +278,21 @@
             .card:nth-child(3n) {
 
                 border-right: 1px solid var(--grey);
-                animation: slide-in-up both, gradient-animation;
+                animation: slide-in-up both, white-background-cards;
                 animation-timeline: view();
 
             }
 
             .card:nth-child(3n+2) {
                 border-right: 1px solid var(--grey);
-                animation: slide-in-up both, gradient-animation;
+                animation: slide-in-up both, white-background-cards;
                 animation-timeline: view();
             }
 
             .card:nth-child(3n+4),
             .card:nth-child(1) {
                 border-right: 1px solid var(--grey);
-                animation: slide-in-up both, gradient-animation;
+                animation: slide-in-up both, white-background-cards;
                 animation-timeline: view();
 
             }
@@ -306,7 +305,6 @@
     @media (min-width: 1466px) and (max-width: 1815px) {
 
 
-
         .card:nth-child(4n-1),
         .card:nth-child(4n-2),
         .card:nth-child(4n-3) {
@@ -314,17 +312,18 @@
         }
 
     }
-    @media (min-width: 1466px){
+
+    @media (min-width: 1466px) {
         @media (prefers-reduced-motion: no-preference) {
             .card:nth-child(4n-2),
             .card:nth-child(4n-3) {
-                animation: slide-in-up both, gradient-animation;
+                animation: slide-in-up both, white-background-cards;
                 animation-timeline: view();
             }
 
             .card:nth-child(4n-1),
             .card:nth-child(4n-4) {
-                animation: slide-in-up both, gradient-animation;
+                animation: slide-in-up both, white-background-cards;
                 animation-timeline: view();
             }
         }
@@ -335,12 +334,12 @@
     @media (min-width: 1815px) and (max-width: 2165px) {
 
 
-            .card:nth-child(5n-1),
-            .card:nth-child(5n-2),
-            .card:nth-child(5n-3),
-            .card:nth-child(5n-4) {
-                border-right: 1px solid var(--grey);
-            }
+        .card:nth-child(5n-1),
+        .card:nth-child(5n-2),
+        .card:nth-child(5n-3),
+        .card:nth-child(5n-4) {
+            border-right: 1px solid var(--grey);
+        }
 
 
     }

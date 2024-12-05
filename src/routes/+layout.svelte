@@ -19,8 +19,6 @@
 
 <Header />
 
-<Graphic />
-
 <main>
   <slot></slot>
 </main>

@@ -10,15 +10,20 @@
   src: url("/font/font2/archivo-v19-latin-regular.woff2") format("woff2");
 }
 
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+/* @font-face {
+  font-display: swap;
   font-family: "Martian Mono";
-  src: url("/font/font2/martian-mono-v3-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/font/font2/martian-mono-v3-latin-regular.woff2") format("woff2");
+} */
+
+@font-face {
+  font-family: "Martian Mono";
+  src: url("/font/Globs.ttf");
 }
 
 @font-face {
   font-family: Flux;
-  src: url(/font/Flux.woff2);
+  src: url(/font/paplane.woff2);
 }
 
 * {
@@ -71,12 +76,13 @@ h6 {
 p {
   font-family: "Flux", sans-serif;
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 h1 {
   font-size: 4.25rem;
   font-weight: 800;
-  font-variation-settings: "wdth" 600;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -166,7 +172,6 @@ main {
   padding: 2rem;
   border-bottom: 1px solid var(--black);
 }
-
 
 @media (min-width: 43rem) {
   header,

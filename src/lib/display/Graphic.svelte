@@ -46,7 +46,7 @@
 
     // STEP 3: lighting
     // Create ambient light for general illumination
-    const ambientLight = new THREE.AmbientLight(0x666666);
+    const ambientLight = new THREE.AmbientLight(0xffffff);
     // Add both lights to the scene
     scene.add(ambientLight);
 

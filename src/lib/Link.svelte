@@ -38,11 +38,6 @@
     stroke: var(--blue); /* blue color for svg */
   }
 
-  .detail-link svg path {
-    fill: var(--blue);
-    stroke: var(--blue)
-  }
-
   .login-link {
     color: var(--blue);
     stroke: var(--blue);

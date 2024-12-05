@@ -1,6 +1,7 @@
 <script>
   import Card from "../lib/display/Card.svelte";
   import IntroSection from "./../lib/IntroSection.svelte";
+  import Graphic from "../lib/display/Graphic.svelte";
 
   export let data;
 
@@ -11,6 +12,9 @@
     { key: "expertise" },
   ];
 </script>
+
+<Graphic />
+
 
 <IntroSection title="De Beste Bureau's van Nederland">
   <svelte:fragment slot="subtitle">

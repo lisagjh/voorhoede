@@ -91,6 +91,7 @@
     h2 {
         text-overflow: ellipsis;
         white-space: nowrap;
+        overflow: hidden;
         font-size: 38px;
     }
 

@@ -21,6 +21,7 @@
       // Renderer needs to know what DOM element to use
       // Link the renderer to our canvas element
       canvas: canvas,
+      alpha: true,
     });
 
     renderer.setPixelRatio(window.devicePixelRatio); // Set pixel ratio for high-DPI screens
@@ -34,7 +35,7 @@
 
     // Create the material - defines how the surface looks
     const material = new THREE.MeshBasicMaterial({
-      color: 0x433F3F, // Color of the torus
+      color: 0x433f3f, // Color of the torus
       wireframe: true, // Show the wireframe (edges of the shape)
     });
 
@@ -89,6 +90,8 @@
 
       // Smoothly interpolate the torus rotation towards the target
       torus.rotation.x += (targetRotation - torus.rotation.x) * easingFactor;
+      // torus.rotation.y += 0.01;
+      torus.rotation.z += 0.01;
 
       renderer.render(scene, camera);
     }
@@ -102,7 +105,12 @@
       window.removeEventListener("resize", onWindowResize);
     };
   });
+
+  // if button is clicked add this to animate()
+  // torus.rotation.y += 0.01;
+  // torus.rotation.z += 0.01
 </script>
+
 
 <canvas bind:this={canvas}></canvas>
 

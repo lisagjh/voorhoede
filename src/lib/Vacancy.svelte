@@ -27,12 +27,12 @@
 <style>
 
     div {
+        color: var(--black);
         display: flex;
         flex-wrap: wrap;
         gap: 1.75em;
         padding-bottom: 10%;
         margin-bottom: 10%;
-        border-bottom: 1px solid black;
     }
     .job-title {
         width: 100%;

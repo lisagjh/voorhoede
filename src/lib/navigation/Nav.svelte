@@ -107,16 +107,6 @@
       isOpen = false;
     }
   }
-
-  onMount(async () => {
-    // event listener for keydown event
-    document.addEventListener("keydown", closeMenuOnEsc);
-
-    const nav = document.querySelector("nav");
-    let viewportWidth = window.innerWidth;
-
-    console.log(viewportWidth);
-  });
 </script>
 
 <MenuToggleBtn {isOpen} {toggle} />

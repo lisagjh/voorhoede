@@ -87,10 +87,12 @@
 
   @media (width > 35em) {
     p {
+      justify-self: center;
       letter-spacing: -2px;
       line-height: 1;
-      font-size: 4rem;
+      font-size: 3.5rem;
       font-weight: 800;
+      max-width: 20ch;
       text-wrap: balance;
     }
   }

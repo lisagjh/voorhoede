@@ -3,79 +3,98 @@
   import * as THREE from "three";
   import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader";
 
-
   let canvas;
 
   onMount(() => {
-    if (typeof window !== "undefined") {
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(
-        75,
-        window.innerWidth / window.innerHeight,
-        0.1,
-        1000
-      );
+    const scene = new THREE.Scene();
 
-      const renderer = new THREE.WebGLRenderer({ canvas });
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      camera.position.setZ(100);
+    const camera = new THREE.PerspectiveCamera(
+      60,
+      window.innerWidth / window.innerHeight,
+      1,
+      1000
+    );
 
-      // Load SVG
-loader.load("src/lib/assets/emoji.svg", (data) => {
-  const paths = data.paths;
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas,
+      antialias: true,
+      alpha: true,
+    });
 
-  paths.forEach((path)=> {
-    const fillMaterial = new THREE.MeshBasicMaterial({
-      color: path.color || 0x000000,
-      side: THREE.DoubleSide,
-    })
-  })
-})
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.position.setZ(50);
 
-      //
-      const loader = new SVGLoader();
-      loader.load("/src/lib/assets/emoji.svg", (data) => {
-        const paths = data.paths;
+    const loader = new SVGLoader();
 
-        paths.forEach((path) => {
+    loader.load(
+      "/emoji.svg",
+      (data) => {
+        const group = new THREE.Group();
+
+        data.paths.forEach((path) => {
           const material = new THREE.MeshBasicMaterial({
-            color: path.color || 0x000000, // Default to green if no color
+            color: path.color,
             side: THREE.DoubleSide,
-            depthWrite: false,
+            transparent: true,
+            opacity: 0.8
           });
 
-          const shapes = SVGLoader.createShapes(path);
-
-          shapes.forEach((shape) => {
-            const geometry = new THREE.ShapeGeometry(shape);
-            const mesh = new THREE.Mesh(geometry, material);
-
-            mesh.scale.set(0.1, 0.1, 0.1); // Scale down if needed
-            scene.add(mesh);
-          });
+          try {
+            const shapes = path.toShapes(true);
+            shapes.forEach((shape) => {
+              const geometry = new THREE.ExtrudeGeometry(shape, {
+                depth: 1,
+                bevelEnabled: false
+              });
+              const mesh = new THREE.Mesh(geometry, material);
+              group.add(mesh);
+            });
+          } catch (error) {
+            console.error("SVG loading error:", error);
+          }
         });
 
-        // Optional: Adjust camera to fit SVG
-        const box = new THREE.Box3().setFromObject(scene);
-        const size = new THREE.Vector3();
-        box.getSize(size);
-        camera.position.z = Math.max(size.x, size.y) * 2;
-      });
+        // Center the group
+        const box = new THREE.Box3().setFromObject(group);
+        const center = box.getCenter(new THREE.Vector3());
+        group.position.sub(center);
 
-      // Animation loop
-      function animate() {
-        requestAnimationFrame(animate);
+        scene.add(group);
 
-        // Render the scene
-        renderer.render(scene, camera);
+        function animate() {
+          requestAnimationFrame(animate);
+          group.rotation.y += 0.01;
+          renderer.render(scene, camera);
+        }
+        animate();
+      },
+      null,
+      (error) => {
+        console.error("SVG load error:", error);
       }
+    );
 
-      animate();
+    function onWindowResize() {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
     }
+    window.addEventListener("resize", onWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", onWindowResize);
+    };
   });
 </script>
 
 <canvas bind:this={canvas}></canvas>
 
-<!-- <img bind:this={canvas} src="/src/lib/assets/emoji.svg" alt="frownie face" /> -->
+<style>
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+</style>

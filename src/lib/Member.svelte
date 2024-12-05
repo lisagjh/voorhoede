@@ -46,7 +46,6 @@
 <style>
 
 
-
     /*hieronder normale code*/
     .grid-container {
 
@@ -116,7 +115,7 @@
     }
 
     /*animatie*/
-    img{
+    img {
         animation: reveal 1s linear both;
         /* Rember to declare the timeline after the shorthand */
         animation-timeline: view();
@@ -134,25 +133,24 @@
     }
 
 
-
     @keyframes slide-in-up {
 
 
         0% {
 
             transform: translateY(10em);
-            background: rgb(98,194,6);
-            background: linear-gradient(50deg, rgba(2,0,36,1) 0%, rgb(226, 244, 198) 25%, rgba(0,212,255,1) 100%);
+            background: rgb(98, 194, 6);
+            background: linear-gradient(50deg, rgba(2, 0, 36, 1) 0%, rgb(226, 244, 198) 25%, rgba(0, 212, 255, 1) 100%);
         }
-        25%{
+        25% {
             transform: translateY(5em);
-            background: rgb(98,194,6);
+            background: rgb(98, 194, 6);
             background: linear-gradient(139deg, rgba(2, 0, 36, 1) 0%, rgb(194, 250, 243) 47%, rgb(255 174 249) 100%)
         }
-        50%{
-                transform: translateY(0em);
-                background: rgb(98,194,6);
-                background: linear-gradient(20deg, rgb(255, 253, 253) 0%, rgb(255, 213, 213) 47%, rgba(0,212,255,1) 100%);
+        50% {
+            transform: translateY(0em);
+            background: rgb(98, 194, 6);
+            background: linear-gradient(20deg, rgb(255, 253, 253) 0%, rgb(255, 213, 213) 47%, rgba(0, 212, 255, 1) 100%);
         }
         /*50% {*/
         /*    transform: translateY(7.5em);*/
@@ -171,8 +169,8 @@
     @keyframes gradient-animation {
         0% {
             background-position: 0% 50%;
-            background: rgb(98,194,6);
-            background: linear-gradient(300deg, rgba(98,194,6,1) 0%, rgb(235, 235, 255) 47%, rgba(0,212,255,1) 100%);
+            background: rgb(98, 194, 6);
+            background: linear-gradient(300deg, rgba(98, 194, 6, 1) 0%, rgb(235, 235, 255) 47%, rgba(0, 212, 255, 1) 100%);
         }
         100% {
             background-position: 100% 50%;
@@ -186,8 +184,8 @@
     @keyframes gradient-animation-1 {
         0% {
             background-position: 0% 50%;
-            background: rgb(98,194,6);
-            background: linear-gradient(300deg, rgb(128, 216, 250) 0%, rgb(235, 235, 255) 47%, rgba(0,212,255,1) 100%);
+            background: rgb(98, 194, 6);
+            background: linear-gradient(300deg, rgb(128, 216, 250) 0%, rgb(235, 235, 255) 47%, rgba(0, 212, 255, 1) 100%);
         }
         100% {
             background-position: 100% 50%;
@@ -201,7 +199,7 @@
     @keyframes gradient-animation-2 {
         0% {
             background-position: 0% 50%;
-            background: rgb(98,194,6);
+            background: rgb(98, 194, 6);
             background: linear-gradient(188deg, rgb(128, 216, 250) 0%, rgb(235, 235, 255) 47%, rgb(200, 200, 200) 100%);
         }
         100% {
@@ -212,6 +210,7 @@
             background: linear-gradient(357deg, rgb(243, 128, 128) 0%, rgb(246, 241, 149) 47%, rgb(255 174 249) 100%)
         }
     }
+
     @media (max-width: 350px) {
 
         .grid-container {
@@ -235,20 +234,20 @@
         }
 
 
-
-
     }
 
     @media (max-width: 43rem) {
-        .card  {
+        .card {
             border: 1px solid var(--grey);
         }
     }
+
     @media (min-width: 43rem) {
         .card {
             border-bottom: 1px solid var(--grey);
         }
     }
+
     @media (min-width: 325px) {
         .grid-container {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -256,23 +255,16 @@
 
     }
 
-    @media (max-width: 766px)  {
+    @media (max-width: 766px) {
         .grid-container {
             /*overflow-x: hidden;*/
         }
 
-        .card
-        {
+        .card {
 
-            animation: slide-in-up both ,gradient-animation 2s infinite;
+            animation: slide-in-up both, gradient-animation 2s infinite;
             animation-timeline: view();
         }
-
-
-
-
-
-
 
     }
 
@@ -291,26 +283,22 @@
         }
 
         /*animatie*/
+        .card:nth-child(odd) {
 
-        .card:nth-child(odd)
-        {
-
-            animation: spin both ;
+            animation: spin both;
             /*animation: slideLeftAnimation both ;*/
             animation-timeline: view();
         }
 
 
-        .card:nth-child(even)
-        {
+        .card:nth-child(even) {
 
-            animation: slide-in-up both ;
+            animation: slide-in-up both;
             animation-timeline: view();
         }
 
         /*2de animatie*/
         /*https://codepen.io/argyleink/pen/wvOKbyL/2d672362df9ac37cf6920b5b6bc3a243*/
-
         /*todo voeg tutorial toe aan issue deze*/
         @keyframes spin {
             to {
@@ -327,7 +315,6 @@
         }
 
 
-
     }
 
 
@@ -336,41 +323,35 @@
     /*hier nog een animatie op toevoegen*/
     @media (min-width: 1127px) and (max-width: 1466px) {
 
-        .grid-container{
+        .grid-container {
             width: 100%;
             /*met paddidng maak je er 2 cardss van met overflow hidden stop je de extra ruimte aan de rechterkant
             en het laten inkomen van rechts is niet mogelijk*/
             /*padding: 10em;*/
             /*overflow: hidden;*/
         }
-        /*.card{*/
-        /*    border-right: 1px solid var(--grey);*/
-        /*    animation: slide-in-up both ,gradient-animation,  reveal;*/
-        /*    animation-timeline: view();*/
-        /*}*/
 
 
         /*alle 3 tegelijk kan niet*/
-
-        .card:nth-child(3n){
+        .card:nth-child(3n) {
 
             border-right: 1px solid var(--grey);
-            animation: slide-in-up both ,gradient-animation-1 ;
+            animation: slide-in-up both, gradient-animation-1;
             animation-timeline: view();
 
         }
 
-        .card:nth-child(3n+2){
+        .card:nth-child(3n+2) {
             border-right: 1px solid var(--grey);
-            animation: slide-in-up both ,gradient-animation-2, ;
+            animation: slide-in-up both, gradient-animation-2,;
             animation-timeline: view();
         }
 
         .card:nth-child(3n+4),
-        .card:nth-child(1){
-                border-right: 1px solid var(--grey);
-                animation: slide-in-up both ,gradient-animation;
-                animation-timeline: view();
+        .card:nth-child(1) {
+            border-right: 1px solid var(--grey);
+            animation: slide-in-up both, gradient-animation;
+            animation-timeline: view();
 
         }
 
@@ -381,21 +362,21 @@
     @media (min-width: 1466px) and (max-width: 1815px) {
 
 
-
         .card:nth-child(4n-2),
-        .card:nth-child(4n-3){
+        .card:nth-child(4n-3) {
             animation: slide-in-up both, gradient-animation-2;
             animation-timeline: view();
         }
+
         .card:nth-child(4n-1),
-        .card:nth-child(4n-4){
+        .card:nth-child(4n-4) {
             animation: slide-in-up both, gradient-animation-1;
             animation-timeline: view();
         }
 
         .card:nth-child(4n-1),
         .card:nth-child(4n-2),
-        .card:nth-child(4n-3){
+        .card:nth-child(4n-3) {
             border-right: 1px solid var(--grey);
         }
 
@@ -407,26 +388,24 @@
     @media (min-width: 1815px) and (max-width: 2165px) {
 
 
-
         .card:nth-child(5n-1),
         .card:nth-child(5n-2),
         .card:nth-child(5n-3),
         .card:nth-child(5n-4) {
             border-right: 1px solid var(--grey);
         }
+
         .card:nth-child(5n-3),
-        .card:nth-child(5n-4)
-        {
+        .card:nth-child(5n-4) {
             animation: slide-in-up both, gradient-animation-1;
             animation-timeline: view();
         }
 
         .card:nth-child(5n-1),
-        .card:nth-child(5n-2){
+        .card:nth-child(5n-2) {
             animation: slide-in-up both, gradient-animation-2;
             animation-timeline: view();
         }
-
 
 
     }
@@ -438,8 +417,7 @@
         .card:nth-child(6n-2),
         .card:nth-child(6n-3),
         .card:nth-child(6n-4),
-        .card:nth-child(6n-5)
-        {
+        .card:nth-child(6n-5) {
             border-right: 1px solid var(--grey);
         }
     }
@@ -453,14 +431,12 @@
         .card:nth-child(6n-2),
         .card:nth-child(6n-3),
         .card:nth-child(6n-4),
-
         .card:nth-child(13),
-        .card:nth-child(26)
-        {
+        .card:nth-child(26) {
             border-right: 1px solid var(--grey);
         }
 
-        .card:nth-child(7n){
+        .card:nth-child(7n) {
             border-right: none;
         }
 

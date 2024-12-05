@@ -77,6 +77,7 @@
 <style>
   .filter-section{
     border-top: 1px solid;
+    border-bottom: 1px solid;
   }
 
   @media (max-width: 43rem) {
@@ -148,7 +149,6 @@
 
 
       border-bottom: 1px solid ;
-      border-top: 1px solid ;
       justify-content: space-between;
     }
   }

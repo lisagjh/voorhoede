@@ -34,9 +34,9 @@
 }
 
 :root {
-  --black: #bfbfc8;
+  --black: #c8c6bf;
   --grey: #666666;
-  --white: #262525;
+  --white: #1d1d1d;
   --blue: #f7d436;
 
   --martian-mono: "Martian Mono", system-ui;

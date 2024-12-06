@@ -52,7 +52,7 @@
     scene.add(ambientLight);
 
     // STEP 4: resize handler
-    function onWindowResize() {
+    function handleResize() {
       // Update renderer size
       renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -60,38 +60,38 @@
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix(); // Apply the aspect ratio changes
     }
-    window.addEventListener("resize", onWindowResize); // Attach resize handler
+    window.addEventListener("resize", handleResize); // Attach resize handler
 
     // STEP 5: scroll animation
-    let previousScrollPosition = window.scrollY;
+    let prevScroll = window.scrollY;
     let targetRotation = 0; // The rotation value we want to reach
-    const easingFactor = 0.1; // Adjust this value to control the smoothness (lower = smoother)
+    const easing = 0.05; // Adjust this value to control the smoothness (lower = smoother)
 
-    function moveCamera() {
-      const currentScrollPosition = window.scrollY;
-      const delta = currentScrollPosition - previousScrollPosition;
+    function updateCameraMovement() {
+      const currentScroll = window.scrollY;
+      const scrollDelta = currentScroll - prevScroll;
 
       // Update the target rotation based on scroll direction
-      if (delta > 0) {
+      if (scrollDelta > 0) {
         targetRotation += 0.1; // Scrolling down increases target rotation
-      } else if (delta < 0) {
+      } else if (scrollDelta < 0) {
         targetRotation -= 0.15; // Scrolling up decreases target rotation
       }
 
-      previousScrollPosition = currentScrollPosition;
+      prevScroll = currentScroll;
     }
 
     // Attach the scroll handler
-    document.body.onscroll = moveCamera;
+    document.body.onscroll = updateCameraMovement;
 
     // STEP 6: animation loop
     function animate() {
       requestAnimationFrame(animate);
 
       // Smoothly interpolate the torus rotation towards the target
-      torus.rotation.x += (targetRotation - torus.rotation.x) * easingFactor;
+      torus.rotation.x += (targetRotation - torus.rotation.x) * easing;
       // torus.rotation.y += 0.01;
-      torus.rotation.z += 0.01;
+      torus.rotation.z += 0.001;
 
       renderer.render(scene, camera);
     }
@@ -102,15 +102,10 @@
       // Remove scroll event listener
       window.onscroll = null;
       // Remove resize listener
-      window.removeEventListener("resize", onWindowResize);
+      window.removeEventListener("resize", handleResize);
     };
   });
-
-  // if button is clicked add this to animate()
-  // torus.rotation.y += 0.01;
-  // torus.rotation.z += 0.01
 </script>
-
 
 <canvas bind:this={canvas}></canvas>
 

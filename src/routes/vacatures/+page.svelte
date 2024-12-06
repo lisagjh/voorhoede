@@ -15,6 +15,7 @@
 
 </script>
 
+
 <div class="sneeuwvlokken" aria-hidden="true">
   <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
   <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
@@ -72,7 +73,7 @@
 
   :global(body.sneeuw .sneeuwvlokken div) {
     opacity:1;
-    animation-play-state:running;
+    animation-play-state: running;
   }
 
   .sneeuwvlokken {
@@ -88,8 +89,8 @@
     user-select:none;
     opacity:0;
     animation:
-      sneeuwvlok-neer 8s linear infinite paused,
-      sneeuwvlok-heen-en-weer 2s ease-in-out infinite paused;
+      sneeuwvlok-neer 3.25s linear infinite paused,
+      sneeuwvlok-heen-en-weer 1.25s ease-in-out infinite paused;
   }
 
   /* #region Seperate snowflake animation */
@@ -130,7 +131,7 @@
   svg {
     animation: bubble-increase ease-out;
     animation-timeline: scroll(root);
-    animation-range: 0 15%; 
+    animation-range: 0 25%; 
   }
 
   svg.is-after {

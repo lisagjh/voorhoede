@@ -119,6 +119,7 @@
       padding: 1.25rem 1.5rem;
       word-break: break-word;
       width: 100%;
+      border: none;
     }
 
     article:nth-of-type(2n + 1) {

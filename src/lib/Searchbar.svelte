@@ -27,6 +27,7 @@
 
 
 input {
+  background-color: inherit;
   min-width: 19em;
   padding: 1em 0;
   margin: 1em;

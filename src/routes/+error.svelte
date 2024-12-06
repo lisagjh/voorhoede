@@ -49,6 +49,12 @@
     line-height: 1.5;
   }
 
+  h1 {
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+  }
+
   @media (max-width: 35em) {
     h1 {
       font-size: 1.5rem; /*letters worden anders te groot*/

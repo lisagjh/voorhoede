@@ -5,11 +5,8 @@
   import IntroSection from "$lib/IntroSection.svelte";
   import Vacancy from "$lib/Vacancy.svelte";
   import Searchbar from "$lib/Searchbar.svelte"
-  import Emoji from "../../lib/display/Emoji.svelte";
 
 </script>
-
-<Emoji />
 
 <IntroSection
   title="Vacatures"

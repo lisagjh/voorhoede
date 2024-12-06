@@ -23,7 +23,7 @@
 
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.position.setZ(50);
+    camera.position.setZ(550);
 
     const loader = new SVGLoader();
 
@@ -33,46 +33,52 @@
         const group = new THREE.Group();
 
         data.paths.forEach((path) => {
-          const material = new THREE.MeshBasicMaterial({
+          const material = new THREE.MeshStandardMaterial({
             color: path.color,
             side: THREE.DoubleSide,
             transparent: true,
-            opacity: 0.8
+            opacity: 0.9,
           });
 
-          try {
-            const shapes = path.toShapes(true);
-            shapes.forEach((shape) => {
-              const geometry = new THREE.ExtrudeGeometry(shape, {
-                depth: 1,
-                bevelEnabled: false
-              });
-              const mesh = new THREE.Mesh(geometry, material);
-              group.add(mesh);
+          const shapes = path.toShapes(true);
+          shapes.forEach((shape) => {
+            const geometry = new THREE.ExtrudeGeometry(shape, {
+              depth: 25, // Increased depth for more pronounced 3D effect
+              bevelEnabled: true, // Enable beveling
+              bevelThickness: 0.5, // Bevel thickness
+              bevelSize: 0.3, // Bevel size
+              bevelSegments: 3, // Number of bevel segments
             });
-          } catch (error) {
-            console.error("SVG loading error:", error);
-          }
+            const mesh = new THREE.Mesh(geometry, material);
+            group.add(mesh);
+          });
         });
 
-        // Center the group
-        const box = new THREE.Box3().setFromObject(group);
-        const center = box.getCenter(new THREE.Vector3());
-        group.position.sub(center);
+        group.position.set(0, -100, 0);
 
-        scene.add(group);
+        // Add some lighting for better 3D effect
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
+        const pointLight = new THREE.PointLight(0xe9faa3, 1);
+        pointLight.position.set(5, 5, 5);
+
+        scene.add(ambientLight, pointLight, group);
 
         function animate() {
-          requestAnimationFrame(animate);
-          group.rotation.y += 0.01;
-          renderer.render(scene, camera);
+          targetX = mouseX * 0.001;
+          targetY = mouseY * 0.001;
+
+          const elapsedTime = clock.getElapsedTime();
+
+          //Update objects - increase number to create automated animation
+          group.rotation.x = 0 * elapsedTime;
+          group.rotation.y = 0 * elapsedTime;
+
+          group.rotation.x += 2 * (targetY - group.rotation.x);
+          group.rotation.y += 1.5 * (targetX - group.rotation.y);
         }
         animate();
       },
-      null,
-      (error) => {
-        console.error("SVG load error:", error);
-      }
+
     );
 
     function onWindowResize() {

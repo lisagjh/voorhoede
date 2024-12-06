@@ -1,8 +1,10 @@
 <script>
   import { page } from "$app/stores";
-  import { onMount } from "svelte";
+  import Emoji from "../lib/threejs/Emoji.svelte";
   console.log($page.status);
 </script>
+
+<Emoji />
 
 
 <section>

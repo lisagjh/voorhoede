@@ -43,8 +43,8 @@
   section {
     padding: 2rem;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     line-height: 1.5;
   }
@@ -53,6 +53,7 @@
     text-align: center;
     align-self: center;
     justify-self: center;
+    margin: 1rem;
   }
 
   @media (max-width: 35em) {

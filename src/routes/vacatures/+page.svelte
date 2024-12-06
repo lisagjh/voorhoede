@@ -85,7 +85,7 @@
   .sneeuwvlokken div {
     position:fixed;
     top:-10%;
-    color: #fff;
+    color: #e2f4fd;
     user-select:none;
     opacity:0;
     animation:

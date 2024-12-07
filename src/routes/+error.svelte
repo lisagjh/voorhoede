@@ -41,6 +41,7 @@
 
 <style>
   section {
+    min-height: 70vh;
     padding: 2rem;
     display: flex;
     flex-direction: column;

@@ -44,7 +44,7 @@
 
     // Add the mesh to the scene
     scene.add(torus);
-
+ 
     // STEP 3: lighting
     // Create ambient light for general illumination
     const ambientLight = new THREE.AmbientLight(0xffffff);

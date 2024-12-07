@@ -170,3 +170,14 @@ main {
     border-width: 0px 1px 1px 1px;
   }
 }
+
+@media (width > 50rem) {
+  main {
+    border-left: none;
+      margin: 0.25rem;
+      margin-top: 1rem;
+      padding-top: 2.5rem;
+      justify-self: end;
+      max-width: calc(100% - 18%);
+    }
+  }

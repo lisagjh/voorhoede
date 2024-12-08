@@ -107,6 +107,11 @@
       isOpen = false;
     }
   }
+
+  onMount(async () => {
+    // event listener for keydown event
+    document.addEventListener("keydown", closeMenuOnEsc);
+  });
 </script>
 
 <MenuToggleBtn {isOpen} {toggle} />
@@ -212,6 +217,10 @@
     li {
       margin: 0;
       margin-bottom: 1.5rem;
+    }
+
+    div {
+      display: none;
     }
   }
 </style>

@@ -1,6 +1,7 @@
 <script>
   import Card from "../lib/display/Card.svelte";
   import IntroSection from "./../lib/IntroSection.svelte";
+  import Graphic from "../lib/graphic/Graphic.svelte";
 
   export let data;
 

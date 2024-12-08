@@ -14,5 +14,9 @@
 		"svelte": "^5.2.7",
 		"vite": "^5.0.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"p5": "^1.11.2",
+		"p5-svelte": "^3.1.2"
+	}
 }

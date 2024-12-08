@@ -27,6 +27,9 @@
 
   span {
     display: inline-block;
+    min-width: 1.2rem;
+    padding: 0.1rem;
+    color: var(--white);
     background-color: var(--blue);
   }
 </style>

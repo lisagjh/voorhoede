@@ -3,7 +3,7 @@
 
     // input components
     import Input from "$lib/input/Input-text.svelte";
-    import InputNotMandoraty from "$lib/input/Input-text-not-mandaroty.svelte";
+    import InputNotMandoraty from "$lib/input/Input-text-not-mandatory.svelte";
     import InputEmail from "$lib/input/Input-email.svelte";
     import InputMobile from "$lib/input/Input-mobile.svelte";
     import TextArea from "$lib/input/Textarea.svelte";
@@ -13,10 +13,6 @@
 
 //     todo user-valid moet een javascript functie worden waarin de gebruiker eerst typt en geen feedback krijgt
 //     en als er op submit gedrukt word dat er gecheckt moet worden of alles goed is ingevuld en er feebback op gegeven moet worden
-
-
-
-
 </script>
 
 <form action="/bedankt" class="form">

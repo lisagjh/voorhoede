@@ -2,7 +2,7 @@
     export let label;
     export let id;
     export let name;
-    export let type = 'text'; // Default type is 'text'
+    export let type = 'text';
     export let placeholder = '';
     export let required = true;
 </script>

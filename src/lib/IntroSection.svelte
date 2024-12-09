@@ -32,8 +32,8 @@
     </Link>
   {/if}
 
-  <h1>{title}</h1>
-  <p><slot name="subtitle">{subtitle}</slot></p>
+  <h1 aria-label="{title}">{title}</h1>
+  <p aria-label="{title}"><slot name="subtitle">{subtitle}</slot></p>
 </section>
 
 <style>

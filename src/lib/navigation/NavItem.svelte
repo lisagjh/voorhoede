@@ -1,7 +1,7 @@
 <script>
   import { page } from "$app/stores";
 
-  let { title, href, badge, action } = $props();
+  let { title, href, badge } = $props();
 
   let isActive = $derived($page.url.pathname === href);
 </script>
@@ -16,19 +16,34 @@
 <style>
   .active {
     color: var(--blue);
+    transition: 0.25s ease-in-out;
   }
 
   .active::before {
-    /* content: url(/line.svg); */
     content: "";
     position: absolute;
     height: 1rem;
     width: 0.4rem;
     vertical-align: bottom;
-    translate: -.5rem 0;
-    border-radius: .1rem;
+    translate: -0.5rem 0;
+    border-radius: 0.1rem;
     background-color: var(--blue);
     view-transition-name: active-link;
+  }
+
+  ::view-transition-old(active-link),
+  ::view-transition-new(active-link) {
+    animation: move 0.45s both
+      cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+
+  @keyframes move {
+    from {
+      transform: translateY(1.2rem);
+    }
+    to {
+      transform: translateY(0);
+    }
   }
 
   a {

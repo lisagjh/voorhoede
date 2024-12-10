@@ -3,7 +3,6 @@
     console.log($page.status)
 </script>
 
-
 <section>
     <a href="/#">
         <svg class="flip-arrow"

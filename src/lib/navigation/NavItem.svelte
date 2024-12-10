@@ -22,7 +22,7 @@
   .active::before {
     content: "";
     position: absolute;
-    height: 1rem;
+    height: 1.2rem;
     width: 0.4rem;
     vertical-align: bottom;
     translate: -0.5rem 0;
@@ -33,8 +33,7 @@
 
   ::view-transition-old(active-link),
   ::view-transition-new(active-link) {
-    animation: move 0.45s both
-      cubic-bezier(0.39, 0.575, 0.565, 1);
+    animation: move 0.45s both cubic-bezier(.5,-0.84,.53,1.57);
   }
 
   @keyframes move {

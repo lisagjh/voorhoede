@@ -6,7 +6,7 @@
 
 
 
-    onMount(async () => {
+    onMount(() => {
 
         if (document.startViewTransition) {
             // (check for browser support)
@@ -19,17 +19,20 @@
             });
         }
         if (document.startViewTransition) {
+            const button = document.getElementById('button');
+            const card = document.getElementById('cardArticle');
 
-                document.addEventListener('click', function (event){
-                    const cards = document.querySelectorAll(".card");
-                    if (event.target.matches('button')) {
-                        document.startViewTransition(() => {
-                            cards.forEach(card => card.classList.add('color'));
-                            console.log('button is aangeklikt'); // Log message when button is clicked
-                        });
-                    }
+            const div = document.getElementById('test');
+            button.addEventListener('click', toggleActiveState);
+            console.log(button+'er is gelikt op de button')
+
+            function toggleActiveState() {
+                document.startViewTransition(() => {
+                    div.classList.toggle('active');
+                    card.classList.add('color')
                 });
-
+            }
+        // https://codepen.io/user46frontend/pen/PwYzyZG eigne voorbeeld
 
         }
 
@@ -46,12 +49,13 @@
 <!--    <details>-->
 <!--        <summary>open cards</summary>-->
 
+    <button id="button">klik mij</button>
         <div class="grid-container">
-
 
             {#each data.members as member}
 
-                <article class="card">
+                <div id="test">dit word aangepast</div>
+                <article class="card" id="cardArticle">
                     <picture>
                         <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
                         <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
@@ -80,7 +84,7 @@
                                   stroke-linejoin="round"/>
                         </svg>
                     </Link>
-                    <button>klik mij</button>
+
 
                 </article>
 
@@ -91,9 +95,29 @@
 <style>
 
 
+    #test {
+        width: 200px;
+        aspect-ratio: 1;
+        background: hotpink;
+        display: grid;
+        place-content: center;
+        color: #fff;
+        p {
+            display: none;
+        }
+    }
+
+    #test.active {
+        background: rebeccapurple;
+        rotate: 405deg;
+
+    }
     .color{
         background-color: red;
     }
+
+
+
     /*hieronder normale code*/
     .grid-container {
 

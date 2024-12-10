@@ -1,64 +1,133 @@
 <script>
     import Link from "$lib/Link.svelte";
-
+    import {onMount} from "svelte";
     export let data;
+
+
+
+    onMount(async () => {
+
+        if (document.startViewTransition) {
+            // (check for browser support)
+            document.addEventListener("click", function (event) {
+                if (event.target.matches("summary")) {
+                    event.preventDefault(); // (we'll toggle the element ourselves)
+                    const details = event.target.closest("details");
+                    document.startViewTransition(() => details.toggleAttribute("open"));
+                }
+            });
+        }
+
+
+
+        // here must be a gradient on the cards when hovering code isnt working there is something wrong with teh addeventlisteners
+
+        if (document.startViewTransition) {
+            document.startViewTransition(function () {
+                console.log("startViewTransition+page");
+
+                // todo the cards must be coming with the view transiton from top to bottom
+
+
+
+                document.addEventListener("mouseover", function (event) {
+                    const cardElements = document.querySelector('.card');
+                    cardElements.classList.add("hovered")
+
+                    // cardElements.forEach(card => card.classList.add("hovered"));
+                });
+
+                // document.addEventListener("mouseout", function (event) {
+                //         const cardElement = document.querySelectorAll('.card')
+                //         cardElement.classList.remove("hovered")
+                //     }
+                // )
+
+            });
+        }
+
+        else
+        {
+
+        }
+
+    });
 </script>
 
 
-<article class="grid-container">
-    {#each data.members as member}
+<section class="">
+    <details>
+        <summary>open cards</summary>
 
-        <article class="card">
-            <picture>
-                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
-                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
-                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="">
-            </picture>
-
-            <ul class="card-label-filters">
-                <li class="label-filters">
-                    service design
-                </li>
-                <li class="label-filters">label</li>
-            </ul>
-
-            <h2>{member.title}</h2>
-            <p>{member.address}</p>
-
-            <ul class="card-label">
-                <li>{parseInt(member.colleagues)}  werknemers</li>
-                <li class="card-hiring">hiring</li>
-
-            </ul>
-
-            <Link href="/" clazz="detail-link"><span slot="link-text">Details</span>
-                <svg width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none">
-                    <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"/>
-                </svg>
-            </Link>
-
-        </article>
-    {/each}
+        <div class="grid-container">
 
 
-</article>
+            {#each data.members as member}
 
+                <article class="card">
+                    <picture>
+                        <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
+                        <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
+                        <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="{member.title}">
+                    </picture>
+
+                    <ul class="card-label-filters">
+                        <li class="label-filters">
+                            service design
+                        </li>
+                        <li class="label-filters">label</li>
+                    </ul>
+
+                    <h2 aria-label="{member.title}">{member.title}</h2>
+                    <p>{member.address}</p>
+
+                    <ul class="card-label">
+                        <li>{parseInt(member.colleagues)}  werknemers</li>
+                        <li class="card-hiring">hiring</li>
+
+                    </ul>
+
+                    <Link href="/" clazz="detail-link"><span slot="link-text">Details</span>
+                        <svg width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round"/>
+                        </svg>
+                    </Link>
+
+                </article>
+
+            {/each}
+        </div>
+    </details>
+</section>
 <style>
+
+
+
+    .hovered{
+        background-color: red;
+    }
+
+    .card {
+        transition: all 0.5s ease-in-out;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+        background-color: #f0f0f0;
+        cursor: pointer;
+    }
+
+    /*hieronder normale code*/
     .grid-container {
 
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
         text-transform: uppercase;
-        margin: 1rem -1rem 0rem;
     }
 
     .card {
         width: 100%;
-        overflow: hidden;
-        /*todo this border change to the design*/
-
-
         padding: 2rem;
         display: grid;
         grid-template-rows: 16rem auto auto 4rem auto;
@@ -114,6 +183,73 @@
         height: 100%;
     }
 
+    /*animatie*/
+    /*@media (prefers-reduced-motion: no-preference) {*/
+    /*    img {*/
+    /*        animation: reveal 1s linear both;*/
+    /*        !* Rember to declare the timeline after the shorthand *!*/
+    /*        animation-timeline: view();*/
+    /*    }*/
+    /*}*/
+
+    /*!*animatie tonen image van klein naar groot*!*/
+    /*@keyframes reveal {*/
+    /*    from {*/
+    /*        opacity: 0;*/
+    /*        clip-path: inset(30% 30% 25% 30%);*/
+    /*    }*/
+    /*    50% {*/
+    /*        opacity: 1;*/
+    /*        clip-path: inset(0% 0% 0% 0%);*/
+    /*    }*/
+    /*}*/
+
+
+    /*!*animatie slide up om de card te tonen van beneden naar boven*!*/
+    @keyframes slide-in-up {
+
+
+        0% {
+            /*background-color: red;*/
+            transform: translateY(10em);
+            filter: blur(25px);
+            transition: filter 0.3s ease-in-out;
+        }
+        25% {
+            transform: translateY(5em);
+            filter: blur(15px);
+            transition: filter 0.3s ease-in-out;
+        }
+        50% {
+            filter: blur(0px);
+            transition: filter 0.3s ease-in-out;
+        }
+
+        100%{
+            filter: blur(10px);
+            transition: filter 0.3s ease-in-out;
+        }
+
+    }
+
+    /*gradient animation white*/
+    @keyframes white-background-cards {
+        0% {
+            background-position: 0% 50%;
+            background-color: red;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .card {
+            animation: slide-in-up both, white-background-cards 2s infinite;
+            animation-timeline: view();
+        }
+    }
+
 
     @media (max-width: 350px) {
 
@@ -140,229 +276,153 @@
 
     }
 
+    @media (max-width: 43rem) {
+        .card {
+            border: 1px solid var(--grey);
+        }
+    }
+
+    @media (min-width: 43rem) {
+        .card {
+            border-bottom: 1px solid var(--grey);
+        }
+    }
+
     @media (min-width: 325px) {
         .grid-container {
+            padding: 1rem;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         }
+        .card{
+            border: 1px solid var(--grey);
+        }
+    }
+
+    @media (max-width: 766px) {
+
+
 
     }
 
-    .card {
-        border-bottom: 1px solid var(--grey);
-    }
+    /*aniamtie keyframes*/
 
-    /*voor 725px is het opgelost */
+    /*animtiate moet vna boven naar beneden zijn*/
+    /*2 koloms */
     @media (min-width: 765px) and (max-width: 1127px) {
-        .card:nth-child(-n+4) {
-            border-top: none;
+        /*.card:nth-child(-n+4) {*/
+        /*    border-top: none;*/
 
-        }
+        /*}*/
 
-        .card:nth-child(odd) {
-            border-right: 1px solid var(--grey);
-        }
-
+        /*.card:nth-child(odd) {*/
+        /*    border-right: 1px solid var(--grey);*/
+        /*}*/
 
 
 
 
     }
+
 
     /*3koloms*/
 
-    @media (min-width: 1127px) and (max-width: 1466px) {
+    /*hier nog een animatie op toevoegen*/
+    /*@media (min-width: 1127px) and (max-width: 1466px) {*/
+
+    /*    .grid-container {*/
+    /*        width: 100%;*/
+
+    /*    }*/
 
 
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(4),
-        .card:nth-child(5),
-        .card:nth-child(7),
-        .card:nth-child(8),
-        .card:nth-child(10),
-        .card:nth-child(11),
-        .card:nth-child(13),
-        .card:nth-child(14),
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(19),
-        .card:nth-child(20),
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(25),
-        .card:nth-child(26)
-        {
-            border-right: 1px solid var(--grey);
-        }
+    /*    !*alle 3 tegelijk kan niet*!*/
+    /*    @media (prefers-reduced-motion: no-preference) {*/
+    /*        .card:nth-child(3n) {*/
 
-    }
+    /*            border-right: 1px solid var(--grey);*/
+
+
+    /*        }*/
+
+    /*        .card:nth-child(3n+2) {*/
+    /*            border-right: 1px solid var(--grey);*/
+
+    /*        }*/
+
+    /*        .card:nth-child(3n+4),*/
+    /*        .card:nth-child(1) {*/
+    /*            border-right: 1px solid var(--grey);*/
+
+
+    /*        }*/
+    /*    }*/
+
+
+    /*}*/
 
     /*4koloms*/
-    @media (min-width: 1466px) and (max-width: 1815px) {
-
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
+    /*@media (min-width: 1466px) and (max-width: 1815px) {*/
 
 
-        .card:nth-child(5),
-        .card:nth-child(6),
-        .card:nth-child(7),
+    /*    .card:nth-child(4n-1),*/
+    /*    .card:nth-child(4n-2),*/
+    /*    .card:nth-child(4n-3) {*/
+    /*        border-right: 1px solid var(--grey);*/
+    /*    }*/
 
-        .card:nth-child(9),
-            /*.card:nth-child(10),*/
-        .card:nth-child(10),
+    /*}*/
 
-        .card:nth-child(11),
-        .card:nth-child(13),
-        .card:nth-child(14),
+    /*@media (min-width: 1466px) {*/
 
-        .card:nth-child(15),
+    /*}*/
 
-        .card:nth-child(17),
-        .card:nth-child(18),
+    /*!*5colums *!*/
 
-        .card:nth-child(19),
-        .card:nth-child(21),
-        .card:nth-child(22),
-
-        .card:nth-child(23),
-        .card:nth-child(25),
-        .card:nth-child(26)
-        {
-            border-right: 1px solid var(--grey);
-        }
+    /*@media (min-width: 1815px) and (max-width: 2165px) {*/
 
 
-
-    }
-
-
-    /*5colums */
-
-    @media (min-width: 1815px) and (max-width: 2165px) {
-
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-        .card:nth-child(4),
-
-            /*5 niet*/
-        .card:nth-child(6),
-        .card:nth-child(7),
-        .card:nth-child(8),
-        .card:nth-child(9),
-        .card:nth-child(11),
-        .card:nth-child(12),
+    /*    .card:nth-child(5n-1),*/
+    /*    .card:nth-child(5n-2),*/
+    /*    .card:nth-child(5n-3),*/
+    /*    .card:nth-child(5n-4) {*/
+    /*        border-right: 1px solid var(--grey);*/
+    /*    }*/
 
 
-        .card:nth-child(13),
-        .card:nth-child(14),
+    /*}*/
 
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(18),
-        .card:nth-child(19),
-            /*.card:nth-child(20),*/
-
-        .card:nth-child(21),
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(24),
-        .card:nth-child(26)
-
-        {
-            border-right: 1px solid var(--grey);
-        }
+    /*!*6colums *!*/
+    /*@media (min-width: 2165px) and (max-width: 2516px) {*/
 
 
+    /*    .card:nth-child(6n-1),*/
+    /*    .card:nth-child(6n-2),*/
+    /*    .card:nth-child(6n-3),*/
+    /*    .card:nth-child(6n-4),*/
+    /*    .card:nth-child(6n-5) {*/
+    /*        border-right: 1px solid var(--grey);*/
+    /*    }*/
+    /*}*/
 
-    }
-
-    /*6colums */
-    @media (min-width: 2165px) and (max-width: 2515px) {
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-        .card:nth-child(4),
-        .card:nth-child(5),
-
-            /*6 niet*/
-
-        .card:nth-child(7),
-        .card:nth-child(8),
-        .card:nth-child(9),
-        .card:nth-child(11),
+    /*!*7 colums*!*/
+    /*@media (min-width: 2516px) {*/
 
 
+    /*    .card:nth-child(6n),*/
+    /*    .card:nth-child(6n-1),*/
+    /*    .card:nth-child(6n-2),*/
+    /*    .card:nth-child(6n-3),*/
+    /*    .card:nth-child(6n-4),*/
+    /*    .card:nth-child(13),*/
+    /*    .card:nth-child(26) {*/
+    /*        border-right: 1px solid var(--grey);*/
+    /*    }*/
 
-        .card:nth-child(13),
-        .card:nth-child(14),
+    /*    .card:nth-child(7n) {*/
+    /*        border-right: none;*/
+    /*    }*/
 
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(19),
-            /*.card:nth-child(20),*/
-
-        .card:nth-child(21),
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(25),
-
-        .card:nth-child(26)
-
-        {
-            border-right: 1px solid var(--grey);
-        }
-
-
-    }
-
-    /*7 colums*/
-    @media (min-width: 2516px) {
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-        .card:nth-child(4),
-        .card:nth-child(5),
-        .card:nth-child(6),
-
-            /*7 niet*/
-
-
-
-        .card:nth-child(8),
-        .card:nth-child(9),
-        .card:nth-child(10),
-        .card:nth-child(11),
-        .card:nth-child(12),
-
-
-
-        .card:nth-child(13),
-
-
-        .card:nth-child(15),
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(18),
-        .card:nth-child(19),
-        .card:nth-child(20),
-            /*.card:nth-child(20),*/
-
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(24),
-        .card:nth-child(25),
-
-        .card:nth-child(26)
-
-        {
-            border-right: 1px solid var(--grey);
-        }
-
-
-    }
+    /*}*/
 
 
 </style>

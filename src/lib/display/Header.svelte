@@ -19,6 +19,9 @@
       padding: 0.5rem 1rem;
       width: 100%;
       height: 100%;
+      /* ensures the header stays during the view transition and doesnt fade or anything */
+      view-transition-name: header;
+
     }
   
     @media (width > 50rem) {

@@ -1,0 +1,11 @@
+/** view transitions */
+
+::view-transition-old(titel),
+::view-transition-new(titel) {
+  /* Break aspect ratio at an element level */
+  height: 100%;
+  /* But maintain it within the image itself */
+  object-fit: none;
+  /* And hide parts of the image that go out of bounds */
+  overflow: clip;
+}

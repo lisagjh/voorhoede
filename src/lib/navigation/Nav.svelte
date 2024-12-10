@@ -4,7 +4,7 @@
   import NavItem from "./NavItem.svelte";
 
   // Menu state
-  let isOpen = false; // Initialize state for menu visibility
+  let isOpen = false; // Initial state for menu visibility
   let openVacancies = 0;
   let hasAnimated = false;
   const delay = 1750;
@@ -88,9 +88,7 @@
     const handleClick = () => {
       toggle(); // Call the toggle function when clicked
     };
-
     node.addEventListener("click", handleClick);
-
     // Cleanup when the element is removed
     return {
       destroy() {
@@ -215,12 +213,19 @@
     }
 
     li {
+      font-size: 0.85rem;
       margin: 0;
       margin-bottom: 1.5rem;
     }
 
     div {
       display: none;
+    }
+  }
+
+  @media (width > 56rem) {
+    li {
+      font-size: 1rem;
     }
   }
 </style>

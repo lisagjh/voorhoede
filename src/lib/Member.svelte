@@ -5,6 +5,7 @@
 
 
 
+
     onMount(async () => {
 
         if (document.startViewTransition) {
@@ -17,33 +18,19 @@
                 }
             });
         }
-
-
-
-        // here must be a gradient on the cards when hovering code isnt working there is something wrong with teh addeventlisteners
-
         if (document.startViewTransition) {
-            document.startViewTransition(function () {
-                console.log("startViewTransition+page");
 
-                // todo the cards must be coming with the view transiton from top to bottom
-
-
-
-                document.addEventListener("mouseover", function (event) {
-                    const cardElements = document.querySelector('.card');
-                    cardElements.classList.add("hovered")
-
-                    // cardElements.forEach(card => card.classList.add("hovered"));
+                document.addEventListener('click', function (event){
+                    const cards = document.querySelectorAll(".card");
+                    if (event.target.matches('button')) {
+                        document.startViewTransition(() => {
+                            cards.forEach(card => card.classList.add('color'));
+                            console.log('button is aangeklikt'); // Log message when button is clicked
+                        });
+                    }
                 });
 
-                // document.addEventListener("mouseout", function (event) {
-                //         const cardElement = document.querySelectorAll('.card')
-                //         cardElement.classList.remove("hovered")
-                //     }
-                // )
 
-            });
         }
 
         else
@@ -56,8 +43,8 @@
 
 
 <section class="">
-    <details>
-        <summary>open cards</summary>
+<!--    <details>-->
+<!--        <summary>open cards</summary>-->
 
         <div class="grid-container">
 
@@ -93,31 +80,20 @@
                                   stroke-linejoin="round"/>
                         </svg>
                     </Link>
+                    <button>klik mij</button>
 
                 </article>
 
             {/each}
         </div>
-    </details>
+<!--    </details>-->
 </section>
 <style>
 
 
-
-    .hovered{
+    .color{
         background-color: red;
     }
-
-    .card {
-        transition: all 0.5s ease-in-out;
-    }
-
-    .card:hover {
-        transform: scale(1.1);
-        background-color: #f0f0f0;
-        cursor: pointer;
-    }
-
     /*hieronder normale code*/
     .grid-container {
 
@@ -206,31 +182,31 @@
 
 
     /*!*animatie slide up om de card te tonen van beneden naar boven*!*/
-    @keyframes slide-in-up {
+    /*@keyframes slide-in-up {*/
 
 
-        0% {
-            /*background-color: red;*/
-            transform: translateY(10em);
-            filter: blur(25px);
-            transition: filter 0.3s ease-in-out;
-        }
-        25% {
-            transform: translateY(5em);
-            filter: blur(15px);
-            transition: filter 0.3s ease-in-out;
-        }
-        50% {
-            filter: blur(0px);
-            transition: filter 0.3s ease-in-out;
-        }
+    /*    0% {*/
+    /*        !*background-color: red;*!*/
+    /*        transform: translateY(10em);*/
+    /*        filter: blur(25px);*/
+    /*        transition: filter 0.3s ease-in-out;*/
+    /*    }*/
+    /*    25% {*/
+    /*        transform: translateY(5em);*/
+    /*        filter: blur(15px);*/
+    /*        transition: filter 0.3s ease-in-out;*/
+    /*    }*/
+    /*    50% {*/
+    /*        filter: blur(0px);*/
+    /*        transition: filter 0.3s ease-in-out;*/
+    /*    }*/
 
-        100%{
-            filter: blur(10px);
-            transition: filter 0.3s ease-in-out;
-        }
+    /*    100%{*/
+    /*        filter: blur(10px);*/
+    /*        transition: filter 0.3s ease-in-out;*/
+    /*    }*/
 
-    }
+    /*}*/
 
     /*gradient animation white*/
     @keyframes white-background-cards {

@@ -33,6 +33,7 @@ input {
   border: none;
   border-bottom: 1.5px solid var(--black);
   font-size: 1em;
+  background-color: var(--white);
 }
 
 input::placeholder {

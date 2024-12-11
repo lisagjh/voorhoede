@@ -1,13 +1,7 @@
 @font-face {
-  font-family: Archivo;
-  src: url(/font/Archivo-VariableFont_wdth\,wght.woff2);
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Archivo";
   font-display: swap;
-  src: url("/font/font2/archivo-v19-latin-regular.woff2") format("woff2");
+  src: url("font/Archivo-VariableFont_wdth\,wght.woff2");
 }
 
 @font-face {
@@ -16,35 +10,47 @@
   src: url("/font/font2/martian-mono-v3-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+@font-face {
+  font-family: "Grand Bageur";
+  src: url("/font/Grand-Bageur.ttf");
+}
+
 * {
-  /*todo uitzoekenw aarom border box de subscribe button text aanpaast*/
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Archivo", sans-serif;
+  font-family: "Grand Bageur", sans-serif;
 }
 
 :root {
-  --black: #222226;
+  --black: #1b1b23;
   --grey: #666666;
-  --white: #fff;
-  --blue: #364bf7;
+  --white: #cdc9c9;
+  --blue: #1b14a6;
 
   --martian-mono: "Martian Mono", system-ui;
 }
 
+body {
+  background-color: var(--white);
+}
+
+h1, h2, h3, h4, h5, p, li, a {
+  color: var(--black);
+}
+
 h1 {
   font-size: 6rem;
-  letter-spacing: -2px;
+  /* letter-spacing: -2px; */
   line-height: 6rem;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 h2 {
   font-size: 4rem;
-  letter-spacing: -2px;
+  /* letter-spacing: -2px; */
   line-height: 4rem;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 h3 {
@@ -75,7 +81,10 @@ h6 {
 
 p {
   font-size: 1.12rem;
-  line-height: 2rem;
+  font-family: "Archivo", Arial, Helvetica, sans-serif;
+  /* font-family: var(--martian-mono); */
+  line-height: 1rem;
+  letter-spacing: 0.9px;
 }
 
 a {

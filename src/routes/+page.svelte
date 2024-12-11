@@ -63,6 +63,7 @@
   }
 
   p {
+    font-family: "Grand Bageur", sans-serif;
     letter-spacing: 1px;
     font-size: 2.5rem;
     font-weight: 800;

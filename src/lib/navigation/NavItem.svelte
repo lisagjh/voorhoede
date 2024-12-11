@@ -62,6 +62,8 @@
   }
 
   span {
+    font-family: var(--martian-mono);
+    vertical-align: middle;
     display: inline-block;
     min-width: 1.2rem;
     padding: 0.1rem;

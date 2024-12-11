@@ -48,6 +48,7 @@
   }
 
   h1 {
+    text-transform: uppercase;
   }
 
   @media (min-width: 842px ){

@@ -9,7 +9,7 @@
   };
 
   const sketch = (p5) => {
-    let t = 0; // time variable
+    let t = 0; 
 
     p5.preload = () => {
       preload(p5);
@@ -20,14 +20,13 @@
       p5.noStroke();
       p5.fill("#29293b");
       p5.textFont(customFont);
-      p5.textSize(72);
+      p5.textSize(100);
       p5.textAlign(p5.CENTER, p5.CENTER);
     };
 
     p5.draw = () => {
-      p5.background(205, 201, 201, 50);
+      p5.background(205, 201, 201, 75);
 
-      // Increased spacing between grid points
       for (let x = 0; x <= p5.width; x = x + 200) {
         for (let y = 0; y <= p5.height; y = y + 200) {
           const xAngle = p5.map(
@@ -81,6 +80,5 @@
     justify-self: center;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
   }
 </style>

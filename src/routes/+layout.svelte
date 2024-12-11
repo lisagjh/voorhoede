@@ -28,6 +28,7 @@
 </script>
 
 <div class="bg" class:show-transition={isTransitioning}>
+ <!-- <div class="show-transition"> -->
   <Graphic />
 </div>
 
@@ -46,11 +47,13 @@ div.bg {
     height: 110vh;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.5s ease;
+    transition: all 0.5s ease;
+    scale: 1.2;
   }
 
   div.bg.show-transition {
     opacity: 1;
+    scale: 1;
     pointer-events: auto;
   }
 
@@ -85,34 +88,6 @@ div.bg {
     to {
       transform: translateX(0);
       opacity: 1;
-    }
-  }
-
-
-  ::view-transition-old(root)::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1); /* Subtle overlay */
-    z-index: 3;
-    animation: fade-intermediate 0.5s ease-in-out;
-  }
-
-  @keyframes fade-intermediate {
-    0% {
-      opacity: 0;
-      transform: scale(1.1);
-    }
-    50% {
-      opacity: 0.2;
-      transform: scale(1.05);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(1);
     }
   }
 </style>

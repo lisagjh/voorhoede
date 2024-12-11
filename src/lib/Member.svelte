@@ -8,16 +8,20 @@
 
     onMount(() => {
 
-        if (document.startViewTransition) {
-            // (check for browser support)
-            document.addEventListener("click", function (event) {
-                if (event.target.matches("summary")) {
-                    event.preventDefault(); // (we'll toggle the element ourselves)
-                    const details = event.target.closest("details");
-                    document.startViewTransition(() => details.toggleAttribute("open"));
-                }
-            });
-        }
+        // if (document.startViewTransition) {
+        //     // (check for browser support)
+        //     document.addEventListener("click", function (event) {
+        //         if (event.target.matches("summary")) {
+        //             event.preventDefault(); // (we'll toggle the element ourselves)
+        //             const details = event.target.closest("details");
+        //             document.startViewTransition(() => details.toggleAttribute("open"));
+        //         }
+        //     });
+        // }
+
+
+
+
         if (document.startViewTransition) {
             const button = document.getElementById('button');
             const card = document.getElementById('cardArticle');
@@ -28,6 +32,7 @@
 
             function toggleActiveState() {
                 document.startViewTransition(() => {
+                    console.log('view transition is getsard ')
                     div.classList.toggle('active');
                     card.classList.add('color')
                 });
@@ -94,27 +99,37 @@
 </section>
 <style>
 
-
     #test {
         width: 200px;
         aspect-ratio: 1;
         background: hotpink;
         display: grid;
         place-content: center;
+        view-transition-name:test;
         color: #fff;
         p {
             display: none;
         }
+        &.active {
+            background: rebeccapurple !important;
+            /*rotate: 405deg;*/
+            /*animation: test;*/
+        }
     }
 
-    #test.active {
-        background: rebeccapurple;
-        rotate: 405deg;
+    /*#test.active {*/
 
-    }
-    .color{
-        background-color: red;
-    }
+
+    /*    background: rebeccapurple;*/
+    /*    rotate: 405deg;*/
+    /*    animation: test;*/
+
+    /*}*/
+
+
+    /*.color{*/
+    /*    background-color: red;*/
+    /*}*/
 
 
 

@@ -4,7 +4,6 @@
   import Header from "../lib/display/Header.svelte";
   import Footer from "$lib/display/Footer.svelte";
 
-
   onNavigate((navigation) => {
     if (!document.startViewTransition) return;
 

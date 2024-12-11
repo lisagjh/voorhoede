@@ -105,31 +105,21 @@
         background: hotpink;
         display: grid;
         place-content: center;
-        view-transition-name:test;
         color: #fff;
-        p {
-            display: none;
-        }
-        &.active {
-            background: rebeccapurple !important;
-            /*rotate: 405deg;*/
-            /*animation: test;*/
-        }
+
     }
 
-    /*#test.active {*/
 
+    :global(#test.active) {
 
-    /*    background: rebeccapurple;*/
-    /*    rotate: 405deg;*/
-    /*    animation: test;*/
+            background: rebeccapurple;
+            rotate: 405deg;
+            animation: test;
+    }
 
-    /*}*/
-
-
-    /*.color{*/
-    /*    background-color: red;*/
-    /*}*/
+    :global(.color) {
+        background-color: red;
+    }
 
 
 

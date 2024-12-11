@@ -25,6 +25,7 @@
         if (document.startViewTransition) {
             const button = document.getElementById('button');
             const card = document.getElementById('cardArticle');
+            // const card = document.querySelectorAll('#cardArticle');
 
             const div = document.getElementById('test');
             button.addEventListener('click', toggleActiveState);
@@ -33,8 +34,7 @@
             function toggleActiveState() {
                 document.startViewTransition(() => {
                     console.log('view transition is getsard ')
-                    div.classList.toggle('active');
-                    card.classList.add('color')
+                    card.classList.toggle('active');
                 });
             }
         // https://codepen.io/user46frontend/pen/PwYzyZG eigne voorbeeld
@@ -54,12 +54,10 @@
 <!--    <details>-->
 <!--        <summary>open cards</summary>-->
 
-    <button id="button">klik mij</button>
-        <div class="grid-container">
 
+        <div class="grid-container">
             {#each data.members as member}
 
-                <div id="test">dit word aangepast</div>
                 <article class="card" id="cardArticle">
                     <picture>
                         <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
@@ -90,7 +88,7 @@
                         </svg>
                     </Link>
 
-
+                    <button id="button">klik mij</button>
                 </article>
 
             {/each}
@@ -110,7 +108,7 @@
     }
 
 
-    :global(#test.active) {
+    :global(#cardArticle.active) {
 
             background: rebeccapurple;
             rotate: 405deg;

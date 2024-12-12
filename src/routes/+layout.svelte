@@ -3,6 +3,7 @@
   import Footer from "$lib/display/Footer.svelte";
   import { onNavigate } from "$app/navigation";
   import Graphic from "../lib/graphic/Graphic.svelte";
+  import Glitter from "../lib/graphic/Glitter.svelte";
 
   // Graphic component is invisible, because no transition happening
   let isTransitioning = false;
@@ -34,6 +35,11 @@
 
 <Header />
 
+<div class="glitter" class:show-transition={isTransitioning}>
+  <Glitter/>
+</div>
+
+
 <main>
   <slot></slot>
 </main>
@@ -52,6 +58,22 @@ div.bg {
   }
 
   div.bg.show-transition {
+    opacity: 1;
+    scale: 1;
+    pointer-events: auto;
+  }
+
+  div.glitter {
+    position: fixed;
+    width: 110vw;
+    height: 110vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    scale: 1.2;
+  }
+
+  div.glitter.show-transition {
     opacity: 1;
     scale: 1;
     pointer-events: auto;

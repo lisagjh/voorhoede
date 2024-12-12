@@ -3,42 +3,17 @@
     import {onMount} from "svelte";
     export let data;
 
-
-
-
     onMount(() => {
-
-        // if (document.startViewTransition) {
-        //     // (check for browser support)
-        //     document.addEventListener("click", function (event) {
-        //         if (event.target.matches("summary")) {
-        //             event.preventDefault(); // (we'll toggle the element ourselves)
-        //             const details = event.target.closest("details");
-        //             document.startViewTransition(() => details.toggleAttribute("open"));
-        //         }
-        //     });
-        // }
-
-
-
-
         if (document.startViewTransition) {
-            const button = document.getElementById('button');
-            const card = document.getElementById('cardArticle');
-            // const card = document.querySelectorAll('#cardArticle');
-
-            const div = document.getElementById('test');
-            button.addEventListener('click', toggleActiveState);
-            console.log(button+'er is gelikt op de button')
-
-            function toggleActiveState() {
-                document.startViewTransition(() => {
-                    console.log('view transition is getsard ')
-                    card.classList.toggle('active');
+            const buttons = document.querySelectorAll('.button');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', () => {
+                    const clickedCard = buttons[i].closest('.card');
+                    clickedCard.classList.toggle('active');
                 });
             }
-        // https://codepen.io/user46frontend/pen/PwYzyZG eigne voorbeeld
 
+        // https://codepen.io/user46frontend/pen/PwYzyZG eigne voorbeeld
         }
 
         else
@@ -51,14 +26,11 @@
 
 
 <section class="">
-<!--    <details>-->
-<!--        <summary>open cards</summary>-->
-
 
         <div class="grid-container">
             {#each data.members as member}
 
-                <article class="card" id="cardArticle">
+                <article class="card">
                     <picture>
                         <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
                         <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
@@ -88,7 +60,7 @@
                         </svg>
                     </Link>
 
-                    <button id="button">klik mij</button>
+                    <button class="button" >maak mij recht</button>
                 </article>
 
             {/each}
@@ -97,29 +69,39 @@
 </section>
 <style>
 
-    #test {
-        width: 200px;
-        aspect-ratio: 1;
-        background: hotpink;
-        display: grid;
-        place-content: center;
-        color: #fff;
+
+
+    :global(.card.active) {
+        background: linear-gradient(300deg, rgb(128, 216, 250) 0%, rgb(235, 235, 255) 47%, rgba(0,212,255,1) 100%);
+        rotate: 348deg;
 
     }
 
-
-    :global(#cardArticle.active) {
-
-            background: rebeccapurple;
-            rotate: 405deg;
-            animation: test;
+    @media (prefers-reduced-motion: reduce) {
+        .card{
+            animation:rotating;
+        }
+        :global(.card.active) {
+            animation: none; /* Remove the animation */
+        }
     }
-
     :global(.color) {
         background-color: red;
     }
 
 
+    .button{
+        background-color: var(--blue);
+        color: white;
+        font-size: 18px;
+        width: max-content;
+        padding: 8px;
+        /*border-radius: 15px;*/
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .button:hover {
+        background-color: black;
+    }
 
     /*hieronder normale code*/
     .grid-container {
@@ -209,31 +191,32 @@
 
 
     /*!*animatie slide up om de card te tonen van beneden naar boven*!*/
-    /*@keyframes slide-in-up {*/
+    @keyframes slide-in-up {
 
 
-    /*    0% {*/
-    /*        !*background-color: red;*!*/
-    /*        transform: translateY(10em);*/
-    /*        filter: blur(25px);*/
-    /*        transition: filter 0.3s ease-in-out;*/
-    /*    }*/
-    /*    25% {*/
-    /*        transform: translateY(5em);*/
-    /*        filter: blur(15px);*/
-    /*        transition: filter 0.3s ease-in-out;*/
-    /*    }*/
-    /*    50% {*/
-    /*        filter: blur(0px);*/
-    /*        transition: filter 0.3s ease-in-out;*/
-    /*    }*/
+        0% {
+            /*background-color: red;*/
+            transform: translateY(10em);
+            filter: blur(25px);
+            transition: filter 0.3s ease-in-out;
+            rotate: 405deg;
+        }
+        25% {
+            transform: translateY(5em);
+            filter: blur(15px);
+            transition: filter 0.3s ease-in-out;
+        }
+        50% {
+            filter: blur(0px);
+            transition: filter 0.3s ease-in-out;
+        }
 
-    /*    100%{*/
-    /*        filter: blur(10px);*/
-    /*        transition: filter 0.3s ease-in-out;*/
-    /*    }*/
+        100%{
+            filter: blur(10px);
+            transition: filter 0.3s ease-in-out;
+        }
 
-    /*}*/
+    }
 
     /*gradient animation white*/
     @keyframes white-background-cards {

@@ -9,7 +9,9 @@
             for (let i = 0; i < buttons.length; i++) {
                 buttons[i].addEventListener('click', () => {
                     const clickedCard = buttons[i].closest('.card');
-                    clickedCard.classList.toggle('active');
+                    document.startViewTransition(() =>
+                        clickedCard.classList.toggle('active')
+                )
                 });
             }
 
@@ -18,7 +20,13 @@
 
         else
         {
-
+            const buttons = document.querySelectorAll('.button');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', () => {
+                    const clickedCard = buttons[i].closest('.card');
+                        clickedCard.classList.toggle('active')
+                });
+            }
         }
 
     });

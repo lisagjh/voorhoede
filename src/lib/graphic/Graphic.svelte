@@ -18,7 +18,7 @@
     p5.setup = () => {
       p5.createCanvas(containerWidth, containerHeight);
       p5.noStroke();
-      p5.fill("#29293b");
+      p5.fill("#1b14a6");
       p5.textFont(customFont);
       p5.textSize(100);
       p5.textAlign(p5.CENTER, p5.CENTER);

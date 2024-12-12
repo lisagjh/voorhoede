@@ -79,37 +79,7 @@
 
 
 
-    :global(.card.active) {
-        background: linear-gradient(300deg, rgb(128, 216, 250) 0%, rgb(235, 235, 255) 47%, rgba(0,212,255,1) 100%);
-        rotate: 348deg;
 
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .card{
-            animation:rotating;
-        }
-        :global(.card.active) {
-            animation: none; /* Remove the animation */
-        }
-    }
-    :global(.color) {
-        background-color: red;
-    }
-
-
-    .button{
-        background-color: var(--blue);
-        color: white;
-        font-size: 18px;
-        width: max-content;
-        padding: 8px;
-        /*border-radius: 15px;*/
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    .button:hover {
-        background-color: black;
-    }
 
     /*hieronder normale code*/
     .grid-container {
@@ -177,29 +147,10 @@
     }
 
     /*animatie*/
-    /*@media (prefers-reduced-motion: no-preference) {*/
-    /*    img {*/
-    /*        animation: reveal 1s linear both;*/
-    /*        !* Rember to declare the timeline after the shorthand *!*/
-    /*        animation-timeline: view();*/
-    /*    }*/
-    /*}*/
-
-    /*!*animatie tonen image van klein naar groot*!*/
-    /*@keyframes reveal {*/
-    /*    from {*/
-    /*        opacity: 0;*/
-    /*        clip-path: inset(30% 30% 25% 30%);*/
-    /*    }*/
-    /*    50% {*/
-    /*        opacity: 1;*/
-    /*        clip-path: inset(0% 0% 0% 0%);*/
-    /*    }*/
-    /*}*/
 
 
     /*!*animatie slide up om de card te tonen van beneden naar boven*!*/
-    @keyframes slide-in-up {
+    @keyframes Rotate {
 
 
         0% {
@@ -239,11 +190,41 @@
 
     @media (prefers-reduced-motion: no-preference) {
         .card {
-            animation: slide-in-up both, white-background-cards 2s infinite;
+            animation: Rotate both, white-background-cards 2s infinite;
             animation-timeline: view();
         }
     }
+    :global(.card.active) {
+        background: linear-gradient(300deg, rgb(128, 216, 250) 0%, rgb(235, 235, 255) 47%, rgba(0,212,255,1) 100%);
+        rotate: 348deg;
 
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .card {
+            animation: none;
+        }
+        :global(.card.active) {
+            animation: none; /* Remove the animation */
+        }
+    }
+    :global(.color) {
+        background-color: red;
+    }
+
+
+    .button{
+        background-color: var(--blue);
+        color: white;
+        font-size: 18px;
+        width: max-content;
+        padding: 8px;
+        /*border-radius: 15px;*/
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .button:hover {
+        background-color: black;
+    }
 
     @media (max-width: 350px) {
 

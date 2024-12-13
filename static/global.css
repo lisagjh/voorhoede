@@ -5,15 +5,15 @@
 }
 
 @font-face {
-  font-family: 'Archivo';
+  font-family: "Archivo";
   font-display: swap;
-  src: url('/font/font2/archivo-v19-latin-regular.woff2') format('woff2');
+  src: url("/font/font2/archivo-v19-latin-regular.woff2") format("woff2");
 }
 
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Martian Mono';
-  src: url('/font/font2/martian-mono-v3-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  font-family: "Martian Mono";
+  src: url("/font/font2/martian-mono-v3-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 * {
@@ -85,9 +85,8 @@ a {
   text-decoration: none;
 }
 
-
-
-a:focus-visible, button:focus-visible {
+a:focus-visible,
+button:focus-visible {
   color: var(--blue);
   font-weight: bolder;
   border: 3px dashed var(--blue);
@@ -174,17 +173,17 @@ main {
 @media (width > 50rem) {
   main {
     border-left: none;
-      margin: 0 0.25rem;
-      margin-top: 1rem;
-      padding-top: 2.5rem;
-      justify-self: end;
-      max-width: calc(100% - 19%);
-    }
-
-    footer {
-      border-left: none;
-      margin:0 0.25rem;
-      justify-self: end;
-      max-width: calc((100% - 21%));
-    }
+    margin: 0 0.25rem;
+    margin-top: 1rem;
+    padding-top: 2.5rem;
+    justify-self: end;
+    max-width: calc(100% - 19%);
   }
+
+  footer {
+    max-width: calc(100% - 19%);
+    border-left: none;
+    margin: 0 0.25rem;
+    justify-self: end;
+  }
+}

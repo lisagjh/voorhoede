@@ -80,5 +80,6 @@
     justify-self: center;
     width: 100vw;
     height: 100vh;
+    z-index: 20;
   }
 </style>

@@ -40,15 +40,16 @@
 <Footer />
 
 <style>
-div.bg {
-  transform: translateX(-100px);
+  div.bg {
+    background-color: var(--white);
+    transform: translateX(-100px);
     position: fixed;
     width: 110vw;
     height: 110vh;
     opacity: 0;
     pointer-events: none;
-    transition: all 0.5s ease;
     scale: 1.2;
+    transition: all 0.5s ease;
   }
 
   div.bg.show-transition {
@@ -56,8 +57,9 @@ div.bg {
     scale: 1;
     transform: translate(0);
     pointer-events: auto;
-  }
+    transition: all 0.5s ease;
 
+  }
 
   /* view transitions! */
 

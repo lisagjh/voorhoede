@@ -40,18 +40,36 @@
   .intro-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 0.75em;
-    margin: 7.5% 0 15% 0;
+    height: 90vh;
   }
 
   h1 {
     text-transform: uppercase;
+    position: sticky;
+    top: 2.5rem;
+    anchor-name: --base;
+    margin-top: 1rem;
   }
 
-  @media (min-width: 842px ){
+  p {
+    position: absolute;
+    position-anchor: --base;
+    top: anchor(--base bottom);
+    max-width: 55ch;
+    margin-bottom: 1rem;
+  }
+
+  @media (width > 1000px) {
+    h1 {
+      font-size: 8rem;
+      line-height: 6.2rem;
+    }
+    p {
+      line-height: 1.1rem;
+    }
+  }
+
+  /* @media (min-width: 842px ){
       .intro-section {
         margin: 7.5% 20% 5% 20%;
       }
@@ -61,5 +79,5 @@
       .intro-section {
         margin: 7.5% 25% 5% 25%;
       }
-  }
+  } */
 </style>

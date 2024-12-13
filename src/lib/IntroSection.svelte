@@ -32,8 +32,10 @@
     </Link>
   {/if}
 
-  <h1>{title}</h1>
-  <p><slot name="subtitle">{subtitle}</slot></p>
+ <div>
+    <h1>{title}</h1>
+    <p><slot name="subtitle">{subtitle}</slot></p>
+ </div>
 </section>
 
 <style>
@@ -44,6 +46,12 @@
   }
 
   h1 {
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+    margin-top: 1.75rem;
+  }
+
+   /* h1 {
     text-transform: uppercase;
     position: sticky;
     top: 2.5rem;
@@ -57,12 +65,18 @@
     top: anchor(--base bottom);
     max-width: 55ch;
     margin-bottom: 1rem;
+  } */
+
+  p {
+    margin-top: -1.25rem;
+    text-transform: uppercase;
+    max-width: 55ch;
   }
 
   @media (width > 1000px) {
     h1 {
-      font-size: 8rem;
-      line-height: 6.2rem;
+      font-size: 12rem;
+      line-height: 9.2rem;
     }
     p {
       line-height: 1.1rem;

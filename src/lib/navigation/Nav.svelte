@@ -12,16 +12,15 @@
   // Pages data
   let pages = [
     { title: "Home", ref: "/" },
-    { title: "Over Ons", ref: "/over" },
-    { title: "Events", ref: "/events" },
-    { title: "Publicaties", ref: "/publicaties" },
     { title: "Leden", ref: "/members" },
     { title: "Vacatures", ref: "/vacatures" },
+    { title: "Game", ref: "/game" },
+    { title: "BYOCT", ref: "/BYOCT" },
   ];
 
   let pagesCTA = [
-    { title: "Inloggen", ref: "/inloggen" },
-    { title: "Join", ref: "/join" },
+    // { title: "Inloggen", ref: "/inloggen" },
+    // { title: "Join", ref: "/join" },
   ];
 
   let allPages = [...pages, ...pagesCTA];
@@ -32,19 +31,20 @@
     document.body.style.overflow = isOpen ? "hidden" : ""; // Disable/enable scrolling
     if (isOpen && !hasAnimated) {
       hasAnimated = true;
-      startVacancyAnimation();
     }
   }
 
   // Fetch vacancies and animate counter
-  async function startVacancyAnimation() {
+  async function fetchAndAnimateVacancies() {
     try {
       const response = await fetch(
         "https://fdnd-agency.directus.app/items/dda_agencies_vacancies/"
       );
       const vacatures = await response.json();
       const totalVacancies = vacatures.data ? vacatures.data.length : 0;
-      animateCounter(openVacancies, totalVacancies, delay);
+      
+      // Always animate from 0 to total vacancies
+      animateCounter(0, totalVacancies, delay);
     } catch (error) {
       console.error("Error fetching vacancies:", error);
     }
@@ -52,34 +52,24 @@
 
   // Function to animate the vacancy badge in the nav menu
   function animateCounter(start, end, duration) {
-    // Calculate the range of the animation
     const range = end - start;
-
-    // when it starts
     const startTime = performance.now();
 
-    // Easing function to make the animation slow down at the end
     function easeOut(t) {
       return t * (2 - t);
     }
 
-    // Function to update the animation on each frame
     function update(currentTime) {
-      // Calculate how much time has passed since the animation started
       const elapsedTime = currentTime - startTime;
-      // Translates the elapsedtime to a number between 0 (start) and 1 (end)
       const normalizedTime = Math.min(elapsedTime / duration, 1);
-      // Apply the easing function
       const easedProgress = easeOut(normalizedTime);
-      // Update the number of the counter
       openVacancies = Math.floor(start + range * easedProgress);
-      // checks if the animation is finished or not
+      
       if (normalizedTime < 1) {
-        // if not keeps updating
         requestAnimationFrame(update);
       }
     }
-    // Start the animation by calling the update function
+    
     requestAnimationFrame(update);
   }
 
@@ -91,7 +81,6 @@
 
     node.addEventListener("click", handleClick);
 
-    // Cleanup when the element is removed
     return {
       destroy() {
         node.removeEventListener("click", handleClick);
@@ -101,16 +90,33 @@
 
   // close menu when esc is pressed
   function closeMenuOnEsc(event) {
-    // check if esc key is pressed
     if (event.key === "Escape") {
-      // close menu
       isOpen = false;
+      document.body.style.overflow = "";
     }
   }
 
   onMount(async () => {
-    // event listener for keydown event
     document.addEventListener("keydown", closeMenuOnEsc);
+
+    // Fetch and animate vacancies immediately on mount
+    fetchAndAnimateVacancies();
+
+    // Ensure proper initial state on load
+    const handleResize = () => {
+      if (window.innerWidth >= 800) {
+        isOpen = false;
+        document.body.style.overflow = "";
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => {
+      document.removeEventListener("keydown", closeMenuOnEsc);
+      window.removeEventListener('resize', handleResize);
+    };
   });
 </script>
 
@@ -141,7 +147,6 @@
     right: 0;
     top: 0;
     height: 100vh;
-    /* clamp(min, val, max) - clamp means it will use the preferred value (val) when its between the min or max value. */
     width: clamp(190px, 50%, 300px);
     z-index: 1;
     border-left: 1px solid var(--black);
@@ -201,22 +206,28 @@
       background-color: transparent;
       border: none;
       position: relative;
-
       visibility: visible;
       display: flex;
-      transform: translateY(0);
+      transform: none;
       opacity: 1;
       height: fit-content;
       margin-top: 2rem;
+      width: 100%;
+      right: auto;
+      top: auto;
+      
+      /* Reset mobile-specific styles */
+      border-left: none;
     }
 
     ul {
       margin-top: 0;
+      justify-content: flex-start;
+      gap: 2rem;
     }
 
     li {
       margin: 0;
-      margin-bottom: 1.5rem;
     }
 
     div {

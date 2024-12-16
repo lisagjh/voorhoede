@@ -28,7 +28,7 @@
         position: fixed;
         left: 0;
         top: 0;
-        width: 17%;
+        width: 20%;
         height: 100%;
         max-height: 100vh;
         padding: 1rem;

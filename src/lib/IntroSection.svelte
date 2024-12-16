@@ -48,15 +48,12 @@
 
   h1 {
     font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: -1.5px;
     margin-top: 1.75rem;
   }
 
   p {
     margin-top: -1rem;
     margin-left: 0.25rem;
-    text-transform: uppercase;
     max-width: 55ch;
   }
 
@@ -68,7 +65,6 @@
     p {
       margin-top: 0;
       margin-left: 0.5rem;
-      max-width: 75ch;
     }
   }
 

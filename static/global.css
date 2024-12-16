@@ -1,36 +1,36 @@
 @font-face {
-  font-family: Archivo;
-  src: url(/font/Archivo-VariableFont_wdth\,wght.woff2);
-  font-display: swap;
+  font-family: "Magic Retro";
+  src: url("/font/Magic-Retro.ttf");
 }
 
 @font-face {
-  font-family: "Archivo";
-  font-display: swap;
-  src: url("/font/font2/archivo-v19-latin-regular.woff2") format("woff2");
+  font-family: "Instrument Sans";
+  src: url("/font/InstrumentSans-var.ttf") format("truetype");
 }
 
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Martian Mono";
-  src: url("/font/font2/martian-mono-v3-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
 
 * {
   /*todo uitzoekenw aarom border box de subscribe button text aanpaast*/
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Archivo", sans-serif;
+  font-family: "Instrument Sans", sans-serif;
 }
 
 :root {
-  --black: #222226;
+  --black: #08310b;
   --grey: #666666;
-  --white: #fff;
-  --blue: #364bf7;
+  --white: #ffd8de;
+  --blue: #c55c5c;
+}
 
-  --martian-mono: "Martian Mono", system-ui;
+body {
+  color: var(--black);
+  background-color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Magic Retro;
 }
 
 h1 {
@@ -79,9 +79,7 @@ p {
 }
 
 a {
-  font-family: var(--martian-mono);
   color: var(--blue);
-  text-transform: uppercase;
   text-decoration: none;
 }
 
@@ -177,11 +175,11 @@ main {
     margin-top: 1rem;
     padding-top: 2.5rem;
     justify-self: end;
-    max-width: calc(100% - 19%);
+    max-width: calc(100% - 23%);
   }
 
   footer {
-    max-width: calc(100% - 19%);
+    max-width: calc(100% - 23%);
     border-left: none;
     margin: 0 0.25rem;
     justify-self: end;

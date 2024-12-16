@@ -136,7 +136,7 @@
   nav {
     display: none;
     visibility: hidden;
-    background-color: var(--white);
+    background-color: inherit;
     position: absolute;
     right: 0;
     top: 0;

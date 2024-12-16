@@ -12,6 +12,19 @@
   ];
 </script>
 
+<div class="sneeuwvlokken" aria-hidden="true">
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+</div>
+
+<div class="progress"></div>
+<img class="santa" src="https://assets.codepen.io/85648/santa-03.svg" alt="Santa on a snowmobile" />
+
 <IntroSection title="De Beste Bureau's van Nederland">
   <svelte:fragment slot="subtitle">
     Dutch Digital Agencies (DDA) verenigt en verbindt toonaangevende digitale
@@ -75,13 +88,5 @@
     justify-self: center;
   }
 
-  @media (width > 35em) {
-    p {
-      letter-spacing: -2px;
-      line-height: 1;
-      font-size: 4rem;
-      font-weight: 800;
-      text-wrap: balance;
-    }
-  }
+
 </style>

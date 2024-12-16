@@ -8,6 +8,19 @@
 
 </script>
 
+<div class="progress"></div>
+<img class="santa" src="https://assets.codepen.io/85648/santa-03.svg" alt="Santa on a snowmobile" />
+
+<div class="sneeuwvlokken" aria-hidden="true">
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+</div>
+
 <IntroSection
   title="Vacatures"
   subtitle="Verslim je carrière bij de beste digitale bureaus van Nederland. Pak je rol als developer of designer, researcher, als scrum master of marketeer, als strateeg. Start of groei door – en laat zien wat je kan."

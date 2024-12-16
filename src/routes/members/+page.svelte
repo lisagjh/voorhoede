@@ -14,6 +14,18 @@
   );
 </script>
 
+<div class="sneeuwvlokken" aria-hidden="true">
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+  <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
+</div>
+
+<div class="progress"></div>
+<img class="santa" src="https://assets.codepen.io/85648/santa-03.svg" alt="Santa on a snowmobile" />
 
 <IntroSection
   title="Leden"

@@ -21,8 +21,8 @@
 
 <section class="vacancy-section">
   <div class="top">
-    <h2 class="tag">Vacatures</h2>
-    <p>De beste agencies zoeken de beste mensen</p>
+    <h3 class="tag">Vacatures</h3>
+    <h2>De beste agencies zoeken de beste mensen</h2>
     <a href="/vacatures">Bekijk alle vacatures</a>
   </div>
 
@@ -48,7 +48,7 @@
     max-height: 400px;
   }
 
-  h2.tag {
+  h3.tag {
     line-height: 1;
     font-size: 1rem;
     display: inline-block;
@@ -60,10 +60,10 @@
     margin: 0 0.5rem;
   }
 
-  p {
-    letter-spacing: 1px;
+  h2 {
+    font-family: "xmas-font", sans-serif;
+    color: #FF1C3B;
     font-size: 2.5rem;
-    font-weight: 800;
     align-self: center;
     text-align: center;
     text-transform: uppercase;

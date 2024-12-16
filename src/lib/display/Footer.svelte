@@ -108,7 +108,7 @@
   }
 
   a {
-    color: var(--black);
+    color: var(--white);
     width: fit-content;
     text-underline-offset: 0.2rem;
     text-wrap: wrap;

@@ -16,6 +16,17 @@
   src: url("/font/font2/martian-mono-v3-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+@font-face {
+  font-family: "xmas-font";
+  src: url(/font/xmas-font.otf);
+}
+
+@font-face {
+  font-family: "xmas-font2";
+  src: url(/font/xmas-font3.ttf);
+}
+
+
 * {
   /*todo uitzoekenw aarom border box de subscribe button text aanpaast*/
   box-sizing: border-box;
@@ -40,6 +51,8 @@ h1 {
   letter-spacing: -2px;
   line-height: 6rem;
   font-weight: 600;
+  font-family: "xmas-font", sans-serif;
+  color: #FF1C3B;
 }
 
 h2 {
@@ -47,6 +60,8 @@ h2 {
   letter-spacing: -2px;
   line-height: 4rem;
   font-weight: 600;
+  font-family: "xmas-font", sans-serif;
+  color: #FF1C3B;
 }
 
 h3 {
@@ -55,12 +70,14 @@ h3 {
   line-height: 3rem;
   font-weight: 600;
   text-transform: capitalize;
+  font-family: "xmas-font", sans-serif;
 }
 
 h4 {
   font-size: 2rem;
   line-height: 2.5rem;
   font-weight: normal;
+  font-family: "xmas-font", sans-serif;
 }
 
 h5 {

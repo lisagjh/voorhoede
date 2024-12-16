@@ -1,17 +1,18 @@
 <script>
-  import { page } from '$app/stores'; // Import the $page store to get current route
+  import { page } from "$app/stores"; // Import the $page store to get current route
   import Link from "$lib/Link.svelte";
-  
+
   export let title,
     subtitle,
     displayHomeLink = true;
 
   // Check if current page is the homepage
-  $: isHomePage = $page.url.pathname === '/';
+  $: isHomePage = $page.url.pathname === "/";
 </script>
 
 <section class="intro-section">
-  {#if displayHomeLink && !isHomePage} <!-- Only show if not on the homepage -->
+  {#if displayHomeLink && !isHomePage}
+    <!-- Only show if not on the homepage -->
     <Link href="/" clazz="back-to-home">
       <svg
         slot="svg-icon-left"
@@ -32,30 +33,50 @@
     </Link>
   {/if}
 
-  <h1>{title}</h1>
-  <p><slot name="subtitle">{subtitle}</slot></p>
+  <div>
+    <h1>{title}</h1>
+    <p><slot name="subtitle">{subtitle}</slot></p>
+  </div>
 </section>
 
 <style>
   .intro-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 0.75em;
-    margin: 7.5% 0 15% 0;
+    height: 90vh;
   }
 
-  @media (min-width: 842px ){
-      .intro-section {
-        margin: 7.5% 20% 5% 20%;
-      }
+  h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+    margin-top: 1.75rem;
   }
 
-  @media (min-width: 1332px ){
-      .intro-section {
-        margin: 7.5% 25% 5% 25%;
-      }
+  p {
+    margin-top: -1rem;
+    margin-left: 0.25rem;
+    text-transform: uppercase;
+    max-width: 55ch;
+  }
+
+  @media (width > 1000px) {
+    h1 {
+      font-size: 8rem;
+    }
+
+    p {
+      margin-top: 0;
+      margin-left: 0.5rem;
+      max-width: 75ch;
+    }
+  }
+
+  @media (width > 1200px) {
+    h1 {
+      font-size: 9rem;
+      letter-spacing: -0.5px;
+      line-height: 0.8;
+    }
   }
 </style>

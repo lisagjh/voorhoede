@@ -38,10 +38,10 @@
 
   @keyframes move {
     from {
-      transform: translateY(1.2rem);
+      scale: 0.8;
     }
     to {
-      transform: translateY(0);
+      scale: 1;
     }
   }
 

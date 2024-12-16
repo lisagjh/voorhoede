@@ -5,9 +5,9 @@
 </script>
 
 
-<article class="grid-container">
+<section class="grid-container">
     {#each data.members as member}
-
+        <h2 class="hidden-text">leden</h2>
         <article class="card">
             <picture>
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
@@ -22,7 +22,7 @@
                 <li class="label-filters">label</li>
             </ul>
 
-            <h2>{member.title}</h2>
+            <h3>{member.title}</h3>
             <p>{member.address}</p>
 
             <ul class="card-label">
@@ -42,9 +42,12 @@
     {/each}
 
 
-</article>
+</section>
 
 <style>
+    .hidden-text{
+        display: none;
+    }
     .grid-container {
 
         display: grid;

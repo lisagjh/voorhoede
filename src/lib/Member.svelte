@@ -152,6 +152,9 @@
 
     .card {
         border-bottom: 1px solid var(--grey);
+        /*!*border: 1px solid var(--black);*! dit kan ineit*/
+
+
     }
 
     /*voor 725px is het opgelost */
@@ -171,7 +174,7 @@
 
     }
 
-    /*3koloms*/
+    /*!*3koloms*!*/
 
     @media (min-width: 1127px) and (max-width: 1466px) {
 

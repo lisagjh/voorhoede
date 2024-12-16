@@ -49,7 +49,7 @@
 
 <style>
   .vacancy-section {
-    border-top: 1px solid var(--black);
+    border-top: 1px solid var(--white);
     margin-bottom: 8rem;
   }
 
@@ -67,7 +67,7 @@
     display: inline-block;
     justify-self: center;
     font-family: var(--martian-mono);
-    border: 1px solid var(--black);
+    border: 1px solid var(--white);
     height: fit-content;
     padding: 0.25rem;
     margin: 0 0.5rem;

@@ -39,12 +39,12 @@
     place-items: center;
     padding: 1.25rem 0.5rem;
     margin: 1.25rem 0;
-    border-top: 1px solid var(--black);
+    border-top: 1px solid var(--white);
     transition: .25s ease-in-out;
   }
 
   article:last-of-type {
-    border-bottom: 1px solid var(--black);
+    border-bottom: 1px solid var(--white);
   }
 
   article p,
@@ -114,20 +114,20 @@
     }
 
     article {
-      border-bottom: 1px solid black;
-      border-top: 0px solid black;
+      border-bottom: 1px solid var(--white);
+      border-top: 0px solid var(--white);
       padding: 1.25rem 1.5rem;
       word-break: break-word;
       width: 100%;
     }
 
     article:nth-of-type(2n + 1) {
-      border-right: 1px solid var(--black);
+      border-right: 1px solid var(--white);
     }
 
     article:nth-of-type(1),
     article:nth-of-type(2) {
-      border-top: 1px solid var(--black);
+      border-top: 1px solid var(--white);
     }
   }
 

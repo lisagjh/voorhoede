@@ -1,8 +1,10 @@
 <script>
   import Card from "../lib/display/Card.svelte";
   import IntroSection from "./../lib/IntroSection.svelte";
+  import Popup from "../lib/display/Popup.svelte";
 
-  export let data;
+  let data = $props();
+  let showModal = $state(false);
 
   const extraFields = [
     { key: "agencyName" },
@@ -11,6 +13,24 @@
     { key: "expertise" },
   ];
 </script>
+
+<Popup bind:showModal>
+  {#snippet content()}
+  <iframe
+    title=""
+    style="border-radius:12px;"
+    src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0Yxoavh5qJV?utm_source=generator"
+    width="100%"
+    height="352px" 
+    frameBorder="0" 
+    allowfullscreen="" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    loading="lazy">
+  </iframe>
+  {/snippet}
+</Popup>
+
+<button onclick={() => (showModal = true)}> show modal </button>
 
 <div class="sneeuwvlokken" aria-hidden="true">
   <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>

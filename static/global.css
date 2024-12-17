@@ -261,7 +261,7 @@ main {
   left: 0;
   width: calc(100% - var(--santaWidth));
   height: 0.5rem;
-  background: rgb(0, 255, 247);
+  background: rgb(44, 255, 248);
   transform-origin: 0 50%;
   animation: scaleProgress linear;
   animation-timeline: scroll(root);

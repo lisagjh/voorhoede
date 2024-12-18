@@ -1,22 +1,37 @@
 <script>
   import { onMount } from "svelte";
   import Select from "../../lib/spike/Select.svelte";
+	import Notes from './../../lib/spike/Notes.svelte';
 
-  const songs = [{
-    "Jingle Bells": [
-      "E4",
-      "E4",
-      "E4",
-      "E4",
-      "E4",
-      "E4",
-      "E4",
-      "G4",
-      "C4",
-      "D4",
-      "E4",
-    ],
-  },];
+  const songs = [
+    {
+      name: "Jingle Bells",
+      notes: [
+        { note: "E4", time: 0 },
+        { note: "E4", time: 500 },
+        { note: "E4", time: 1000 },
+        { note: "G4", time: 1500 },
+        { note: "C4", time: 2000 },
+      ],
+    },
+    {
+      name: "Twinkle Twinkle",
+      notes: [
+        { note: "C4", time: 0 },
+        { note: "C4", time: 500 },
+        { note: "G4", time: 1000 },
+        { note: "G4", time: 1500 },
+        { note: "A4", time: 2000 },
+      ],
+    },
+  ];
+
+  let selectedSong = null;
+
+  function handleSongChange(event) {
+    selectedSong = songs.find((song) => song.name === event.detail);
+    console.log("Selected song:", selectedSong);
+  }
 
   let audioContext;
 
@@ -85,7 +100,7 @@
     const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
 
-    oscillator.type = "sawtooth"; // You can change this to 'square', 'triangle', or 'sawtooth'
+    oscillator.type = "sine"; // You can change this to 'square', 'triangle', or 'sawtooth'
     oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
 
     oscillator.connect(gainNode);
@@ -105,8 +120,14 @@
   }
 </script>
 
-<Select option={songs} />
+<Select options={songs} on:change={handleSongChange} />
 
+{#if selectedSong}
+  <h2>Playing: {selectedSong.name}</h2>
+  <button on:click={() => startGame(selectedSong)}>Start Game</button>
+
+  <Notes notes={selectedSong.notes} bpm={120} />
+{/if}
 <div class="wrapper">
   <div class="piano">
     <svg

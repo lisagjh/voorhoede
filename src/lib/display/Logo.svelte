@@ -24,3 +24,9 @@
     clip-rule="evenodd"
   />
 </svg>
+
+<style>
+  svg{
+    background: white;
+  }
+</style>

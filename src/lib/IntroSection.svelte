@@ -45,6 +45,7 @@
     text-align: center;
     gap: 0.75em;
     margin: 7.5% 0 15% 0;
+    color: white;
   }
 
   @media (min-width: 842px ){

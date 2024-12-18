@@ -6,7 +6,7 @@
 
 
 
-
+// todo animation add that the cards are out of the screen
 
 </script>
 

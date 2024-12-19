@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import Select from "../../lib/spike/Select.svelte";
-	import Notes from './../../lib/spike/Notes.svelte';
+  import Notes from "./../../lib/spike/Notes.svelte";
 
   const songs = [
     {
@@ -27,11 +27,6 @@
   ];
 
   let selectedSong = null;
-
-  function handleSongChange(event) {
-    selectedSong = songs.find((song) => song.name === event.detail);
-    console.log("Selected song:", selectedSong);
-  }
 
   let audioContext;
 
@@ -89,6 +84,21 @@
     });
   });
 
+  let notesComponent = null; // Declare this at the top level
+
+  function handleSongChange(event) {
+    selectedSong = songs.find((song) => song.name === event.detail);
+    console.log("Selected song:", selectedSong);
+  }
+
+  function startGame() {
+    if (notesComponent) {
+      console.log("Starting falling notes...");
+      notesComponent.startFallingNotes();
+    } else {
+      console.error("Notes component not initialized!");
+    }
+  }
   //   Play a note using the Web Audio API
   function playNote(note) {
     if (!audioContext) return;
@@ -126,8 +136,9 @@
   <h2>Playing: {selectedSong.name}</h2>
   <button on:click={() => startGame(selectedSong)}>Start Game</button>
 
-  <Notes notes={selectedSong.notes} bpm={120} />
+  <Notes bind:this={notes} notes={selectedSong.notes} bpm={120} />
 {/if}
+
 <div class="wrapper">
   <div class="piano">
     <svg
@@ -360,6 +371,12 @@
 </div>
 
 <style>
+  button {
+    min-width: 5rem;
+    height: 2.5rem;
+    margin-left: 3rem;
+  }
+
   .wrapper {
     min-height: 70vh;
     height: 100%;

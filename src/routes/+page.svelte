@@ -19,6 +19,20 @@
   </svelte:fragment>
 </IntroSection>
 
+<div class="given-up">
+  <p class="piano"><a href="/piano">play a song on my piano.</a></p>
+  <p>
+    <span>ive given up</span> <span>ive given up</span>
+    <span>ive given up</span> <span>ive given up</span>
+    <span>ive given up</span> <span>ive given up</span>
+    <span>ive given up</span> <span>ive given up</span>
+  </p>
+</div>
+
+<div class="santa">
+  <img src="/santa.png" alt="" width="240" />
+</div>
+
 <section class="vacancy-section">
   <div class="top">
     <h2 class="tag">Vacatures</h2>
@@ -35,6 +49,57 @@
 </section>
 
 <style>
+  .given-up {
+    margin-top: -32rem;
+  }
+
+  .given-up p {
+    justify-self: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .given-up p span {
+    margin-right: 3rem;
+    text-wrap: nowrap;
+    animation: move-text 3s linear infinite;
+  }
+
+  @keyframes move-text {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-175%);
+    }
+  }
+
+  .santa {
+    position: absolute;
+    top: 35rem;
+    min-height: 15rem;
+    width: 100vw;
+  }
+  .santa img {
+    width: 25rem;
+    offset-path: path("M 0 80 Q 360 0, 800 80");
+    animation: move 5s infinite forwards ease-in-out;
+  }
+
+  @keyframes move {
+    0% {
+      transform: translateX(-50%);
+      offset-distance: 0%;
+    }
+    100% {
+      transform: translateX(100%);
+      offset-distance: 100%;
+    }
+  }
+
   .vacancy-section {
     border-top: 1px solid var(--black);
     margin-bottom: 8rem;

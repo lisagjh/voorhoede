@@ -153,6 +153,9 @@
     opacity: 0;
   }
 
+  svg{
+    background: white;
+  }
   nav.is-open {
     visibility: visible;
     display: flex;

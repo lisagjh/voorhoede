@@ -45,6 +45,7 @@ body {
   --grey: #666666;
   --white: #fff;
   --blue: #364bf7;
+  --christmas-red : #FF1C3B;
 
   --martian-mono: "Martian Mono", system-ui;
   --santaWidth: clamp(5rem, 200px, 10vw);
@@ -56,7 +57,7 @@ h1 {
   line-height: 6rem;
   font-weight: 600;
   font-family: "xmas-font", sans-serif;
-  color: #FF1C3B;
+  color: var(--christmas-red);
 }
 
 h2 {
@@ -65,7 +66,7 @@ h2 {
   line-height: 4rem;
   font-weight: 600;
   font-family: "xmas-font", sans-serif;
-  color: #FF1C3B;
+  color: var(--christmas-red);
 }
 
 h3 {

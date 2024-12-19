@@ -30,7 +30,7 @@
   {/snippet}
 </Popup>
 
-<button onclick={() => (showModal = true)}> show modal </button>
+<button onclick={() => (showModal = true)}> Play Music </button>
 
 <div class="sneeuwvlokken" aria-hidden="true">
   <div>❅</div><div>❅</div><div>❅</div><div>❅</div><div>❅</div>
@@ -95,7 +95,6 @@
 
   h2 {
     font-family: "xmas-font", sans-serif;
-    color: #FF1C3B;
     font-size: 2.5rem;
     align-self: center;
     text-align: center;
@@ -106,6 +105,29 @@
 
   a {
     justify-self: center;
+  }
+
+  button {
+    position: fixed;
+    top: 2em;
+    left: 2.25em;
+    border-radius: 1em;
+    font-family: "xmas-font", sans-serif;
+    padding: 1.5em;
+    background-color: var(--christmas-red);
+    border: none;
+  }
+
+  button:hover{
+    transition: .75s;
+    background-color: var(--blue);
+  }
+
+  @media (min-width: 800px){
+    button {
+      left : auto;
+      right: 2em;
+    }
   }
 
 

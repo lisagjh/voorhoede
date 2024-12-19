@@ -27,7 +27,7 @@
         background-color: inherit;
         position: fixed;
         top: 20%;
-        left: 5%;
+        left: 7%;
         right: 5%;
 	}
 	dialog::backdrop {
@@ -59,7 +59,14 @@
     @media(min-width: 400px){
         dialog{
             top: 25%;
-            left: 40%;
+            left: 22%;
+        }
+    }
+
+	@media(min-width: 800px){
+        dialog{
+            top: 25%;
+            left: 38%;
         }
     }
 

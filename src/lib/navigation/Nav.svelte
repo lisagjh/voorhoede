@@ -12,16 +12,11 @@
   // Pages data
   let pages = [
     { title: "Home", ref: "/" },
-    { title: "Over Ons", ref: "/over" },
-    { title: "Events", ref: "/events" },
-    { title: "Publicaties", ref: "/publicaties" },
     { title: "Leden", ref: "/members" },
     { title: "Vacatures", ref: "/vacatures" },
   ];
 
   let pagesCTA = [
-    { title: "Inloggen", ref: "/inloggen" },
-    { title: "Join", ref: "/join" },
   ];
 
   let allPages = [...pages, ...pagesCTA];

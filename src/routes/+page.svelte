@@ -55,7 +55,7 @@
 
 <style>
   .given-up {
-    margin-top: -32rem;
+    margin-top: -10rem;
   }
 
   .given-up p {

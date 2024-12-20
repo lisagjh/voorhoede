@@ -42,7 +42,7 @@
   .intro-section {
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 85vh;
   }
 
   h1 {

@@ -1,13 +1,17 @@
 <script>
-  // add class props here if needed so we can style each text element differently
+  import { page } from '$app/stores'; // Import the $page store to get current route
   import Link from "$lib/Link.svelte";
+  
   export let title,
     subtitle,
     displayHomeLink = true;
+
+  // Check if current page is the homepage
+  $: isHomePage = $page.url.pathname === '/';
 </script>
 
 <section class="intro-section">
-  {#if displayHomeLink}
+  {#if displayHomeLink && !isHomePage} <!-- Only show if not on the homepage -->
     <Link href="/" clazz="back-to-home">
       <svg
         slot="svg-icon-left"
@@ -32,8 +36,6 @@
   <p><slot name="subtitle">{subtitle}</slot></p>
 </section>
 
-<!--More text elements if needed-->
-
 <style>
   .intro-section {
     display: flex;
@@ -42,6 +44,18 @@
     justify-content: center;
     text-align: center;
     gap: 0.75em;
-    margin: 15% 15% 10% 15%;
+    margin: 7.5% 0 15% 0;
+  }
+
+  @media (min-width: 842px ){
+      .intro-section {
+        margin: 7.5% 20% 5% 20%;
+      }
+  }
+
+  @media (min-width: 1332px ){
+      .intro-section {
+        margin: 7.5% 25% 5% 25%;
+      }
   }
 </style>

@@ -12,9 +12,17 @@
     in het component-->
   <slot name="svg-icon-left" />
 
+<<<<<<< HEAD
   <slot name="link-text" />
 
   <slot name="svg-icon-right" />
+=======
+    <slot name="link-text">
+        link
+    </slot>
+    
+    <slot name="svg-icon-right"/>
+>>>>>>> main
 </a>
 
 <style>
@@ -38,8 +46,23 @@
     stroke: var(--blue); /* blue color for svg */
   }
 
+<<<<<<< HEAD
   .login-link {
     color: var(--blue);
     stroke: var(--blue);
   }
 </style>
+=======
+    .detail-link {
+        font-weight: bold;
+        color: var(--black);
+        stroke: var(--blue); /* blue color for svg */
+    }
+
+    .login-link{
+        color: var(--black);
+        stroke:var(--black);
+    }
+
+</style>
+>>>>>>> main

@@ -3,10 +3,11 @@
     export let title, language, company, hours, city, href
 </script>
 
-<article>
-    <h4 class="job-title">{title}</h4>
-    <span class="language">{language}</span>
+
+<div>
+    <h2 class="job-title">{title}</h2>
     <span class="company">{company}</span>
+    <span class="language">{language}</span>
     <span class="workweek">{hours}</span>
     <span class="city" >{city}</span>
 
@@ -20,55 +21,54 @@
         <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     </Link>
-</article>
+</div>
 
 
 <style>
 
-article {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: auto auto auto auto;
-    gap: 1.75em 0;
-    align-items: center;
-    margin-bottom: 15%;
-    padding-bottom: 15%;
-    border-bottom: 1px solid black;
-}
-
-article:last-child {
-    border-bottom: none;
-}
-
-@media (min-width: 620px){
-    article {
-        grid-template-columns: repeat(3, 1fr);
-        margin-bottom: 7.5%;
-        padding-bottom: 7.5%;
-        
-    }
-
-}
-
-@media (min-width: 820px){
-    article {
+    div {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 4.5%;
-        padding-bottom: 4.5%;
+        flex-wrap: wrap;
+        gap: 1.75em;
+        padding-bottom: 10%;
+        margin-bottom: 10%;
+        border-bottom: 1px solid var(--black);
     }
-}
-
-@media (min-width: 1024px){
-    article {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 2.5%;
-        padding-bottom: 2.5%;
+    .job-title {
+        width: 100%;
     }
-}
-
-
+    h2 {
+        font-weight: 400;
+        font-size: 2em;
+    }
+    .company, .language, .workweek, .city {
+        width: 37.5%;
+    }
+    @media (min-width: 540px){
+        .company, .language, .workweek, .city {
+            width: 29%;
+        }
+    }
+    @media (min-width: 560px){
+        div {
+            padding-bottom: 5%;
+            margin-bottom: 5%;
+        }
+    }
+    @media (min-width: 812px){
+        div {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        .job-title {
+            width: 30%;
+        }
+        .company, .language{
+            width: 10%;
+        }
+        .workweek, .city {
+            width: 20%;
+        }
+    }
 </style>

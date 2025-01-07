@@ -85,7 +85,15 @@
   .filter-section {
     padding: 1em;
     border: 1px solid black;
-    border-bottom: none;
+
+  }
+
+  @media (min-width: 800px) {
+    .filter-section{
+      /*border-bottom: none;*/
+      border-left: none;
+      border-right: none;
+    }
   }
 
   .textvacature {

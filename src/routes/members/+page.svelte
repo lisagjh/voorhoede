@@ -150,6 +150,7 @@
       padding: 2rem;
       border-left: 1px solid var(--grey);
       border-right: 1px solid var(--grey);
+      border-top: 1px solid var(--grey);
       /*border: 1px solid;*/
       justify-content: space-between;
     }

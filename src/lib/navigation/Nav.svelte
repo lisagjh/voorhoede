@@ -3,14 +3,12 @@
   import MenuToggleBtn from "./../input/MenuToggleBtn.svelte";
   import NavItem from "./NavItem.svelte";
 
-  // Menu state
-  let isOpen = false; // Initialize state for menu visibility
-  let openVacancies = 0;
-  let hasAnimated = false;
+  let isOpen = false; // Menu visibility state
+  let openVacancies = 0; // Count of open vacancies
+  let isSmallScreen = true; // Default to small screen until checked
   const delay = 1750;
 
-  // Pages data
-  let pages = [
+  const pages = [
     { title: "Home", ref: "/" },
     { title: "Over Ons", ref: "/over" },
     { title: "Events", ref: "/events" },
@@ -19,98 +17,97 @@
     { title: "Vacatures", ref: "/vacatures" },
   ];
 
-  let pagesCTA = [
+  const pagesCTA = [
     { title: "Inloggen", ref: "/inloggen" },
     { title: "Join", ref: "/join" },
   ];
 
-  let allPages = [...pages, ...pagesCTA];
+  const allPages = [...pages, ...pagesCTA];
 
-  // Toggle menu visibility and handle body overflow
-  function toggle() {
-    isOpen = !isOpen;
-    document.body.style.overflow = isOpen ? "hidden" : ""; // Disable/enable scrolling
-    if (isOpen && !hasAnimated) {
-      hasAnimated = true;
-      startVacancyAnimation();
+  const toggle = () => {
+    if (isSmallScreen) {
+      isOpen = !isOpen;
+      document.body.style.overflow = isOpen ? "hidden" : "";
+
+      // Start the vacancy animation when the menu opens
+      if (isOpen && openVacancies === 0) {
+        startVacancyAnimation();
+      }
     }
-  }
+  };
 
-  // Fetch vacancies and animate counter
-  async function startVacancyAnimation() {
+  const closeMenuOnEsc = (event: KeyboardEvent) => {
+    if (event.key === "Escape" && isOpen) {
+      isOpen = false;
+      document.body.style.overflow = "";
+    }
+  };
+
+  const updateScreenSize = () => {
+    if (typeof window !== "undefined") {
+      isSmallScreen = window.innerWidth <= 800;
+      if (!isSmallScreen) {
+        isOpen = false;
+        document.body.style.overflow = "";
+        if (openVacancies === 0) {
+          startVacancyAnimation(); // Start animation immediately on large screens
+        }
+      }
+    }
+  };
+
+  const startVacancyAnimation = async () => {
     try {
       const response = await fetch(
         "https://fdnd-agency.directus.app/items/dda_agencies_vacancies/"
       );
       const vacatures = await response.json();
-      const totalVacancies = vacatures.data ? vacatures.data.length : 0;
-      animateCounter(openVacancies, totalVacancies, delay);
+      const totalVacancies = vacatures.data?.length || 0;
+      animateCounter(0, totalVacancies, delay);
     } catch (error) {
       console.error("Error fetching vacancies:", error);
     }
-  }
-
-  // Function to animate the vacancy badge in the nav menu
-  function animateCounter(start, end, duration) {
-    // Calculate the range of the animation
-    const range = end - start;
-
-    // when it starts
-    const startTime = performance.now();
-
-    // Easing function to make the animation slow down at the end
-    function easeOut(t) {
-      return t * (2 - t);
-    }
-
-    // Function to update the animation on each frame
-    function update(currentTime) {
-      // Calculate how much time has passed since the animation started
-      const elapsedTime = currentTime - startTime;
-      // Translates the elapsedtime to a number between 0 (start) and 1 (end)
-      const normalizedTime = Math.min(elapsedTime / duration, 1);
-      // Apply the easing function
-      const easedProgress = easeOut(normalizedTime);
-      // Update the number of the counter
-      openVacancies = Math.floor(start + range * easedProgress);
-      // checks if the animation is finished or not
-      if (normalizedTime < 1) {
-        // if not keeps updating
-        requestAnimationFrame(update);
-      }
-    }
-    // Start the animation by calling the update function
-    requestAnimationFrame(update);
-  }
-
-  // to close the menu after a menu item or backdrop gets clicked
-  const menuToggle: Action = (node) => {
-    const handleClick = () => {
-      toggle(); // Call the toggle function when clicked
-    };
-
-    node.addEventListener("click", handleClick);
-
-    // Cleanup when the element is removed
-    return {
-      destroy() {
-        node.removeEventListener("click", handleClick);
-      },
-    };
   };
 
-  // close menu when esc is pressed
-  function closeMenuOnEsc(event) {
-    // check if esc key is pressed
-    if (event.key === "Escape") {
-      // close menu
-      isOpen = false;
-    }
-  }
+  const animateCounter = (start: number, end: number, duration: number) => {
+    const range = end - start;
+    const startTime = performance.now();
 
-  onMount(async () => {
-    // event listener for keydown event
-    document.addEventListener("keydown", closeMenuOnEsc);
+    const update = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      openVacancies = Math.floor(start + range * easeOut(progress));
+      if (progress < 1) requestAnimationFrame(update);
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  const easeOut = (t: number) => t * (2 - t);
+
+  const menuToggle: Action = (node) => {
+    const handleClick = () => toggle();
+    node.addEventListener("click", handleClick);
+    return { destroy: () => node.removeEventListener("click", handleClick) };
+  };
+
+  onMount(() => {
+    if (typeof window !== "undefined") {
+      isSmallScreen = window.innerWidth <= 800;
+
+      // Start animation immediately on large screens
+      if (!isSmallScreen && openVacancies === 0) {
+        startVacancyAnimation();
+      }
+
+      document.addEventListener("keydown", closeMenuOnEsc);
+      window.addEventListener("resize", updateScreenSize);
+    }
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", updateScreenSize);
+      }
+    };
   });
 </script>
 
@@ -145,7 +142,6 @@
     width: clamp(190px, 50%, 300px);
     z-index: 1;
     border-left: 1px solid var(--black);
-
     transition:
       transform 0.3s ease-in-out,
       opacity 0.3s ease-in-out;
@@ -156,7 +152,7 @@
   nav.is-open {
     visibility: visible;
     display: flex;
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
   }
 
@@ -180,15 +176,11 @@
   }
 
   ul {
-    height: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    margin-top: 5rem;
-    margin-bottom: 1rem;
+    margin: 5rem 0 1rem;
     padding: 0;
+    list-style: none;
   }
 
   li {
@@ -196,17 +188,16 @@
     margin: 1rem;
   }
 
-  @media (width > 50rem) {
+  @media (min-width: 800px) {
     nav {
       background-color: transparent;
       border: none;
       position: relative;
-
       visibility: visible;
       display: flex;
-      transform: translateY(0);
+      transform: none;
       opacity: 1;
-      height: fit-content;
+      height: auto;
       margin-top: 2rem;
     }
 

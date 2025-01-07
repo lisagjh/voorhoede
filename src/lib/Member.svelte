@@ -13,7 +13,7 @@
             <picture>
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
-                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="">
+                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="foto {member.title}">
             </picture>
 
             <ul class="card-label-filters">
@@ -23,7 +23,7 @@
                 <li class="label-filters">label</li>
             </ul>
 
-            <h2>{member.title}</h2>
+            <h2 aria-label="{member.title}">{member.title } </h2>
             <p>{member.address}</p>
 
             <ul class="card-label">

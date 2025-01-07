@@ -4,40 +4,8 @@
 
   import IntroSection from "$lib/IntroSection.svelte";
   import Vacancy from "$lib/Vacancy.svelte";
-  let vacancies = [
-    {
-      title: "Design Lead",
-      language: "Dutch",
-      company: "Company",
-      hours: "hours",
-      city: "city",
-      href: "href",
-    },
-    {
-      title: "Design Lead",
-      language: "Dutch",
-      company: "Company",
-      hours: "hours",
-      city: "city",
-      href: "href",
-    },
-    {
-      title: "Design Lead",
-      language: "Dutch",
-      company: "Company",
-      hours: "hours",
-      city: "city",
-      href: "href",
-    },
-    {
-      title: "Design Lead",
-      language: "Dutch",
-      company: "Company",
-      hours: "hours",
-      city: "city",
-      href: "href",
-    },
-  ];
+  import Searchbar from "$lib/Searchbar.svelte"
+
 </script>
 
 <IntroSection

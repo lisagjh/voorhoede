@@ -7,6 +7,8 @@
   let openVacancies = 0; // Count of open vacancies
   let isSmallScreen = true; // Default to small screen until checked
   const delay = 1750;
+  let menuItems: HTMLElement[] = [];
+  let navElement: HTMLElement;
 
   const pages = [
     { title: "Home", ref: "/" },
@@ -42,6 +44,22 @@
       document.body.style.overflow = "";
     }
   };
+
+  function handleTabOut(event: KeyboardEvent) {
+    if (event.key === "Tab" && isOpen) {
+      const focusedElement = document.activeElement;
+      // Get all focusable elements in the nav
+      const focusableElements = navElement.querySelectorAll(
+        'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+      );
+      const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+      if (focusedElement === lastFocusableElement && !event.shiftKey) {
+        isOpen = false;
+        document.body.style.overflow = "";
+      }
+    }
+  }
 
   const updateScreenSize = () => {
     if (typeof window !== "undefined") {
@@ -85,10 +103,20 @@
 
   const easeOut = (t: number) => t * (2 - t);
 
+  // to close the menu after a menu item or backdrop gets clicked
   const menuToggle: Action = (node) => {
-    const handleClick = () => toggle();
+    const handleClick = () => {
+      toggle(); // Call the toggle function when clicked
+    };
+
     node.addEventListener("click", handleClick);
-    return { destroy: () => node.removeEventListener("click", handleClick) };
+
+    // Cleanup when the element is removed
+    return {
+      destroy() {
+        node.removeEventListener("click", handleClick);
+      },
+    };
   };
 
   onMount(() => {
@@ -101,11 +129,14 @@
       }
 
       document.addEventListener("keydown", closeMenuOnEsc);
+      document.addEventListener("keydown", handleTabOut);
       window.addEventListener("resize", updateScreenSize);
     }
     return () => {
       if (typeof window !== "undefined") {
         window.removeEventListener("resize", updateScreenSize);
+        document.removeEventListener("keydown", closeMenuOnEsc);
+        document.removeEventListener("keydown", handleTabOut);
       }
     };
   });
@@ -113,7 +144,7 @@
 
 <MenuToggleBtn {isOpen} {toggle} />
 
-<nav class:is-open={isOpen}>
+<nav class:is-open={isOpen} bind:this={navElement}>
   <ul>
     {#each allPages as page}
       <li use:menuToggle>

@@ -126,8 +126,10 @@
   }
 
   // easing for anim
-  function easeOutAnimation(t: number) {
-    return t * (2 - t);
+  function easeOutAnimation(progress: number) {
+    // progress is 0 at the start of the animation, and 1 at the end of the animation
+    // so this is how to animation gets it easing, causing it to slow down at the end
+    return progress * (2 - progress);
   }
 
   // handle clicks on menu
@@ -135,9 +137,7 @@
     function handleClick() {
       toggleMenu();
     }
-
     node.addEventListener("click", handleClick);
-
     return {
       destroy() {
         node.removeEventListener("click", handleClick);

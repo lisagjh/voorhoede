@@ -52,7 +52,6 @@
     color: var(--black);
     text-decoration: none;
     transition: 0.15s ease-in-out;
-    view-transition-name: none;
   }
 
   a:hover {

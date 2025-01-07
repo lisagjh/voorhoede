@@ -1,8 +1,9 @@
 <script>
   import { onNavigate } from "$app/navigation";
 
-  import Header from "../lib/organism/Header.svelte";
-  import Footer from "$lib/footer.svelte";
+  import Header from "../lib/display/Header.svelte";
+  import Footer from "$lib/display/Footer.svelte";
+
 
   onNavigate((navigation) => {
     if (!document.startViewTransition) return;
@@ -21,12 +22,5 @@
 <main>
   <slot></slot>
 </main>
-
+  
 <Footer />
-
-<style>
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation-duration: 0.2s;
-  }
-</style>

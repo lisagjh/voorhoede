@@ -23,7 +23,6 @@
     align-items: center;
     justify-content: center;
     z-index: 10;
-    background-color: var(--white);
   }
 
   span {
@@ -62,4 +61,12 @@
       transform: translateX(0);
     }
   }
+
+
+  @media (width > 50rem) {
+    button {
+      display: none;
+    }
+  }
+
 </style>

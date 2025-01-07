@@ -40,6 +40,8 @@
             </Link>
 
         </article>
+<!--        hr doesnt work for solving the line problem-->
+<!--        <hr>-->
     {/each}
 
 
@@ -56,10 +58,12 @@
         width: 100%;
         overflow: hidden;
         /*border: var(--grey) 1px solid;*/
+        border-bottom: 1px var(--grey) solid;
         padding: 2rem;
         display: grid;
         grid-template-rows: 16rem auto auto 4rem auto;
         gap: 16px;
+        /*margin-left: 1rem;*/
     }
 
     .card-label-filters {
@@ -144,19 +148,143 @@
 
     }
 
-    @media (max-width: 903px) {
+
+    @media (max-width: 680px) {
         .card {
 
-            border-bottom: 1px var(--grey) solid;
+            border-right: 1px var(--grey) solid;
+            border-left: 1px var(--grey) solid;
 
         }
-
     }
     @media (min-width: 825px) {
         .card {
             grid-template-rows: 16rem auto auto 4rem auto;
         }
 
+    }
+
+    @media (min-width: 957px) and (max-width: 1338px) {
+
+        .card:nth-child(odd) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+    }
+
+    @media (min-width: 1339px) and (max-width: 1823px) {
+
+        .card:nth-child(1) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(2) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(4) {
+            border-right: 1px var(--grey) solid;
+
+        }  .card:nth-child(5) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(7) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(8) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(10) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(11) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+
+        .card:nth-child(13) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(14) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(16) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(17) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(19) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(20) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(22) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+
+        .card:nth-child(23) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(25) {
+            border-right: 1px var(--grey) solid;
+
+
+
+        }.card:nth-child(26) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+
+    }
+
+    @media (min-width: 1823px) and (max-width: 2500px) {
+        .card:nth-child(1) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(2) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(3) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+
+        .card:nth-child(5) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(6) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(7) {
+            border-right: 1px var(--grey) solid;
+
+        }
     }
 
 

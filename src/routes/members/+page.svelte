@@ -93,9 +93,27 @@
       /*border-bottom: none;*/
       border-left: none;
       border-right: none;
+      /*margin-left:-1rem;*/
+      /*margin-right:-1rem;*/
+    }
+  }
+  @media (min-width: 67rem) {
+    .filter-section {
+      /*margin-left: -1.2rem;*/
     }
   }
 
+  @media (min-width: 1241px) {
+    .filter-section {
+      /*margin-left: -1.3rem;*/
+    }
+  }
+
+  @media (min-width: 1309px) {
+    .filter-section {
+      /*margin-left: -1.4rem;*/
+    }
+  }
   .textvacature {
     font-size: 1.2rem;
   }
@@ -130,7 +148,9 @@
       display: flex;
       flex-direction: row;
       padding: 2rem;
-      border: 1px solid;
+      border-left: 1px solid var(--grey);
+      border-right: 1px solid var(--grey);
+      /*border: 1px solid;*/
       justify-content: space-between;
     }
   }

@@ -17,14 +17,12 @@
   );
 </script>
 
-<IntroSection title="Leden">
-  <slot name="subtitle"
-    >Ook DDA lid worden? Ga dan naar <span class="specific-text-decoration"
-      >deze pagina</span
-    > voor meer informatie</slot
-  >
-</IntroSection>
 
+
+<IntroSection
+  title="Leden"
+  subtitle="De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging. Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
+/>
 <section class="filter-section">
   <!--To build : een delay functie, instant feedback is misschien niet user friendlyg-->
   <Searchbar placeholderText="Zoek een bureau" bind:searchTerm />

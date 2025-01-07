@@ -6,9 +6,9 @@
 </script>
 
 
-<article class="grid-container">
+<div class="grid-container">
+<!--    it is not possible to make this a section because the h2 has influence on the styling of the cards-->
     {#each data.members as member}
-
         <article class="card">
             <picture>
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
@@ -45,7 +45,7 @@
     {/each}
 
 
-</article>
+</div>
 
 <style>
     .grid-container {
@@ -53,6 +53,7 @@
         /*grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));*/
         text-transform: uppercase;
     }
+
 
     .card {
         width: 100%;
@@ -63,11 +64,27 @@
         grid-template-rows: 16rem auto auto 4rem auto;
         gap: 16px;
         /*margin-left: 1rem;*/
-    }
-    .card:not(:nth-last-child(1)):not(:nth-last-child(2)) {
-        border-bottom: 1px solid var(--grey);
+
+        /*border-bottom: 1px solid var(--grey);*/
     }
 
+
+    @media (max-width: 2213px) {
+        .card {
+            border-bottom: 1px solid var(--grey);
+        }
+
+        .card:nth-last-child(1),
+        .card:nth-last-child(2) {
+            border-bottom: none;
+        }
+    }
+
+    @media (min-width: 2214px) {
+        .card:not(:nth-last-child(1)) {
+            border-bottom: 1px solid var(--grey);
+        }
+    }
 
     .card-label-filters {
         display: flex;
@@ -167,16 +184,19 @@
 
     }
 
-    @media (min-width: 957px) and (max-width: 1338px) {
+    @media (min-width: 900px) and (max-width: 1338px) {
 
         .card:nth-child(odd) {
             border-right: 1px var(--grey) solid;
 
         }
 
+
+
     }
 
-    @media (min-width: 1339px) and (max-width: 1823px) {
+    /*3colums*/
+    @media (min-width: 1339px) and (max-width: 1768px) {
 
         .card:nth-child(1) {
             border-right: 1px var(--grey) solid;
@@ -259,7 +279,7 @@
 
     }
 
-    @media (min-width: 1823px) and (max-width: 2500px) {
+    @media (min-width: 1768px) and (max-width: 2147px) {
         .card:nth-child(1) {
             border-right: 1px var(--grey) solid;
 
@@ -354,6 +374,108 @@
 
         }
     }
+    @media (min-width: 2217px) and (max-width: 2600px) {
+        .card:nth-child(1) {
+            border-right: 1px var(--grey) solid;
 
+        }
+        .card:nth-child(2) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(3) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+
+        .card:nth-child(4) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(6) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(7) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(8) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(9) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(11) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(12) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(13) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(14) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(16) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(17) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(18) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(19) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(20) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(21) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(22) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(23) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(24) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(26) {
+            border-right: 1px var(--grey) solid;
+
+        }
+    }
 
 </style>

@@ -3,13 +3,17 @@
   import MenuToggleBtn from "./../input/MenuToggleBtn.svelte";
   import NavItem from "./NavItem.svelte";
 
-  let isOpen = false; // Menu visibility state
-  let openVacancies = 0; // Count of open vacancies
-  let isSmallScreen = true; // Default to small screen until checked
-  const delay = 1750;
-  let menuItems: HTMLElement[] = [];
+  // State variables
+  let isOpen = false;
+  let openVacancies = 0;
+  let isSmallScreen = true;
   let navElement: HTMLElement;
 
+  // Configuration
+  const breakpoint = 800;
+  const delay = 1750;
+
+  // Navigation menu data
   const pages = [
     { title: "Home", ref: "/" },
     { title: "Over Ons", ref: "/over" },
@@ -26,128 +30,146 @@
 
   const allPages = [...pages, ...pagesCTA];
 
-  const toggle = () => {
+  // open and close menu and prevent scroll
+  function toggleMenu() {
     if (isSmallScreen) {
       isOpen = !isOpen;
-      document.body.style.overflow = isOpen ? "hidden" : "";
+      setBodyScroll();
 
-      // Start the vacancy animation when the menu opens
+      // Start counting vacancies when menu opens
       if (isOpen && openVacancies === 0) {
         startVacancyAnimation();
       }
     }
-  };
+  }
 
-  const closeMenuOnEsc = (event: KeyboardEvent) => {
+  // enables or disables body scroll based on state
+  function setBodyScroll() {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  }
+
+  // close menu on esc
+  function handleEscapeKey(event: KeyboardEvent) {
     if (event.key === "Escape" && isOpen) {
-      isOpen = false;
-      document.body.style.overflow = "";
+      closeMenu();
     }
-  };
+  }
 
-  function handleTabOut(event: KeyboardEvent) {
+  // force close menu
+  function closeMenu() {
+    isOpen = false;
+    setBodyScroll();
+  }
+
+  // close menu after tabbing out last item
+  function handleTabKey(event: KeyboardEvent) {
     if (event.key === "Tab" && isOpen) {
       const focusedElement = document.activeElement;
-      // Get all focusable elements in the nav
-      const focusableElements = navElement.querySelectorAll(
-        'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
-      );
-      const lastFocusableElement = focusableElements[focusableElements.length - 1];
+      const focusableElements = getFocusableElements();
+      const lastElement = focusableElements[focusableElements.length - 1];
 
-      if (focusedElement === lastFocusableElement && !event.shiftKey) {
-        isOpen = false;
-        document.body.style.overflow = "";
+      if (focusedElement === lastElement && !event.shiftKey) {
+        closeMenu();
       }
     }
   }
 
-  const updateScreenSize = () => {
+  // get all focusable items to find last item
+  function getFocusableElements() {
+    return navElement.querySelectorAll(
+      'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+    );
+  }
+
+  function updateScreenSize() {
     if (typeof window !== "undefined") {
-      isSmallScreen = window.innerWidth <= 800;
+      isSmallScreen = window.innerWidth <= breakpoint;
+
       if (!isSmallScreen) {
-        isOpen = false;
-        document.body.style.overflow = "";
+        closeMenu();
         if (openVacancies === 0) {
-          startVacancyAnimation(); // Start animation immediately on large screens
+          startVacancyAnimation();
         }
       }
     }
-  };
+  }
 
-  const startVacancyAnimation = async () => {
+  async function startVacancyAnimation() {
     try {
       const response = await fetch(
         "https://fdnd-agency.directus.app/items/dda_agencies_vacancies/"
       );
-      const vacatures = await response.json();
-      const totalVacancies = vacatures.data?.length || 0;
+      const data = await response.json();
+      const totalVacancies = data.data?.length || 0;
       animateCounter(0, totalVacancies, delay);
     } catch (error) {
       console.error("Error fetching vacancies:", error);
     }
-  };
+  }
 
-  const animateCounter = (start: number, end: number, duration: number) => {
+  // animation
+  function animateCounter(start: number, end: number, duration: number) {
     const range = end - start;
     const startTime = performance.now();
 
-    const update = (currentTime: number) => {
+    function update(currentTime: number) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      openVacancies = Math.floor(start + range * easeOut(progress));
-      if (progress < 1) requestAnimationFrame(update);
-    };
+      openVacancies = Math.floor(start + range * easeOutAnimation(progress));
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    }
 
     requestAnimationFrame(update);
-  };
+  }
 
-  const easeOut = (t: number) => t * (2 - t);
+  // easing for anim
+  function easeOutAnimation(t: number) {
+    return t * (2 - t);
+  }
 
-  // to close the menu after a menu item or backdrop gets clicked
-  const menuToggle: Action = (node) => {
-    const handleClick = () => {
-      toggle(); // Call the toggle function when clicked
-    };
+  // handle clicks on menu
+  function menuToggleAction(node: HTMLElement): { destroy: () => void } {
+    function handleClick() {
+      toggleMenu();
+    }
 
     node.addEventListener("click", handleClick);
 
-    // Cleanup when the element is removed
     return {
       destroy() {
         node.removeEventListener("click", handleClick);
       },
     };
-  };
+  }
 
   onMount(() => {
     if (typeof window !== "undefined") {
-      isSmallScreen = window.innerWidth <= 800;
+      updateScreenSize();
 
-      // Start animation immediately on large screens
-      if (!isSmallScreen && openVacancies === 0) {
-        startVacancyAnimation();
-      }
-
-      document.addEventListener("keydown", closeMenuOnEsc);
-      document.addEventListener("keydown", handleTabOut);
+      // Add event listeners
+      document.addEventListener("keydown", handleEscapeKey);
+      document.addEventListener("keydown", handleTabKey);
       window.addEventListener("resize", updateScreenSize);
-    }
-    return () => {
-      if (typeof window !== "undefined") {
+
+      // Cleanup on unmount
+      return () => {
+        document.removeEventListener("keydown", handleEscapeKey);
+        document.removeEventListener("keydown", handleTabKey);
         window.removeEventListener("resize", updateScreenSize);
-        document.removeEventListener("keydown", closeMenuOnEsc);
-        document.removeEventListener("keydown", handleTabOut);
-      }
-    };
+      };
+    }
   });
 </script>
 
-<MenuToggleBtn {isOpen} {toggle} />
+<MenuToggleBtn {isOpen} toggle={toggleMenu} />
 
 <nav class:is-open={isOpen} bind:this={navElement}>
   <ul>
     {#each allPages as page}
-      <li use:menuToggle>
+      <li use:menuToggleAction>
         <NavItem
           title={page.title}
           href={page.ref}
@@ -158,7 +180,7 @@
   </ul>
 </nav>
 
-<div id="backdrop" class:is-open={isOpen} use:menuToggle></div>
+<div id="backdrop" class:is-open={isOpen} use:menuToggleAction></div>
 
 <style>
   nav {

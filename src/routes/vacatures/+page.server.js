@@ -9,8 +9,6 @@ export async function load() {
 
   const allVacatures = vacatures.data
 
-  // console.log("First 6 vacancies:", first6Items); // Log first 6 vacancies
-
   return {
     vacatures: allVacatures
   };

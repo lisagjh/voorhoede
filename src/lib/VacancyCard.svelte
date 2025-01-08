@@ -15,7 +15,7 @@
         href={href}
         clazz="detail-link"
     >
-        <span slot="link-text">BEKIJKEN</span>
+        <span slot="link-text">BEKIJK VACATURE</span>
         <svg slot="svg-icon-right"
         width="16" height="16" viewBox="0 0 24 24" fill="none">
         <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

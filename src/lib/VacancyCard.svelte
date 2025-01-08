@@ -25,11 +25,11 @@ article {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 1.5em;
+    gap: 1.75em;
     border-top: solid 1px black;
     border-bottom: solid 1px black;
     padding: 3em 0;
-    margin: .25em 0;
+    margin: .35em 0;
 }
 
 h3 {

@@ -9,10 +9,10 @@
     <p>{company}</p>
     <p>{city}</p>
     <p>
-        <span>Voertaal :</span>{language}
+        <span>Voertaal :</span> {language}
     </p>
     <p>
-        <span>Uren per week :</span>{hours}
+        <span>Uren per week :</span> {hours}
     </p>
     <a href="/">Bekijk vacature</a>
 

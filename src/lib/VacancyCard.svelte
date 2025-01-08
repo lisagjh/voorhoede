@@ -1,28 +1,17 @@
 <script>
-    import Link from "$lib/Link.svelte";
-    export let title, language, company, hours, city, href
+    // import Link from "$lib/Link.svelte"; // Will later convert slots to snipppets SV5
+    let {title, language, company, hours, city} = $props()
 </script>
 
 
 <article>
-    <h2 class="job-title">{title}</h2>
-    <span class="company">{company}</span>
-    <span class="language">Voertaal :{language}</span>
-    <span class="workweek">Uren per week :{hours}</span>
-    <span class="city" >{city}</span>
-
-    <Link 
-        href={href}
-        clazz="detail-link"
-    >
-        <span slot="link-text">BEKIJK VACATURE</span>
-        <svg slot="svg-icon-right"
-        width="16" height="16" viewBox="0 0 24 24" fill="none">
-        <path d="M7 17L17 7M17 7H8M17 7V16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    </Link>
+    <h2>{title}</h2>
+    <span>{company}</span>
+    <span>{city}</span>
+    <span>Voertaal :{language}</span>
+    <span>Uren per week :{hours}</span>
+    <a href="/">Bekijk vacature</a>
 </article>
-
 
 <style>
 

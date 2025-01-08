@@ -6,11 +6,16 @@
 
 <article>
     <h2>{title}</h2>
-    <span>{company}</span>
-    <span>{city}</span>
-    <span>Voertaal :{language}</span>
-    <span>Uren per week :{hours}</span>
+    <p>{company}</p>
+    <p>{city}</p>
+    <p>
+        <span>Voertaal :</span>{language}
+    </p>
+    <p>
+        <span>Uren per week :</span>{hours}
+    </p>
     <a href="/">Bekijk vacature</a>
+
 </article>
 
 <style>

@@ -5,11 +5,9 @@ export async function load() {
     "https://fdnd-agency.directus.app/items/dda_agencies_vacancies";
   const vacatures = await fetchJson(ddaAgencies);
 
-  const first6Items = vacatures.data.slice(0, 10);
-
-  const allVacatures = vacatures.data
+  const allVacancies = vacatures.data
 
   return {
-    vacatures: allVacatures
+    vacancies: allVacancies
   };
 }

@@ -17,10 +17,19 @@
   });
 </script>
 
+<a href="#main" class="skip-link">Skip to main content</a>
+
 <Header />
 
-<main>
+<main id="main">
   <slot></slot>
 </main>
   
 <Footer />
+
+<style>
+  .skip-link {
+    position: absolute;
+    opacity: 0;
+  }
+</style>

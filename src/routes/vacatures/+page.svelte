@@ -18,14 +18,14 @@
 </section>
 
 <section class="vacancies-section">
-  {#each data.vacatures as vacature}
+  {#each data.vacancies as vacancy}
   <Vacancy
-    title={vacature.title}
-    language="Unknown"
-    company="Unknown"
-    hours={vacature.hours}
-    city={vacature.locatie}
-    href={vacature.href}
+    title={vacancy.title}
+    company=""
+    language="ENG & NL"
+    hours={vacancy.hours}
+    city={vacancy.locatie}
+    href={vacancy.href}
   />
 {/each}
 </section>

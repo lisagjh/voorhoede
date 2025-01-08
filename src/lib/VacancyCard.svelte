@@ -14,8 +14,9 @@
     <p>
         <span>Uren per week :</span> {hours}
     </p>
-    <a href="/">Bekijk vacature</a>
-
+    <a href="/">
+        Bekijk vacature
+    </a>
 </article>
 
 <style>

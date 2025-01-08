@@ -3,7 +3,7 @@
   export let data;
 
   import IntroSection from "$lib/IntroSection.svelte";
-  import Vacancy from "$lib/Vacancy.svelte";
+  import Vacancy from "$lib/VacancyCard.svelte";
   import Searchbar from "$lib/Searchbar.svelte"
 
 </script>

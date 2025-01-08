@@ -3,14 +3,18 @@
   import MenuToggleBtn from "./../input/MenuToggleBtn.svelte";
   import NavItem from "./NavItem.svelte";
 
-  // Menu state
-  let isOpen = false; // Initialize state for menu visibility
+  // State variables
+  let isOpen = false;
   let openVacancies = 0;
-  let hasAnimated = false;
+  let isSmallScreen = true;
+  let navElement: HTMLElement;
+
+  // Configuration
+  const breakpoint = 800;
   const delay = 1750;
 
-  // Pages data
-  let pages = [
+  // Navigation menu data
+  const pages = [
     { title: "Home", ref: "/" },
     { title: "Over Ons", ref: "/over" },
     { title: "Events", ref: "/events" },
@@ -19,107 +23,153 @@
     { title: "Vacatures", ref: "/vacatures" },
   ];
 
-  let pagesCTA = [
+  const pagesCTA = [
     { title: "Inloggen", ref: "/inloggen" },
     { title: "Join", ref: "/join" },
   ];
 
-  let allPages = [...pages, ...pagesCTA];
+  const allPages = [...pages, ...pagesCTA];
 
-  // Toggle menu visibility and handle body overflow
-  function toggle() {
-    isOpen = !isOpen;
-    document.body.style.overflow = isOpen ? "hidden" : ""; // Disable/enable scrolling
-    if (isOpen && !hasAnimated) {
-      hasAnimated = true;
-      startVacancyAnimation();
+  // open and close menu and prevent scroll
+  function toggleMenu() {
+    if (isSmallScreen) {
+      isOpen = !isOpen;
+      setBodyScroll();
+
+      // Start counting vacancies when menu opens
+      if (isOpen && openVacancies === 0) {
+        startVacancyAnimation();
+      }
     }
   }
 
-  // Fetch vacancies and animate counter
+  // enables or disables body scroll based on state
+  function setBodyScroll() {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  }
+
+  // close menu on esc
+  function handleEscapeKey(event: KeyboardEvent) {
+    if (event.key === "Escape" && isOpen) {
+      closeMenu();
+    }
+  }
+
+  // force close menu
+  function closeMenu() {
+    isOpen = false;
+    setBodyScroll();
+  }
+
+  // close menu after tabbing out last item
+  function handleTabKey(event: KeyboardEvent) {
+    if (event.key === "Tab" && isOpen) {
+      const focusedElement = document.activeElement;
+      const focusableElements = getFocusableElements();
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (focusedElement === lastElement && !event.shiftKey) {
+        closeMenu();
+      }
+    }
+  }
+
+  // get all focusable items to find last item
+  function getFocusableElements() {
+    return navElement.querySelectorAll(
+      'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+    );
+  }
+
+  function updateScreenSize() {
+    if (typeof window !== "undefined") {
+      isSmallScreen = window.innerWidth <= breakpoint;
+
+      if (!isSmallScreen) {
+        closeMenu();
+        if (openVacancies === 0) {
+          startVacancyAnimation();
+        }
+      }
+    }
+  }
+
   async function startVacancyAnimation() {
     try {
       const response = await fetch(
         "https://fdnd-agency.directus.app/items/dda_agencies_vacancies/"
       );
-      const vacatures = await response.json();
-      const totalVacancies = vacatures.data ? vacatures.data.length : 0;
-      animateCounter(openVacancies, totalVacancies, delay);
+      const data = await response.json();
+      const totalVacancies = data.data?.length || 0;
+      animateCounter(0, totalVacancies, delay);
     } catch (error) {
       console.error("Error fetching vacancies:", error);
     }
   }
 
-  // Function to animate the vacancy badge in the nav menu
-  function animateCounter(start, end, duration) {
-    // Calculate the range of the animation
+  // animation
+  function animateCounter(start: number, end: number, duration: number) {
     const range = end - start;
-
-    // when it starts
     const startTime = performance.now();
 
-    // Easing function to make the animation slow down at the end
-    function easeOut(t) {
-      return t * (2 - t);
-    }
+    function update(currentTime: number) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      openVacancies = Math.floor(start + range * easeOutAnimation(progress));
 
-    // Function to update the animation on each frame
-    function update(currentTime) {
-      // Calculate how much time has passed since the animation started
-      const elapsedTime = currentTime - startTime;
-      // Translates the elapsedtime to a number between 0 (start) and 1 (end)
-      const normalizedTime = Math.min(elapsedTime / duration, 1);
-      // Apply the easing function
-      const easedProgress = easeOut(normalizedTime);
-      // Update the number of the counter
-      openVacancies = Math.floor(start + range * easedProgress);
-      // checks if the animation is finished or not
-      if (normalizedTime < 1) {
-        // if not keeps updating
+      if (progress < 1) {
         requestAnimationFrame(update);
       }
     }
-    // Start the animation by calling the update function
+
     requestAnimationFrame(update);
   }
 
-  // to close the menu after a menu item or backdrop gets clicked
-  const menuToggle: Action = (node) => {
-    const handleClick = () => {
-      toggle(); // Call the toggle function when clicked
-    };
+  // easing for anim
+  function easeOutAnimation(progress: number) {
+    // progress is 0 at the start of the animation, and 1 at the end of the animation
+    // so this is how to animation gets it easing, causing it to slow down at the end
+    return progress * (2 - progress);
+  }
 
+  // handle clicks on menu
+  function menuToggleAction(node: HTMLElement): { destroy: () => void } {
+    function handleClick() {
+      toggleMenu();
+    }
     node.addEventListener("click", handleClick);
-
-    // Cleanup when the element is removed
     return {
       destroy() {
         node.removeEventListener("click", handleClick);
       },
     };
-  };
-
-  // close menu when esc is pressed
-  function closeMenuOnEsc(event) {
-    // check if esc key is pressed
-    if (event.key === "Escape") {
-      // close menu
-      isOpen = false;
-    }
   }
 
-  onMount(async () => {
-    // event listener for keydown event
-    document.addEventListener("keydown", closeMenuOnEsc);
+  onMount(() => {
+    if (typeof window !== "undefined") {
+      updateScreenSize();
+
+      // Add event listeners
+      document.addEventListener("keydown", handleEscapeKey);
+      document.addEventListener("keydown", handleTabKey);
+      window.addEventListener("resize", updateScreenSize);
+
+      // Cleanup on unmount
+      return () => {
+        document.removeEventListener("keydown", handleEscapeKey);
+        document.removeEventListener("keydown", handleTabKey);
+        window.removeEventListener("resize", updateScreenSize);
+      };
+    }
   });
 </script>
 
-<MenuToggleBtn {isOpen} {toggle} />
+<MenuToggleBtn {isOpen} toggle={toggleMenu} />
 
-<nav class:is-open={isOpen}>
+<nav class:is-open={isOpen} bind:this={navElement}>
   <ul>
     {#each allPages as page}
-      <li use:menuToggle>
+      <li use:menuToggleAction>
         <NavItem
           title={page.title}
           href={page.ref}
@@ -130,7 +180,7 @@
   </ul>
 </nav>
 
-<div id="backdrop" class:is-open={isOpen} use:menuToggle></div>
+<div id="backdrop" class:is-open={isOpen} use:menuToggleAction></div>
 
 <style>
   nav {
@@ -145,7 +195,6 @@
     width: clamp(190px, 50%, 300px);
     z-index: 1;
     border-left: 1px solid var(--black);
-
     transition:
       transform 0.3s ease-in-out,
       opacity 0.3s ease-in-out;
@@ -156,7 +205,7 @@
   nav.is-open {
     visibility: visible;
     display: flex;
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
   }
 
@@ -180,15 +229,11 @@
   }
 
   ul {
-    height: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    margin-top: 5rem;
-    margin-bottom: 1rem;
+    margin: 5rem 0 1rem;
     padding: 0;
+    list-style: none;
   }
 
   li {
@@ -196,17 +241,16 @@
     margin: 1rem;
   }
 
-  @media (width > 50rem) {
+  @media (min-width: 800px) {
     nav {
       background-color: transparent;
       border: none;
       position: relative;
-
       visibility: visible;
       display: flex;
-      transform: translateY(0);
+      transform: none;
       opacity: 1;
-      height: fit-content;
+      height: auto;
       margin-top: 2rem;
     }
 

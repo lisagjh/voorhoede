@@ -38,10 +38,10 @@
 
   @keyframes move {
     from {
-      transform: translateY(1.2rem);
+      scale: 0.6;
     }
     to {
-      transform: translateY(0);
+      scale: 1;
     }
   }
 
@@ -52,7 +52,6 @@
     color: var(--black);
     text-decoration: none;
     transition: 0.15s ease-in-out;
-    view-transition-name: none;
   }
 
   a:hover {

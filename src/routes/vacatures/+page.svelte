@@ -21,8 +21,8 @@
   {#each data.vacancies as vacancy}
   <Vacancy
     title={vacancy.title}
-    company=""
-    language="ENG & NL"
+    company="UNKNOWN"
+    language="ENGELS & NEDERLANDS"
     hours={vacancy.hours}
     city={vacancy.locatie}
     href={vacancy.href}

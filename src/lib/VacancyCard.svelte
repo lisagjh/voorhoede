@@ -5,14 +5,14 @@
 
 
 <article>
-    <h2>{title}</h2>
+    <h3>{title}</h3>
     <p>{company}</p>
     <p>{city}</p>
     <p>
-        <span>Voertaal :</span> {language}
+        <span>VOERTAAL :</span> {language}
     </p>
     <p>
-        <span>Uren per week :</span> {hours}
+        <span>UREN PER WEEK :</span> {hours}
     </p>
     <a href="/">
         Bekijk vacature
@@ -20,5 +20,39 @@
 </article>
 
 <style>
+
+article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5em;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    padding: 3em 0;
+    margin: .25em 0;
+}
+
+h3 {
+    width: 100%;
+}
+
+article p, span {
+    font-family: var(--martian-mono);
+}
+
+article p:nth-of-type(1){
+   text-decoration: underline;
+}
+
+article p:nth-of-type(3), p:nth-of-type(4){
+    width: 100%;
+}
+
+@media (min-width: 820px){
+    span {
+        display: none;
+    }
+}
+
 
 </style>

@@ -76,10 +76,6 @@
 </div>
 
 <style>
-  .page-numbers {
-    color: red;
-  }
-
   .filter-section {
     padding: 1em;
     border: 1px solid black;
@@ -94,31 +90,12 @@
 
   @media (min-width: 800px) {
     .filter-section{
-      /*border-bottom: none;*/
       border-left: none;
       border-right: none;
       border-right: 1px solid black;
-      /*margin-left:-1rem;*/
-      /*margin-right:-1rem;*/
-    }
-  }
-  @media (min-width: 67rem) {
-    .filter-section {
-      /*margin-left: -1.2rem;*/
     }
   }
 
-  @media (min-width: 1241px) {
-    .filter-section {
-      /*margin-left: -1.3rem;*/
-    }
-  }
-
-  @media (min-width: 1309px) {
-    .filter-section {
-      /*margin-left: -1.4rem;*/
-    }
-  }
   .textvacature {
     font-size: 1.2rem;
   }
@@ -156,7 +133,6 @@
       padding: 2rem;
       border-right: 1px solid var(--grey);
       border-top: 1px solid var(--grey);
-      /*border: 1px solid;*/
       justify-content: space-between;
     }
   }

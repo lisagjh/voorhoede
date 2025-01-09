@@ -40,8 +40,6 @@
             </Link>
 
         </article>
-        <!--        hr doesnt work for solving the line problem-->
-        <!--        <hr>-->
     {/each}
 
 
@@ -50,7 +48,6 @@
 <style>
     .grid-container {
         display: grid;
-        /*grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));*/
         text-transform: uppercase;
     }
 
@@ -63,9 +60,6 @@
         display: grid;
         grid-template-rows: 16rem auto auto 4rem auto;
         gap: 16px;
-
-
-        /*border-bottom: 1px solid var(--grey);*/
     }
 
 
@@ -77,12 +71,6 @@
         .card:nth-last-child(1),
         .card:nth-last-child(2) {
             border-bottom: none;
-        }
-    }
-
-    @media (min-width: 2214px) {
-        .card:not(:nth-last-child(1)) {
-            border-bottom: 1px solid var(--grey);
         }
     }
 
@@ -134,7 +122,7 @@
         height: 100%;
     }
 
-
+    /*mobile screen*/
     @media (max-width: 350px) {
 
         .grid-container {
@@ -161,6 +149,7 @@
 
     }
 
+    /*tablet screen */
     @media (min-width: 800px) {
         .grid-container {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -171,12 +160,12 @@
 
     @media (max-width: 680px) {
         .card {
-
             border-right: 1px var(--grey) solid;
             border-left: 1px var(--grey) solid;
 
         }
     }
+
     @media (max-width: 800px) {
         .grid-container{
             margin-left: 1rem;
@@ -197,7 +186,7 @@
 
     }
 
-
+    /*2 colums*/
     @media (min-width: 900px) and (max-width: 1338px) {
 
         .card:nth-child(odd) {
@@ -211,286 +200,51 @@
 
     /*3colums*/
     @media (min-width: 1339px) and (max-width: 1768px) {
-
-        .card:nth-child(1) {
+        .card:nth-child(n+1):nth-child(-n+2),    /*         cards 1 to 2.*/
+        .card:nth-child(n+4):nth-child(-n+5),/*         cards 4 to 5.*/
+        .card:nth-child(n+7):nth-child(-n+8),/*         cards 7 to 8.*/
+        .card:nth-child(n+10):nth-child(-n+11),/*         cards 10 to 11.*/
+        .card:nth-child(n+13):nth-child(-n+14), /*         cards 13 to 14.*/
+        .card:nth-child(n+16):nth-child(-n+17),/*         cards 16 to 17.*/
+        .card:nth-child(n+19):nth-child(-n+20),/*         cards 19 to 20.*/
+        .card:nth-child(n+22):nth-child(-n+23),/*         cards 22 to 23.*/
+        .card:nth-child(25),
+        .card:nth-child(26) {
             border-right: 1px var(--grey) solid;
-
         }
-        .card:nth-child(2) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(4) {
-            border-right: 1px var(--grey) solid;
-
-        }  .card:nth-child(5) {
-               border-right: 1px var(--grey) solid;
-
-           }
-        .card:nth-child(7) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(8) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(10) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(11) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-
-        .card:nth-child(13) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(14) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(16) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(17) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(19) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(20) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(22) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-
-        .card:nth-child(23) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(25) {
-            border-right: 1px var(--grey) solid;
-
-
-
-        }.card:nth-child(26) {
-             border-right: 1px var(--grey) solid;
-
-         }
-
-
     }
 
+
+    /*4colums*/
     @media (min-width: 1768px) and (max-width: 2147px) {
-        .card:nth-child(1) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(2) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(3) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-
-        .card:nth-child(5) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(6) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(7) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(9) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(10) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(11) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(13) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(14) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(15) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(17) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(18) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(19) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(21) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(22) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(23) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(25) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
+        .card:nth-child(n+1):nth-child(-n+3),/*  card 1 to 3. */
+        .card:nth-child(n+5):nth-child(-n+7), /*  cards  5 to 7 */
+        .card:nth-child(n+9):nth-child(-n+11),/*  cards  9 to 11 */
+        .card:nth-child(n+13):nth-child(-n+15),/*  cards  13 to 15. */
+        .card:nth-child(n+17):nth-child(-n+19),  /*  cards  17 to 19. */
+        .card:nth-child(n+21):nth-child(-n+23), /*  cards  21 to 23.. */
+        .card:nth-child(25),
         .card:nth-child(26) {
             border-right: 1px var(--grey) solid;
-
         }
     }
+
+
+
+    @media (min-width: 2214px) {
+        .card:not(:nth-last-child(1)) {
+            border-bottom: 1px solid var(--grey);
+        }
+    }
+
+
     @media (min-width: 2217px) {
-        /*and (max-width: 2600px) */
-        .card:nth-child(1) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(2) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(3) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-
-        .card:nth-child(4) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(6) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(7) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(8) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(9) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(11) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(12) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(13) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(14) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(16) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(17) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(18) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(19) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(20) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(21) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(22) {
-            border-right: 1px var(--grey) solid;
-
-        }
-        .card:nth-child(23) {
-            border-right: 1px var(--grey) solid;
-
-        }
-
-        .card:nth-child(24) {
-            border-right: 1px var(--grey) solid;
-
-        }
+        .card:nth-child(n+1):nth-child(-n+4),  /*card 1 to 4  */
+        .card:nth-child(n+6):nth-child(-n+9),  /*card 6 to 9  */
+        .card:nth-child(n+11):nth-child(-n+14),  /*card 11 to 14  */
+        .card:nth-child(n+16):nth-child(-n+24),   /*card 16 to 24 */
         .card:nth-child(26) {
             border-right: 1px var(--grey) solid;
-
         }
     }
-
 </style>

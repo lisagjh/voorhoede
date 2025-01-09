@@ -136,7 +136,7 @@ header {
 
 main {
   line-height: 1.5;
-  padding: 2rem;
+  /*padding: 2rem;*/
   border-bottom: 1px solid var(--black);
 }
 
@@ -145,7 +145,6 @@ main {
   main,
   footer {
     width: 100%;
-    max-width: calc(100vw - 2rem);
   }
 
   header {

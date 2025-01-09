@@ -82,11 +82,7 @@
 
   }
 
-  @media (max-width: 800px) {
-    .filter-section{
-      margin-left: 1rem;
-    }
-  }
+
 
   @media (min-width: 800px) {
     .filter-section{

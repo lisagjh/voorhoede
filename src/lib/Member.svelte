@@ -165,12 +165,6 @@
         }
     }
 
-    @media (max-width: 800px) {
-        .grid-container{
-            margin-left: 1rem;
-        }
-
-    }
     @media (min-width: 825px) {
         .card {
             grid-template-rows: 16rem auto auto 4rem auto;

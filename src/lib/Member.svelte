@@ -58,7 +58,7 @@
     .card {
         width: 100%;
         overflow: hidden;
-        /*border: var(--grey) 1px solid;*/
+        border-right: var(--grey) 1px solid;
         padding: 2rem;
         display: grid;
         grid-template-rows: 16rem auto auto 4rem auto;
@@ -177,12 +177,26 @@
 
         }
     }
+    @media (max-width: 800px) {
+        .grid-container{
+            margin-left: 1rem;
+        }
+
+    }
     @media (min-width: 825px) {
         .card {
             grid-template-rows: 16rem auto auto 4rem auto;
         }
 
     }
+    @media (max-width: 825px) {
+        .card {
+            border-left: 1px var(--grey) solid;
+        }
+
+
+    }
+
 
     @media (min-width: 900px) and (max-width: 1338px) {
 

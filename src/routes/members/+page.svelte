@@ -86,11 +86,18 @@
 
   }
 
+  @media (max-width: 800px) {
+    .filter-section{
+      margin-left: 1rem;
+    }
+  }
+
   @media (min-width: 800px) {
     .filter-section{
       /*border-bottom: none;*/
       border-left: none;
       border-right: none;
+      border-right: 1px solid black;
       /*margin-left:-1rem;*/
       /*margin-right:-1rem;*/
     }

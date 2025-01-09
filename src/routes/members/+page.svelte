@@ -132,7 +132,8 @@
     justify-content: center;
     align-items: center;
     place-content: center;
-    border: 1px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
     padding: 2rem;
     text-decoration: none;
   }
@@ -153,7 +154,6 @@
       display: flex;
       flex-direction: row;
       padding: 2rem;
-      border-left: 1px solid var(--grey);
       border-right: 1px solid var(--grey);
       border-top: 1px solid var(--grey);
       /*border: 1px solid;*/

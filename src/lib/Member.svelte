@@ -165,7 +165,7 @@
         }
     }
 
-    @media (min-width: 825px) {
+    @media (min-width: 825px) and (max-width: 900px){
         .card {
             grid-template-rows: 16rem auto auto 4rem auto;
         }

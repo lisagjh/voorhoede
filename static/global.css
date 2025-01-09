@@ -140,15 +140,17 @@ main {
   border-bottom: 1px solid var(--black);
 }
 
+
 @media (min-width: 43rem) {
   header,
   main,
   footer {
-    width: 100%;
+    width: 102%;
   }
 
+
+
   header {
-    margin: 1rem;
     margin-bottom: 0;
     border: solid var(--black);
     border-width: 1px;
@@ -173,11 +175,11 @@ main {
     margin: 1rem 0 0;
     padding-top: 2.5rem;
     justify-self: end;
-    max-width: calc(100% - 17% - 1rem);
+    max-width: calc(100% - 17% - 0rem);
   }
 
   footer {
-    max-width: calc(100% - 17% - 1rem);
+    max-width: calc(100% - 17% - 0rem);
     border-left: none;
     margin: 0 0;
     justify-self: end;

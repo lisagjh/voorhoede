@@ -2,17 +2,18 @@
     import Link from "$lib/Link.svelte";
 
     export let data;
+
 </script>
 
 
-<article class="grid-container">
+<div class="grid-container">
+    <!--    it is not possible to make this a section because the h2 has influence on the styling of the cards-->
     {#each data.members as member}
-
         <article class="card">
             <picture>
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
-                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="">
+                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="foto {member.title}">
             </picture>
 
             <ul class="card-label-filters">
@@ -22,7 +23,7 @@
                 <li class="label-filters">label</li>
             </ul>
 
-            <h2>{member.title}</h2>
+            <h2 aria-label="{member.title}">{member.title } </h2>
             <p>{member.address}</p>
 
             <ul class="card-label">
@@ -39,32 +40,51 @@
             </Link>
 
         </article>
+        <!--        hr doesnt work for solving the line problem-->
+        <!--        <hr>-->
     {/each}
 
 
-</article>
+</div>
 
 <style>
     .grid-container {
-
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
+        /*grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));*/
         text-transform: uppercase;
-        margin: 1rem -1rem 0rem;
     }
+
 
     .card {
         width: 100%;
         overflow: hidden;
-        /*todo this border change to the design*/
-
-
+        /*border: var(--grey) 1px solid;*/
         padding: 2rem;
         display: grid;
         grid-template-rows: 16rem auto auto 4rem auto;
         gap: 16px;
+
+
+        /*border-bottom: 1px solid var(--grey);*/
     }
 
+
+    @media (max-width: 2213px) {
+        .card {
+            border-bottom: 1px solid var(--grey);
+        }
+
+        .card:nth-last-child(1),
+        .card:nth-last-child(2) {
+            border-bottom: none;
+        }
+    }
+
+    @media (min-width: 2214px) {
+        .card:not(:nth-last-child(1)) {
+            border-bottom: 1px solid var(--grey);
+        }
+    }
 
     .card-label-filters {
         display: flex;
@@ -135,234 +155,328 @@
             grid-template-rows: 16rem auto auto auto auto;
             grid-template-columns: 14em;
             row-gap: 2em;
+
         }
 
 
     }
 
-    @media (min-width: 325px) {
+    @media (min-width: 800px) {
         .grid-container {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         }
 
     }
 
-    .card {
-        border-bottom: 1px solid var(--grey);
-    }
 
-    /*voor 725px is het opgelost */
-    @media (min-width: 765px) and (max-width: 1127px) {
-        .card:nth-child(-n+4) {
-            border-top: none;
+    @media (max-width: 680px) {
+        .card {
+
+            border-right: 1px var(--grey) solid;
+            border-left: 1px var(--grey) solid;
 
         }
+    }
+    @media (min-width: 825px) {
+        .card {
+            grid-template-rows: 16rem auto auto 4rem auto;
+        }
+
+    }
+
+    @media (min-width: 900px) and (max-width: 1338px) {
 
         .card:nth-child(odd) {
-            border-right: 1px solid var(--grey);
-        }
+            border-right: 1px var(--grey) solid;
 
-
-
-
-
-    }
-
-    /*3koloms*/
-
-    @media (min-width: 1127px) and (max-width: 1466px) {
-
-
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(4),
-        .card:nth-child(5),
-        .card:nth-child(7),
-        .card:nth-child(8),
-        .card:nth-child(10),
-        .card:nth-child(11),
-        .card:nth-child(13),
-        .card:nth-child(14),
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(19),
-        .card:nth-child(20),
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(25),
-        .card:nth-child(26)
-        {
-            border-right: 1px solid var(--grey);
-        }
-
-    }
-
-    /*4koloms*/
-    @media (min-width: 1466px) and (max-width: 1815px) {
-
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-
-
-        .card:nth-child(5),
-        .card:nth-child(6),
-        .card:nth-child(7),
-
-        .card:nth-child(9),
-            /*.card:nth-child(10),*/
-        .card:nth-child(10),
-
-        .card:nth-child(11),
-        .card:nth-child(13),
-        .card:nth-child(14),
-
-        .card:nth-child(15),
-
-        .card:nth-child(17),
-        .card:nth-child(18),
-
-        .card:nth-child(19),
-        .card:nth-child(21),
-        .card:nth-child(22),
-
-        .card:nth-child(23),
-        .card:nth-child(25),
-        .card:nth-child(26)
-        {
-            border-right: 1px solid var(--grey);
         }
 
 
 
     }
 
+    /*3colums*/
+    @media (min-width: 1339px) and (max-width: 1768px) {
 
-    /*5colums */
+        .card:nth-child(1) {
+            border-right: 1px var(--grey) solid;
 
-    @media (min-width: 1815px) and (max-width: 2165px) {
+        }
+        .card:nth-child(2) {
+            border-right: 1px var(--grey) solid;
 
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-        .card:nth-child(4),
-
-            /*5 niet*/
-        .card:nth-child(6),
-        .card:nth-child(7),
-        .card:nth-child(8),
-        .card:nth-child(9),
-        .card:nth-child(11),
-        .card:nth-child(12),
-
-
-        .card:nth-child(13),
-        .card:nth-child(14),
-
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(18),
-        .card:nth-child(19),
-            /*.card:nth-child(20),*/
-
-        .card:nth-child(21),
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(24),
-        .card:nth-child(26)
-
-        {
-            border-right: 1px solid var(--grey);
         }
 
+        .card:nth-child(4) {
+            border-right: 1px var(--grey) solid;
+
+        }  .card:nth-child(5) {
+               border-right: 1px var(--grey) solid;
+
+           }
+        .card:nth-child(7) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(8) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(10) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(11) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+
+        .card:nth-child(13) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(14) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(16) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(17) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(19) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(20) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(22) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+
+        .card:nth-child(23) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(25) {
+            border-right: 1px var(--grey) solid;
+
+
+
+        }.card:nth-child(26) {
+             border-right: 1px var(--grey) solid;
+
+         }
 
 
     }
 
-    /*6colums */
-    @media (min-width: 2165px) and (max-width: 2515px) {
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-        .card:nth-child(4),
-        .card:nth-child(5),
+    @media (min-width: 1768px) and (max-width: 2147px) {
+        .card:nth-child(1) {
+            border-right: 1px var(--grey) solid;
 
-            /*6 niet*/
+        }
+        .card:nth-child(2) {
+            border-right: 1px var(--grey) solid;
 
-        .card:nth-child(7),
-        .card:nth-child(8),
-        .card:nth-child(9),
-        .card:nth-child(11),
+        }
 
+        .card:nth-child(3) {
+            border-right: 1px var(--grey) solid;
 
-
-        .card:nth-child(13),
-        .card:nth-child(14),
-
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(19),
-            /*.card:nth-child(20),*/
-
-        .card:nth-child(21),
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(25),
-
-        .card:nth-child(26)
-
-        {
-            border-right: 1px solid var(--grey);
         }
 
 
+        .card:nth-child(5) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(6) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(7) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(9) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(10) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(11) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(13) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(14) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(15) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(17) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(18) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(19) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(21) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(22) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(23) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(25) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(26) {
+            border-right: 1px var(--grey) solid;
+
+        }
     }
+    @media (min-width: 2217px) {
+        /*and (max-width: 2600px) */
+        .card:nth-child(1) {
+            border-right: 1px var(--grey) solid;
 
-    /*7 colums*/
-    @media (min-width: 2516px) {
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-        .card:nth-child(4),
-        .card:nth-child(5),
-        .card:nth-child(6),
+        }
+        .card:nth-child(2) {
+            border-right: 1px var(--grey) solid;
 
-            /*7 niet*/
+        }
 
+        .card:nth-child(3) {
+            border-right: 1px var(--grey) solid;
 
-
-        .card:nth-child(8),
-        .card:nth-child(9),
-        .card:nth-child(10),
-        .card:nth-child(11),
-        .card:nth-child(12),
-
-
-
-        .card:nth-child(13),
-
-
-        .card:nth-child(15),
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(18),
-        .card:nth-child(19),
-        .card:nth-child(20),
-            /*.card:nth-child(20),*/
-
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(24),
-        .card:nth-child(25),
-
-        .card:nth-child(26)
-
-        {
-            border-right: 1px solid var(--grey);
         }
 
 
-    }
+        .card:nth-child(4) {
+            border-right: 1px var(--grey) solid;
 
+        }
+        .card:nth-child(6) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(7) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(8) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(9) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(11) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(12) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(13) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(14) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(16) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(17) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(18) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(19) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(20) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(21) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(22) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(23) {
+            border-right: 1px var(--grey) solid;
+
+        }
+
+        .card:nth-child(24) {
+            border-right: 1px var(--grey) solid;
+
+        }
+        .card:nth-child(26) {
+            border-right: 1px var(--grey) solid;
+
+        }
+    }
 
 </style>

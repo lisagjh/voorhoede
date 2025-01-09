@@ -156,11 +156,10 @@ main {
   }
 
   main {
-    margin: 0 1rem;
-    border: solid var(--black);
+    /*margin: 0 1rem;*/
     border-width: 0px 1px 1px 1px;
     border-top: none;
-    padding: 1rem;
+    padding: 0;
   }
 
   footer {
@@ -173,17 +172,17 @@ main {
 @media (width > 50rem) {
   main {
     border-left: none;
-    margin: 0 0.25rem;
+    margin: 0 ;
     margin-top: 1rem;
     padding-top: 2.5rem;
     justify-self: end;
-    max-width: calc(100% - 19%);
+    max-width: calc(100% - 17% - 1rem);
   }
 
   footer {
-    max-width: calc(100% - 19%);
+    max-width: calc(100% - 17% - 1rem);
     border-left: none;
-    margin: 0 0.25rem;
+    margin: 0 0;
     justify-self: end;
   }
 }

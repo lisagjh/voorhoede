@@ -156,7 +156,6 @@ main {
   }
 
   main {
-    /*margin: 0 1rem;*/
     border-width: 0px 1px 1px 1px;
     border-top: none;
     padding: 0;
@@ -172,8 +171,7 @@ main {
 @media (width > 50rem) {
   main {
     border-left: none;
-    margin: 0 ;
-    margin-top: 1rem;
+    margin: 1rem 0 0;
     padding-top: 2.5rem;
     justify-self: end;
     max-width: calc(100% - 17% - 1rem);

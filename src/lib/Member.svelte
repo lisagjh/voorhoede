@@ -4,8 +4,8 @@
 </script>
 
 
-<div class="grid-container">
-    <!--    it is not possible to make this a section because the h2 has influence on the styling of the cards-->
+<section class="grid-container">
+    <h2 class="hide">leden</h2>
     {#each data.members as member}
         <article class="card">
             <picture>
@@ -21,7 +21,7 @@
                 <li class="label-filters">label</li>
             </ul>
 
-            <h2 aria-label="{member.title}">{member.title } </h2>
+            <h3 aria-label="{member.title}">{member.title } </h3>
             <p>{member.address}</p>
 
             <ul class="card-label">
@@ -41,12 +41,17 @@
     {/each}
 
 
-</div>
+</section>
 
 <style>
     .grid-container {
         display: grid;
         text-transform: uppercase;
+    }
+    .hide{
+        position: absolute;
+        left: 999px;
+        top: -9999px;
     }
 
 

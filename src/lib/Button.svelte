@@ -1,6 +1,6 @@
 <script>
 
-let {tag= "button", variant, label, href, svgIcon, action = $bindable()} = $props();
+let {tag = "button", variant, label, href, svgIcon, action = $bindable()} = $props();
 
 </script>
 

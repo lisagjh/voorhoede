@@ -27,7 +27,7 @@
           />
           <img
             src="https://fdnd-agency.directus.app/assets/{item.logo}"
-            alt=""
+            alt="{item.title}"
             height="150"
           />
         </picture>
@@ -49,7 +49,7 @@
           />
           <img
             src="https://fdnd-agency.directus.app/assets/{item.logo}"
-            alt=""
+            alt="{item.title}"
             height="150"
           />
         </picture>

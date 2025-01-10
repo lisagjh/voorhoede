@@ -2,7 +2,6 @@
   // turn data into props
   let { data } = $props();
 
-  //   example Anne: https://github.com/Annevd/connect-your-tribe-squad-page/wiki/3.-Bouwen#-13-februari-2024-mobile-first--scroll-driven-animations
   const endFirstRow = Math.ceil(data.length / 2);
 
   const firstRow = data.slice(0, endFirstRow);

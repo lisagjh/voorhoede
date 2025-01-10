@@ -4,26 +4,12 @@
 
   //   example Anne: https://github.com/Annevd/connect-your-tribe-squad-page/wiki/3.-Bouwen#-13-februari-2024-mobile-first--scroll-driven-animations
   const endFirstRow = Math.ceil(data.length / 2);
-//   console.log("End First Row:", endFirstRow); // returns 13
 
   const firstRow = data.slice(0, endFirstRow);
-//   console.log("First Row:", firstRow)
 
   const secondRow = data.slice(endFirstRow)
-  console.log("Second Row:", secondRow)
 
 </script>
-
-<h1>row one</h1>
-{#each firstRow as item}
-<h3>{item.title}</h3>
-{/each}
-
-<h1>row two</h1>
-{#each secondRow as item}
-<h3>{item.title}</h3>
-{/each}
-
 
 <div class="rows">
   <div class="row">

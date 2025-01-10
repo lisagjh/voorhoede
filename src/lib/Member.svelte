@@ -1,18 +1,17 @@
 <script>
     import Link from "$lib/Link.svelte";
-
     export let data;
 </script>
 
 
-<article class="grid-container">
+<section class="grid-container">
+    <h2 class="hide">leden</h2>
     {#each data.members as member}
-
         <article class="card">
             <picture>
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
-                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="">
+                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="foto {member.title}">
             </picture>
 
             <ul class="card-label-filters">
@@ -22,7 +21,7 @@
                 <li class="label-filters">label</li>
             </ul>
 
-            <h2>{member.title}</h2>
+            <h3 aria-label="{member.title}">{member.title } </h3>
             <p>{member.address}</p>
 
             <ul class="card-label">
@@ -42,28 +41,36 @@
     {/each}
 
 
-</article>
+</section>
 
 <style>
     .grid-container {
-
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(263px, 1fr));
         text-transform: uppercase;
-        margin: 1rem -1rem 0rem;
     }
+    .hide{
+        position: absolute;
+        left: 999px;
+        top: -9999px;
+    }
+
 
     .card {
         width: 100%;
         overflow: hidden;
-        /*todo this border change to the design*/
-
-
+        border-right: var(--grey) 1px solid;
+        border-bottom: 1px solid var(--grey);
         padding: 2rem;
         display: grid;
         grid-template-rows: 16rem auto auto 4rem auto;
         gap: 16px;
     }
+
+    .card:nth-last-child(1),
+    .card:nth-last-child(2) {
+        border-bottom: none;
+    }
+
 
 
     .card-label-filters {
@@ -114,7 +121,7 @@
         height: 100%;
     }
 
-
+    /*mobile screen*/
     @media (max-width: 350px) {
 
         .grid-container {
@@ -135,234 +142,104 @@
             grid-template-rows: 16rem auto auto auto auto;
             grid-template-columns: 14em;
             row-gap: 2em;
+
         }
 
 
     }
 
-    @media (min-width: 325px) {
+    /*tablet screen */
+    @media (min-width: 800px) {
         .grid-container {
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         }
 
     }
 
-    .card {
-        border-bottom: 1px solid var(--grey);
-    }
 
-    /*voor 725px is het opgelost */
-    @media (min-width: 765px) and (max-width: 1127px) {
-        .card:nth-child(-n+4) {
-            border-top: none;
+    @media (max-width: 680px) {
+        .card {
+            border-right: 1px var(--grey) solid;
+            border-left: 1px var(--grey) solid;
 
         }
+    }
+
+    @media (min-width: 825px) and (max-width: 900px){
+        .card {
+            grid-template-rows: 16rem auto auto 4rem auto;
+        }
+
+    }
+    @media (max-width: 825px) {
+        .card {
+            border-left: 1px var(--grey) solid;
+        }
+
+
+    }
+
+    /*2 colums*/
+    @media (min-width: 900px) and (max-width: 1338px) {
 
         .card:nth-child(odd) {
-            border-right: 1px solid var(--grey);
+            border-right: 1px var(--grey) solid;
+
         }
-
-
 
 
 
     }
 
-    /*3koloms*/
-
-    @media (min-width: 1127px) and (max-width: 1466px) {
-
-
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(4),
-        .card:nth-child(5),
-        .card:nth-child(7),
-        .card:nth-child(8),
-        .card:nth-child(10),
-        .card:nth-child(11),
-        .card:nth-child(13),
-        .card:nth-child(14),
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(19),
-        .card:nth-child(20),
-        .card:nth-child(22),
-        .card:nth-child(23),
+    /*3colums*/
+    @media (min-width: 1339px) and (max-width: 1768px) {
+        .card:nth-child(n+1):nth-child(-n+2),    /*         cards 1 to 2.*/
+        .card:nth-child(n+4):nth-child(-n+5),/*         cards 4 to 5.*/
+        .card:nth-child(n+7):nth-child(-n+8),/*         cards 7 to 8.*/
+        .card:nth-child(n+10):nth-child(-n+11),/*         cards 10 to 11.*/
+        .card:nth-child(n+13):nth-child(-n+14), /*         cards 13 to 14.*/
+        .card:nth-child(n+16):nth-child(-n+17),/*         cards 16 to 17.*/
+        .card:nth-child(n+19):nth-child(-n+20),/*         cards 19 to 20.*/
+        .card:nth-child(n+22):nth-child(-n+23),/*         cards 22 to 23.*/
         .card:nth-child(25),
-        .card:nth-child(26)
-        {
-            border-right: 1px solid var(--grey);
+        .card:nth-child(26) {
+            border-right: 1px var(--grey) solid;
         }
-
     }
 
-    /*4koloms*/
-    @media (min-width: 1466px) and (max-width: 1815px) {
 
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-
-
-        .card:nth-child(5),
-        .card:nth-child(6),
-        .card:nth-child(7),
-
-        .card:nth-child(9),
-            /*.card:nth-child(10),*/
-        .card:nth-child(10),
-
-        .card:nth-child(11),
-        .card:nth-child(13),
-        .card:nth-child(14),
-
-        .card:nth-child(15),
-
-        .card:nth-child(17),
-        .card:nth-child(18),
-
-        .card:nth-child(19),
-        .card:nth-child(21),
-        .card:nth-child(22),
-
-        .card:nth-child(23),
+    /*4colums*/
+    @media (min-width: 1768px) and (max-width: 2147px) {
+        .card:nth-child(n+1):nth-child(-n+3),/*  card 1 to 3. */
+        .card:nth-child(n+5):nth-child(-n+7), /*  cards  5 to 7 */
+        .card:nth-child(n+9):nth-child(-n+11),/*  cards  9 to 11 */
+        .card:nth-child(n+13):nth-child(-n+15),/*  cards  13 to 15. */
+        .card:nth-child(n+17):nth-child(-n+19),  /*  cards  17 to 19. */
+        .card:nth-child(n+21):nth-child(-n+23), /*  cards  21 to 23.. */
         .card:nth-child(25),
-        .card:nth-child(26)
-        {
-            border-right: 1px solid var(--grey);
+        .card:nth-child(26) {
+            border-right: 1px var(--grey) solid;
         }
-
-
-
     }
 
 
-    /*5colums */
 
-    @media (min-width: 1815px) and (max-width: 2165px) {
-
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-        .card:nth-child(4),
-
-            /*5 niet*/
-        .card:nth-child(6),
-        .card:nth-child(7),
-        .card:nth-child(8),
-        .card:nth-child(9),
-        .card:nth-child(11),
-        .card:nth-child(12),
-
-
-        .card:nth-child(13),
-        .card:nth-child(14),
-
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(18),
-        .card:nth-child(19),
-            /*.card:nth-child(20),*/
-
-        .card:nth-child(21),
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(24),
-        .card:nth-child(26)
-
-        {
-            border-right: 1px solid var(--grey);
+    @media (min-width: 2214px) {
+        .card:not(:nth-last-child(1)) {
+            border-bottom: 1px solid var(--grey);
         }
-
-
-
     }
 
-    /*6colums */
-    @media (min-width: 2165px) and (max-width: 2515px) {
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-        .card:nth-child(4),
-        .card:nth-child(5),
 
-            /*6 niet*/
-
-        .card:nth-child(7),
-        .card:nth-child(8),
-        .card:nth-child(9),
-        .card:nth-child(11),
-
-
-
-        .card:nth-child(13),
-        .card:nth-child(14),
-
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(19),
-            /*.card:nth-child(20),*/
-
-        .card:nth-child(21),
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(25),
-
-        .card:nth-child(26)
-
-        {
-            border-right: 1px solid var(--grey);
+    /*5colums*/
+    @media (min-width: 2217px) {
+        .card:nth-child(n+1):nth-child(-n+4),  /*card 1 to 4  */
+        .card:nth-child(n+6):nth-child(-n+9),  /*card 6 to 9  */
+        .card:nth-child(n+11):nth-child(-n+14),  /*card 11 to 14  */
+        .card:nth-child(n+16):nth-child(-n+24),   /*card 16 to 24 */
+        .card:nth-child(26) {
+            border-right: 1px var(--grey) solid;
         }
-
-
     }
-
-    /*7 colums*/
-    @media (min-width: 2516px) {
-        .card:nth-child(1),
-        .card:nth-child(2),
-        .card:nth-child(3),
-        .card:nth-child(4),
-        .card:nth-child(5),
-        .card:nth-child(6),
-
-            /*7 niet*/
-
-
-
-        .card:nth-child(8),
-        .card:nth-child(9),
-        .card:nth-child(10),
-        .card:nth-child(11),
-        .card:nth-child(12),
-
-
-
-        .card:nth-child(13),
-
-
-        .card:nth-child(15),
-        .card:nth-child(16),
-        .card:nth-child(17),
-        .card:nth-child(18),
-        .card:nth-child(19),
-        .card:nth-child(20),
-            /*.card:nth-child(20),*/
-
-        .card:nth-child(22),
-        .card:nth-child(23),
-        .card:nth-child(24),
-        .card:nth-child(25),
-
-        .card:nth-child(26)
-
-        {
-            border-right: 1px solid var(--grey);
-        }
-
-
-    }
-
 
 </style>

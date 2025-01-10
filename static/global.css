@@ -136,31 +136,30 @@ header {
 
 main {
   line-height: 1.5;
-  padding: 2rem;
+  /*padding: 2rem;*/
   border-bottom: 1px solid var(--black);
 }
+
 
 @media (min-width: 43rem) {
   header,
   main,
   footer {
-    width: 100%;
-    max-width: calc(100vw - 2rem);
+    width: 102%;
   }
 
+
+
   header {
-    margin: 1rem;
     margin-bottom: 0;
     border: solid var(--black);
     border-width: 1px;
   }
 
   main {
-    margin: 0 1rem;
-    border: solid var(--black);
     border-width: 0px 1px 1px 1px;
     border-top: none;
-    padding: 1rem;
+    padding: 0;
   }
 
   footer {
@@ -173,17 +172,16 @@ main {
 @media (width > 50rem) {
   main {
     border-left: none;
-    margin: 0 0.25rem;
-    margin-top: 1rem;
+    margin: 1rem 0 0;
     padding-top: 2.5rem;
     justify-self: end;
-    max-width: calc(100% - 19%);
+    max-width: calc(100% - 17% - 0rem);
   }
 
   footer {
-    max-width: calc(100% - 19%);
+    max-width: calc(100% - 17% - 0rem);
     border-left: none;
-    margin: 0 0.25rem;
+    margin: 0 0;
     justify-self: end;
   }
 }

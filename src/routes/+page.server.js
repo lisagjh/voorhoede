@@ -27,6 +27,7 @@ export async function load() {
   console.log("Server received data:", allVacatures.length);
 
   return {
+    agencies: agencyData,
     vacancyAgencies: enrichedVacancies,
     latestVacancies: lastFiveItems,
     vacatures: allVacatures,

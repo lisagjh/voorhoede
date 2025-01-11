@@ -77,7 +77,6 @@
     height: fit-content;
     overflow: hidden;
     margin-bottom: 3rem;
-    gap: 0;
   }
 
   .row,
@@ -102,7 +101,11 @@
   picture,
   img {
     align-items: center;
-    padding: 0.5rem;
+    border-radius: .25rem;
+  }
+
+  .row, .row-reverse, img {
+    margin: .5rem .75rem;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -125,13 +128,13 @@
 
     @supports (animation-timeline: view()) {
       /* .row {
-          animation: adjust-position linear forwards;
-          animation-timeline: scroll(root block);
-        }
-        .row-reverse {
-          animation: adjust-position linear forwards;
-          animation-timeline: scroll(root block);
-        } */
+        animation: adjust-position linear forwards;
+        animation-timeline: scroll(root block);
+      }
+      .row-reverse {
+        animation: adjust-position linear forwards;
+        animation-timeline: scroll(root block);
+      } */
 
       @keyframes adjust-position {
         from {

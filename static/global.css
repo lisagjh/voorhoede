@@ -129,10 +129,6 @@ button:focus-visible {
   }
 }
 
-header {
-  border-bottom: 1px solid var(--black);
-}
-
 main {
   line-height: 1.5;
   /*padding: 2rem;*/
@@ -140,19 +136,16 @@ main {
 }
 
 
-@media (min-width: 43rem) {
+@media (width >= 43rem) {
   header,
   main,
   footer {
-    width: 102%;
+    width: 100%;
   }
 
-
-
   header {
+    border-right: 1px solid var(--black);
     margin-bottom: 0;
-    border: solid var(--black);
-    border-width: 1px;
   }
 
   main {
@@ -162,9 +155,8 @@ main {
   }
 
   footer {
-    margin: 0 1rem 1rem 1rem;
     border: solid var(--black);
-    border-width: 0px 1px 1px 1px;
+    border-top: 1px;
   }
 }
 
@@ -179,7 +171,7 @@ main {
 
   footer {
     max-width: calc(100% - 17% - 0rem);
-    border-left: none;
+    border: 1px 0 0 0 solid var(--black);
     margin: 0 0;
     justify-self: end;
   }

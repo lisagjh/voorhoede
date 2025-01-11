@@ -6,55 +6,58 @@
 
   const firstRow = data.slice(0, endFirstRow);
 
-  const secondRow = data.slice(endFirstRow)
-
+  const secondRow = data.slice(endFirstRow);
 </script>
 
 <div class="rows">
-  <div class="row">
+  <ul class="row">
     <!-- data is received in the +page.svelte using data={data.agencies}, and agencies is defined in the server js -->
     {#each firstRow as item}
       {#if item.logo}
-        <picture>
-          <source
-            srcset="https://fdnd-agency.directus.app/assets/{item.logo}format=avif"
-            type="image/avif"
-          />
-          <source
-            srcset="https://fdnd-agency.directus.app/assets/{item.logo}?format=webp"
-            type="image/webp"
-          />
-          <img
-            src="https://fdnd-agency.directus.app/assets/{item.logo}"
-            alt="{item.title}"
-            height="150"
-          />
-        </picture>
+        <li>
+          <picture>
+            <source
+              srcset="https://fdnd-agency.directus.app/assets/{item.logo}format=avif"
+              type="image/avif"
+            />
+            <source
+              srcset="https://fdnd-agency.directus.app/assets/{item.logo}?format=webp"
+              type="image/webp"
+            />
+            <img
+              src="https://fdnd-agency.directus.app/assets/{item.logo}"
+              alt={item.title}
+              height="150"
+            />
+          </picture>
+        </li>
       {/if}
     {/each}
-  </div>
+  </ul>
 
-  <div class="row-reverse">
+  <ul class="row-reverse">
     {#each secondRow as item}
       {#if item.logo}
-        <picture>
-          <source
-            srcset="https://fdnd-agency.directus.app/assets/{item.logo}format=avif"
-            type="image/avif"
-          />
-          <source
-            srcset="https://fdnd-agency.directus.app/assets/{item.logo}?format=webp"
-            type="image/webp"
-          />
-          <img
-            src="https://fdnd-agency.directus.app/assets/{item.logo}"
-            alt="{item.title}"
-            height="150"
-          />
-        </picture>
+        <li>
+          <picture>
+            <source
+              srcset="https://fdnd-agency.directus.app/assets/{item.logo}format=avif"
+              type="image/avif"
+            />
+            <source
+              srcset="https://fdnd-agency.directus.app/assets/{item.logo}?format=webp"
+              type="image/webp"
+            />
+            <img
+              src="https://fdnd-agency.directus.app/assets/{item.logo}"
+              alt={item.title}
+              height="150"
+            />
+          </picture>
+        </li>
       {/if}
     {/each}
-  </div>
+  </ul>
 </div>
 
 <style>
@@ -63,16 +66,13 @@
     align-self: center;
     height: fit-content;
     overflow: hidden;
-    padding: 0.25rem;
-    margin-bottom: 2rem;
-  }
-
-  .row img {
-    padding-top: 0.5rem;
+    margin-bottom: 3rem;
+    gap: 0;
   }
 
   .row,
   .row-reverse {
+    list-style: "";
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -84,10 +84,14 @@
     animation-direction: reverse;
   }
 
+  ul {
+    background-color: black;
+  }
+
   picture,
   img {
-    background-color: black;
     align-items: center;
+    padding: 0.5rem;
   }
 
   @media (prefers-reduced-motion: no-preference) {

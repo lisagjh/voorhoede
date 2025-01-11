@@ -28,11 +28,12 @@
   </picture>
 {/snippet}
 
-<!-- clickable version -->
 <div class="rows">
+  <!-- if clickable = true in the +page.svelte, use this version with the anchor element -->
   {#if clickable}
     <ul class="row">
       {#each firstRow as item}
+        <!--TODO: when detail page for members is added, make this refer to the matching member's page.  -->
         <a href="/members">
           <li>
             {@render picture(item)}
@@ -50,6 +51,8 @@
         </a>
       {/each}
     </ul>
+
+    <!-- if clickable = false, use this versoon without the anchor element -->
   {:else}
     <ul class="row">
       {#each firstRow as item}
@@ -101,11 +104,13 @@
   picture,
   img {
     align-items: center;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
   }
 
-  .row, .row-reverse, img {
-    margin: .5rem .75rem;
+  .row,
+  .row-reverse,
+  img {
+    margin: 0.5rem 0.75rem;
   }
 
   @media (prefers-reduced-motion: no-preference) {

@@ -71,6 +71,7 @@
 
 <style>
   .rows {
+    background-color: black;
     width: 100%;
     align-self: center;
     height: fit-content;
@@ -93,11 +94,8 @@
     animation-direction: reverse;
   }
 
-  ul {
-    background-color: black;
-  }
-
-  ul:hover {
+  .row:hover,
+  .row-reverse:hover {
     animation-play-state: paused;
   }
 

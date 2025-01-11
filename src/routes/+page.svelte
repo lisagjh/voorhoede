@@ -20,7 +20,7 @@
   </svelte:fragment>
 </IntroSection>
 
-<Banner data={data.agencies} />
+<Banner data={data.agencies} clickable={true}/>
 
 <section class="vacancy-section">
   <div class="top">

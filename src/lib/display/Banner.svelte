@@ -97,6 +97,10 @@
     background-color: black;
   }
 
+  ul:hover {
+    animation-play-state: paused;
+  }
+
   picture,
   img {
     align-items: center;

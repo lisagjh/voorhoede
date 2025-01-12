@@ -1,6 +1,22 @@
 <script>
 
-let {tag = "button", variant, label, href, svgIcon, action = $bindable()} = $props();
+let {tag, variant, label, href, svgIcon, action, validTags = ["button", "a"]} = $props();
+
+
+try {
+    if (!validTags.includes(tag)){
+         throw new error(`Invalid tag '${tag}'. Use "<button>" or "<a>".`);
+    }
+    if (tag === "button" && !action) {
+        throw new error("A <button> element must have a action or function attached.");
+    }
+
+    if (tag === "a" && !href){
+        throw new error("A <a> element must have a href provided");
+    }
+} catch (e) {
+    console.error(e);
+}
 
 </script>
 
@@ -9,7 +25,7 @@ let {tag = "button", variant, label, href, svgIcon, action = $bindable()} = $pro
     class={variant}
     role={tag === "a" ? "link" : "button"}
     href={tag === "a" ? href : undefined}
-    bind:this={action}
+    onclick={tag === "button" ? action : undefined}
 >   
     {#if label !== ""}
         {label}
@@ -28,6 +44,7 @@ button {
     text-decoration: none;
     padding: 1em;
     display: flex;
+    flex-direction: column;
     gap: 1em;
 }
 

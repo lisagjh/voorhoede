@@ -3,7 +3,7 @@
 </script>
 
 <section>
-  <a href="/#">
+  <a href="/">
       <svg class="flip-arrow"
            width="16"
            height="16"

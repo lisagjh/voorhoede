@@ -3,7 +3,6 @@
   import IntroSection from "$lib/IntroSection.svelte";
   import Form from "$lib/Form.svelte";
 
-
 </script>
 
 <IntroSection

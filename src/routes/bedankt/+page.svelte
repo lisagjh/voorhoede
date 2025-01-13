@@ -1,25 +1,24 @@
-
 <section>
     <a href="/#">
         <svg class="flip-arrow"
-             width="16"
+             fill="none"
              height="16"
              viewBox="0 0 16 16"
-             fill="none"
+             width="16"
              xmlns="http://www.w3.org/2000/svg"
         >
             <path
                     d="M8 3L13.0001 8.0001L8 13.0002"
                     stroke="#222226FF"
-                    stroke-width="1.5"
                     stroke-miterlimit="4.62023"
+                    stroke-width="1.5"
             />
             <path
                     d="M3 8L13 8"
                     stroke="#222226FF"
-                    stroke-width="1.5"
-                    stroke-miterlimit="4.62023"
                     stroke-linejoin="round"
+                    stroke-miterlimit="4.62023"
+                    stroke-width="1.5"
             />
         </svg>
         terug naar home
@@ -50,7 +49,8 @@
             line-height: 1.5;
         }
     }
-    h1{
+
+    h1 {
         letter-spacing: 2px;
     }
 
@@ -69,8 +69,6 @@
         stroke: var(--blue);
 
     }
-
-
 
     svg {
         vertical-align: middle;

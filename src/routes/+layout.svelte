@@ -17,10 +17,30 @@
   });
 </script>
 
+<div id="skip">
+  <a href="#main">Skip Content</a>
+</div>
 <Header />
 
-<main>
+<main id="main">
   <slot></slot>
 </main>
   
 <Footer />
+
+<style>
+  #skip a {
+    display: block;
+    position: absolute;
+    left: -999px;
+    top: -999px;
+    }
+
+#skip a:focus {
+    left: 0;
+    top: 0;
+    padding: .1rem;
+    background: var(--white);
+    border:1px solid var(--blue);
+    }
+</style>

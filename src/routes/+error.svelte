@@ -1,8 +1,6 @@
 <script>
   import {page} from '$app/stores'
-  console.log($page.status)
 </script>
-
 
 <section>
   <a href="/#">
@@ -31,7 +29,6 @@
   </a>
   <h1>Er gaat iets mis, zie onderstaande error.</h1>
   <p>{$page.status} - {$page.error.message}
-      <!--Pagestatus is the statuscode-->
   </p>
 
 </section>

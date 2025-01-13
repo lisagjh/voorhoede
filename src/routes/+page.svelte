@@ -43,9 +43,9 @@
   .vacancy-section .top {
     display: grid;
     padding: 1.5rem 0;
-    min-height: 250px;
+    min-height: 15.6rem;
     height: 100%;
-    max-height: 400px;
+    max-height: 25rem;
   }
 
   h2.tag {

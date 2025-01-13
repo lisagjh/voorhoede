@@ -1,6 +1,6 @@
 <script>
-  import Card from "../lib/display/Card.svelte";
-  import IntroSection from "./../lib/IntroSection.svelte";
+  import Card from "$lib/display/Card.svelte";
+  import IntroSection from "$lib/IntroSection.svelte";
 
   export let data;
 

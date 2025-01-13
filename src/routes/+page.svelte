@@ -1,5 +1,5 @@
 <script>
-  import Card from "$lib/display/Card.svelte";
+  import Card from "$lib/display/VacancyCard_home.svelte";
   import IntroSection from "$lib/IntroSection.svelte";
 
   export let data;

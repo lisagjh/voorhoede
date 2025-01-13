@@ -259,8 +259,7 @@
     }
 
     li {
-      margin: 0;
-      margin-bottom: 1.5rem;
+      margin: 0 0 1.5rem;
     }
 
     div {

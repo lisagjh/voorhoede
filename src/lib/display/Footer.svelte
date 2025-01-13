@@ -1,8 +1,10 @@
 <footer>
   <div class="top-content">
+
     <a href="/" class="logo">
       <img src="/dda-logo.svg" alt="DDA logo" width="106" height="80" />
     </a>
+
     <a href="/login" class="login">
       Inloggen
       <svg
@@ -27,10 +29,12 @@
         />
       </svg>
     </a>
+
   </div>
 
   <div class="middle-content">
     <ul>
+
       <li>
         <a href="/over">Over ons</a>
       </li>
@@ -46,9 +50,11 @@
       <li>
         <a href="/vacatures">Vacatures</a>
       </li>
+
     </ul>
 
     <ul class="address">
+
       <li>
         <strong> Dutch Digital Agencies</strong>
       </li>
@@ -62,7 +68,9 @@
           >info@dutchdigitalagencies.com</a
         >
       </li>
+
     </ul>
+
   </div>
 
   <div class="bottom-content">

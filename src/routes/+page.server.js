@@ -9,7 +9,6 @@ export async function load() {
 
   // Access the `data` property from both API responses
   let allVacatures = vacatures.data;
-  let agencyData = agencies.data;
 
 
   // Create a Map for efficient agency lookups

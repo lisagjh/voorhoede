@@ -15,8 +15,6 @@
   );
 </script>
 
-
-
 <IntroSection
         title="Leden"
         subtitle="De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging. Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
@@ -52,8 +50,8 @@
 </div>
 
 <div class="link-more-events">
-  <Link href="/" clazz="detail-link" class=""
-  ><span slot="link-text">Meer events laden</span>
+  <Link href="/" clazz="detail-link" class="">
+    <span slot="link-text">Meer events laden</span>
     <svg
             width="16"
             height="16"
@@ -77,8 +75,6 @@
     border: 1px solid black;
 
   }
-
-
 
   @media (min-width: 800px) {
     .filter-section{

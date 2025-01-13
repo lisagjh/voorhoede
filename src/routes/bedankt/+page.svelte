@@ -1,5 +1,5 @@
 <section>
-    <a href="/#">
+    <a href="/">
         <svg class="flip-arrow"
              fill="none"
              height="16"

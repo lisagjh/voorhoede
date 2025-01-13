@@ -75,9 +75,9 @@
 
   <div class="bottom-content">
     <ul class="social">
-      <li><a href="/#">Instagram</a></li>
-      <li><a href="/#">Facebook</a></li>
-      <li><a href="/#">LinkedIn</a></li>
+      <li><a href="/">Instagram</a></li>
+      <li><a href="/">Facebook</a></li>
+      <li><a href="/">LinkedIn</a></li>
     </ul>
     <p>Copyright © 2023 Dutch Digital Agencies</p>
   </div>

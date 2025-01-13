@@ -171,6 +171,8 @@
         }
 
     }
+
+
     @media (max-width: 825px) {
         .card {
             border-left: 1px var(--grey) solid;

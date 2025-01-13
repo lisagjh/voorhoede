@@ -62,7 +62,7 @@
         border-bottom: 1px solid var(--grey);
         padding: 2rem;
         display: grid;
-        grid-template-rows: 16rem auto auto 4rem auto;
+        grid-template-rows: 16rem 2rem auto 4rem auto;
         gap: 16px;
     }
 
@@ -139,7 +139,7 @@
         }
 
         .card {
-            grid-template-rows: 16rem auto auto auto auto;
+            grid-template-rows: 16rem 2rem auto auto auto;
             grid-template-columns: 14em;
             row-gap: 2em;
 
@@ -167,7 +167,7 @@
 
     @media (min-width: 825px) and (max-width: 900px){
         .card {
-            grid-template-rows: 16rem auto auto 4rem auto;
+            grid-template-rows: 16rem 2rem auto 4rem auto;
         }
 
     }

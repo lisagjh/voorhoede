@@ -60,6 +60,7 @@
     }
   
     .outline {
+      display: flex;
       align-items: center;
       border: 1px solid black;
       padding: 1em;

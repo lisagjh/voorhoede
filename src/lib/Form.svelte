@@ -2,6 +2,7 @@
     import TextButton from '$lib/Subscribe-button.svelte';
     import Input from "$lib/input/Input.svelte";
     import Select from "$lib/input/Select.svelte";
+    import Textarea from "$lib/input/Textarea.svelte";
 </script>
 
 <form action="/bedankt">
@@ -15,19 +16,9 @@
         <Input label="Mobiel" id="Mobiel" name="Mobiel" />
         <Input label="Bedrijfsnaam" id="Bedrijfsnaam" name="Bedrijfsnaam" />
         <Input label="Bedrijfswebsite" id="Bedrijfswebsite" name="Bedrijfswebsite" />
-        <label class="form-label input-textfield" for="I want to be member because">
-            <span class="star">Ik wil graag lid worden omdat </span>
-            <textarea aria-required="true" cols="5" id="Textarea"
-                      name="Textarea"
-                      placeholder=""
-                      required
-                      rows="1">
 
-            </textarea>
-        </label>
         <Select/>
-
-
+        <Textarea/>
 
         <TextButton/>
     </fieldset>

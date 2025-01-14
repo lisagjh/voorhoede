@@ -49,4 +49,11 @@ h3 {
     font-size: 1.75em;
 }
 
+p:nth-of-type(1){
+    display: flex;
+    gap: .5em;
+    align-items: center;
+    text-decoration: underline;
+}
+
 </style>

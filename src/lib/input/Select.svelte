@@ -58,5 +58,17 @@
         color: red;
 
     }
+
+    /*ui states*/
+    select:focus, option:focus {
+        outline: 2px solid var(--blue);
+    }
+    select:user-valid {
+        outline: 2px solid green;
+
+    }
+    select:user-invalid {
+        outline: 2px solid red;
+    }
 </style>
 

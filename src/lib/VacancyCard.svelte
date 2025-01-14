@@ -100,4 +100,16 @@ div {
     }
 }
 
+@media(min-width: 648px){
+    article {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    article > p:nth-child(3){
+        padding: .5em .8em;
+        background-color: #F1F0F0;
+    }
+}
+
 </style>

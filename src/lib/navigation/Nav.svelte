@@ -32,66 +32,8 @@
 
   // open and close menu and prevent scroll
   function toggleMenu() {
-    if (isSmallScreen) {
-      isOpen = !isOpen;
-      setBodyScroll();
-
-      // Start counting vacancies when menu opens
-      if (isOpen && openVacancies === 0) {
-        startVacancyAnimation();
-      }
-    }
-  }
-
-  // enables or disables body scroll based on state
-  function setBodyScroll() {
-    document.body.style.overflow = isOpen ? "hidden" : "";
-  }
-
-  // close menu on esc
-  function handleEscapeKey(event: KeyboardEvent) {
-    if (event.key === "Escape" && isOpen) {
-      closeMenu();
-    }
-  }
-
-  // force close menu
-  function closeMenu() {
-    isOpen = false;
-    setBodyScroll();
-  }
-
-  // close menu after tabbing out last item
-  function handleTabKey(event: KeyboardEvent) {
-    if (event.key === "Tab" && isOpen) {
-      const focusedElement = document.activeElement;
-      const focusableElements = getFocusableElements();
-      const lastElement = focusableElements[focusableElements.length - 1];
-
-      if (focusedElement === lastElement && !event.shiftKey) {
-        closeMenu();
-      }
-    }
-  }
-
-  // get all focusable items to find last item
-  function getFocusableElements() {
-    return navElement.querySelectorAll(
-      'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
-    );
-  }
-
-  function updateScreenSize() {
-    if (typeof window !== "undefined") {
-      isSmallScreen = window.innerWidth <= breakpoint;
-
-      if (!isSmallScreen) {
-        closeMenu();
-        if (openVacancies === 0) {
-          startVacancyAnimation();
-        }
-      }
-    }
+    isOpen = !isOpen;
+    startVacancyAnimation()
   }
 
   async function startVacancyAnimation() {
@@ -131,37 +73,6 @@
     // so this is how to animation gets it easing, causing it to slow down at the end
     return progress * (2 - progress);
   }
-
-  // handle clicks on menu
-  function menuToggleAction(node: HTMLElement): { destroy: () => void } {
-    function handleClick() {
-      toggleMenu();
-    }
-    node.addEventListener("click", handleClick);
-    return {
-      destroy() {
-        node.removeEventListener("click", handleClick);
-      },
-    };
-  }
-
-  onMount(() => {
-    if (typeof window !== "undefined") {
-      updateScreenSize();
-
-      // Add event listeners
-      document.addEventListener("keydown", handleEscapeKey);
-      document.addEventListener("keydown", handleTabKey);
-      window.addEventListener("resize", updateScreenSize);
-
-      // Cleanup on unmount
-      return () => {
-        document.removeEventListener("keydown", handleEscapeKey);
-        document.removeEventListener("keydown", handleTabKey);
-        window.removeEventListener("resize", updateScreenSize);
-      };
-    }
-  });
 </script>
 
 <MenuToggleBtn {isOpen} toggle={toggleMenu} />

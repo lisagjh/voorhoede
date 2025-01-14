@@ -75,4 +75,19 @@
     input {
         border: none;
     }
+
+    /*code of the star mandatory or not*/
+    .star:after {
+        content: "*";
+        font-size: 2rem;
+        color: red;
+
+    }
+
+    .no-star:after {
+        font-size: 2rem;
+
+        content: "";
+    }
+
 </style>

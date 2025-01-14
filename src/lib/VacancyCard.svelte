@@ -28,12 +28,14 @@
         </svg>
         {city}
     </p>
-    <p>
-       {language}
-    </p>
-    <p>
-        30-{hours} UUR
-    </p>
+    <div>
+        <p>
+            {language}
+        </p>
+        <p>
+            30-{hours} UUR
+        </p>
+    </div>
     <a href="/">
         Bekijk vacature
     </a>
@@ -57,7 +59,7 @@ h3 {
     font-size: 1.75em;
 }
 
-p:nth-of-type(1){
+article > p:nth-of-type(1){
     text-decoration: underline;
 }
 
@@ -65,6 +67,34 @@ p:nth-of-type(1), p:nth-of-type(2){
     display: flex;
     gap: .5em;
     align-items: center;
+}
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+@media(min-width: 420px){
+    article{
+        padding: 2.5em;
+    }
+    article:nth-of-type(1) {
+        padding: 0em 2.5em 2.5em 2.5em;
+    }
+    div {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+    }
+}
+
+@media(min-width: 500px){
+
+    div > p:first-of-type, div > :last-of-type{
+        border: 1px solid black;
+        padding: .5em;
+    }
 }
 
 </style>

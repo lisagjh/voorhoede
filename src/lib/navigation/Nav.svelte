@@ -2,9 +2,8 @@
   import ToggleButton from "../input/ToggleButton.svelte";
   import NavItem from "./NavItem.svelte";
 
-  // let { isOpen = false, openVacancies = 0 } = $props();
+  let { openVacancies = 0, isOpen = false } = $props();
 
-  // Navigation menu data
   const pages = [
     { title: "Home", ref: "/" },
     { title: "Over Ons", ref: "/over" },
@@ -19,12 +18,9 @@
   ];
   const allPages = [...pages, ...pagesCTA];
 
-  let openVacancies = 0
-  let isOpen = false
-
   function toggleMenu() {
-        isOpen = !isOpen;
-    }
+    isOpen = !isOpen;
+  }
 </script>
 
 <ToggleButton {isOpen} toggle={toggleMenu} />

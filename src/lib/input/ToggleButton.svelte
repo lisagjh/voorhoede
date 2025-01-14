@@ -1,6 +1,5 @@
 <script>
-    export let isOpen = false;
-    export let toggle;
+    let { isOpen = false, toggle } = $props();
 </script>
   
 <button on:click={toggle}>
@@ -10,6 +9,7 @@
         <span class="menu">Menu</span>
     {/if}
 </button>
+
   <style>
     button {
       font-family: var(--martian-mono);

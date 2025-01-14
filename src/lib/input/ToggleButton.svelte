@@ -2,7 +2,7 @@
     let { isOpen = false, toggle } = $props();
 </script>
   
-<button on:click={toggle}>
+<button onclick={toggle}>
     {#if isOpen}
         <span class="close">Close</span>
     {:else}

@@ -21,6 +21,10 @@
   function toggleMenu() {
     isOpen = !isOpen;
   }
+
+  function closeMenu() {
+    isOpen = false;
+  }
 </script>
 
 <ToggleButton {isOpen} toggle={toggleMenu} />
@@ -28,7 +32,7 @@
 <nav class:is-open={isOpen}>
   <ul>
     {#each allPages as page}
-      <li>
+      <li on:click={closeMenu}>
         <NavItem
           title={page.title}
           href={page.ref}

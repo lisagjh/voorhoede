@@ -7,14 +7,14 @@
 <form action="/bedankt">
     <fieldset>
         <legend>persoonlijke gegevens</legend>
-        <Input label="function" id="function" name="function" />
-        <Input label="firstname" id="firstname" name="firstname" />
-        <Input label="middle-name" id="middle-name" name="middle-name" />
-        <Input label="lastname" id="lastname" name="lastname" />
+        <Input label="Functie" id="Functie" name="Functie" />
+        <Input label="Voornaam" id="voornaam" name="voornaam" />
+        <Input label="Tussenvoegsel" id="Tussenvoegsel" name="Tussenvoegsel" />
+        <Input label="Achternaam" id="Achternaam" name="Achternaam" />
         <Input label="email" id="email" name="email" />
-        <Input label="mobile" id="v" name="mobile" />
-        <Input label="company" id="company" name="company" />
-        <Input label="company-website" id="website" name="website" />
+        <Input label="Mobiel" id="Mobiel" name="Mobiel" />
+        <Input label="Bedrijfsnaam" id="Bedrijfsnaam" name="Bedrijfsnaam" />
+        <Input label="Bedrijfswebsite" id="Bedrijfswebsite" name="Bedrijfswebsite" />
         <label class="form-label input-textfield" for="I want to be member because">
             <span class="star">Ik wil graag lid worden omdat </span>
             <textarea aria-required="true" cols="5" id="Textarea"

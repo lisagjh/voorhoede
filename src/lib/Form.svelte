@@ -40,57 +40,57 @@
         left: -9999px;
     }
 
-    label {
-        margin-top: 1.8rem;
-        display: grid;
-        width: 100%;
-        border-bottom: 1.5px solid var(--black);
-        gap: 0.8rem;
-    }
+    /*label {*/
+    /*    margin-top: 1.8rem;*/
+    /*    display: grid;*/
+    /*    width: 100%;*/
+    /*    border-bottom: 1.5px solid var(--black);*/
+    /*    gap: 0.8rem;*/
+    /*}*/
 
-    span {
-        grid-row: 1;
-        grid-column: 1;
-        height: 2rem;
+    /*span {*/
+    /*    grid-row: 1;*/
+    /*    grid-column: 1;*/
+    /*    height: 2rem;*/
 
-    }
+    /*}*/
 
-    input {
-        grid-row: 2;
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
+    /*input {*/
+    /*    grid-row: 2;*/
+    /*    grid-column-start: 1;*/
+    /*    grid-column-end: 3;*/
+    /*}*/
 
-    input, textarea, select {
-        border: none;
-    }
+    /*input, textarea, select {*/
+    /*    border: none;*/
+    /*}*/
 
 
-    textarea {
-        height: auto;
-    }
+    /*textarea {*/
+    /*    height: auto;*/
+    /*}*/
 
-    .star:after {
-        content: "*";
-        font-size: 2rem;
-        color: red;
+    /*.star:after {*/
+    /*    content: "*";*/
+    /*    font-size: 2rem;*/
+    /*    color: red;*/
 
-    }
+    /*}*/
 
-    .no-star:after {
-        font-size: 2rem;
+    /*.no-star:after {*/
+    /*    font-size: 2rem;*/
 
-        content: "";
-    }
+    /*    content: "";*/
+    /*}*/
 
     /*ui states*/
-    input:focus, textarea:focus, select:focus, option:focus {
-        outline: 2px solid var(--blue);
-    }
+    /*input:focus, textarea:focus, select:focus, option:focus {*/
+    /*    outline: 2px solid var(--blue);*/
+    /*}*/
 
-    textarea {
-        width: 100%; /* Make it full width */
-    }
+    /*textarea {*/
+    /*    width: 100%; !* Make it full width *!*/
+    /*}*/
 
     /* form focus valid  */
 

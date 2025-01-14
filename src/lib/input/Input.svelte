@@ -50,3 +50,29 @@
             required={requiredType}
     />
 </label>
+<style>
+    label {
+        margin-top: 1.8rem;
+        display: grid;
+        width: 100%;
+        border-bottom: 1.5px solid var(--black);
+        gap: 0.8rem;
+    }
+
+    span {
+        grid-row: 1;
+        grid-column: 1;
+        height: 2rem;
+
+    }
+
+    input {
+        grid-row: 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    input {
+        border: none;
+    }
+</style>

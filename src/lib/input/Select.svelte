@@ -52,12 +52,18 @@
         height: 2rem;
 
     }
+
+    select{
+        border: none;
+    }
+
     .star:after {
         content: "*";
         font-size: 2rem;
         color: red;
 
     }
+
 
     /*ui states*/
     select:focus, option:focus {
@@ -69,6 +75,12 @@
     }
     select:user-invalid {
         outline: 2px solid red;
+    }
+
+    @container  (min-width: 600px) {
+        .dropown {
+            grid-row: 7;
+        }
     }
 </style>
 

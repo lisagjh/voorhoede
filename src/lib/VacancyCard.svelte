@@ -32,7 +32,7 @@
        {language}
     </p>
     <p>
-        30-{hours}
+        30-{hours} UUR
     </p>
     <a href="/">
         Bekijk vacature

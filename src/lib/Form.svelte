@@ -95,24 +95,24 @@
     /* form focus valid  */
 
 
-    input[type='text']:user-valid,
-    input[type='email']:valid,
-    input[type='number']:valid,
-    textarea:user-valid,
-    select:user-valid {
-        outline: 2px solid green;
+    /*input[type='text']:user-valid,*/
+    /*input[type='email']:valid,*/
+    /*input[type='number']:valid,*/
+    /*textarea:user-valid,*/
+    /*select:user-valid {*/
+    /*    outline: 2px solid green;*/
 
-    }
+    /*}*/
 
-    /* form focus invalid */
+    /*!* form focus invalid *!*/
 
-    input[type='text']:user-invalid,
-    input[type='email']:user-invalid,
-    input[type='number']:user-invalid,
-    textarea:user-invalid,
-    select:user-invalid {
-        outline: 2px solid red;
-    }
+    /*input[type='text']:user-invalid,*/
+    /*input[type='email']:user-invalid,*/
+    /*input[type='number']:user-invalid,*/
+    /*textarea:user-invalid,*/
+    /*select:user-invalid {*/
+    /*    outline: 2px solid red;*/
+    /*}*/
 
     /*contianer queries */
     form {
@@ -120,9 +120,9 @@
     }
 
     @container  (max-width: 300px) {
-        textarea {
-            margin-top: 2rem;
-        }
+        /*textarea {*/
+        /*    margin-top: 2rem;*/
+        /*}*/
     }
 
     @container  (min-width: 600px) {

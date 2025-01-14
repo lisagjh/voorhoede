@@ -48,8 +48,6 @@
       border: inherit;
       text-decoration: none;
       padding: 1em;
-      display: flex;
-      flex-direction: column;
       gap: 1em;
     }
   
@@ -62,7 +60,6 @@
     }
   
     .outline {
-      display: flex;
       align-items: center;
       border: 1px solid black;
       padding: 1em;

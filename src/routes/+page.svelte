@@ -13,10 +13,10 @@
 </script>
 
 <IntroSection title="De Beste Bureau's van Nederland">
-  <svelte:fragment slot="subtitle">
-    Dutch Digital Agencies (DDA) verenigt en verbindt toonaangevende digitale
-    bureaus. Samen maken we de wereld elke dag een beetje slimmer.
-  </svelte:fragment>
+<!--  <svelte:fragment slot="subtitle">-->
+<!--    Dutch Digital Agencies (DDA) verenigt en verbindt toonaangevende digitale-->
+<!--    bureaus. Samen maken we de wereld elke dag een beetje slimmer.-->
+<!--  </svelte:fragment>-->
 </IntroSection>
 
 <section class="vacancy-section">

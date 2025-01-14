@@ -9,10 +9,14 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/enhanced-img": "^0.4.4",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.1",
 		"svelte": "^5.2.4",
 		"vite": "^5.0.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@unpic/svelte": "^0.0.58"
+	}
 }

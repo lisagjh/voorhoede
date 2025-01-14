@@ -1,6 +1,7 @@
 <script>
     import Link from "$lib/Link.svelte";
     export let data;
+    import { Image } from "@unpic/svelte";
 </script>
 
 
@@ -11,8 +12,20 @@
             <picture>
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
                 <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
-                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="foto {member.title}">
+                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" fetchpriority="high" alt="foto {member.title}">
+
             </picture>
+
+<!--            <Image-->
+<!--                    src="https://fdnd-agency.directus.app/assets/{member.photo}"-->
+<!--                    width="280"-->
+<!--                    height="240"-->
+<!--                    layout="fullWidth"-->
+
+<!--                    alt="{member.title}"-->
+<!--            />-->
+
+
 
             <ul class="card-label-filters">
                 <li class="label-filters">

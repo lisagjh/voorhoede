@@ -37,5 +37,26 @@
 
 </label>
 
+<style>
+    label {
+        margin-top: 1.8rem;
+        display: grid;
+        width: 100%;
+        border-bottom: 1.5px solid var(--black);
+        gap: 0.8rem;
+    }
 
+    span {
+        grid-row: 1;
+        grid-column: 1;
+        height: 2rem;
+
+    }
+    .star:after {
+        content: "*";
+        font-size: 2rem;
+        color: red;
+
+    }
+</style>
 

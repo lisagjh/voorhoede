@@ -1,16 +1,12 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import MenuToggleBtn from "./../input/MenuToggleBtn.svelte";
   import NavItem from "./NavItem.svelte";
 
   // State variables
   let isOpen = false;
   let openVacancies = 0;
-  let isSmallScreen = true;
-  let navElement: HTMLElement;
 
   // Configuration
-  const breakpoint = 800;
   const delay = 1750;
 
   // Navigation menu data
@@ -29,12 +25,6 @@
   ];
 
   const allPages = [...pages, ...pagesCTA];
-
-  // open and close menu and prevent scroll
-  function toggleMenu() {
-    isOpen = !isOpen;
-    startVacancyAnimation()
-  }
 
   async function startVacancyAnimation() {
     try {
@@ -75,12 +65,34 @@
   }
 </script>
 
-<MenuToggleBtn {isOpen} toggle={toggleMenu} />
 
-<nav class:is-open={isOpen} bind:this={navElement}>
+<input type="checkbox" id="menu-toggle" class="menu-toggle" />
+<label for="menu-toggle" class="menu-button">
+  <svg
+    width="18"
+    height="14"
+    viewBox="0 0 18 14"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M2 2H16" stroke="#121212" stroke-width="2.5" stroke-linecap="round"
+    ></path>
+    <path d="M2 7H16" stroke="#121212" stroke-width="2.5" stroke-linecap="round"
+    ></path>
+    <path
+      d="M2 12H16"
+      stroke="#121212"
+      stroke-width="2.5"
+      stroke-linecap="round"
+    ></path>
+  </svg>
+  Menu
+</label>
+
+<nav class:is-open={isOpen}>
   <ul>
     {#each allPages as page}
-      <li use:menuToggleAction>
+      <li>
         <NavItem
           title={page.title}
           href={page.ref}
@@ -91,90 +103,30 @@
   </ul>
 </nav>
 
-<div id="backdrop" class:is-open={isOpen} use:menuToggleAction></div>
+<div id="backdrop" class:is-open={isOpen}></div>
 
 <style>
-  nav {
+  /* Clean version */
+  .menu-toggle {
     display: none;
-    visibility: hidden;
-    background-color: var(--white);
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    /* clamp(min, val, max) - clamp means it will use the preferred value (val) when its between the min or max value. */
-    width: clamp(190px, 50%, 300px);
-    z-index: 1;
-    border-left: 1px solid var(--black);
-    transition:
-      transform 0.3s ease-in-out,
-      opacity 0.3s ease-in-out;
-    transform: translateX(100%);
-    opacity: 0;
   }
 
-  nav.is-open {
-    visibility: visible;
-    display: flex;
-    transform: translateX(0);
+  .menu-toggle:checked ~ nav {
+    margin-top: 0;
+    transform: translateY(0);
     opacity: 1;
+    transition:
+      opacity 0.15s ease-in-out,
+      transform 0.3s ease-out;
   }
 
-  div {
+  nav {
     position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.1;
-    transform: translateX(-10%);
-    clip-path: circle(29.3% at 86% 89%);
-    transition: all 0.25s ease-in-out;
-  }
-
-  div.is-open {
-    background-color: black;
-    opacity: 0.6;
-    width: 100vw;
-    height: 100vh;
-    transform: translateX(0);
-    clip-path: none;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    margin: 5rem 0 1rem;
-    padding: 0;
-    list-style: none;
-  }
-
-  li {
-    font-family: var(--martian-mono);
-    margin: 1rem;
-  }
-
-  @media (min-width: 800px) {
-    nav {
-      background-color: transparent;
-      border: none;
-      position: relative;
-      visibility: visible;
-      display: flex;
-      transform: none;
-      opacity: 1;
-      height: auto;
-      margin-top: 2rem;
-    }
-
-    ul {
-      margin-top: 0;
-    }
-
-    li {
-      margin: 0 0 1.5rem;
-    }
-
-    div {
-      display: none;
-    }
+    top: 2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    background-color: #f2f2f2;
+    transition: all 0.35s ease-in-out;
+    z-index: 90;
   }
 </style>

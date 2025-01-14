@@ -44,9 +44,12 @@
   </ul>
 </nav>
 
-<!-- svelte-ignore a11y_click_events_have_key_events -->
-<!-- svelte-ignore a11y_no_static_element_interactions -->
-<div id="backdrop" class:is-open={isOpen} onclick={closeMenu}></div>
+<div
+  role="presentation"
+  id="backdrop"
+  class:is-open={isOpen}
+  onclick={closeMenu}
+></div>
 
 <style>
   .is-open {

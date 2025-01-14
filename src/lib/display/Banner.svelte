@@ -130,25 +130,5 @@
         transform: translateX(-50%);
       }
     }
-
-    @supports (animation-timeline: view()) {
-      /* .row {
-        animation: adjust-position linear forwards;
-        animation-timeline: scroll(root block);
-      }
-      .row-reverse {
-        animation: adjust-position linear forwards;
-        animation-timeline: scroll(root block);
-      } */
-
-      @keyframes adjust-position {
-        from {
-          transform: translateX(calc(-100% + 100vh));
-        }
-        to {
-          transform: translateX(calc(100% - 100vh));
-        }
-      }
-    }
   }
 </style>

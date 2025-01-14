@@ -46,10 +46,7 @@
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-<div id="backdrop" 
-  class:is-open={isOpen} 
-  onclick={closeMenu}>
-</div>
+<div id="backdrop" class:is-open={isOpen} onclick={closeMenu}></div>
 
 <style>
   .is-open {
@@ -84,6 +81,19 @@
     opacity: 1;
   }
 
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 0 1rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    font-family: var(--martian-mono);
+    margin: 1rem;
+  }
+
   div {
     position: absolute;
     top: 0;
@@ -101,5 +111,32 @@
     height: 100vh;
     transform: translateX(0);
     clip-path: none;
+  }
+
+  @media (min-width: 800px) {
+    nav {
+      background-color: transparent;
+      border: none;
+      position: relative;
+      visibility: visible;
+      display: flex;
+      transform: none;
+      opacity: 1;
+      height: auto;
+      margin-top: 2rem;
+    }
+
+    ul {
+      margin-top: 0;
+    }
+
+    li {
+      margin: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    div {
+      display: none;
+    }
   }
 </style>

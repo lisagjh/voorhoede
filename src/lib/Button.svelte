@@ -1,7 +1,7 @@
 <script>
     let {
       tag,
-      variant,
+      className,
       label,
       href,
       svgIcon,
@@ -28,7 +28,7 @@
   
   <svelte:element
     this={tag}
-    class={variant}
+    class={className}
     role={tag === "a" ? "link" : "button"}
     href={tag === "a" ? href : undefined}
     onclick={tag === "button" ? action : undefined}

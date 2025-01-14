@@ -1,13 +1,10 @@
-
-
 <label class="form-label input-textfield" for="I want to be member because">
     <span class="star">Ik wil graag lid worden omdat </span>
     <textarea aria-required="true" cols="5" id="Textarea"
               name="Textarea"
               placeholder=""
               required
-              rows="1">
-    </textarea>
+              rows="1"></textarea>
 </label>
 
 <style>
@@ -27,8 +24,6 @@
 
     }
 
-
-
     textarea {
         height: auto;
         border: none;
@@ -38,6 +33,35 @@
         content: "*";
         font-size: 2rem;
         color: red;
+
+    }
+    /*ui states*/
+    textarea:focus {
+        outline: 2px solid var(--blue);
+    }
+
+    textarea {
+        width: 100%; /* Make it full width */
+    }
+
+    /* form focus invalid */
+    textarea:user-invalid
+    {
+        outline: 2px solid red;
+    }
+
+    /* form focus valid  */
+    textarea:user-valid{
+        outline: 2px solid green;
+
+    }
+
+    @container  (min-width: 600px) {
+        .input-textfield {
+            grid-row: 6;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
 
     }
 </style>

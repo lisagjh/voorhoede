@@ -28,6 +28,7 @@
 
     form {
         color: var(--grey);
+        padding: 2rem;
     }
 
     fieldset {

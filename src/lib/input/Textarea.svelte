@@ -41,7 +41,7 @@
     }
 
     textarea {
-        width: 100%; /* Make it full width */
+        width: 100%;
     }
 
     /* form focus invalid */

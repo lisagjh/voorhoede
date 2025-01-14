@@ -89,5 +89,28 @@
 
         content: "";
     }
+    /*ui states*/
+    input:focus{
+        outline: 2px solid var(--blue);
+    }
 
+
+
+    /* form focus valid  */
+
+    input[type='text']:user-valid,
+    input[type='email']:valid,
+    input[type='number']:valid{
+        outline: 2px solid green;
+
+    }
+
+    /* form focus invalid */
+
+    input[type='text']:user-invalid,
+    input[type='email']:user-invalid,
+    input[type='number']:user-invalid
+    {
+        outline: 2px solid red;
+    }
 </style>

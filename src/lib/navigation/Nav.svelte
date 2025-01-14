@@ -32,18 +32,19 @@
 <nav class:is-open={isOpen}>
   <ul>
     {#each allPages as page}
-      <li on:click={closeMenu}>
+      <li>
         <NavItem
           title={page.title}
           href={page.ref}
           badge={page.ref === "/vacatures" ? openVacancies : null}
+          onNavigate={closeMenu}
         />
       </li>
     {/each}
   </ul>
 </nav>
 
-<div id="backdrop" class:is-open={isOpen}></div>
+<div id="backdrop" class:is-open={isOpen} onclick={closeMenu}></div>
 
 <style>
   nav {
@@ -61,5 +62,24 @@
     display: flex;
     transform: translateX(0);
     opacity: 1;
+  }
+
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+    transform: translateX(-10%);
+    clip-path: circle(29.3% at 86% 89%);
+    transition: all 0.25s ease-in-out;
+  }
+
+  div.is-open {
+    background-color: black;
+    opacity: 0.6;
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(0);
+    clip-path: none;
   }
 </style>

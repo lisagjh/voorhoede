@@ -1,16 +1,19 @@
 <script>
   import { page } from "$app/stores";
 
-  let { title, href, badge } = $props();
+  let { title, href, badge, onNavigate } = $props();
 
   let isActive = $derived($page.url.pathname === href);
 </script>
 
-<a {href} class:active={isActive}>
-  {title}
-  {#if badge}
-    <span>{badge}</span>
-  {/if}
+<a {href} 
+  class:active={isActive} 
+  onclick={onNavigate}
+  >
+    {title}
+    {#if badge}
+      <span>{badge}</span>
+    {/if}
 </a>
 
 <style>
@@ -33,7 +36,7 @@
 
   ::view-transition-old(active-link),
   ::view-transition-new(active-link) {
-    animation: move 0.45s both cubic-bezier(.5,-0.84,.53,1.57);
+    animation: move 0.45s both cubic-bezier(0.5, -0.84, 0.53, 1.57);
   }
 
   @keyframes move {

@@ -4,12 +4,6 @@
   font-display: swap;
 }
 
-/* @font-face {
-  font-family: "Archivo Italic";
-  font-display: swap;
-  src: url("/font/Archivo-Italic-Variable.woff2") format("woff2");
-} */
-
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Martian Mono";

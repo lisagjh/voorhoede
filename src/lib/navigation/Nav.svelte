@@ -113,7 +113,7 @@
     clip-path: none;
   }
 
-  @media (min-width: 800px) {
+  @media (width >= 50rem) {
     nav {
       background-color: transparent;
       border: none;

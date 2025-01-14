@@ -44,17 +44,37 @@
   </ul>
 </nav>
 
-<div id="backdrop" class:is-open={isOpen} onclick={closeMenu}></div>
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div id="backdrop" 
+  class:is-open={isOpen} 
+  onclick={closeMenu}>
+</div>
 
 <style>
+  .is-open {
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+  }
+
   nav {
+    display: none;
+    visibility: hidden;
+    background-color: var(--white);
     position: absolute;
-    top: 2rem;
-    transform: translateY(-100%);
+    right: 0;
+    top: 0;
+    height: 100vh;
+    /* clamp(min, val, max) - clamp means it will use the preferred value (val) when its between the min or max value. */
+    width: clamp(190px, 50%, 300px);
+    z-index: 1;
+    border-left: 1px solid var(--black);
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+    transform: translateX(100%);
     opacity: 0;
-    background-color: #f2f2f2;
-    transition: all 0.35s ease-in-out;
-    z-index: 90;
   }
 
   nav.is-open {

@@ -17,6 +17,7 @@
         starClass = 'star';
     }
     let requiredType = required;
+
     if (label === 'Tussenvoegsel') {
         requiredType = false;
     }
@@ -24,9 +25,15 @@
     let inputType = type;
     if (id === 'email') {
         inputType = 'email';
-    } else if (id === 'Mobiel') {
+    }
+
+    else if (id === 'Mobiel')
+    {
         inputType = 'number';
-    } else if (id === 'text') {
+    }
+
+    else if (id === 'text')
+    {
         inputType = 'text';
     }
 </script>

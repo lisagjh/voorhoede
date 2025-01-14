@@ -1,89 +1,21 @@
 <script>
     import TextButton from '$lib/Subscribe-button.svelte';
-
+    import Input from "$lib/input/Input.svelte";
     let selectedValue = "";
 </script>
 
 <form action="/bedankt">
     <fieldset>
         <legend>persoonlijke gegevens</legend>
-
-        <label class="form-label" for="functie">
-            <span class="star"> Functie</span>
-            <input aria-required="true"
-                   id="functie"
-                   name="functie"
-                   required type="text"/>
-        </label>
-
-        <label class="form-label" for="Voornaam">
-            <span class="star">Voornaam</span>
-            <input aria-required="true"
-                   autocomplete="given-name" id="Voornaam"
-                   name="voornaam"
-                   required
-                   type="text"
-            />
-        </label>
-
-        <label class="form-label" for="functie">
-            <span class="no-star">Tussenvoegsel</span>
-            <input aria-required="true"
-                   autocomplete="additional-name"
-                   id="tussenvoegsel"
-                   name="tussenvoegesel"
-                   type="text"/>
-        </label>
-
-        <label class="form-label" for="Achternaam">
-            <span class="star">Achternaam</span>
-            <input aria-required="true"
-                   autocomplete="family-name"
-                   id="Achternaam"
-                   name="Achternaam"
-                   required type="text"/>
-        </label>
-
-        <label class="form-label" for="email">
-            <span class="star">E-mail</span>
-            <input aria-required="true"
-                   autocomplete="email"
-                   id="email"
-
-                   name="email"
-                   required type="email"/>
-        </label>
-
-        <label class="form-label" for="Mobiel">
-            <span class="star">Mobiel</span>
-            <input aria-required="true"
-                   autocomplete="tel"
-                   id="Mobiel"
-                   name="Mobiel"
-                   required
-                   type="number"/>
-        </label>
-
-        <label class="form-label" for="Bedrijfsnaam">
-
-            <span class="star">Bedrijfsnaam</span>
-            <input aria-required="true"
-                   id="Bedrijfsnaam"
-                   name="Bedrijfsnaam"
-
-                   required type="text"/>
-        </label>
-        <label class="form-label " for="Bedrijfswebsite">
-
-            <span class="star">Bedrijfswebsite</span>
-            <input aria-required="true"
-                   id="Bedrijfswebsite"
-                   name="Bedrijfswebsite"
-                   required type="text"/>
-        </label>
-
-
-        <label class="form-label input-textfield" for="ik-wil-graag-lid-worden-omdat">
+        <Input label="function" id="function" name="function" />
+        <Input label="firstname" id="firstname" name="firstname" />
+        <Input label="middle-name" id="middle-name" name="middle-name" />
+        <Input label="lastname" id="lastname" name="lastname" />
+        <Input label="email" id="email" name="email" />
+        <Input label="mobile" id="v" name="mobile" />
+        <Input label="company" id="company" name="company" />
+        <Input label="company-website" id="website" name="website" />
+        <label class="form-label input-textfield" for="I want to be member because">
             <span class="star">Ik wil graag lid worden omdat </span>
             <textarea aria-required="true" cols="5" id="Textarea"
                       name="Textarea"

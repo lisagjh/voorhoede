@@ -55,6 +55,9 @@
 
     select{
         border: none;
+        height: 2.5rem;
+        padding-left: 1rem;
+        font-size: 18px;
     }
 
     .star:after {

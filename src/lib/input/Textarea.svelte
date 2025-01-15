@@ -43,6 +43,10 @@
 
     textarea {
         width: 100%;
+        border: none;
+        height: 1.5rem;
+        padding-left: 1rem;
+        font-size: 18px;
     }
 
     /* form focus invalid */

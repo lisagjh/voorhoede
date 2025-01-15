@@ -1,11 +1,14 @@
-*Wil je een issue inschieten? Wij zouden het fijn vinden als je dat doet in de [FDND Agency repo](https://github.com/fdnd-agency/voorhoede). Zo kunnen wij de issue meenemen is ons projectboard, en blijft alles op een plaats!*
+
+
+*Would you like to create an issue? We'd appreciate it if you could do this in the  [FDND Agency repo](https://github.com/fdnd-agency/voorhoede). so we can add it to our project board*
 
 # Dutch Digital Agencies
 
-[View this project here](https://dda-liard.vercel.app/)
+
+[View this project here](https://dutchdigitalagencies.vercel.app/)
 
 
-![readmee](https://github.com/user-attachments/assets/e7100b8a-0d7e-4945-8d30-d5ace0f499dc)
+![readme](https://github.com/user-attachments/assets/e7100b8a-0d7e-4945-8d30-d5ace0f499dc)
 
 
 ## Project Overview

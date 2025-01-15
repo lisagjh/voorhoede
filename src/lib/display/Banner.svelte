@@ -22,7 +22,7 @@
     />
     <img
       src="https://fdnd-agency.directus.app/assets/{item.logo}"
-      alt={item.title}
+      alt="Logo van {item.title}"
       height="150"
     />
   </picture>

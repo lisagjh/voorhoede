@@ -1,7 +1,6 @@
 <script>
   import { page } from '$app/stores'; // Import the $page store to get current route
-  import Button from '$lib/Button.svelte';
-  // import Link from "$lib/Link.svelte";
+  import Button from '$lib/input/Button.svelte';
   
   export let title,
     subtitle;

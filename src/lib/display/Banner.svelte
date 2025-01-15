@@ -29,7 +29,7 @@
 {/snippet}
 
 <div class="rows">
-  <!-- if clickable = true in the +page.svelte, use this version with the anchor element -->
+  <!-- if clickable = true, use this version with the anchor element -->
   {#if clickable}
     <ul class="row">
       {#each firstRow as item}

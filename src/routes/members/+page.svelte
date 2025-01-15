@@ -1,6 +1,5 @@
 <script>
   export let data;
-  import Link from "$lib/Link.svelte";
   import Member from "$lib/Member.svelte";
   import Searchbar from "$lib/Searchbar.svelte";
   import IntroSection from "$lib/IntroSection.svelte";
@@ -28,7 +27,7 @@
   <p class="textvacature">
     Kom werken bij de beste digitale bureaus van Nederland
   </p>
-  <Link href="/" clazz="detail-link" class="more-events">
+  <!-- <Link href="/" clazz="detail-link" class="more-events">
     <span slot="link-text" class="number-vacatures">bekijk vacatures (54)</span>
     <svg
             width="16"
@@ -42,11 +41,11 @@
               stroke-linecap="round"
               stroke-linejoin="round"/>
     </svg>
-  </Link>
+  </Link> -->
 </div>
 
 <div class="link-more-events">
-  <Link href="/" clazz="detail-link" class="">
+  <!-- <Link href="/" clazz="detail-link" class="">
     <span slot="link-text">Meer events laden</span>
     <svg
             width="16"
@@ -61,7 +60,7 @@
               stroke-linejoin="round"
       />
     </svg>
-  </Link>
+  </Link> -->
 </div>
 
 <style>

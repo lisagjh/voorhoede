@@ -110,6 +110,29 @@ div {
         padding: .5em .8em;
         background-color: #F1F0F0;
     }
+
+    h3 {
+        width: 60%;
+        order: 1;
+    }
+
+    article > p:nth-of-type(1){
+        width: 100%;
+        order: 3;
+        margin-bottom: .5em;
+    }
+
+    article > p:nth-of-type(2){
+        order: 2;
+        max-height: 2.5em;
+    }
+    div{
+        order: 4;
+        margin-bottom: 1em;
+    }
+    a {
+        order: 5;
+    }
 }
 
 </style>

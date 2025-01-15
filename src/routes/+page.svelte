@@ -1,6 +1,6 @@
 <script>
-  import Card from "../lib/display/Card.svelte";
-  import IntroSection from "./../lib/IntroSection.svelte";
+  import Card from "$lib/display/VacancyCard_home.svelte";
+  import IntroSection from "$lib/IntroSection.svelte";
 
   export let data;
 
@@ -43,9 +43,9 @@
   .vacancy-section .top {
     display: grid;
     padding: 1.5rem 0;
-    min-height: 250px;
+    min-height: 15.6rem;
     height: 100%;
-    max-height: 400px;
+    max-height: 25rem;
   }
 
   h2.tag {

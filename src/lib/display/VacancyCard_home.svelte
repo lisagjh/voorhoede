@@ -20,7 +20,7 @@
         {/if}
       {/each}
 
-        <a href="/#">{anchorText}</a>
+        <a href="/">{anchorText}</a>
       </article>
     {/each}
   {/if}

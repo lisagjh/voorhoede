@@ -1,23 +1,22 @@
 @font-face {
-  font-family: Archivo;
-  src: url(/font/Archivo-VariableFont_wdth\,wght.woff2);
+  font-family: "Archivo";
+  src: url("./font/Archivo-Variable.woff2");
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Archivo";
+/* @font-face {
+  font-family: "Archivo Italic";
   font-display: swap;
-  src: url("/font/font2/archivo-v19-latin-regular.woff2") format("woff2");
-}
+  src: url("/font/Archivo-Italic-Variable.woff2") format("woff2");
+} */
 
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Martian Mono";
-  src: url("/font/font2/martian-mono-v3-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("/font/MartianMono.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 * {
-  /*todo uitzoekenw aarom border box de subscribe button text aanpaast*/
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -132,60 +131,50 @@ button:focus-visible {
   }
 }
 
-header {
-  border-bottom: 1px solid var(--black);
-}
-
 main {
   line-height: 1.5;
-  padding: 2rem;
+  /*padding: 2rem;*/
   border-bottom: 1px solid var(--black);
 }
 
-@media (min-width: 43rem) {
+
+@media (width >= 43rem) {
   header,
   main,
   footer {
     width: 100%;
-    max-width: calc(100vw - 2rem);
   }
 
   header {
-    margin: 1rem;
+    border-right: 1px solid var(--black);
     margin-bottom: 0;
-    border: solid var(--black);
-    border-width: 1px;
   }
 
   main {
-    margin: 0 1rem;
-    border: solid var(--black);
     border-width: 0px 1px 1px 1px;
     border-top: none;
-    padding: 1rem;
+    padding: 0;
   }
 
   footer {
-    margin: 0 1rem 1rem 1rem;
     border: solid var(--black);
-    border-width: 0px 1px 1px 1px;
+    border-top: 1px;
   }
 }
 
 @media (width > 50rem) {
   main {
     border-left: none;
-    margin: 0 0.25rem;
-    margin-top: 1rem;
+    margin: 1rem 0 0;
     padding-top: 2.5rem;
     justify-self: end;
-    max-width: calc(100% - 19%);
+    max-width: calc(100% - 17% - 0rem);
   }
 
   footer {
-    max-width: calc(100% - 19%);
-    border-left: none;
-    margin: 0 0.25rem;
+    max-width: calc(100% - 17% - 0rem);
+    border: 1px 0 0 0 solid var(--black);
+    margin: 0 0;
     justify-self: end;
   }
 }

@@ -1,5 +1,4 @@
 <script>
-    import Link from "$lib/Link.svelte";
     export let data;
 </script>
 
@@ -30,13 +29,6 @@
 
             </ul>
 
-            <Link href="/" clazz="detail-link"><span slot="link-text">Details</span>
-                <svg width="16" height="16" slot="svg-icon-right" viewBox="0 0 24 24" fill="none">
-                    <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"/>
-                </svg>
-            </Link>
-
         </article>
     {/each}
 
@@ -62,7 +54,7 @@
         border-bottom: 1px solid var(--grey);
         padding: 2rem;
         display: grid;
-        grid-template-rows: 16rem auto auto 4rem auto;
+        grid-template-rows: 16rem 2rem auto 4rem auto;
         gap: 16px;
     }
 
@@ -167,10 +159,12 @@
 
     @media (min-width: 825px) and (max-width: 900px){
         .card {
-            grid-template-rows: 16rem auto auto 4rem auto;
+            grid-template-rows: 16rem 2rem auto 4rem auto;
         }
 
     }
+
+
     @media (max-width: 825px) {
         .card {
             border-left: 1px var(--grey) solid;

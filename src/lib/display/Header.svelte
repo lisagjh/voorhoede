@@ -1,6 +1,6 @@
 <script>
   import Nav from "$lib/navigation/Nav.svelte";
-  import Logo from "$lib/display/Logo.svelte"
+  import Logo from "$lib/display/Logo.svelte";
 </script>
 
 <header>
@@ -21,8 +21,9 @@
     height: 100%;
   }
 
-  @media (width > 50rem) {
+  @media (width >= 50rem) {
     header {
+      font-size: 0.88rem;
       display: flex;
       flex-direction: column;
       position: fixed;
@@ -33,6 +34,12 @@
       max-height: 100vh;
       padding: 1rem;
       justify-content: flex-start;
+    }
+  }
+
+  @media (width >= 56rem) {
+    header {
+      font-size: 1rem;
     }
   }
 </style>

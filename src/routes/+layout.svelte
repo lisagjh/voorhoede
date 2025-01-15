@@ -1,7 +1,7 @@
 <script>
   import { onNavigate } from "$app/navigation";
 
-  import Header from "../lib/display/Header.svelte";
+  import Header from "$lib/display/Header.svelte";
   import Footer from "$lib/display/Footer.svelte";
 
 

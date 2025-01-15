@@ -4,9 +4,8 @@
     export let searchTerm='';
     export let listToSearch = [];
 
-  // $: Is een dynamisch element wat zich gelijk aanpast op de data die erin zit. 
-  // .filter is een built in JS functie die een nieuwe arraay aanmaakt met de juiste items op basis van de requirements
-  // Om dit component dus globaal te maken 
+  // FilteredItems is a dynamic element that instantly changes depending on the data that is has.
+  
   $: filteredItems = listToSearch.filter(item =>
     item.toLowerCase().includes(searchTerm.toLowerCase())
   );

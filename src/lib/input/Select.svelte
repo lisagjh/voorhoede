@@ -61,6 +61,7 @@
         content: "*";
         font-size: 2rem;
         color: red;
+        padding-left: 0.4rem;
 
     }
 

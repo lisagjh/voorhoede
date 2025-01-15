@@ -13,7 +13,7 @@
         <Input label="Voornaam" id="voornaam" name="voornaam"/>
         <Input label="Tussenvoegsel" id="Tussenvoegsel" name="Tussenvoegsel"/>
         <Input label="Achternaam" id="Achternaam" name="Achternaam"/>
-        <Input label="email" id="email" name="email"/>
+        <Input label="Email" id="email" name="email"/>
         <Input label="Mobiel" id="Mobiel" name="Mobiel"/>
         <Input label="Bedrijfsnaam" id="Bedrijfsnaam" name="Bedrijfsnaam"/>
         <Input label="Bedrijfswebsite" id="Bedrijfswebsite" name="Bedrijfswebsite"/>

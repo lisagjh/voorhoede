@@ -25,7 +25,7 @@
 
   const pagesCTA = [
     { title: "Inloggen", ref: "/inloggen" },
-    { title: "Lid-worden", ref: "/Lid-worden" },
+    { title: "Join", ref: "/Lid-worden" },
   ];
 
   const allPages = [...pages, ...pagesCTA];

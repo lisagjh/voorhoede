@@ -74,6 +74,9 @@
 
     input {
         border: none;
+        height: 2.5rem;
+        padding-left: 1rem;
+        font-size: 18px;
     }
 
     /*code of the star mandatory or not*/
@@ -81,6 +84,7 @@
         content: "*";
         font-size: 2rem;
         color: red;
+        padding-left: 0.4rem;
 
     }
 

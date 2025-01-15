@@ -33,6 +33,7 @@
   }
 </script>
 
+<!-- This is a special svelte element that you can use to bind events to the window, see issue#201 for more info -->
 <svelte:window onkeydown={handleKeydown} />
 
 <ToggleButton {isOpen} toggle={toggleMenu} />

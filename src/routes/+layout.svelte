@@ -18,11 +18,11 @@
 </script>
 
 <div id="skip">
-  <a href="#main">Skip Content</a>
+  <a href="#content">Skip to main content</a>
 </div>
 <Header />
 
-<main id="main">
+<main id="content">
   <slot></slot>
 </main>
   

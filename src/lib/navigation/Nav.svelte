@@ -25,7 +25,15 @@
   function closeMenu() {
     isOpen = false;
   }
+
+  function handleKeydown(event) {
+    if (event.key === "Escape" && isOpen) {
+      closeMenu();
+    }
+  }
 </script>
+
+<svelte:window onkeydown={handleKeydown} />
 
 <ToggleButton {isOpen} toggle={toggleMenu} />
 

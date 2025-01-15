@@ -34,21 +34,21 @@
     <ul class="row">
       {#each firstRow as item}
         <!--TODO: when detail page for members is added, make this refer to the matching member's page.  -->
-        <a href="/members">
-          <li>
+        <li>
+          <a href="/members">
             {@render picture(item)}
-          </li>
-        </a>
+          </a>
+        </li>
       {/each}
     </ul>
 
     <ul class="row-reverse">
       {#each secondRow as item}
-        <a href="/members">
-          <li>
+        <li>
+          <a href="/members">
             {@render picture(item)}
-          </li>
-        </a>
+          </a>
+        </li>
       {/each}
     </ul>
 

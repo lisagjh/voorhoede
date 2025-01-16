@@ -3,7 +3,6 @@
   import NavItem from "./NavItem.svelte";
   import { onMount } from "svelte";
 
-  // Use $state for mutable state
   let isOpen = $state(false);
   let { openVacancies = 0 } = $props();
 

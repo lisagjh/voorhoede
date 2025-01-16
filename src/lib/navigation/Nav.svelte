@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from "svelte";
   import ToggleButton from "../input/ToggleButton.svelte";
   import NavItem from "./NavItem.svelte";
 
@@ -22,6 +23,12 @@
     isOpen = !isOpen;
   }
 
+  $effect(() => {
+    if (typeof document !== "undefined") {
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    }
+  });
+
   function closeMenu() {
     isOpen = false;
   }
@@ -31,6 +38,14 @@
       closeMenu();
     }
   }
+
+  onMount(() => {
+    return () => {
+      if (typeof document !== "undefined") {
+        document.body.style.overflow = "";
+      }
+    };
+  });
 </script>
 
 <!-- This is a special svelte element that you can use to bind events to the window, see issue#201 for more info -->

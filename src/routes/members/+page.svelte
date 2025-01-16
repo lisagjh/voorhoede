@@ -1,7 +1,7 @@
 <script>
   export let data;
   import Member from "$lib/Member.svelte";
-  import Searchbar from "$lib/Searchbar.svelte";
+  import Searchbar from "$lib/input/Searchbar.svelte";
   import IntroSection from "$lib/IntroSection.svelte";
 
   let searchTerm = "";

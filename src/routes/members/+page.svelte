@@ -1,9 +1,9 @@
 <script>
-  export let data;
   import Member from "$lib/Member.svelte";
   import Searchbar from "$lib/input/Searchbar.svelte";
   import IntroSection from "$lib/IntroSection.svelte";
 
+  export let data;
   let searchTerm = "";
 
   // FilteredItems is a dynamic element that instantly changes depending on the data that is has.

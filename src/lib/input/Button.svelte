@@ -91,5 +91,11 @@
     }
   
     /* More variants can be created if neccesarry */
+
+    @media(min-width: 648px){
+      .vacancy-link{
+        order: 5;
+      }
+    }
   </style>
   

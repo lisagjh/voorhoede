@@ -24,9 +24,13 @@
     justify-content: center;
     text-align: center;
     gap: 0.75em;
+    padding: 2rem;
+
     margin: 7.5% 0 15% 0;
   }
 
+  /*if spacing problem is not solved remove margin and change this to a min-width and max-width*/
+  /*and height for the spacing differents*/
   @media (min-width: 842px ){
       .intro-section {
         margin: 7.5% 20% 5% 20%;

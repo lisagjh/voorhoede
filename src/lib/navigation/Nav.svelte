@@ -1,8 +1,11 @@
 <script>
   import ToggleButton from "../input/ToggleButton.svelte";
   import NavItem from "./NavItem.svelte";
+  import { onMount } from "svelte";
 
-  let { openVacancies = 0, isOpen = false } = $props();
+  // Use $state for mutable state
+  let isOpen = $state(false);
+  let { openVacancies = 0 } = $props();
 
   const pages = [
     { title: "Home", ref: "/" },
@@ -12,12 +15,19 @@
     { title: "Leden", ref: "/members" },
     { title: "Vacatures", ref: "/vacatures" },
   ];
+
   const pagesCTA = [
     { title: "Inloggen", ref: "/inloggen" },
     { title: "Join", ref: "/Lid-worden" },
-
   ];
+
   const allPages = [...pages, ...pagesCTA];
+
+  $effect(() => {
+    if (typeof document !== "undefined") {
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    }
+  });
 
   function toggleMenu() {
     isOpen = !isOpen;
@@ -32,10 +42,17 @@
       closeMenu();
     }
   }
+
+  onMount(() => {
+    return () => {
+      if (typeof document !== "undefined") {
+        document.body.style.overflow = "";
+      }
+    };
+  });
 </script>
 
-<!-- This is a special svelte element that you can use to bind events to the window, see issue#201 for more info -->
-<svelte:window onkeydown={handleKeydown} />
+<svelte:window on:keydown={handleKeydown} />
 
 <ToggleButton {isOpen} toggle={toggleMenu} />
 
@@ -77,8 +94,8 @@
     top: 0;
     height: 100vh;
     /* clamp(min, val, max) - clamp means it will use the preferred value (val) when its between the min or max value. */
-    width: clamp(190px, 50%, 300px);
-    z-index: 1;
+    width: clamp(200px, 50%, 300px);
+    z-index: 5;
     border-left: 1px solid var(--black);
     transition:
       transform 0.3s ease-in-out,
@@ -115,6 +132,7 @@
     transform: translateX(-10%);
     clip-path: circle(29.3% at 86% 89%);
     transition: all 0.25s ease-in-out;
+    z-index: 3;
   }
 
   div.is-open {

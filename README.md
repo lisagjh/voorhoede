@@ -1,18 +1,22 @@
 
 
-*Would you like to create an issue? We'd appreciate it if you could do this in the  [FDND Agency repo](https://github.com/fdnd-agency/voorhoede). This helps us keep everything in one place.*
+*Would you like to leave an issue? We'd appreciate it if you could do this in the  [FDND Agency repo](https://github.com/fdnd-agency/voorhoede). This helps us keep everything in one place.*
 
-# Dutch Digital Agencies
-
-
-[Live site](https://dda.agency.fdnd.nl/)
+# Dutch Digital Agencies 💻
 
 
 ![DUTCH DIGITAL AGENCIES](https://github.com/user-attachments/assets/b461e4bc-0d6d-480a-8e47-c75e88187acd)
 
+## Link to website 🔗
 
+[Live site](https://dda.agency.fdnd.nl/)
 
-## Project Overview
+## Content
+
+- [Description](#Description)
+- [Installation](#Installation)
+
+## Description
 
 This project is focused on creating a dynamic, responsive, accessible and performant website for Dutch Digital Agencies. For now, we have decided to focus on the home page, the members overview page, and the vacancy overview page.
 

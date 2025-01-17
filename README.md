@@ -24,9 +24,9 @@ This project is focused on creating a dynamic, responsive, accessible and perfor
 
 ## Tech Stack
 
-[x] Sveltekit 5
-[x] Directus
-[x] Vite
+- [x] Sveltekit 5 📙
+- [x] Directus 🐰
+- [x] Vite ⚡️
 
 ## Installation
 

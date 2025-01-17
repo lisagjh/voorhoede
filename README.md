@@ -30,7 +30,7 @@ Make sure you have the following installed:
 1. Clone this repository to your local machine using the following command in your terminal:
 
     ```bash
-    git clone https://github.com/fdnd-agency/voorhoede.git
+    git clone https://github.com/lisagjh/voorhoede.git
     ```
 
 2. Navigate to the project folder:

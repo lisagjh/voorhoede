@@ -33,13 +33,7 @@ This project is focused on creating a dynamic, responsive, accessible and perfor
 
 ## Installation 🛠️
 
-Follow these steps to clone and run the project locally.
-
-Make sure you have the following installed:
-
-- [Git](https://git-scm.com/) 
-- [Node.js](https://nodejs.org/) 
-- [npm](https://www.npmjs.com/) (comes with Node.js)
+Follow these steps to clone and run the project locally. Make sure you have git, Node, and npm installed.
 
 1. Clone this repository to your local machine using the following command in your terminal:
 

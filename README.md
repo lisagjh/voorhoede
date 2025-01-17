@@ -1,6 +1,6 @@
 
 
-*Would you like to create an issue? We'd appreciate it if you could do this in the  [FDND Agency repo](https://github.com/fdnd-agency/voorhoede). so we can add it to our project board*
+*Would you like to create an issue? We'd appreciate it if you could do this in the  [FDND Agency repo](https://github.com/fdnd-agency/voorhoede). This helps us keep everything in one place.*
 
 # Dutch Digital Agencies
 
@@ -8,7 +8,8 @@
 [View this project here](https://dutchdigitalagencies.vercel.app/)
 
 
-![readme](https://github.com/user-attachments/assets/e7100b8a-0d7e-4945-8d30-d5ace0f499dc)
+![DUTCH DIGITAL AGENCIES](https://github.com/user-attachments/assets/b461e4bc-0d6d-480a-8e47-c75e88187acd)
+
 
 
 ## Project Overview

@@ -70,5 +70,6 @@ Make sure you have the following installed:
 
 ## Known Bugs
 
--[]
+- After tabbing through the menu, you start tabbing through the main content, but the menu remains open.
 
+We are currently not aware of any other bugs. If you encounter any, feel free to [tell us about it in an issue]([url](https://github.com/fdnd-agency/voorhoede))!

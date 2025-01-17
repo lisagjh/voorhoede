@@ -2,7 +2,6 @@
   import { onMount } from "svelte";
   import ToggleButton from "../input/ToggleButton.svelte";
   import NavItem from "./NavItem.svelte";
-  import { onMount } from "svelte";
 
   let isOpen = $state(false);
   let { openVacancies = 0 } = $props();

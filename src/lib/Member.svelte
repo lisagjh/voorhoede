@@ -1,5 +1,7 @@
 <script>
-    export let data;
+    import Button from "$lib/input/Button.svelte";
+
+    export let data, href;
 </script>
 
 
@@ -29,6 +31,11 @@
 
             </ul>
 
+            <Button 
+                tag="a"
+                label="Bekijk agency"
+                href={href}
+            />
         </article>
     {/each}
 

@@ -1,5 +1,7 @@
 <script>
-  let { data = [], className = "", extraFields = [], anchorText } = $props();
+  let { data = [], className = "", extraFields = [], href } = $props();
+
+  import Button from "$lib/input/Button.svelte";
 </script>
 
 <div class={className}>
@@ -20,7 +22,12 @@
         {/if}
       {/each}
 
-        <a href="/">{anchorText}</a>
+        <Button
+          tag="a"
+          label="View"
+          href={href}
+          className="index-page-link-view"
+        />
       </article>
     {/each}
   {/if}
@@ -47,10 +54,6 @@
     border-bottom: 1px solid var(--black);
   }
 
-  article p,
-  a {
-    text-transform: uppercase;
-  }
 
   .title {
     font-weight: 400;
@@ -59,20 +62,6 @@
   p {
     font-family: var(--martian-mono);
     text-transform: capitalize;
-  }
-
-  a {
-    width: 100%;
-    text-wrap: nowrap;
-    justify-self: self-end;
-    text-align: right;
-    margin-top: 0.5rem;
-
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
   }
 
   /* className="vacancies" styling */

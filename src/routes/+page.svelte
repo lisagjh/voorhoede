@@ -1,7 +1,10 @@
 <script>
-  import Card from "$lib/display/VacancyCard_home.svelte";
+
   import IntroSection from "$lib/IntroSection.svelte";
   import Banner from "$lib/display/Banner.svelte";
+  import Button from "$lib/input/Button.svelte"
+  import Card from "$lib/display/VacancyCard_home.svelte";
+
 
   export let data;
 
@@ -26,7 +29,12 @@
   <div class="top">
     <h2 class="tag">Vacatures</h2>
     <p>De beste agencies zoeken de beste mensen</p>
-    <a href="/vacatures">Bekijk alle vacatures</a>
+    <Button
+      tag="a"
+      label="Bekijk alle vacatures"
+      href="/vacatures"
+      className="index-page-link"
+    />
   </div>
 
   <Card
@@ -72,10 +80,6 @@
     text-transform: uppercase;
     text-wrap: balance;
     margin: 1rem;
-  }
-
-  a {
-    justify-self: center;
   }
 
   @media (width > 35em) {

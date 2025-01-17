@@ -1,6 +1,7 @@
 <script>
-    // import Link from "$lib/Link.svelte"; // Will later convert slots to snipppets SV5
-    let {title, language, company, hours, city} = $props()
+    import Button from "$lib/input/Button.svelte";
+
+    let {title, language, company, hours, city, href} = $props()
 </script>
 
 
@@ -39,9 +40,12 @@
             30-{hours} UUR
         </p>
     </div>
-    <a href="/">
-        Bekijk vacature
-    </a>
+    <Button
+        tag="a"
+        label="Bekijk Vacature"
+        href="/"
+        className="vacancy-link"
+    />
 </article>
 
 <style>
@@ -56,6 +60,10 @@ article {
 
 article:nth-of-type(1) {
     padding: 0em 1em 2.5em 1em;
+}
+
+article:last-of-type {
+    border-bottom: none;
 }
 
 h3 {

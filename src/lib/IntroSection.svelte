@@ -25,7 +25,13 @@
     text-align: center;
     gap: 0.75em;
     padding: 2rem;
-    /*margin: 7.5% 0 7.5% 0;*/
+    margin: 3rem 0 3rem 0;
+  }
+
+  @media (max-width: 842px ){
+    .intro-section {
+      min-height: 20rem;
+    }
   }
 
 

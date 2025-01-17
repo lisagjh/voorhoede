@@ -31,16 +31,15 @@ This project is focused on creating a dynamic, responsive, accessible and perfor
 - [x] Directus 🐰
 - [x] Vite ⚡️
 
-## Installation
+## Installation 🛠️
 
 Follow these steps to clone and run the project locally.
 
 Make sure you have the following installed:
 
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/) (version 18.x or higher recommended)
+- [Git](https://git-scm.com/) 
+- [Node.js](https://nodejs.org/) 
 - [npm](https://www.npmjs.com/) (comes with Node.js)
-
 
 1. Clone this repository to your local machine using the following command in your terminal:
 
@@ -70,7 +69,7 @@ Make sure you have the following installed:
 5. Click the link to view the website, and have fun coding.
 
 
-## Known Bugs
+## Known Bugs 🐛
 
 - After tabbing through the menu, you start tabbing through the main content, but the menu remains open.
 

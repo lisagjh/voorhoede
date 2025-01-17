@@ -14,12 +14,19 @@
 ## Content
 
 - [Description](#Description)
+- [Tech Stack](#Tech-Stack)
 - [Installation](#Installation)
+- [Known Bugs](#Known-Bugs)
 
 ## Description
 
 This project is focused on creating a dynamic, responsive, accessible and performant website for Dutch Digital Agencies. For now, we have decided to focus on the home page, the members overview page, and the vacancy overview page.
 
+## Tech Stack
+
+[x] Sveltekit 5
+[x] Directus
+[x] Vite
 
 ## Installation
 
@@ -58,4 +65,8 @@ Make sure you have the following installed:
     ```
 
 5. Click the link to view the website, and have fun coding.
+
+## Known Bugs
+
+-[]
 

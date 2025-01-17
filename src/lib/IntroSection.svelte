@@ -1,36 +1,16 @@
 <script>
   import { page } from '$app/stores'; // Import the $page store to get current route
-  import Link from "$lib/Link.svelte";
+  import Button from '$lib/input/Button.svelte';
   
   export let title,
-    subtitle,
-    displayHomeLink = true;
+    subtitle;
+  //   displayHomeLink = true;
 
   // Check if current page is the homepage
-  $: isHomePage = $page.url.pathname === '/';
+  // $: isHomePage = $page.url.pathname === '/';
 </script>
 
 <section class="intro-section">
-  {#if displayHomeLink && !isHomePage} <!-- Only show if not on the homepage -->
-    <Link href="/" clazz="back-to-home">
-      <svg
-        slot="svg-icon-left"
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-      >
-        <path
-          d="M6 12H18M6 12L11 7M6 12L11 17"
-          stroke="#000000"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-      <span slot="link-text">TERUG NAAR HOME</span>
-    </Link>
-  {/if}
 
   <h1>{title}</h1>
   <p><slot name="subtitle">{subtitle}</slot></p>

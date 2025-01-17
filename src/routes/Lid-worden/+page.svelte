@@ -1,7 +1,7 @@
 <script>
 
   import IntroSection from "$lib/IntroSection.svelte";
-  import Form from "$lib/Form.svelte";
+  import Form from "$lib/input/Form.svelte";
 
 </script>
 

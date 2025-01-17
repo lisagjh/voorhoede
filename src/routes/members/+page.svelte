@@ -1,8 +1,7 @@
 <script>
   export let data;
-  import Link from "$lib/Link.svelte";
   import Member from "$lib/Member.svelte";
-  import Searchbar from "$lib/Searchbar.svelte";
+  import Searchbar from "$lib/input/Searchbar.svelte";
   import IntroSection from "$lib/IntroSection.svelte";
 
   let searchTerm = "";
@@ -15,7 +14,7 @@
 
 <IntroSection
         title="Leden"
-        subtitle="De [nummer] beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging. Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
+        subtitle="De  beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging. Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
 />
 
 <section class="filter-section">
@@ -28,7 +27,7 @@
   <p class="textvacature">
     Kom werken bij de beste digitale bureaus van Nederland
   </p>
-  <Link href="/" clazz="detail-link" class="more-events">
+  <!-- <Link href="/" clazz="detail-link" class="more-events">
     <span slot="link-text" class="number-vacatures">bekijk vacatures (54)</span>
     <svg
             width="16"
@@ -42,11 +41,11 @@
               stroke-linecap="round"
               stroke-linejoin="round"/>
     </svg>
-  </Link>
+  </Link> -->
 </div>
 
 <div class="link-more-events">
-  <Link href="/" clazz="detail-link" class="">
+  <!-- <Link href="/" clazz="detail-link" class="">
     <span slot="link-text">Meer events laden</span>
     <svg
             width="16"
@@ -61,7 +60,7 @@
               stroke-linejoin="round"
       />
     </svg>
-  </Link>
+  </Link> -->
 </div>
 
 <style>

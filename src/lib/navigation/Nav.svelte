@@ -23,10 +23,10 @@
     isOpen = !isOpen;
   }
 
+  // runs whener isOpen variable changes
   $effect(() => {
-    if (typeof document !== "undefined") {
-      document.body.style.overflow = isOpen ? "hidden" : "";
-    }
+    // When menu is open, set body overflow to "hidden" to prevent scrolling
+    document.body.style.overflow = isOpen ? "hidden" : "";
   });
 
   function closeMenu() {
@@ -41,9 +41,9 @@
 
   onMount(() => {
     return () => {
-      if (typeof document !== "undefined") {
-        document.body.style.overflow = "";
-      }
+      // Reset body overflow to default when component is destroyed
+      // This prevents the page from staying locked if component is removed while menu is open
+      document.body.style.overflow = "";
     };
   });
 </script>

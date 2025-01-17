@@ -19,6 +19,7 @@
 - [Tech Stack](#Tech-Stack)
 - [Installation](#Installation)
 - [Known Bugs](#Known-Bugs)
+- [License](#License)
 
 ## Description
 
@@ -73,3 +74,8 @@ Make sure you have the following installed:
 - After tabbing through the menu, you start tabbing through the main content, but the menu remains open.
 
 We are currently not aware of any other bugs. If you encounter any, feel free to [tell us about it in an issue]([url](https://github.com/fdnd-agency/voorhoede))!
+
+
+### License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+

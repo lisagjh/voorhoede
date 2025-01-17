@@ -1,4 +1,6 @@
-
+![SvelteKit](https://img.shields.io/badge/SvelteKit-v5-orange)
+![Directus](https://img.shields.io/badge/Directus-API-blue)
+![Vite](https://img.shields.io/badge/Vite-fast-brightgreen)
 
 *Would you like to leave an issue? We'd appreciate it if you could do this in the  [FDND Agency repo](https://github.com/fdnd-agency/voorhoede). This helps us keep everything in one place.*
 

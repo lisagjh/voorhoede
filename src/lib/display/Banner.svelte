@@ -92,15 +92,6 @@
     white-space: nowrap;
   }
 
-  .row-reverse {
-    animation-direction: reverse;
-  }
-
-  .row:hover,
-  .row-reverse:hover {
-    animation-play-state: paused;
-  }
-
   picture,
   img {
     align-items: center;
@@ -120,6 +111,12 @@
 
     .row-reverse {
       animation: loop 30s linear infinite reverse;
+      animation-direction: reverse;
+    }
+
+    .row:hover,
+    .row-reverse:hover {
+      animation-play-state: paused;
     }
 
     @keyframes loop {

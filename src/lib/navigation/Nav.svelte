@@ -198,5 +198,12 @@
       overflow: scroll;
       margin: 0;
     }
+
+    @media (width >= 50rem) {
+      ul {
+        flex-direction: column;
+        margin-top: 0;
+      }
+    }
   }
 </style>

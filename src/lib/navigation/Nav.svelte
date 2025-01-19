@@ -2,7 +2,6 @@
   import { onMount } from "svelte";
   import ToggleButton from "../input/ToggleButton.svelte";
   import NavItem from "./NavItem.svelte";
-  import { onMount } from "svelte";
 
   let isOpen = $state(false);
   let { openVacancies = 0 } = $props();
@@ -174,6 +173,30 @@
 
     div {
       display: none;
+    }
+  }
+
+  @media (scripting: none) {
+    nav {
+      position: relative;
+      display: block;
+      visibility: visible;
+      transform: translateX(0%);
+      opacity: 1;
+      height: fit-content;
+      width: fit-content;
+      border: none;
+    }
+
+    div {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      overflow: scroll;
+      margin: 0;
     }
   }
 </style>

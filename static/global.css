@@ -85,7 +85,7 @@ a:focus-visible,
 button:focus-visible {
   color: var(--blue);
   font-weight: bolder;
-  border: 3px dashed var(--blue);
+  outline: 3px dashed var(--blue);
 }
 
 .subtext {

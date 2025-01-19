@@ -42,4 +42,14 @@
       font-size: 1rem;
     }
   }
+
+  @media (scripting: none) {
+    header {
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      max-height: 20rem;
+      overflow: auto;
+    }
+  }
 </style>

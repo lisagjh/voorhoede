@@ -64,14 +64,13 @@
     }
 
     .index-page-link-view {
-    width: 100%;
-    text-wrap: nowrap;
-    justify-self: self-end;
-    text-align: right;
-    margin-top: 0.5rem;
-
-    text-decoration: none;
-  }
+      width: 100%;
+      text-wrap: nowrap;
+      justify-self: self-end;
+      text-align: right;
+      margin-top: 0.5rem;
+      text-decoration: none;
+    }
 
   .index-page-link-view:hover {
     text-decoration: underline;
@@ -88,6 +87,10 @@
   
     .outline:hover {
       border: 1px solid var(--blue);
+    }
+
+    .vacancy-link:hover{
+      text-decoration: underline;
     }
   
     /* More variants can be created if neccesarry */

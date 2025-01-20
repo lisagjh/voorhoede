@@ -34,7 +34,8 @@
             <Button 
                 tag="a"
                 label="Bekijk agency"
-                href={href}
+                href="/"
+                className="vacancy-link"
             />
         </article>
     {/each}

@@ -25,7 +25,7 @@
         <Button
           tag="a"
           label="View"
-          href={href}
+          href="/"
           className="index-page-link-view"
         />
       </article>

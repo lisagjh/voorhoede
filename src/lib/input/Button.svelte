@@ -29,7 +29,6 @@
   <svelte:element
     this={tag}
     class={className}
-    role={tag === "a" ? "link" : "button"}
     href={tag === "a" ? href : undefined}
     onclick={tag === "button" ? action : undefined}
   >
@@ -72,17 +71,23 @@
       text-decoration: none;
     }
 
-  .index-page-link-view:hover {
-    text-decoration: underline;
-  }
+    .index-page-link-view:hover {
+      text-decoration: underline;
+    }
   
     .outline {
-      display: flex;
-      align-items: center;
-      border: 1px solid black;
-      padding: 1em;
-      gap: 0.5em;
-      transition: 0.35s;
+      margin-right: .5em;
+    }
+    
+    @supports(gap: .5em){
+      .outline {
+        display: flex;
+        align-items: center;
+        border: 1px solid black;
+        padding: 1em;
+        gap: 0.5em;
+        transition: 0.35s;
+      }
     }
   
     .outline:hover {

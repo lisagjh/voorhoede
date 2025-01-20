@@ -11,6 +11,18 @@
   );
  
 </script>
+
+<noscript>
+
+  <style>
+
+    form {
+     display: none !important;
+    }
+    
+  </style>
+
+</noscript>
  
 <form action="#" method="GET" on:submit|preventDefault>
   <input
@@ -23,7 +35,6 @@
 </form>
  
 <style>
-
 
 input {
   min-width: 19em;
@@ -63,6 +74,4 @@ input[type="search"]::-webkit-search-cancel-button {
     }
 }
 
-
- 
 </style>

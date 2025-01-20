@@ -24,11 +24,6 @@
 
     }
 
-    textarea {
-        height: auto;
-        border: none;
-    }
-
     .star:after {
         content: "*";
         font-size: 2rem;
@@ -47,6 +42,7 @@
         height: 1.5rem;
         padding-left: 1rem;
         font-size: 18px;
+        border: none;
     }
 
     /* form focus invalid */

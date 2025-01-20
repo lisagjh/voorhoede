@@ -18,16 +18,20 @@
 </section>
 
 <section class="vacancies-section">
-  {#each data.vacancies as vacancy}
-  <Vacancy
-    title={vacancy.title}
-    company="UNKNOWN"
-    language="ENGELS & NEDERLANDS"
-    hours={vacancy.hours}
-    city={vacancy.locatie}
-    href={vacancy.href}
-  />
-{/each}
+  {#if data.length === 0}
+    <p>Error : Seems like data is empty</p>
+  {:else}
+    {#each data.vacancies as vacancy}
+      <Vacancy
+        title={vacancy.title}
+        company="UNKNOWN"
+        language="ENGELS & NEDERLANDS"
+        hours={vacancy.hours}
+        city={vacancy.locatie}
+        href={vacancy.href}
+      />
+    {/each}
+  {/if}
 </section>
 
 <style>

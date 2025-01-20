@@ -138,9 +138,6 @@ div {
         order: 4;
         margin-bottom: 1em;
     }
-    a {
-        order: 5;
-    }
 }
 
 </style>

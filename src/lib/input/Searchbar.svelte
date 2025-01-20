@@ -11,18 +11,6 @@
   );
  
 </script>
-
-<noscript>
-
-  <style>
-
-    form {
-     display: none !important;
-    }
-    
-  </style>
-
-</noscript>
  
 <form action="#" method="GET" on:submit|preventDefault>
   <input
@@ -72,6 +60,12 @@ input[type="search"]::-webkit-search-cancel-button {
     input {
         min-width: 14em; /* for small phone screens */
     }
+}
+
+@media (scripting: none){
+  form {
+    display: none !important;
+  }
 }
 
 </style>

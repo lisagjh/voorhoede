@@ -14,7 +14,7 @@
 />
 
 <section class="filter-section">
-  <Searchbar placeholderText="Zoek een vacture... " />
+  <!--Searchbar filter w.i.p-->
 </section>
 
 <section class="vacancies-section">

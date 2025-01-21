@@ -1,7 +1,7 @@
 <script>
   import { page } from '$app/stores'; // Import the $page store to get current route
   import Button from '$lib/input/Button.svelte';
-  
+
   export let title,
     subtitle;
   //   displayHomeLink = true;
@@ -11,8 +11,8 @@
 </script>
 
 <section class="intro-section">
-
-  <h1>{title}</h1>
+<!--  todo tabindex using if there is no other solution-->
+  <h1 aria-label="{title}">{title}</h1>
   <p><slot name="subtitle">{subtitle}</slot></p>
 </section>
 

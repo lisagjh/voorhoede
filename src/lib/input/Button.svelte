@@ -99,13 +99,13 @@
         order: 5;
       }
 
-      .button-test{
+      .Button-Subscribe{
         max-width: fit-content;
       }
     }
 
 
-    .button-test{
+    .Button-Subscribe{
       border-left: 1px solid var(--grey);
       border-right: 1px solid var(--grey);
       border-top: 1px solid var(--grey);
@@ -120,14 +120,14 @@
       grid-row: 8;
       font-size: 20px;
     }
-    .button-test *{
+    .Button-Subscribe *{
       box-sizing: content-box;
     }
-    .button-test:hover{
+    .Button-Subscribe:hover{
       color: var(--blue);
     }
 
-    button-test:focus {
+    Button-Subscribe:focus {
       outline: 2px solid var(--blue);
     }
 

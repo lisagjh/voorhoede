@@ -20,7 +20,7 @@
         <Select/>
         <Textarea/>
         <Button
-                className="button-test"
+                className="Button-Subscribe"
                 tag="button"
                 label="SCHRIJF MIJ IN"
                 href="/bedankt"

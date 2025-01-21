@@ -28,8 +28,7 @@
                 type="submit"
                 action={() => {
                 console.log("lid worden");
-  }}
-
+                }}
         />
     </fieldset>
 </form>

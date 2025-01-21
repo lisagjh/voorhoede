@@ -6,7 +6,6 @@
 
 
 <section class="grid-container">
-    <h2 class="hide">leden</h2>
     {#if data.length === 0}
         <p>Seems like data is empty</p>
     {:else}
@@ -25,7 +24,7 @@
                     <li class="label-filters">label</li>
                 </ul>
 
-                <h3 class="title-members" aria-label="{member.title}">{member.title } </h3>
+                <h2  class="title-members" aria-label="{member.title}">{member.title } </h2>
                 <p>{member.address}</p>
 
                 <ul class="card-label-workers-hiring">
@@ -131,6 +130,7 @@
         height: 1.6rem;
     }
 
+
     img {
         object-fit: cover;
         width: 100%;
@@ -163,6 +163,14 @@
 
 
     }
+    @media (max-width: 900px) {
+        .card {
+            grid-template-rows: 16rem auto auto auto auto;
+
+
+        }
+
+    }
 
     /*tablet screen */
     @media (min-width: 800px) {
@@ -181,12 +189,7 @@
         }
     }
 
-    @media (min-width: 825px) and (max-width: 900px){
-        .card {
-            grid-template-rows: 16rem 2rem auto 4rem auto;
-        }
 
-    }
 
 
     @media (max-width: 825px) {

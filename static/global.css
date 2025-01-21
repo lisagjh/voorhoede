@@ -138,13 +138,6 @@ main {
   border-bottom: 1px solid var(--black);
 }
 
-/*@media (width <= 43rem) {*/
-/*  main{*/
-/*    padding: 0rem 2rem 2rem 2rem;*/
-/*  }*/
-
-/*}*/
-
 @media (width >= 43rem) {
   header,
   main,

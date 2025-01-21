@@ -14,13 +14,14 @@ export async function load() {
     const allMembers = members.data;
     const allVacancies = vacancies.data;
 
-    // Create a Map for efficient agency lookups
+    // Create a Map for efficient agency lookups in a other function
     const agencyMap = createAgencyMap(allMembers);
 
-    // Enrich vacancies with agency names (call separate function)
+
+    // user 2 parameters in a seperate function for both data tables
     const vacancyWithAgencyData = DataAgenciesDataVacancies(allVacancies, agencyMap);
 
-    // Get the latest vacancies (call separate function)
+    // Get the latest vacancies in a seperate function
     const lastFiveItems = getLatestVacancies(vacancyWithAgencyData);
 
     console.log("Server received data:", allVacancies.length);
@@ -46,6 +47,7 @@ export async function load() {
   }
 }
 
+// The code in the functions are the same nothing is change only that it is now in a seperate function
 function createAgencyMap(membersData) {
   return new Map(membersData.map((agency) => [agency.id, agency.title]));
 }
@@ -55,43 +57,6 @@ function DataAgenciesDataVacancies(allVacancies, agencyMap) {
   }));
 }
 
-function getLatestVacancies(DataLast5Items) {
-  return DataLast5Items.slice(-6).reverse();
+function getLatestVacancies(getLatestFiveVacancies) {
+  return getLatestFiveVacancies.slice(-6).reverse();
 }
-//old code in case i can't fix this
-// export async function load() {
-//   const ddaVacancies =
-//     "https://fdnd-agency.directus.app/items/dda_agencies_vacancies";
-//   const ddaAgencies = "https://fdnd-agency.directus.app/items/dda_agencies/";
-//
-//   const vacatures = await fetchJson(ddaVacancies);
-//   const agencies = await fetchJson(ddaAgencies);
-//
-//   // Access the `data` property from both API responses
-//   const allVacatures = vacatures.data;
-//
-//   const agencyData = agencies.data;
-//
-//   // Create a Map for efficient agency lookups
-//   const agencyMap = new Map(
-//     agencies.data.map((agency) => [agency.id, agency.title])
-//   );
-//
-//   // Enrich vacancies with agency names
-//   const vacancyWithAgencyData = allVacatures.map((vacancy) => ({
-//     ...vacancy,
-//     agencyName: agencyMap.get(vacancy.agency_id) || "Unknown Agency",
-//   }));
-//
-//   // Take the first 6 vacancies for latest items
-//   const lastFiveItems = vacancyWithAgencyData.slice(-6).reverse();
-//
-//   console.log("Server received data:", allVacatures.length);
-//
-//   return {
-//     agencies: agencyData,
-//     vacancyAgencies: vacancyWithAgencyData,
-//     latestVacancies: lastFiveItems,
-//     vacatures: allVacatures,
-//   };
-// }

@@ -17,14 +17,11 @@ export async function load() {
     // Create a Map for efficient agency lookups in a other function
     const agencyMap = createAgencyMap(allMembers);
 
-
-    // user 2 parameters in a seperate function for both data tables
+    // use 2 parameters in a seperate function for both data tables
     const vacancyWithAgencyData = DataAgenciesDataVacancies(allVacancies, agencyMap);
 
     // Get the latest vacancies in a seperate function
     const lastFiveItems = getLatestVacancies(vacancyWithAgencyData);
-
-    console.log("Server received data:", allVacancies.length);
 
     return {
       vacancies: allVacancies,

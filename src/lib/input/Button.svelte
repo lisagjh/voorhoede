@@ -12,15 +12,15 @@
 
   try {
     if (!validTags.includes(tag)) {
-      throw new Error(`Invalid tag '${tag}'. Use "<button>" or "<a>".`);
+      throw new error(`Invalid tag '${tag}'. Use "<button>" or "<a>".`);
     }
     if (tag === "button" && !action) {
-      throw new Error(
+      throw new error(
               "A <button> element must have a action or function attached."
       );
     }
     if (tag === "a" && !href) {
-      throw new Error("A <a> element must have a href provided");
+      throw new error("A <a> element must have a href provided");
     }
   } catch (e) {
     console.error(e);

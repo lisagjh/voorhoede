@@ -12,10 +12,11 @@
   );
 </script>
 
-<IntroSection
-        title="Leden"
-        subtitle="De  beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging. Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie"
-/>
+<IntroSection title="Leden">
+  <svelte:fragment slot="subtitle">
+    De  beste digitale bureaus van Nederland zijn verenigd in Dutch Digital Agencies. Zet de juiste filters aan en zoek contact met het bureau dat het beste bij past bij jouw vraagstuk en uitdaging. Ook DDA lid worden? Ga dan naar deze pagina voor meer informatie
+  </svelte:fragment>
+</IntroSection>
 
 <section class="filter-section">
   <Searchbar placeholderText="Zoek een bureau" bind:searchTerm />

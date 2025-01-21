@@ -131,11 +131,5 @@
       outline: 2px solid var(--blue);
     }
 
-    svg{
-      /*margin-bottom: -0.6rem;*/
-      border-left: 1px solid var(--grey);
-      /*padding: 0.2rem 0.2rem 0.4rem 0.4em;*/
-    }
-
   </style>
   

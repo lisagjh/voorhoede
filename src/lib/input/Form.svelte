@@ -51,14 +51,10 @@
         left: -9999px;
     }
 
-
-
     /*contianer queries */
     form {
         container-type: inline-size;
     }
-
-
 
     @container  (min-width: 600px) {
         fieldset {
@@ -69,9 +65,6 @@
 
         }
     }
-
-
-
 
 </style>
 

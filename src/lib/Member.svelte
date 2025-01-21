@@ -25,10 +25,10 @@
                     <li class="label-filters">label</li>
                 </ul>
 
-                <h3 aria-label="{member.title}">{member.title } </h3>
+                <h3 class="title-members" aria-label="{member.title}">{member.title } </h3>
                 <p>{member.address}</p>
 
-                <ul class="card-label">
+                <ul class="card-label-workers-hiring">
                     <li>{parseInt(member.colleagues)}  werknemers</li>
                     <li class="card-hiring">hiring</li>
 
@@ -64,8 +64,8 @@
         border-bottom: 1px solid var(--grey);
         padding: 2rem;
         display: grid;
-        grid-template-rows: 16rem 2rem auto 4rem auto;
-        gap: 16px;
+        grid-template-rows: 16rem 2rem 4rem 4rem 3rem;
+        gap: 20px;
     }
 
     .card:nth-last-child(1),
@@ -83,12 +83,26 @@
 
     }
 
+    .title-members{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
     .card-label {
         display: flex;
         flex-direction: row;
         text-overflow: ellipsis;
         gap: 0.5rem;
         height: 2rem;
+    }
+    .card-label-workers-hiring{
+        gap: 0.5rem;
+        display: grid;
+        margin-bottom: 1rem;
+    }
+
+    .card-hiring{
+        width: max-content;
     }
 
     .label-filters {

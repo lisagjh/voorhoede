@@ -1,5 +1,6 @@
 <script>
-    let {
+
+  let {
       tag,
       className,
       label,
@@ -8,22 +9,22 @@
       action,
       validTags = ["button", "a"],
     } = $props();
-  
-    try {
-      if (!validTags.includes(tag)) {
-        throw new error(`Invalid tag '${tag}'. Use "<button>" or "<a>".`);
-      }
-      if (tag === "button" && !action) {
-        throw new error(
-          "A <button> element must have a action or function attached."
-        );
-      }
-      if (tag === "a" && !href) {
-        throw new error("A <a> element must have a href provided");
-      }
-    } catch (e) {
-      console.error(e);
+
+  try {
+    if (!validTags.includes(tag)) {
+      throw new Error(`Invalid tag '${tag}'. Use "<button>" or "<a>".`);
     }
+    if (tag === "button" && !action) {
+      throw new Error(
+              "A <button> element must have a action or function attached."
+      );
+    }
+    if (tag === "a" && !href) {
+      throw new Error("A <a> element must have a href provided");
+    }
+  } catch (e) {
+    console.error(e);
+  }
   </script>
   
   <svelte:element
@@ -36,6 +37,7 @@
     {#if label !== ""}
       {label}
     {/if}
+    <!--TODO Hier moet het pijltje komen-->
   
     {#if svgIcon}
       {@render svgIcon()}
@@ -96,6 +98,43 @@
       .vacancy-link{
         order: 5;
       }
+
+      .button-test{
+        max-width: fit-content;
+      }
+    }
+
+
+    .button-test{
+      border-left: 1px solid var(--grey);
+      border-right: 1px solid var(--grey);
+      border-top: 1px solid var(--grey);
+      border-bottom: 1px solid var(--grey);
+      margin-right: -0.3rem;
+      color: var(--black);
+      text-decoration: none;
+      padding: 10px 10px 10px 10px;
+      background-color: transparent;
+      margin-top: 2rem;
+      display: grid;
+      grid-row: 8;
+      font-size: 20px;
+    }
+    .button-test *{
+      box-sizing: content-box;
+    }
+    .button-test:hover{
+      color: var(--blue);
+    }
+
+    button-test:focus {
+      outline: 2px solid var(--blue);
+    }
+
+    svg{
+      /*margin-bottom: -0.6rem;*/
+      border-left: 1px solid var(--grey);
+      /*padding: 0.2rem 0.2rem 0.4rem 0.4em;*/
     }
 
   </style>

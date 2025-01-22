@@ -1,26 +1,40 @@
 <script>
-    import TextButton from '$lib/Subscribe-button.svelte';
     import Input from "$lib/input/Input.svelte";
     import Select from "$lib/input/Select.svelte";
     import Textarea from "$lib/input/Textarea.svelte";
+    import Button from "$lib/input/Button.svelte";
 </script>
 
 <form action="/bedankt">
     <fieldset>
 
         <legend>persoonlijke gegevens</legend>
-        <Input label="Functie" id="Functie" name="Functie"/>
-        <Input label="Voornaam" id="voornaam" name="voornaam"/>
-        <Input label="Tussenvoegsel" id="Tussenvoegsel" name="Tussenvoegsel"/>
-        <Input label="Achternaam" id="Achternaam" name="Achternaam"/>
-        <Input label="Email" id="email" name="email"/>
-        <Input label="Mobiel" id="Mobiel" name="Mobiel"/>
-        <Input label="Bedrijfsnaam" id="Bedrijfsnaam" name="Bedrijfsnaam"/>
-        <Input label="Bedrijfswebsite" id="Bedrijfswebsite" name="Bedrijfswebsite"/>
+
+        <Input id="Functie" label="Functie" name="Functie"/>
+        <Input id="voornaam" label="Voornaam" name="voornaam"/>
+        <Input id="Tussenvoegsel" label="Tussenvoegsel" name="Tussenvoegsel"/>
+        <Input id="Achternaam" label="Achternaam" name="Achternaam"/>
+        <Input id="email" label="Email" name="email"/>
+        <Input id="Mobiel" label="Mobiel" name="Mobiel"/>
+        <Input id="Bedrijfsnaam" label="Bedrijfsnaam" name="Bedrijfsnaam"/>
+        <Input id="Bedrijfswebsite" label="Bedrijfswebsite" name="Bedrijfswebsite"/>
 
         <Select/>
+
         <Textarea/>
-        <TextButton/>
+
+
+        <Button
+                action={() => {
+                console.log("lid worden");
+                }}
+                className="Button-Subscribe"
+                href="/bedankt"
+                label="SCHRIJF MIJ IN"
+                svgIcon=""
+                tag="button"
+                type="submit"
+        />
     </fieldset>
 </form>
 
@@ -41,14 +55,10 @@
         left: -9999px;
     }
 
-
-
     /*contianer queries */
     form {
         container-type: inline-size;
     }
-
-
 
     @container  (min-width: 600px) {
         fieldset {

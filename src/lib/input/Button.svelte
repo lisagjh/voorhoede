@@ -127,7 +127,7 @@
       color: var(--blue);
     }
 
-    Button-Subscribe:focus {
+    .Button-Subscribe:focus {
       outline: 2px solid var(--blue);
     }
 

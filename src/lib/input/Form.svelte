@@ -9,26 +9,29 @@
     <fieldset>
 
         <legend>persoonlijke gegevens</legend>
-        <Input label="Functie" id="Functie" name="Functie"/>
-        <Input label="Voornaam" id="voornaam" name="voornaam"/>
-        <Input label="Tussenvoegsel" id="Tussenvoegsel" name="Tussenvoegsel"/>
-        <Input label="Achternaam" id="Achternaam" name="Achternaam"/>
-        <Input label="Email" id="email" name="email"/>
-        <Input label="Mobiel" id="Mobiel" name="Mobiel"/>
-        <Input label="Bedrijfsnaam" id="Bedrijfsnaam" name="Bedrijfsnaam"/>
-        <Input label="Bedrijfswebsite" id="Bedrijfswebsite" name="Bedrijfswebsite"/>
+
+            <Input id="Functie" label="Functie" name="Functie"/>
+            <Input id="voornaam" label="Voornaam" name="voornaam"/>
+            <Input id="Tussenvoegsel" label="Tussenvoegsel" name="Tussenvoegsel"/>
+            <Input id="Achternaam" label="Achternaam" name="Achternaam"/>
+            <Input id="email" label="Email" name="email"/>
+            <Input id="Mobiel" label="Mobiel" name="Mobiel"/>
+            <Input id="Bedrijfsnaam" label="Bedrijfsnaam" name="Bedrijfsnaam"/>
+            <Input id="Bedrijfswebsite" label="Bedrijfswebsite" name="Bedrijfswebsite"/>
+
         <Select/>
         <Textarea/>
+
         <Button
-                className="Button-Subscribe"
-                tag="button"
-                label="SCHRIJF MIJ IN"
-                href="/bedankt"
-                svgIcon=""
-                type="submit"
                 action={() => {
                 console.log("lid worden");
                 }}
+                className="Button-Subscribe"
+                href="/bedankt"
+                label="SCHRIJF MIJ IN"
+                svgIcon=""
+                tag="button"
+                type="submit"
         />
     </fieldset>
 </form>

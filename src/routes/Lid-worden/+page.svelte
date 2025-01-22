@@ -6,7 +6,7 @@
 </script>
 
 <IntroSection
-        title="LID-WORDEN"
+        title="LID WORDEN"
         subtitle=""
 />
 

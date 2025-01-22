@@ -57,7 +57,7 @@
         width: 100%;
         border-bottom: 1.5px solid var(--black);
         gap: 0.8rem;
-        font-size: 18px;
+        font-size: 1em;
     }
 
     span {
@@ -76,8 +76,8 @@
     input {
         border: none;
         height: 2.5rem;
-        padding-left: 10px;
-        font-size: 18px;
+        padding-left: 0.56em;
+        font-size: 1em;
     }
 
     /*code of the star mandatory or not*/

@@ -10,16 +10,17 @@
 
         <legend>persoonlijke gegevens</legend>
 
-            <Input id="Functie" label="Functie" name="Functie"/>
-            <Input id="voornaam" label="Voornaam" name="voornaam"/>
-            <Input id="Tussenvoegsel" label="Tussenvoegsel" name="Tussenvoegsel"/>
-            <Input id="Achternaam" label="Achternaam" name="Achternaam"/>
-            <Input id="email" label="Email" name="email"/>
-            <Input id="Mobiel" label="Mobiel" name="Mobiel"/>
-            <Input id="Bedrijfsnaam" label="Bedrijfsnaam" name="Bedrijfsnaam"/>
-            <Input id="Bedrijfswebsite" label="Bedrijfswebsite" name="Bedrijfswebsite"/>
+        <Input id="Functie" label="Functie" name="Functie"/>
+        <Input id="voornaam" label="Voornaam" name="voornaam"/>
+        <Input id="Tussenvoegsel" label="Tussenvoegsel" name="Tussenvoegsel"/>
+        <Input id="Achternaam" label="Achternaam" name="Achternaam"/>
+        <Input id="email" label="Email" name="email"/>
+        <Input id="Mobiel" label="Mobiel" name="Mobiel"/>
+        <Input id="Bedrijfsnaam" label="Bedrijfsnaam" name="Bedrijfsnaam"/>
+        <Input id="Bedrijfswebsite" label="Bedrijfswebsite" name="Bedrijfswebsite"/>
 
         <Select/>
+
         <Textarea/>
 
         <Button

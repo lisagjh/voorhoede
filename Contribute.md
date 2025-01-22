@@ -2,7 +2,7 @@
 
 If you would like to contribute to this project, we want to ask you to do so according to this guide.
 
-Make sure to take a look at our (code conventions here)[https://github.com/orgs/fdnd-agency/projects/40/views/7?pane=issue&itemId=92667482&issue=fdnd-agency%7Cvoorhoede%7C161] first!
+Make sure to take a look at our [code conventions here](https://github.com/orgs/fdnd-agency/projects/40/views/7?pane=issue&itemId=92667482&issue=fdnd-agency%7Cvoorhoede%7C161) first!
 
 ## Create a branch
 

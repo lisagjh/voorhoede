@@ -153,52 +153,10 @@ main {
   main {
     grid-column: 2;
     border-left: 1px solid var(--black);
-
   }
 
   footer {
-    position: relative; /* Default position */
+    position: relative;
     grid-column: 1 / 3;
-    z-index: 1; /* Ensure it's below the header */
+    z-index: 1;
   }
-
-/* @media (width >= 43rem) {
-  header,
-  main,
-  footer {
-    width: 100%;
-  }
-
-  header {
-    border-right: 1px solid var(--black);
-    margin-bottom: 0;
-  }
-
-  main {
-    border-width: 0px 1px 1px 1px;
-    border-top: none;
-    padding: 0;
-  }
-
-  footer {
-    border: solid var(--black);
-    border-top: 1px;
-  }
-}
-
-@media (width > 50rem) {
-  main {
-    border-left: none;
-    margin: 1rem 0 0;
-    padding-top: 2.5rem;
-    justify-self: end;
-    max-width: calc(100% - 17% - 0rem);
-  }
-
-  footer {
-    max-width: calc(100% - 17% - 0rem);
-    border: 1px 0 0 0 solid var(--black);
-    margin: 0 0;
-    justify-self: end;
-  }
-} */

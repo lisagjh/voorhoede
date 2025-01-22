@@ -20,13 +20,15 @@
 <div id="skip">
   <a href="#content">Skip to main content</a>
 </div>
-<Header />
-
-<main id="content">
-  <slot></slot>
-</main>
+<div class="main-container">
+  <Header />
   
-<Footer />
+  <main id="content">
+    <slot></slot>
+  </main>
+    
+  <Footer />
+</div>
 
 <style>
   #skip a {
@@ -41,6 +43,6 @@
     top: 0;
     padding: .1rem;
     background: var(--white);
-    border:1px solid var(--blue);
+    outline:1px solid var(--blue);
     }
 </style>

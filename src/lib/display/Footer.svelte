@@ -110,15 +110,13 @@
 
   li {
     display: flex;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     transition: 0.25s ease-in-out;
   }
 
   a {
     color: var(--black);
     width: fit-content;
-    text-underline-offset: 0.2rem;
     text-wrap: wrap;
   }
 
@@ -158,7 +156,7 @@
     margin-right: 1rem;
   }
 
-  @media (min-width: 35rem) {
+  @media (width >= 35rem) {
     .middle-content {
       display: flex;
       flex-direction: row;
@@ -166,7 +164,6 @@
 
     .address {
       flex-direction: column;
-      margin-top: 2.5rem;
       border: none;
     }
 
@@ -176,7 +173,7 @@
     }
   }
 
-  @media (min-width: 43rem) {
+  @media (width >= 43rem) {
     footer {
       display: grid;
       grid-template-areas:
@@ -189,14 +186,13 @@
       grid-area: top;
       border: solid var(--black);
       border-width: 0px 1px 1px 0px;
-      padding-top: 2.5rem;
     }
 
     .middle-content {
       grid-area: middle;
       gap: 2rem;
       margin: 0;
-      padding: 1rem 2.5rem;
+      padding: 1rem;
       border: solid var(--black);
       border-width: 0px 0px 1px 0px;
     }

@@ -153,6 +153,7 @@
     nav {
       background-color: transparent;
       border: none;
+      max-width: 100%;
       position: relative;
       visibility: visible;
       display: flex;

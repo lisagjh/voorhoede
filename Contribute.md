@@ -1,10 +1,3 @@
-Voeg een bestand toe met richtlijnen voor het bijdragen aan het project:
-    - Hoe nieuwe branches moeten worden aangemaakt (bijv. `feature/[naam]`).
-    - Hoe commits gemaakt moeten worden (bijv. “Gebruik duidelijke commitberichten in de vorm van: [type]: [beschrijving]”).
-    - Hoe pull requests moeten worden aangemaakt en gereviewd.
-    - Verwijs naar de in het project gebruikte code conventies
-
-
 # Contributing
 
 If you would like to contribute to this project, we want to ask you to do so according to this guide.

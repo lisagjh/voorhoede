@@ -65,7 +65,7 @@ Follow these steps to clone and run the project locally. Make sure you have git,
 
 ## Contribute
 
-If you would like to contribute to this project, we urge you to read [our contribution guide]([url](https://github.com/lisagjh/voorhoede/blob/main/Contribute.md#contributing)).
+If you would like to contribute to this project, we urge you to read [our contribution guide](https://github.com/lisagjh/voorhoede/blob/main/Contribute.md#contributing).
 
 ## Known Bugs 🐛
 

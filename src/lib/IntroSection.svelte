@@ -28,20 +28,6 @@
     margin: 3rem 0 3rem 0;
   }
 
-  @media (max-width: 842px ){
-    .intro-section {
-      min-height: 20rem;
-    }
-  }
-
-
-
-  @media (min-width: 842px ){
-      .intro-section {
-        margin: 7.5% 20% 5% 20%;
-      }
-  }
-
   @media (min-width: 1332px ){
       .intro-section {
         margin: 7.5% 25% 5% 25%;

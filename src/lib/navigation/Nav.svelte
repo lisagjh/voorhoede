@@ -175,4 +175,35 @@
       display: none;
     }
   }
+
+  @media (scripting: none) {
+    nav {
+      position: relative;
+      display: block;
+      visibility: visible;
+      transform: translateX(0%);
+      opacity: 1;
+      height: fit-content;
+      width: fit-content;
+      border: none;
+    }
+
+    div {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      overflow: scroll;
+      margin: 0;
+    }
+
+    @media (width >= 50rem) {
+      ul {
+        flex-direction: column;
+        margin-top: 0;
+      }
+    }
+  }
 </style>

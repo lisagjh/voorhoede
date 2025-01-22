@@ -103,6 +103,7 @@
   picture:hover,
   img:hover {
     filter: none;
+    scale: 1.02;
   }
 
   .row,

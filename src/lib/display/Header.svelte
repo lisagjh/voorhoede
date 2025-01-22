@@ -17,7 +17,8 @@
     justify-content: space-between;
     overflow-x: hidden;
     overflow: hidden;
-    padding: 0.5rem 1rem;
+    /*in the header the padding top is removed for the right padding and margin*/
+    padding: 2rem 2rem 0rem 2rem;
     width: 100%;
     height: 100%;
   }

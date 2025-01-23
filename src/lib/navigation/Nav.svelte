@@ -1,128 +1,95 @@
-<script lang="ts">
+<script>
   import { onMount } from "svelte";
-  import MenuToggleBtn from "./../input/MenuToggleBtn.svelte";
+  import ToggleButton from "../input/ToggleButton.svelte";
   import NavItem from "./NavItem.svelte";
 
-  // Menu state
-  let isOpen = false; // Initialize state for menu visibility
-  let openVacancies = 0;
-  let hasAnimated = false;
-  const delay = 1750;
+  let isOpen = $state(false);
+  let { openVacancies = 0 } = $props();
 
-  // Pages data
-  let pages = [
+  const pages = [
     { title: "Home", ref: "/" },
+    { title: "Over Ons", ref: "/over" },
+    { title: "Events", ref: "/events" },
+    { title: "Publicaties", ref: "/publicaties" },
     { title: "Leden", ref: "/members" },
     { title: "Vacatures", ref: "/vacatures" },
   ];
 
-  let pagesCTA = [
+  const pagesCTA = [
+    { title: "Inloggen", ref: "/inloggen" },
+    { title: "Join", ref: "/Lid-worden" },
   ];
 
-  let allPages = [...pages, ...pagesCTA];
+  const allPages = [...pages, ...pagesCTA];
 
-  // Toggle menu visibility and handle body overflow
-  function toggle() {
+  $effect(() => {
+    if (typeof document !== "undefined") {
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    }
+  });
+
+  function toggleMenu() {
     isOpen = !isOpen;
-    document.body.style.overflow = isOpen ? "hidden" : ""; // Disable/enable scrolling
-    if (isOpen && !hasAnimated) {
-      hasAnimated = true;
-      startVacancyAnimation();
+  }
+
+  // runs whener isOpen variable changes
+  $effect(() => {
+    // When menu is open, set body overflow to "hidden" to prevent scrolling
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  });
+
+  function closeMenu() {
+    isOpen = false;
+  }
+
+  function handleKeydown(event) {
+    if (event.key === "Escape" && isOpen) {
+      closeMenu();
     }
   }
 
-  // Fetch vacancies and animate counter
-  async function startVacancyAnimation() {
-    try {
-      const response = await fetch(
-        "https://fdnd-agency.directus.app/items/dda_agencies_vacancies/"
-      );
-      const vacatures = await response.json();
-      const totalVacancies = vacatures.data ? vacatures.data.length : 0;
-      animateCounter(openVacancies, totalVacancies, delay);
-    } catch (error) {
-      console.error("Error fetching vacancies:", error);
-    }
-  }
-
-  // Function to animate the vacancy badge in the nav menu
-  function animateCounter(start, end, duration) {
-    // Calculate the range of the animation
-    const range = end - start;
-
-    // when it starts
-    const startTime = performance.now();
-
-    // Easing function to make the animation slow down at the end
-    function easeOut(t) {
-      return t * (2 - t);
-    }
-
-    // Function to update the animation on each frame
-    function update(currentTime) {
-      // Calculate how much time has passed since the animation started
-      const elapsedTime = currentTime - startTime;
-      // Translates the elapsedtime to a number between 0 (start) and 1 (end)
-      const normalizedTime = Math.min(elapsedTime / duration, 1);
-      // Apply the easing function
-      const easedProgress = easeOut(normalizedTime);
-      // Update the number of the counter
-      openVacancies = Math.floor(start + range * easedProgress);
-      // checks if the animation is finished or not
-      if (normalizedTime < 1) {
-        // if not keeps updating
-        requestAnimationFrame(update);
-      }
-    }
-    // Start the animation by calling the update function
-    requestAnimationFrame(update);
-  }
-
-  // to close the menu after a menu item or backdrop gets clicked
-  const menuToggle: Action = (node) => {
-    const handleClick = () => {
-      toggle(); // Call the toggle function when clicked
+  onMount(() => {
+    return () => {
+      // Reset body overflow to default when component is destroyed
+      // This prevents the page from staying locked if component is removed while menu is open
+      document.body.style.overflow = "";
     };
-
-    node.addEventListener("click", handleClick);
-
-    // Cleanup when the element is removed
-    return {
-      destroy() {
-        node.removeEventListener("click", handleClick);
-      },
-    };
-  };
-
-  // close menu when esc is pressed
-  function closeMenuOnEsc(event) {
-    // check if esc key is pressed
-    if (event.key === "Escape") {
-      // close menu
-      isOpen = false;
-    }
-  }
+  });
 </script>
 
-<MenuToggleBtn {isOpen} {toggle} />
+<svelte:window on:keydown={handleKeydown} />
+
+<ToggleButton {isOpen} toggle={toggleMenu} />
 
 <nav class:is-open={isOpen}>
   <ul>
     {#each allPages as page}
-      <li use:menuToggle>
+      <li>
         <NavItem
           title={page.title}
           href={page.ref}
           badge={page.ref === "/vacatures" ? openVacancies : null}
+          onNavigate={closeMenu}
         />
       </li>
     {/each}
   </ul>
 </nav>
 
-<div id="backdrop" class:is-open={isOpen} use:menuToggle></div>
+<div
+  role="presentation"
+  id="backdrop"
+  class:is-open={isOpen}
+  onclick={closeMenu}
+></div>
 
 <style>
+  .is-open {
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+  }
+
   nav {
     display: none;
     visibility: hidden;
@@ -132,10 +99,9 @@
     top: 0;
     height: 100vh;
     /* clamp(min, val, max) - clamp means it will use the preferred value (val) when its between the min or max value. */
-    width: clamp(190px, 50%, 300px);
-    z-index: 1;
+    width: clamp(200px, 50%, 300px);
+    z-index: 5;
     border-left: 1px solid var(--black);
-
     transition:
       transform 0.3s ease-in-out,
       opacity 0.3s ease-in-out;
@@ -146,8 +112,21 @@
   nav.is-open {
     visibility: visible;
     display: flex;
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 0 1rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    font-family: var(--martian-mono);
+    margin: 1rem;
   }
 
   div {
@@ -158,6 +137,7 @@
     transform: translateX(-10%);
     clip-path: circle(29.3% at 86% 89%);
     transition: all 0.25s ease-in-out;
+    z-index: 3;
   }
 
   div.is-open {
@@ -169,34 +149,17 @@
     clip-path: none;
   }
 
-  ul {
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    margin-top: 5rem;
-    margin-bottom: 1rem;
-    padding: 0;
-  }
-
-  li {
-    font-family: var(--martian-mono);
-    margin: 1rem;
-  }
-
-  @media (width > 50rem) {
+  @media (width >= 50rem) {
     nav {
       background-color: transparent;
       border: none;
+      max-width: 100%;
       position: relative;
-
       visibility: visible;
       display: flex;
-      transform: translateY(0);
+      transform: none;
       opacity: 1;
-      height: fit-content;
+      height: auto;
       margin-top: 2rem;
     }
 
@@ -207,6 +170,41 @@
     li {
       margin: 0;
       margin-bottom: 1.5rem;
+    }
+
+    div {
+      display: none;
+    }
+  }
+
+  @media (scripting: none) {
+    nav {
+      position: relative;
+      display: block;
+      visibility: visible;
+      transform: translateX(0%);
+      opacity: 1;
+      height: fit-content;
+      width: fit-content;
+      border: none;
+    }
+
+    div {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      overflow: scroll;
+      margin: 0;
+    }
+
+    @media (width >= 50rem) {
+      ul {
+        flex-direction: column;
+        margin-top: 0;
+      }
     }
   }
 </style>

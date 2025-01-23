@@ -1,5 +1,4 @@
 <script>
-  import { Header } from "$lib/display/Header.svelte";
   import Nav from "$lib/navigation/Nav.svelte";
   import Logo from "$lib/display/Logo.svelte";
 </script>
@@ -41,22 +40,6 @@
   @media (width >= 56rem) {
     header {
       font-size: 1rem;
-    }
-  }
-
-  @media (scripting: none) {
-    header {
-      display: flex;
-      flex-direction: column;
-      height: fit-content;
-      max-height: 20rem;
-      overflow: auto;
-    }
-
-    @media (width >= 50rem) {
-      header {
-        min-height: 100vh;
-      }
     }
   }
 </style>

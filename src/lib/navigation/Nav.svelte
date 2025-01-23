@@ -31,7 +31,6 @@
 
   function toggleMenu() {
     isOpen = !isOpen;
-    console.log("Click!");
   }
 
   function closeMenu() {

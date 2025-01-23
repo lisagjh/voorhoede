@@ -4,6 +4,7 @@
   import NavItem from "./NavItem.svelte";
 
   let isOpen = $state(false);
+  let isJsEnabled = $state(false);
   let { openVacancies = 0 } = $props();
 
   const pages = [
@@ -22,21 +23,16 @@
 
   const allPages = [...pages, ...pagesCTA];
 
-  $effect(() => {
-    if (typeof document !== "undefined") {
-      document.body.style.overflow = isOpen ? "hidden" : "";
-    }
-  });
-
-  function toggleMenu() {
-    isOpen = !isOpen;
-  }
-
   // runs whener isOpen variable changes
   $effect(() => {
     // When menu is open, set body overflow to "hidden" to prevent scrolling
     document.body.style.overflow = isOpen ? "hidden" : "";
   });
+
+  function toggleMenu() {
+    isOpen = !isOpen;
+    console.log("Click!");
+  }
 
   function closeMenu() {
     isOpen = false;
@@ -49,9 +45,8 @@
   }
 
   onMount(() => {
+    isJsEnabled = true;
     return () => {
-      // Reset body overflow to default when component is destroyed
-      // This prevents the page from staying locked if component is removed while menu is open
       document.body.style.overflow = "";
     };
   });
@@ -61,7 +56,7 @@
 
 <ToggleButton {isOpen} toggle={toggleMenu} />
 
-<nav class:is-open={isOpen}>
+<nav class:is-open={isOpen} class:js-enabled={isJsEnabled} hidden={isJsEnabled}>
   <ul>
     {#each allPages as page}
       <li>
@@ -84,49 +79,25 @@
 ></div>
 
 <style>
-  .is-open {
-    transition:
-      transform 0.3s ease-in-out,
-      opacity 0.3s ease-in-out;
-  }
-
   nav {
-    display: none;
-    visibility: hidden;
+    width: fit-content;
+    height: fit-content;
     background-color: var(--white);
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    /* clamp(min, val, max) - clamp means it will use the preferred value (val) when its between the min or max value. */
-    width: clamp(200px, 50%, 300px);
-    z-index: 5;
-    border-left: 1px solid var(--black);
-    transition:
-      transform 0.3s ease-in-out,
-      opacity 0.3s ease-in-out;
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  nav.is-open {
-    visibility: visible;
-    display: flex;
-    transform: translateX(0);
-    opacity: 1;
   }
 
   ul {
     display: flex;
-    flex-direction: column;
-    margin: 5rem 0 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
     padding: 0;
-    list-style: none;
+    overflow-x: scroll;
   }
 
   li {
     font-family: var(--martian-mono);
     margin: 1rem;
+    list-style: "";
   }
 
   div {
@@ -135,7 +106,6 @@
     left: 0;
     opacity: 0.1;
     transform: translateX(-10%);
-    clip-path: circle(29.3% at 86% 89%);
     transition: all 0.25s ease-in-out;
     z-index: 3;
   }
@@ -146,11 +116,35 @@
     width: 100vw;
     height: 100vh;
     transform: translateX(0);
-    clip-path: none;
+  }
+
+  nav.js-enabled {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: clamp(200px, 100%, 290px);
+    height: 100vh;
+    opacity: 0;
+    transform: translateY(-100%);
+    z-index: 5;
+    border-left: 1px solid var(--black);
+    transition: 0.5s ease-in-out;
+  }
+
+  nav.js-enabled.is-open {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.5s ease-in-out;
+  }
+
+  .js-enabled ul {
+    flex-direction: column;
+    margin-top: 5rem;
   }
 
   @media (width >= 50rem) {
-    nav {
+    nav, nav.js-enabled {
       background-color: transparent;
       border: none;
       position: relative;
@@ -162,7 +156,8 @@
       margin-top: 2rem;
     }
 
-    ul {
+    ul, .js-enabled ul {
+      flex-direction: column;
       margin-top: 0;
     }
 

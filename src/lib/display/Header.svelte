@@ -1,9 +1,16 @@
 <script>
+  import { onMount } from "svelte";
   import Nav from "$lib/navigation/Nav.svelte";
   import Logo from "$lib/display/Logo.svelte";
+
+  let isJsEnabled = $state(false);
+
+  onMount(() => {
+    isJsEnabled = true;
+  });
 </script>
 
-<header>
+<header class:js-enabled={isJsEnabled}>
   <Logo />
   <Nav />
 </header>
@@ -12,17 +19,20 @@
   header {
     font-family: var(--martian-mono);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    overflow-x: hidden;
-    overflow: hidden;
     padding: 0.5rem 1rem;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+  }
+
+  header.js-enabled {
+    flex-direction: row;
   }
 
   @media (width >= 50rem) {
-    header {
+    header.js-enabled, header {
       font-size: 0.88rem;
       display: flex;
       flex-direction: column;

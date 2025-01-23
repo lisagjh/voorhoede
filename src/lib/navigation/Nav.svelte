@@ -55,7 +55,11 @@
 
 <ToggleButton {isOpen} toggle={toggleMenu} />
 
-<nav class:is-open={isOpen} class:js-enabled={isJsEnabled} hidden={isJsEnabled}>
+<nav 
+  class:is-open={isOpen} 
+  class:js-enabled={isJsEnabled} 
+  hidden={isJsEnabled}
+>
   <ul>
     {#each allPages as page}
       <li>

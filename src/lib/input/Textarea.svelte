@@ -15,6 +15,7 @@
         width: 100%;
         border-bottom: 1.5px solid var(--black);
         gap: 0.8rem;
+        font-size: 18px;
     }
 
     span {
@@ -22,11 +23,6 @@
         grid-column: 1;
         height: 2rem;
 
-    }
-
-    textarea {
-        height: auto;
-        border: none;
     }
 
     .star:after {
@@ -44,9 +40,11 @@
     textarea {
         width: 100%;
         border: none;
-        height: 1.5rem;
-        padding-left: 1rem;
+        padding: 5px 0 0 10px;
         font-size: 18px;
+        border: none;
+        height: 2rem;
+
     }
 
     /* form focus invalid */

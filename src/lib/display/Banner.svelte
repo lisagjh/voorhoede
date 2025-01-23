@@ -96,6 +96,14 @@
   img {
     align-items: center;
     border-radius: 0.25rem;
+    filter: grayscale(100);
+    transition: .2s ease-in-out;
+  }
+
+  picture:hover,
+  img:hover {
+    filter: none;
+    scale: 1.02;
   }
 
   .row,

@@ -1,8 +1,17 @@
 <script>
+  import { onMount } from "svelte";
+
+  let isJsEnabled = $state(false);
+
   let { isOpen = false, toggle } = $props();
+
+  onMount(() => {
+    isJsEnabled = true;
+  });
 </script>
 
-<button onclick={toggle}>
+<button onclick={toggle} class:js-enabled={isJsEnabled} hidden={!isJsEnabled}
+>
   {#if isOpen}
     <span class="close">Close</span>
   {:else}
@@ -11,7 +20,8 @@
 </button>
 
 <style>
-  button {
+  button.js-enabled {
+    display: block;
     font-family: var(--martian-mono);
     text-transform: uppercase;
     font-size: 1.5rem;
@@ -66,8 +76,8 @@
     }
   }
 
-  @media (scripting: none) {
-    button {
+  @media (width > 50rem) {
+    button, button.js-enabled {
       display: none;
     }
   }

@@ -1,14 +1,13 @@
 @font-face {
   font-family: "Archivo";
-  /*src: url("./font/Archivo-Variable.woff2");*/
   src: url("./font/Archivo-Variable.woff2");
   font-display: swap;
 }
 
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Martian Mono";
-  src: url("./font/MartianMono.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("./font/MartianMono.woff2") format("woff2");
 }
 
 * {
@@ -94,7 +93,7 @@ button:focus-visible {
   letter-spacing: -0.25px;
 }
 
-@media (max-width: 35em) {
+@media (width <= 35em) {
   h1 {
     font-size: 3rem;
     line-height: 100%;
@@ -128,48 +127,37 @@ button:focus-visible {
 
 main {
   line-height: 1.5;
-  /*padding: 2rem;*/
-  border-bottom: 1px solid var(--black);
 }
 
+footer {
+  border-top: 1px solid var(--black);
+}
 
-@media (width >= 43rem) {
-  header,
-  main,
-  footer {
-    width: 100%;
+/** Layout Styling */
+
+main {
+  max-width: 100vw;
+}
+
+@media (width >= 50rem) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 17% 83%;
+    grid-template-rows: auto;
   }
 
   header {
-    border-right: 1px solid var(--black);
-    margin-bottom: 0;
+    grid-column: 1;
   }
 
   main {
-    border-width: 0px 1px 1px 1px;
-    border-top: none;
-    padding: 0;
+    grid-column: 2;
+    border-left: 1px solid var(--black);
   }
 
   footer {
-    border: solid var(--black);
-    border-top: 1px;
-  }
-}
-
-@media (width > 50rem) {
-  main {
-    border-left: none;
-    margin: 1rem 0 0;
-    padding-top: 2.5rem;
-    justify-self: end;
-    max-width: calc(100% - 17% - 0rem);
-  }
-
-  footer {
-    max-width: calc(100% - 17% - 0rem);
-    border: 1px 0 0 0 solid var(--black);
-    margin: 0 0;
-    justify-self: end;
+    position: relative;
+    grid-column: 1 / 3;
+    z-index: 1;
   }
 }

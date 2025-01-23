@@ -33,17 +33,16 @@
 
   @media (width >= 50rem) {
     header.js-enabled, header {
+      /* width is handled in the global.css to prevent issues with layout */
       font-size: 0.88rem;
-      display: flex;
       flex-direction: column;
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 17%;
-      height: 100%;
-      max-height: 100vh;
+      position: sticky; 
+      top: 0; 
+      height: fit-content; 
+      width: fit-content;
       padding: 1rem;
       justify-content: flex-start;
+      z-index: 1;
     }
   }
 

@@ -150,6 +150,7 @@
       position: relative;
       visibility: visible;
       display: flex;
+      max-width: 100%;
       transform: none;
       opacity: 1;
       height: auto;

@@ -130,6 +130,10 @@ main {
   max-width: 100vw;
 }
 
+footer {
+  border-top: 1px solid var(--black);
+}
+
 @media (width >= 50rem) {
   .main-container {
     display: grid;

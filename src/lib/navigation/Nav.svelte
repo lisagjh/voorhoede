@@ -144,6 +144,7 @@
   .js-enabled ul {
     flex-direction: column;
     margin-top: 5rem;
+    overflow-x: hidden;
   }
 
   @media (width >= 50rem) {
@@ -163,6 +164,7 @@
     ul, .js-enabled ul {
       flex-direction: column;
       margin-top: 0;
+      overflow-x: hidden;
     }
 
     li {

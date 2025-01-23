@@ -24,7 +24,6 @@
  
 <style>
 
-
 input {
   min-width: 19em;
   padding: 1em 0;
@@ -63,6 +62,10 @@ input[type="search"]::-webkit-search-cancel-button {
     }
 }
 
+@media (scripting: none){
+  form {
+    display: none !important;
+  }
+}
 
- 
 </style>

@@ -1,13 +1,24 @@
 import fetchJson from "$lib/fetch-json.js";
 
 export async function load() {
-  const ddaAgencies =
-    "https://fdnd-agency.directus.app/items/dda_agencies_vacancies";
-  const vacatures = await fetchJson(ddaAgencies);
+  const ddaAgenciesUrl = "https://fdnd-agency.directus.app/items/dda_agencies_vacancies";
 
-  const allVacancies = vacatures.data
+  try {
+    const [vacatures] = await Promise.all([
+      fetchJson(ddaAgenciesUrl),
+    ]);
+    
+    const allVacancies = vacatures.data;
 
-  return {
-    vacancies: allVacancies
-  };
+    return {
+      vacancies: allVacancies,
+    };
+  } catch (error) {
+    console.error("Error while loading data:", error);
+
+    return {
+      vacancies: [],
+      error: "Failed to load vacancies data",
+    };
+  }
 }

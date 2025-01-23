@@ -1,38 +1,48 @@
 <script>
+    import Button from "$lib/input/Button.svelte";
+
     export let data;
 </script>
 
 
 <section class="grid-container">
     <h2 class="hide">leden</h2>
-    {#each data.members as member}
-        <article class="card">
-            <picture>
-                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
-                <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
-                <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="foto {member.title}">
-            </picture>
+    {#if data.length === 0}
+        <p>Seems like data is empty</p>
+    {:else}
+        {#each data.members as member}
+            <article class="card">
+                <picture>
+                    <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=avif" type="image/avif">
+                    <source srcset="https://fdnd-agency.directus.app/assets/{member.photo}?format=webp" type="image/webp">
+                    <img src="https://fdnd-agency.directus.app/assets/{member.photo}" loading="lazy" alt="foto {member.title}">
+                </picture>
 
-            <ul class="card-label-filters">
-                <li class="label-filters">
-                    service design
-                </li>
-                <li class="label-filters">label</li>
-            </ul>
+                <ul class="card-label-filters">
+                    <li class="label-filters">
+                        service design
+                    </li>
+                    <li class="label-filters">label</li>
+                </ul>
 
-            <h3 aria-label="{member.title}">{member.title } </h3>
-            <p>{member.address}</p>
+                <h3 aria-label="{member.title}">{member.title } </h3>
+                <p>{member.address}</p>
 
-            <ul class="card-label">
-                <li>{parseInt(member.colleagues)}  werknemers</li>
-                <li class="card-hiring">hiring</li>
+                <ul class="card-label">
+                    <li>{parseInt(member.colleagues)}  werknemers</li>
+                    <li class="card-hiring">hiring</li>
 
-            </ul>
+                </ul>
 
-        </article>
-    {/each}
-
-
+                <Button 
+                    tag="a"
+                    label="Bekijk agency"
+                    href="/"
+                    className="vacancy-link"
+                />
+            </article>
+        {/each}
+    {/if}
 </section>
 
 <style>

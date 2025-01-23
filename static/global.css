@@ -127,13 +127,12 @@ button:focus-visible {
 
 main {
   line-height: 1.5;
+  max-width: 100vw;
 }
 
 footer {
   border-top: 1px solid var(--black);
 }
-
-/** Layout Styling */
 
 main {
   max-width: 100vw;

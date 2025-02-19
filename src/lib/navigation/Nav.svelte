@@ -14,6 +14,7 @@
     { title: "Home", ref: "/" },
     { title: "Leden", ref: "/members" },
     { title: "Vacatures", ref: "/vacatures" },
+    { title: "Graphic", ref: "/graphic" },
   ];
 
   let pagesCTA = [
